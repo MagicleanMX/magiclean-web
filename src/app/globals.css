@@ -4,11 +4,16 @@
   --color-primary: #0076FF;
   --color-primary-dark: #0052CC;
   --color-accent: #FF2B2B;
-  --color-gray-light: #F8F9FA;
+  --color-deep: #0A1628;
+  --color-support: #E6E9EF;
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

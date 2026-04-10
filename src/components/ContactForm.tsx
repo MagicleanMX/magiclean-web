@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
 
 interface FormData {
@@ -13,7 +14,10 @@ interface FormData {
 }
 
 const inputClass =
-  'w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0076FF] focus:border-transparent transition'
+  'w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/25 text-sm focus:outline-none focus:border-[#0076FF] transition-colors duration-300'
+
+const labelClass =
+  'block text-white/50 text-xs font-semibold uppercase tracking-widest mb-2'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -40,18 +44,22 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <section id="contacto" className="py-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contacto" className="py-32 bg-[#0A1628]">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="max-w-md mx-auto text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle size={32} className="text-green-600" />
-            </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">
-              ¡Solicitud enviada!
-            </h2>
-            <p className="text-gray-500 text-base">
-              Gracias por contactarnos. Nuestro equipo te responderá en menos de 24 horas hábiles.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="w-16 h-16 rounded-full bg-[#0076FF]/20 flex items-center justify-center mx-auto mb-6">
+                <CheckCircle size={32} className="text-[#0076FF]" />
+              </div>
+              <h2 className="text-3xl font-bold text-white mb-4">¡Solicitud enviada!</h2>
+              <p className="text-white/40 font-light text-base leading-relaxed">
+                Nuestro equipo te responderá en menos de 24 horas hábiles.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -59,23 +67,36 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="py-20 bg-white">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Solicita una cotización
-          </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-base leading-relaxed">
-            Cuéntanos sobre tu negocio y te asesoramos con la mejor solución de limpieza.
+    <section id="contacto" className="py-32 bg-[#0A1628]">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <p className="text-[#FF2B2B] font-semibold text-xs uppercase tracking-widest mb-4">
+            Cotización
           </p>
-        </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight max-w-lg">
+            Hablemos de tu operación
+          </h2>
+        </motion.div>
 
-        <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
+        {/* Form */}
+        <motion.form
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          onSubmit={handleSubmit}
+          className="max-w-2xl"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label htmlFor="nombre" className="block text-sm font-medium text-gray-900 mb-2">
-                Nombre *
-              </label>
+              <label htmlFor="nombre" className={labelClass}>Nombre *</label>
               <input
                 id="nombre"
                 name="nombre"
@@ -88,9 +109,7 @@ export default function ContactForm() {
               />
             </div>
             <div>
-              <label htmlFor="empresa" className="block text-sm font-medium text-gray-900 mb-2">
-                Empresa *
-              </label>
+              <label htmlFor="empresa" className={labelClass}>Empresa *</label>
               <input
                 id="empresa"
                 name="empresa"
@@ -103,9 +122,7 @@ export default function ContactForm() {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
-                Email *
-              </label>
+              <label htmlFor="email" className={labelClass}>Email *</label>
               <input
                 id="email"
                 name="email"
@@ -118,9 +135,7 @@ export default function ContactForm() {
               />
             </div>
             <div>
-              <label htmlFor="telefono" className="block text-sm font-medium text-gray-900 mb-2">
-                Teléfono
-              </label>
+              <label htmlFor="telefono" className={labelClass}>Teléfono</label>
               <input
                 id="telefono"
                 name="telefono"
@@ -132,9 +147,7 @@ export default function ContactForm() {
               />
             </div>
             <div className="md:col-span-2">
-              <label htmlFor="ciudad" className="block text-sm font-medium text-gray-900 mb-2">
-                Ciudad *
-              </label>
+              <label htmlFor="ciudad" className={labelClass}>Ciudad *</label>
               <input
                 id="ciudad"
                 name="ciudad"
@@ -148,10 +161,8 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <div className="mb-8">
-            <label htmlFor="mensaje" className="block text-sm font-medium text-gray-900 mb-2">
-              Mensaje
-            </label>
+          <div className="mb-10">
+            <label htmlFor="mensaje" className={labelClass}>Mensaje</label>
             <textarea
               id="mensaje"
               name="mensaje"
@@ -163,15 +174,13 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="text-center">
-            <button
-              type="submit"
-              className="bg-[#0076FF] text-white px-10 py-3.5 rounded-lg font-semibold text-base hover:bg-[#0052CC] transition-colors"
-            >
-              Enviar solicitud
-            </button>
-          </div>
-        </form>
+          <button
+            type="submit"
+            className="w-full bg-[#0076FF] text-white py-4 rounded-full font-semibold text-base hover:bg-[#0052CC] transition-colors duration-300"
+          >
+            Enviar solicitud
+          </button>
+        </motion.form>
       </div>
     </section>
   )

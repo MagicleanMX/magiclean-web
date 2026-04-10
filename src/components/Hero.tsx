@@ -1,35 +1,79 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
+
 export default function Hero() {
   return (
-    <section className="min-h-[90vh] bg-gradient-to-br from-[#003580] to-[#0076FF] flex items-center pt-16">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-        <div className="max-w-3xl">
-          <p className="text-blue-200 text-sm font-semibold uppercase tracking-widest mb-4">
-            Proveedor B2B · México
-          </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Limpieza profesional
-            <br />
-            para tu negocio
-          </h1>
-          <p className="text-lg sm:text-xl text-blue-100 mb-10 max-w-xl leading-relaxed">
-            Soluciones completas de limpieza para retail, mayoreo, HORECA e institucional.
-            Productos de calidad, entrega confiable y soporte experto en toda la República.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#contacto"
-              className="bg-white text-[#0076FF] px-8 py-3.5 rounded-lg font-semibold text-base hover:bg-blue-50 transition-colors text-center"
-            >
-              Solicitar cotización
-            </a>
-            <a
-              href="#servicios"
-              className="border-2 border-white text-white px-8 py-3.5 rounded-lg font-semibold text-base hover:bg-white/10 transition-colors text-center"
-            >
-              Ver servicios
-            </a>
-          </div>
-        </div>
+    <section className="min-h-screen bg-white flex flex-col justify-center pt-20">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 py-24 w-full flex-1 flex flex-col justify-center">
+        {/* Badge NeoShield */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-2 mb-8"
+        >
+          <span className="text-[#FF2B2B] text-lg leading-none select-none">•</span>
+          <span className="text-gray-400 font-semibold text-xs uppercase tracking-widest">
+            Tecnología NeoShield™
+          </span>
+        </motion.div>
+
+        {/* H1 gigante */}
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.1 }}
+          className="text-7xl lg:text-9xl font-black text-[#1A1A1A] tracking-tight leading-[0.88] mb-8"
+        >
+          Limpieza
+          <br />
+          de precisión
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+          className="font-light text-xl text-gray-400 max-w-md leading-relaxed mb-14"
+        >
+          Soluciones B2B de limpieza profesional para retail, HORECA e institucional
+          en toda la República Mexicana.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="flex flex-col sm:flex-row gap-4"
+        >
+          <a
+            href="#contacto"
+            className="inline-flex items-center justify-center bg-[#0076FF] text-white px-10 py-4 rounded-full font-semibold text-base hover:bg-[#0052CC] transition-colors duration-300"
+          >
+            Solicitar cotización
+          </a>
+          <a
+            href="#servicios"
+            className="inline-flex items-center justify-center border-2 border-[#0076FF] text-[#0076FF] px-10 py-4 rounded-full font-semibold text-base hover:bg-[#0076FF]/5 transition-colors duration-300"
+          >
+            Ver servicios
+          </a>
+        </motion.div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="flex justify-center pb-10">
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
+          className="text-gray-200"
+        >
+          <ChevronDown size={28} />
+        </motion.div>
       </div>
     </section>
   )

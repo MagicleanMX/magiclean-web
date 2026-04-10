@@ -1,32 +1,81 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
+import { useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
+
+interface CounterProps {
+  target: number
+  suffix: string
+}
+
+function AnimatedCounter({ target, suffix }: CounterProps) {
+  const [value, setValue] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
+
+  useEffect(() => {
+    if (!isInView) return
+    const duration = 1800
+    const start = performance.now()
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1)
+      const ease = 1 - Math.pow(1 - progress, 3)
+      setValue(Math.round(ease * target))
+      if (progress < 1) requestAnimationFrame(tick)
+    }
+    requestAnimationFrame(tick)
+  }, [isInView, target])
+
+  return (
+    <div ref={ref}>
+      <p className="text-7xl lg:text-8xl font-black text-[#0076FF] leading-none tracking-tight">
+        {value}
+        {suffix}
+      </p>
+    </div>
+  )
+}
+
 const stats = [
-  { value: '15+', label: 'Años de experiencia' },
-  { value: '500+', label: 'Clientes activos' },
-  { value: '200+', label: 'Productos en catálogo' },
-  { value: '30+', label: 'Ciudades con cobertura' },
+  { target: 15, suffix: '+', label: 'Años de experiencia' },
+  { target: 500, suffix: '+', label: 'Clientes activos' },
+  { target: 200, suffix: '+', label: 'Productos en catálogo' },
+  { target: 30, suffix: '+', label: 'Ciudades con cobertura' },
 ]
 
 export default function WhyUs() {
   return (
-    <section className="py-20 bg-[#0076FF]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            ¿Por qué Magiclean?
+    <section id="nosotros" className="py-32 bg-[#E6E9EF]">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-20"
+        >
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#1A1A1A] tracking-tight">
+            ¿Por qué MagiClean?
           </h2>
-          <p className="text-blue-100 max-w-xl mx-auto text-base leading-relaxed">
-            Líderes en suministros de limpieza B2B en México con décadas de experiencia
-            y miles de clientes satisfechos en todo el país.
-          </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-5xl sm:text-6xl font-extrabold text-white mb-2">
-                {stat.value}
+        {/* Stats sin cards, solo números */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+            >
+              <AnimatedCounter target={stat.target} suffix={stat.suffix} />
+              <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-[#1A1A1A]/50">
+                {stat.label}
               </p>
-              <p className="text-blue-100 text-sm font-medium">{stat.label}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

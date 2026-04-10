@@ -1,13 +1,17 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '700', '800', '900'],
+  variable: '--font-montserrat',
+})
 
 export const metadata: Metadata = {
-  title: 'Magiclean — Limpieza profesional B2B',
+  title: 'MagiClean — Limpieza de precisión',
   description:
-    'Proveedor B2B de productos de limpieza para retail, mayoreo, HORECA e institucional en México. Cotiza hoy.',
+    'Proveedor B2B de productos de limpieza premium para retail, mayoreo, HORECA e institucional en México. Tecnología NeoShield™.',
 }
 
 export default function RootLayout({
@@ -16,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <body className={inter.className}>{children}</body>
+    <html lang="es" className={montserrat.variable}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   )
 }
