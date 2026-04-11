@@ -1,8 +1,8 @@
 const productLinks = [
-  { href: '#servicios', label: 'Fibras' },
-  { href: '#servicios', label: 'Sistemas de mop' },
-  { href: '#servicios', label: 'Químicos' },
-  { href: '#servicios', label: 'Soluciones HORECA' },
+  { href: '#productos', label: 'Fibras' },
+  { href: '#productos', label: 'Sistemas de mop' },
+  { href: '#productos', label: 'Químicos' },
+  { href: '#horeca', label: 'Soluciones HORECA' },
 ]
 
 const companyLinks = [
@@ -22,10 +22,13 @@ export default function Footer() {
               <span className="font-black text-[#FF2B2B]">Magi</span>
               <span className="font-black text-[#0076FF]">Clean</span>
             </a>
-            <p className="text-white/35 text-sm font-light leading-relaxed max-w-xs">
+            <p className="text-white/35 text-sm font-light leading-relaxed max-w-xs mb-5">
               Proveedor B2B de soluciones de limpieza profesional para retail, mayoreo,
               HORECA e institucional en México.
             </p>
+            <span className="inline-flex items-center bg-[#FF2B2B] text-white text-[10px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full">
+              NeoShield™
+            </span>
           </div>
 
           {/* Links */}
@@ -74,7 +77,7 @@ export default function Footer() {
             <span className="hidden sm:inline text-white/10">·</span>
             <span>+52 55 1234 5678</span>
             <span className="hidden sm:inline text-white/10">·</span>
-            <span>Ciudad de México, México</span>
+            <span>Ciudad de México</span>
           </div>
           <p className="text-white/20 text-xs">© 2025 MagiClean. Todos los derechos reservados.</p>
         </div>

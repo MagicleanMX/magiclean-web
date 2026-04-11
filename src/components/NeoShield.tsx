@@ -42,9 +42,10 @@ const stats = [
   { target: 500, suffix: '+', label: 'Clientes activos' },
   { target: 200, suffix: '+', label: 'Productos en catálogo' },
   { target: 30, suffix: '+', label: 'Ciudades con cobertura' },
+  { target: 99, suffix: '%', label: 'Prevención de bacterias' },
 ]
 
-export default function WhyUs() {
+export default function NeoShield() {
   return (
     <section id="nosotros" className="py-32 bg-[#E6E9EF]">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
@@ -56,13 +57,14 @@ export default function WhyUs() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#1A1A1A] tracking-tight">
-            ¿Por qué MagiClean?
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#1A1A1A] tracking-tight mb-4">
+            Tecnología NeoShield™
           </h2>
+          <p className="text-gray-400 font-light text-lg">El futuro es impecable</p>
         </motion.div>
 
-        {/* Stats sin cards, solo números */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+        {/* Stats */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}

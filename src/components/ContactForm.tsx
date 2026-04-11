@@ -9,6 +9,7 @@ interface FormData {
   empresa: string
   email: string
   telefono: string
+  canal: string
   ciudad: string
   mensaje: string
 }
@@ -16,8 +17,7 @@ interface FormData {
 const inputClass =
   'w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/25 text-sm focus:outline-none focus:border-[#0076FF] transition-colors duration-300'
 
-const labelClass =
-  'block text-white/50 text-xs font-semibold uppercase tracking-widest mb-2'
+const labelClass = 'block text-white/50 text-xs font-semibold uppercase tracking-widest mb-2'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -25,20 +25,20 @@ export default function ContactForm() {
     empresa: '',
     email: '',
     telefono: '',
+    canal: '',
     ciudad: '',
     mensaje: '',
   })
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // TODO: conectar a backend (Resend, SendGrid, etc.)
     setSubmitted(true)
   }
 
@@ -80,9 +80,12 @@ export default function ContactForm() {
           <p className="text-[#FF2B2B] font-semibold text-xs uppercase tracking-widest mb-4">
             Cotización
           </p>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight max-w-lg">
-            Hablemos de tu operación
+          <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight max-w-lg mb-4">
+            Solicita tu cotización personalizada
           </h2>
+          <p className="text-white/40 font-light text-lg max-w-lg leading-relaxed">
+            Miles de negocios en México confían en MagiClean. Únete al estándar profesional.
+          </p>
         </motion.div>
 
         {/* Form */}
@@ -96,7 +99,7 @@ export default function ContactForm() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label htmlFor="nombre" className={labelClass}>Nombre *</label>
+              <label htmlFor="nombre" className={labelClass}>Nombre completo *</label>
               <input
                 id="nombre"
                 name="nombre"
@@ -146,7 +149,26 @@ export default function ContactForm() {
                 className={inputClass}
               />
             </div>
-            <div className="md:col-span-2">
+            <div>
+              <label htmlFor="canal" className={labelClass}>Canal *</label>
+              <select
+                id="canal"
+                name="canal"
+                required
+                value={formData.canal}
+                onChange={handleChange}
+                className={`${inputClass} appearance-none cursor-pointer`}
+              >
+                <option value="" disabled className="bg-[#0A1628] text-white/50">
+                  Selecciona un canal
+                </option>
+                <option value="hogar" className="bg-[#0A1628] text-white">Hogar</option>
+                <option value="retail" className="bg-[#0A1628] text-white">Retail</option>
+                <option value="horeca" className="bg-[#0A1628] text-white">HORECA</option>
+                <option value="industrial" className="bg-[#0A1628] text-white">Industrial</option>
+              </select>
+            </div>
+            <div>
               <label htmlFor="ciudad" className={labelClass}>Ciudad *</label>
               <input
                 id="ciudad"

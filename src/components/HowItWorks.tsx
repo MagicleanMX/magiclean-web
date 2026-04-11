@@ -5,27 +5,23 @@ import { motion } from 'framer-motion'
 const steps = [
   {
     number: '01',
-    title: 'Contáctanos',
-    description:
-      'Envíanos tu consulta o llena el formulario con las necesidades de limpieza de tu negocio.',
+    title: 'Consulta',
+    description: 'Cuéntanos las necesidades de limpieza de tu negocio.',
   },
   {
     number: '02',
-    title: 'Recibe tu cotización',
-    description:
-      'Te enviamos una propuesta personalizada en menos de 24 horas hábiles.',
+    title: 'Cotización',
+    description: 'Recibe tu propuesta personalizada en menos de 24 horas.',
   },
   {
     number: '03',
-    title: 'Confirma tu pedido',
-    description:
-      'Aprueba la cotización y coordinamos el despacho de tus productos de inmediato.',
+    title: 'Entrega rápida',
+    description: 'Productos en tu puerta con logística eficiente.',
   },
   {
     number: '04',
-    title: 'Entrega puntual',
-    description:
-      'Recibe con respaldo de nuestro servicio postventa y soporte técnico especializado.',
+    title: 'Soporte continuo',
+    description: 'Acompañamiento técnico y reposición garantizada.',
   },
 ]
 

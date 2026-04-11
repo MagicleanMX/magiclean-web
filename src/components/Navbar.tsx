@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#como-funciona', label: 'Cómo funciona' },
-  { href: '#nosotros', label: 'Por qué nosotros' },
+  { href: '#productos', label: 'Productos' },
+  { href: '#horeca', label: 'HORECA' },
+  { href: '#nosotros', label: 'Nosotros' },
+  { href: '#contacto', label: 'Contacto' },
 ]
 
 export default function Navbar() {
@@ -50,9 +51,9 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="#contacto"
-              className="hidden sm:inline-flex bg-[#0076FF] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#0052CC] transition-colors duration-300"
+              className="hidden sm:inline-flex bg-[#0076FF] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#0052CC] transition-colors duration-300"
             >
-              Cotizar
+              Solicitar cotización
             </a>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -83,7 +84,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
             className="bg-[#0076FF] text-white px-6 py-3 rounded-full text-sm font-semibold text-center hover:bg-[#0052CC] transition-colors"
           >
-            Cotizar
+            Solicitar cotización
           </a>
         </div>
       )}

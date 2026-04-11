@@ -1,9 +1,10 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import ProductHero from '@/components/ProductHero'
-import Services from '@/components/Services'
+import ProductHeroF4 from '@/components/ProductHeroF4'
+import Categories from '@/components/Categories'
+import ProductHeroM1 from '@/components/ProductHeroM1'
+import NeoShield from '@/components/NeoShield'
 import HowItWorks from '@/components/HowItWorks'
-import WhyUs from '@/components/WhyUs'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
 
@@ -13,10 +14,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <ProductHero />
-        <Services />
+        <ProductHeroF4 />
+        <Categories />
+        <ProductHeroM1 />
+        <NeoShield />
         <HowItWorks />
-        <WhyUs />
         <ContactForm />
       </main>
       <Footer />
