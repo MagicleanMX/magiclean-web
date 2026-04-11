@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
 @theme {
+  /* Brand colors */
   --color-primary: #0076FF;
   --color-primary-dark: #0052CC;
   --color-accent: #FF2B2B;
   --color-deep: #0A1628;
-  --color-support: #E6E9EF;
+  --color-ink: #1A1A1A;
+  --color-surface: #F5F7FA;
+  --color-border: #E8EAED;
+
+  /* Typography */
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+
+  /* Spacing scale */
+  --section-y: 9rem;
 }
 
 html {
@@ -16,8 +25,30 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #1A1A1A;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Serif utility */
+.font-serif {
+  font-family: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+/* Editorial headline style */
+.headline-editorial {
+  font-family: var(--font-playfair), ui-serif, Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+/* Eyebrow label style */
+.label-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
