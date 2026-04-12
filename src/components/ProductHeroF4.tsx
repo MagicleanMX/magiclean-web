@@ -15,34 +15,91 @@ export default function ProductHeroF4() {
     <section id="fibra-dual-f4" className="relative overflow-hidden bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2">
 
-        {/* Izquierda — imagen producto (fondo de color, sin márgenes) */}
+        {/* Izquierda — composición editorial Dual */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative bg-[#0A1628] min-h-[55vw] lg:min-h-0 order-1"
+          className="relative min-h-[65vw] sm:min-h-[55vw] lg:min-h-0 order-1 overflow-hidden"
+          style={{ background: '#080500' }}
         >
-          {/* Imagen placeholder — llenará toda la mitad */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
-            {/* Glow sutil */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-80 h-80 rounded-full bg-[#0076FF]/10 blur-[80px]" />
+          {/* Glow cálido — amber para F4 */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-[500px] h-[500px] rounded-full blur-[120px]"
+              style={{ background: 'radial-gradient(circle, rgba(180,83,9,0.25) 0%, transparent 65%)' }} />
+          </div>
+
+          {/* Badge popular — top left */}
+          <div className="absolute top-6 left-6 flex items-center gap-2 bg-[#FF2B2B] text-white px-3.5 py-2 rounded-full z-20">
+            <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+            <span className="text-[10px] font-bold uppercase tracking-widest">Más popular</span>
+          </div>
+
+          {/* Contenido principal */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8 z-10">
+
+            {/* Código F4 — el héroe visual */}
+            <div className="text-center">
+              <p
+                className="font-black leading-none tracking-tight"
+                style={{ fontSize: 'clamp(4.5rem, 14vw, 8rem)', color: '#B45309' }}
+              >
+                F4
+              </p>
+              <p className="label-eyebrow text-white/20 text-[9px] tracking-[0.3em] mt-2">
+                FIBRA ESPONJA DUAL
+              </p>
             </div>
 
-            {/* Producto */}
-            <div className="relative w-52 h-52 lg:w-72 lg:h-72 rounded-full bg-white/8 border border-white/12 flex items-center justify-center">
-              <div className="text-center">
-                <p className="font-black text-white text-5xl lg:text-7xl leading-none">F4</p>
-                <p className="text-white/40 text-xs font-medium tracking-widest mt-2">NeoShield™</p>
-              </div>
-            </div>
+            {/* Separador */}
+            <div className="w-12 h-px" style={{ backgroundColor: 'rgba(180,83,9,0.4)' }} />
 
-            {/* Badge antibacterial */}
-            <div className="absolute top-8 left-8 flex items-center gap-2 bg-[#FF2B2B] text-white px-3.5 py-2 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">Antibacterial</span>
+            {/* Las dos caras — swatches de material */}
+            <div className="flex gap-5">
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="flex flex-col items-center gap-2.5"
+              >
+                <div
+                  className="w-16 h-16 lg:w-20 lg:h-20 rounded-xl"
+                  style={{
+                    background: 'linear-gradient(135deg, #1e5c1e 0%, #0f300f 100%)',
+                    border: '1px solid rgba(45,122,45,0.35)',
+                  }}
+                />
+                <p className="label-eyebrow text-white/25 text-[9px]">Abrasiva</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="flex flex-col items-center gap-2.5"
+              >
+                <div
+                  className="w-16 h-16 lg:w-20 lg:h-20 rounded-xl"
+                  style={{
+                    background: 'linear-gradient(135deg, #c8b97a 0%, #a09058 100%)',
+                    border: '1px solid rgba(200,185,122,0.25)',
+                  }}
+                />
+                <p className="label-eyebrow text-white/25 text-[9px]">Esponja</p>
+              </motion.div>
             </div>
+          </div>
+
+          {/* Spec badge — bottom right */}
+          <div
+            className="absolute bottom-6 right-6 rounded-xl px-4 py-2.5 z-20"
+            style={{ background: 'rgba(180,83,9,0.15)', border: '1px solid rgba(180,83,9,0.3)' }}
+          >
+            <p className="label-eyebrow text-[9px] mb-0.5" style={{ color: '#D97706' }}>Durabilidad</p>
+            <p className="text-xl font-black text-white leading-tight">3×</p>
           </div>
         </motion.div>
 
