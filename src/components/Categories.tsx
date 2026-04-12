@@ -2,6 +2,20 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import type { CategoriesSection } from '@/lib/wordpress'
+
+// Fallback values — used when WordPress is unreachable or field group not yet published
+const FALLBACK: CategoriesSection = {
+  eyebrow:  'La Colección',
+  headline: 'Productos MagicClean',
+  ctaText:  'Ver catálogo completo',
+  ctaLink:  '#contacto',
+  microtext: '23 modelos · 2 líneas de producto',
+}
+
+interface CategoriesProps {
+  data?: CategoriesSection | null
+}
 
 const familias = [
   {
@@ -90,10 +104,16 @@ const familias = [
   },
 ]
 
-export default function Categories() {
+export default function Categories({ data }: CategoriesProps) {
+  const eyebrow  = data?.eyebrow  || FALLBACK.eyebrow
+  const headline = data?.headline || FALLBACK.headline
+  const ctaText  = data?.ctaText  || FALLBACK.ctaText
+  const ctaLink  = data?.ctaLink  || FALLBACK.ctaLink
+  const microtext = data?.microtext || FALLBACK.microtext
+
   return (
-    <section id="productos" className="py-36 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <section id="productos" className="py-20 bg-white">
+      <div className="max-w-[1440px] mx-auto px-8">
 
         {/* Header */}
         <motion.div
@@ -101,27 +121,27 @@ export default function Categories() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12"
         >
           <div>
-            <p className="label-eyebrow text-[#FF2B2B] mb-4">La Colección</p>
-            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] text-[#1A1A1A] max-w-sm">
-              Productos MagicClean
+            <p className="label-eyebrow text-[#FF2B2B] mb-3">{eyebrow}</p>
+            <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] max-w-sm">
+              {headline}
             </h2>
           </div>
           <div className="flex flex-col items-start lg:items-end gap-2">
             <a
-              href="#contacto"
+              href={ctaLink}
               className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0076FF] hover:gap-3 transition-all duration-200"
             >
-              Ver catálogo completo <ArrowRight size={14} />
+              {ctaText} <ArrowRight size={14} />
             </a>
-            <p className="label-eyebrow text-[#999]">23 modelos · 2 líneas de producto</p>
+            <p className="label-eyebrow text-[#999]">{microtext}</p>
           </div>
         </motion.div>
 
         {/* Grid — 6 familias */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {familias.map((f, i) => (
             <motion.div
               key={f.id}
@@ -131,121 +151,102 @@ export default function Categories() {
               transition={{ duration: 0.7, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
             >
               <a href={f.anchor} className="group block cursor-pointer">
-                {/* Imagen — aspect 4/5 */}
+
+                {/* Card visual — producto domina */}
                 <div
-                  className="relative overflow-hidden rounded-2xl mb-4"
-                  style={{ aspectRatio: '4/5' }}
+                  className="relative overflow-hidden rounded-2xl mb-4 transition-shadow duration-300 group-hover:shadow-xl"
+                  style={{ aspectRatio: '4/5', backgroundColor: f.color }}
                 >
-                  {/* Fondo */}
+                  {/* Subtle gradient overlay for depth */}
                   <div
-                    className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                    style={{ backgroundColor: f.color }}
+                    className="absolute inset-0"
+                    style={{ background: `linear-gradient(160deg, ${f.accentColor}08 0%, transparent 60%)` }}
+                  />
+
+                  {/* Ghost large letter — typographic backdrop */}
+                  <p
+                    className="absolute inset-0 flex items-center justify-center font-black text-[11rem] leading-none select-none pointer-events-none"
+                    style={{ color: `${f.accentColor}12` }}
                   >
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6">
+                    {f.modelos[0].charAt(0)}
+                  </p>
 
-                      {/* Badge popular */}
-                      {f.badge && (
-                        <span
-                          className="absolute top-5 left-5 text-white label-eyebrow text-[9px] px-2.5 py-1 rounded-full"
-                          style={{ backgroundColor: f.accentColor }}
+                  {/* Badge — refined pill top-left */}
+                  {f.badge && (
+                    <span
+                      className="absolute top-5 left-5 label-eyebrow text-[9px] px-3 py-1.5 rounded-full text-white z-10"
+                      style={{ backgroundColor: f.accentColor }}
+                    >
+                      {f.badge}
+                    </span>
+                  )}
+
+                  {/* Model count — top-right */}
+                  <span className="absolute top-5 right-5 label-eyebrow text-[9px] px-2.5 py-1 rounded-full z-10"
+                    style={{ backgroundColor: `${f.accentColor}15`, color: f.accentColor }}
+                  >
+                    {f.modelos.length} modelo{f.modelos.length > 1 ? 's' : ''}
+                  </span>
+
+                  {/* Product codes — centered, editorial */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 z-10">
+                    <div className="flex flex-wrap justify-center gap-2.5">
+                      {f.modelos.slice(0, 4).map((m) => (
+                        <div
+                          key={m}
+                          className="rounded-xl px-4 py-3 flex items-center justify-center"
+                          style={{
+                            backgroundColor: `${f.accentColor}10`,
+                            border: `1px solid ${f.accentColor}20`,
+                          }}
                         >
-                          {f.badge}
-                        </span>
-                      )}
-
-                      {/* Modelos chips */}
-                      <div className="flex flex-wrap justify-center gap-2">
-                        {f.modelos.map((m) => (
-                          <div
-                            key={m}
-                            className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center border border-white"
-                            style={{ boxShadow: `0 4px 16px ${f.accentColor}25` }}
+                          <span
+                            className="font-black text-[1.1rem] leading-none tracking-tight"
+                            style={{ color: f.accentColor }}
                           >
-                            <span
-                              className="font-black text-[13px] leading-none"
-                              style={{ color: f.accentColor }}
-                            >
-                              {m}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Nombre familia */}
-                      <div className="text-center mt-2">
-                        <p
-                          className="font-black text-[18px] leading-tight mb-1"
-                          style={{ color: f.accentColor }}
+                            {m}
+                          </span>
+                        </div>
+                      ))}
+                      {f.modelos.length > 4 && (
+                        <div
+                          className="rounded-xl px-4 py-3 flex items-center justify-center"
+                          style={{
+                            backgroundColor: `${f.accentColor}08`,
+                            border: `1px solid ${f.accentColor}15`,
+                          }}
                         >
-                          {f.nombre}
-                        </p>
-                        <p className="text-[11px] font-medium text-[#999] tracking-wider uppercase">
-                          {f.subtitulo}
-                        </p>
-                      </div>
-
-                      {/* Usos */}
-                      <div className="flex flex-col gap-1 mt-1">
-                        {f.usos.map((uso) => (
-                          <div key={uso} className="flex items-center gap-1.5 justify-center">
-                            <span
-                              className="w-1 h-1 rounded-full shrink-0"
-                              style={{ backgroundColor: f.accentColor }}
-                            />
-                            <span className="text-[11px] font-light text-[#777]">{uso}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Nivel abrasividad si aplica */}
-                      {f.abrasividad && (
-                        <div className="mt-3 flex flex-col items-center gap-1">
-                          <p className="label-eyebrow text-[#999] text-[9px]">Nivel Abrasividad</p>
-                          <div className="flex gap-1">
-                            {[1,2,3,4,5].map((n) => (
-                              <div
-                                key={n}
-                                className="w-4 h-1.5 rounded-full"
-                                style={{
-                                  backgroundColor: n <= (f.abrasividad ?? 0)
-                                    ? f.accentColor
-                                    : `${f.accentColor}25`
-                                }}
-                              />
-                            ))}
-                          </div>
+                          <span
+                            className="font-bold text-[0.85rem] leading-none"
+                            style={{ color: `${f.accentColor}80` }}
+                          >
+                            +{f.modelos.length - 4}
+                          </span>
                         </div>
                       )}
                     </div>
                   </div>
 
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-[#1A1A1A]/0 group-hover:bg-[#1A1A1A]/60 transition-all duration-400 flex items-end p-6">
-                    <div className="translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-75">
-                      <p className="label-eyebrow text-white/60 mb-1">{f.modelos.length} modelo{f.modelos.length > 1 ? 's' : ''} disponibles</p>
-                      <p className="text-white font-semibold text-[15px] mb-3">{f.nombre}</p>
-                      <span className="inline-flex items-center gap-1.5 text-white text-[12px] font-semibold border border-white/40 rounded-full px-4 py-1.5 hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200">
-                        Ver familia completa <ArrowRight size={11} />
-                      </span>
+                  {/* Hover CTA — slides up from bottom */}
+                  <div className="absolute inset-x-0 bottom-0 p-5 z-20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                    <div
+                      className="rounded-xl px-4 py-3 flex items-center justify-between"
+                      style={{ backgroundColor: f.accentColor }}
+                    >
+                      <span className="text-white text-[12px] font-semibold">Ver familia</span>
+                      <ArrowRight size={13} className="text-white/80" />
                     </div>
                   </div>
                 </div>
 
-                {/* Info debajo */}
+                {/* Info debajo — limpia, tipografía fuerte */}
                 <div className="px-1">
-                  <div className="flex items-center justify-between mb-1">
-                    <p className="label-eyebrow text-[#999]">{f.subtitulo}</p>
-                    <span
-                      className="label-eyebrow text-[9px] px-2 py-0.5 rounded-full"
-                      style={{ backgroundColor: `${f.accentColor}12`, color: f.accentColor }}
-                    >
-                      {f.canal}
-                    </span>
-                  </div>
-                  <p className="font-serif text-[1.05rem] font-medium text-[#1A1A1A] group-hover:text-[#0076FF] transition-colors duration-200">
+                  <p className="font-serif text-[1.15rem] font-medium text-[#1A1A1A] group-hover:text-[#0076FF] transition-colors duration-200 leading-snug mb-1">
                     {f.nombre}
                   </p>
-                  <p className="text-[13px] font-light text-[#999] mt-0.5 line-clamp-2">{f.descripcion}</p>
+                  <p className="text-[12.5px] font-light text-[#999] leading-snug">
+                    {f.subtitulo}
+                  </p>
                 </div>
               </a>
             </motion.div>

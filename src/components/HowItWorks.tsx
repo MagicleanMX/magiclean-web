@@ -28,8 +28,8 @@ const pasos = [
 
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" className="py-36 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <section id="como-funciona" className="py-20 bg-[#F5F7FA]">
+      <div className="max-w-[1440px] mx-auto px-8">
 
         {/* Header */}
         <motion.div
@@ -37,11 +37,11 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-20"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10"
         >
           <div>
-            <p className="label-eyebrow text-[#FF2B2B] mb-4">El Proceso</p>
-            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] text-[#1A1A1A] max-w-xs">
+            <p className="label-eyebrow text-[#FF2B2B] mb-3">El Proceso</p>
+            <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] max-w-xs">
               Simple y transparente
             </h2>
           </div>
@@ -62,18 +62,18 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative border-t-2 border-[#E8EAED] pt-8 pr-8 pb-0 group hover:border-[#0076FF] transition-colors duration-300"
+              className="relative border-t-2 border-[#E0E3E8] pt-8 pr-8 pb-0 group hover:border-[#0076FF] transition-colors duration-300"
             >
               {/* Número ghost grande */}
-              <p className="font-black text-[5rem] leading-none text-[#F5F7FA] select-none mb-4 group-hover:text-[#EEF4FF] transition-colors duration-300">
+              <p className="font-black text-[5rem] leading-none text-[#E8EAED] select-none mb-4 group-hover:text-[#D8E4FF] transition-colors duration-300">
                 {p.num}
               </p>
 
               {/* Contenido */}
-              <h3 className="font-serif text-[1.2rem] font-medium text-[#1A1A1A] mb-3">
+              <h3 className="font-serif text-[1.05rem] font-medium text-[#1A1A1A] mb-2.5">
                 {p.titulo}
               </h3>
-              <p className="text-[13px] font-light text-[#888] leading-relaxed">
+              <p className="text-[13px] font-light text-[#777] leading-[1.7]">
                 {p.desc}
               </p>
             </motion.div>

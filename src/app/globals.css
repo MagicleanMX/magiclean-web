@@ -41,14 +41,14 @@ body {
 .headline-editorial {
   font-family: var(--font-playfair), ui-serif, Georgia, serif;
   font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.08;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
 }
 
 /* Eyebrow label style */
 .label-eyebrow {
-  font-size: 0.65rem;
+  font-size: 0.63rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
 }

@@ -65,8 +65,8 @@ export default function ProductHeroF123() {
     <section id="fibras-verdes-f1-f2-f3" className="relative overflow-hidden bg-white">
 
       {/* ── Parte superior — headline editorial ── */}
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 pt-24 pb-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-[1440px] mx-auto px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
           {/* Izquierda — copy editorial */}
           <div>
@@ -75,7 +75,7 @@ export default function ProductHeroF123() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="label-eyebrow text-[#0076FF] mb-6"
+              className="label-eyebrow text-[#0076FF] mb-3"
             >
               Fibras Verdes — F1 · F2 · F3
             </motion.p>
@@ -85,7 +85,7 @@ export default function ProductHeroF123() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="headline-editorial text-[2.6rem] lg:text-[3.6rem] xl:text-[4.2rem] text-[#1A1A1A] leading-tight mb-6"
+              className="headline-editorial text-[2.8rem] lg:text-[3.8rem] xl:text-[4.6rem] text-[#1A1A1A] mb-6"
             >
               Tu cocina merece
               <br />
@@ -102,7 +102,7 @@ export default function ProductHeroF123() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[1.05rem] font-light text-[#777] leading-relaxed max-w-md mb-8"
+              className="text-[1rem] font-light text-[#666] leading-[1.75] max-w-md mb-8"
             >
               En MagicClean nos comprometemos a cuidar lo que tú cuidas.
               Esa sartén que elegiste con cuidado, esa olla que usas cada día —
@@ -115,7 +115,7 @@ export default function ProductHeroF123() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.25 }}
-              className="text-[1rem] font-semibold text-[#1A1A1A] tracking-wide mb-10 italic"
+              className="text-[0.95rem] font-light text-[#555] tracking-wide mb-6 italic"
             >
               "Fuerza que limpia. Tecnología que cuida."
             </motion.p>
@@ -126,7 +126,7 @@ export default function ProductHeroF123() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-wrap gap-3 mb-10"
+              className="flex flex-wrap gap-3 mb-6"
             >
               <div className="inline-flex items-center gap-2 bg-[#0076FF]/8 border border-[#0076FF]/20 rounded-full px-4 py-2">
                 <ShieldCheck size={14} className="text-[#0076FF] shrink-0" />
@@ -196,15 +196,15 @@ export default function ProductHeroF123() {
       </div>
 
       {/* ── Parte inferior — los 3 niveles de abrasividad ── */}
-      <div className="bg-[#F5F7FA] mt-20">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8 py-16">
+      <div className="bg-[#F5F7FA] mt-8">
+        <div className="max-w-[1440px] mx-auto px-8 py-12">
 
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-[#999] text-[11px] font-semibold uppercase tracking-widest mb-10 text-center"
+            className="text-[#999] text-[11px] font-semibold uppercase tracking-widest mb-8 text-center"
           >
             Tres niveles. Una sola tecnología.
           </motion.p>
@@ -268,7 +268,7 @@ export default function ProductHeroF123() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-center text-[#999] text-[13px] font-light mt-10 max-w-lg mx-auto"
+            className="text-center text-[#999] text-[13px] font-light mt-6 max-w-lg mx-auto"
           >
             Los tres niveles comparten la misma tecnología NeoShield™,
             la misma durabilidad 3x y el mismo compromiso de no rayar

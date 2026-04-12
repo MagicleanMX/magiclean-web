@@ -69,8 +69,8 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <section id="contacto-ok" className="py-32 bg-[#0A1628]">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+      <section id="contacto-ok" className="py-20 bg-[#0A1628]">
+        <div className="max-w-[1440px] mx-auto px-8">
           <div className="max-w-md mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -99,8 +99,8 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="py-32 bg-[#0A1628]">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+    <section id="contacto" className="py-20 bg-[#0A1628]">
+      <div className="max-w-[1440px] mx-auto px-8">
 
         {/* Header */}
         <motion.div
@@ -108,17 +108,17 @@ export default function ContactForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16"
+          className="mb-10"
         >
           <p className="text-[#FF2B2B] font-semibold text-xs uppercase tracking-widest mb-4">
             Hablemos
           </p>
-          <h2 className="headline-editorial text-[2.4rem] lg:text-[3.2rem] text-white tracking-tight max-w-lg mb-4">
-            Su operación merece una solución diseñada para ella.
+          <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] text-white max-w-lg mb-4">
+            Tu operación merece una solución diseñada para ella.
           </h2>
-          <p className="text-white/40 font-light text-lg max-w-lg leading-relaxed">
-            No tenemos catálogos genéricos. Cuéntenos qué opera, cuánto volumen maneja
-            y qué le duele hoy en su proceso de limpieza. Le respondemos en menos de
+          <p className="text-white/50 font-light text-base max-w-lg leading-[1.75]">
+            No tenemos catálogos genéricos. Cuéntanos qué operas, cuánto volumen manejas
+            y qué te duele hoy en tu proceso de limpieza. Te respondemos en menos de
             24 horas hábiles con una propuesta específica.
           </p>
         </motion.div>
@@ -229,7 +229,7 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <div className="mb-10">
+          <div className="mb-6">
             <label htmlFor="mensaje" className={labelClass}>
               ¿Qué necesitas? (opcional)
             </label>

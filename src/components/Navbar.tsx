@@ -96,7 +96,7 @@ export default function Navbar() {
           scrolled ? 'border-b border-[#E8EAED] shadow-[0_1px_12px_rgba(0,0,0,0.06)]' : ''
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="max-w-[1440px] mx-auto px-8">
           <div className="flex items-center justify-between h-[68px]">
 
             {/* Logo */}

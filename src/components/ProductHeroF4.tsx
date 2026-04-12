@@ -13,7 +13,7 @@ export default function ProductHeroF4() {
   return (
     // Editorial split — imagen izquierda, texto derecha. Sin padding vertical: edge-to-edge como Rolex
     <section id="fibra-dual-f4" className="relative overflow-hidden bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh]">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
 
         {/* Izquierda — imagen producto (fondo de color, sin márgenes) */}
         <motion.div
@@ -54,7 +54,7 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="label-eyebrow text-[#FF2B2B] mb-6"
+            className="label-eyebrow text-[#FF2B2B] mb-3"
           >
             Fibras Abrasivas — NeoShield™
           </motion.p>
@@ -64,7 +64,7 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="headline-editorial text-[2.4rem] lg:text-[3.2rem] xl:text-[3.8rem] text-[#1A1A1A] mb-6"
+            className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4.2rem] text-[#1A1A1A] mb-6"
           >
             Fibra Esponja<br />
             <span className="italic text-[#0076FF]">Dual F4</span>
@@ -75,7 +75,7 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[1rem] font-light text-[#777] leading-relaxed max-w-md mb-4"
+            className="text-[1rem] font-light text-[#666] leading-[1.75] max-w-md mb-5"
           >
             La dualidad inteligente que tu cocina necesita. Fibra abrasiva de alta
             resistencia por un lado, esponja suave por el otro.
@@ -87,9 +87,9 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="border-l-2 border-[#0076FF] pl-5 mb-10"
+            className="border-l-2 border-[#0076FF] pl-5 mb-6"
           >
-            <p className="text-[1rem] font-light text-[#555] italic leading-relaxed">
+            <p className="text-[0.95rem] font-light text-[#666] italic leading-[1.7]">
               "El estándar se creó ayer. Hoy lo evolucionamos."
             </p>
           </motion.blockquote>
@@ -100,7 +100,7 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex items-center gap-8 py-8 border-t border-b border-[#E8EAED] mb-10"
+            className="flex items-center gap-8 py-6 border-t border-b border-[#E8EAED] mb-8"
           >
             {specs.map((s) => (
               <div key={s.etiqueta}>

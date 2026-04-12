@@ -34,8 +34,8 @@ const valores = [
 
 export default function Nosotros() {
   return (
-    <section id="nosotros" className="py-36 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <section id="nosotros" className="py-20 bg-white">
+      <div className="max-w-[1440px] mx-auto px-8">
 
         {/* Header */}
         <motion.div
@@ -43,15 +43,15 @@ export default function Nosotros() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl mb-20"
+          className="max-w-2xl mb-10"
         >
-          <p className="label-eyebrow text-[#0076FF] mb-4">La Empresa</p>
-          <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] text-[#1A1A1A] mb-6">
+          <p className="label-eyebrow text-[#0076FF] mb-3">La Empresa</p>
+          <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] mb-6">
             No vinimos a repetir
             lo de siempre.
             <span className="italic text-[#0076FF]"> Vinimos a cambiarlo.</span>
           </h2>
-          <p className="text-[1.05rem] font-light text-[#777] leading-relaxed">
+          <p className="text-[1rem] font-light text-[#666] leading-[1.75]">
             MagicClean nació hace 3 años con una convicción: que la limpieza profesional
             merecía mejor tecnología, mejor diseño y mejor precio. Hoy nuestros productos
             lideran en MercadoLibre y Amazon — y el retail es el siguiente capítulo.
@@ -64,11 +64,11 @@ export default function Nosotros() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-24 pb-24 border-b border-[#E8EAED]"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10 pb-10 border-b border-[#E8EAED]"
         >
           {stats.map((s) => (
             <div key={s.label}>
-              <p className="font-black text-[3rem] lg:text-[3.5rem] text-[#1A1A1A] leading-none mb-2">
+              <p className="font-black text-[3.4rem] lg:text-[4rem] text-[#1A1A1A] leading-none mb-2">
                 {s.n}
               </p>
               <p className="label-eyebrow text-[#999]">{s.label}</p>
@@ -91,8 +91,8 @@ export default function Nosotros() {
                 <span className="font-black text-[#0076FF] text-[12px]">{v.num}</span>
               </div>
               <div>
-                <p className="font-semibold text-[#1A1A1A] text-[1rem] mb-2">{v.titulo}</p>
-                <p className="text-[14px] font-light text-[#777] leading-relaxed">{v.desc}</p>
+                <p className="font-semibold text-[#1A1A1A] text-[0.95rem] mb-2">{v.titulo}</p>
+                <p className="text-[13.5px] font-light text-[#666] leading-[1.7]">{v.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -104,7 +104,7 @@ export default function Nosotros() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-20 pt-16 border-t border-[#E8EAED]"
+          className="mt-10 pt-8 border-t border-[#E8EAED]"
         >
           <p className="label-eyebrow text-[#999] mb-8 text-center">Ya disponibles en</p>
           <div className="flex flex-wrap items-center justify-center gap-10">
@@ -122,7 +122,7 @@ export default function Nosotros() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+          className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
         >
           <div>
             <p className="font-semibold text-[#1A1A1A] text-[1.1rem] mb-1">

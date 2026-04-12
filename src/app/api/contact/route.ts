@@ -25,6 +25,16 @@ interface LeadPayload {
   mensaje?: string
 }
 
+// ─── Sanitiza texto para inserción en HTML de email ──────────────────────────
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 // ─── Labels para el correo ───────────────────────────────────────────────────
 const CANAL_LABELS: Record<string, string> = {
   distribuidor:  'Distribuidor',
@@ -80,10 +90,21 @@ export async function POST(req: NextRequest) {
     const notifyTo = process.env.NOTIFY_EMAIL || 'hola@magiclean.mx'
     const canalLabel = CANAL_LABELS[body.canal] || body.canal
 
+    // Valores escapados para uso en HTML de email
+    const safe = {
+      nombre:  escapeHtml(body.nombre),
+      empresa: escapeHtml(body.empresa),
+      email:   escapeHtml(body.email),
+      telefono: body.telefono ? escapeHtml(body.telefono) : '—',
+      canal:   escapeHtml(canalLabel),
+      ciudad:  escapeHtml(body.ciudad),
+      mensaje: body.mensaje ? escapeHtml(body.mensaje) : '',
+    }
+
     await resend.emails.send({
       from:    'MagicClean Web <noreply@magiclean.mx>',
       to:      notifyTo,
-      subject: `🟢 Nuevo lead B2B — ${body.empresa} (${canalLabel})`,
+      subject: `🟢 Nuevo lead B2B — ${safe.empresa} (${safe.canal})`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1A1A1A;">
           <div style="background: #0076FF; padding: 24px 32px; border-radius: 8px 8px 0 0;">
@@ -96,47 +117,47 @@ export async function POST(req: NextRequest) {
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 10px 0; color: #6B7280; font-size: 13px; width: 120px; vertical-align: top;">Nombre</td>
-                <td style="padding: 10px 0; font-weight: 600; font-size: 14px;">${body.nombre}</td>
+                <td style="padding: 10px 0; font-weight: 600; font-size: 14px;">${safe.nombre}</td>
               </tr>
               <tr style="border-top: 1px solid #E5E7EB;">
                 <td style="padding: 10px 0; color: #6B7280; font-size: 13px; vertical-align: top;">Empresa</td>
-                <td style="padding: 10px 0; font-weight: 600; font-size: 14px;">${body.empresa}</td>
+                <td style="padding: 10px 0; font-weight: 600; font-size: 14px;">${safe.empresa}</td>
               </tr>
               <tr style="border-top: 1px solid #E5E7EB;">
                 <td style="padding: 10px 0; color: #6B7280; font-size: 13px; vertical-align: top;">Email</td>
                 <td style="padding: 10px 0; font-size: 14px;">
-                  <a href="mailto:${body.email}" style="color: #0076FF;">${body.email}</a>
+                  <a href="mailto:${safe.email}" style="color: #0076FF;">${safe.email}</a>
                 </td>
               </tr>
               <tr style="border-top: 1px solid #E5E7EB;">
                 <td style="padding: 10px 0; color: #6B7280; font-size: 13px; vertical-align: top;">Teléfono</td>
-                <td style="padding: 10px 0; font-size: 14px;">${body.telefono || '—'}</td>
+                <td style="padding: 10px 0; font-size: 14px;">${safe.telefono}</td>
               </tr>
               <tr style="border-top: 1px solid #E5E7EB;">
                 <td style="padding: 10px 0; color: #6B7280; font-size: 13px; vertical-align: top;">Canal</td>
                 <td style="padding: 10px 0; font-size: 14px;">
                   <span style="background: #0076FF; color: white; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;">
-                    ${canalLabel}
+                    ${safe.canal}
                   </span>
                 </td>
               </tr>
               <tr style="border-top: 1px solid #E5E7EB;">
                 <td style="padding: 10px 0; color: #6B7280; font-size: 13px; vertical-align: top;">Ciudad</td>
-                <td style="padding: 10px 0; font-size: 14px;">${body.ciudad}</td>
+                <td style="padding: 10px 0; font-size: 14px;">${safe.ciudad}</td>
               </tr>
-              ${body.mensaje ? `
+              ${safe.mensaje ? `
               <tr style="border-top: 1px solid #E5E7EB;">
                 <td style="padding: 10px 0; color: #6B7280; font-size: 13px; vertical-align: top;">Mensaje</td>
-                <td style="padding: 10px 0; font-size: 14px; line-height: 1.6;">${body.mensaje}</td>
+                <td style="padding: 10px 0; font-size: 14px; line-height: 1.6;">${safe.mensaje}</td>
               </tr>
               ` : ''}
             </table>
 
             <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #E5E7EB;">
-              <a href="mailto:${body.email}?subject=MagicClean — Tu solicitud profesional"
+              <a href="mailto:${safe.email}?subject=MagicClean — Tu solicitud profesional"
                  style="background: #0076FF; color: white; padding: 12px 24px; border-radius: 24px;
                         text-decoration: none; font-weight: 600; font-size: 14px; display: inline-block;">
-                Responder a ${body.nombre} →
+                Responder a ${safe.nombre} →
               </a>
             </div>
 
@@ -165,11 +186,11 @@ export async function POST(req: NextRequest) {
           </div>
           <div style="padding: 40px 32px; border: 1px solid #E5E7EB; border-top: none; border-radius: 0 0 8px 8px;">
             <h2 style="font-size: 20px; font-weight: 700; margin: 0 0 16px; color: #0A1628;">
-              Hola, ${body.nombre}.
+              Hola, ${safe.nombre}.
             </h2>
             <p style="font-size: 15px; line-height: 1.7; color: #374151; margin: 0 0 16px;">
-              Recibimos tu solicitud de información para <strong>${body.empresa}</strong>.
-              Nuestro equipo especializado en el canal <strong>${canalLabel}</strong>
+              Recibimos tu solicitud de información para <strong>${safe.empresa}</strong>.
+              Nuestro equipo especializado en el canal <strong>${safe.canal}</strong>
               la revisará y te contactará en menos de <strong>24 horas hábiles</strong>
               con una propuesta adaptada a tu operación.
             </p>
@@ -181,8 +202,8 @@ export async function POST(req: NextRequest) {
                 Tu solicitud
               </p>
               <p style="font-size: 14px; color: #374151; margin: 0; line-height: 1.6;">
-                Canal: ${canalLabel} · Ciudad: ${body.ciudad}
-                ${body.mensaje ? `<br>"${body.mensaje}"` : ''}
+                Canal: ${safe.canal} · Ciudad: ${safe.ciudad}
+                ${safe.mensaje ? `<br>&ldquo;${safe.mensaje}&rdquo;` : ''}
               </p>
             </div>
             <p style="margin-top: 40px; font-size: 13px; color: #9CA3AF; text-align: center;">

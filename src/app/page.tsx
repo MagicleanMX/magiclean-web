@@ -12,6 +12,8 @@ import Nosotros from '@/components/Nosotros'
 import DistribuidoresCTA from '@/components/DistribuidoresCTA'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
+import Metrics from '@/components/Metrics'
+import { getWPSettings, getHeroSection, getMetrics, getCategoriesSection, getDistribuidoresSection } from '@/lib/wordpress'
 
 /**
  * Orden de secciones — inspirado en rolex.com:
@@ -27,13 +29,40 @@ import Footer from '@/components/Footer'
  * 9. ContactForm       → Cotización (#contacto)
  * 10. Footer
  */
-export default function Home() {
+export default async function Home() {
+  // ── WP connection banner (dev only) ──────────────────────────────────────
+  const wp = await getWPSettings()
+
+  // ── Section data from WordPress ──────────────────────────────────────────
+  const heroData           = await getHeroSection()
+  const metricsData        = await getMetrics()
+  const categoriesData     = await getCategoriesSection()
+  const distribuidoresData = await getDistribuidoresSection()
+
   return (
     <>
+      {/* ── Banner de conexión WP — solo visible mientras se integra el CMS ── */}
+      <div
+        style={{
+          position: 'fixed', bottom: 12, left: 12, zIndex: 9999,
+          background: '#0A1628', border: '1px solid #0076FF33',
+          borderRadius: 10, padding: '8px 14px',
+          fontFamily: 'monospace', fontSize: 11, color: '#74B9FF',
+          pointerEvents: 'none',
+        }}
+      >
+        <span style={{ color: '#2D7A2D', marginRight: 6 }}>●</span>
+        WP conectado · <strong style={{ color: '#fff' }}>{wp.url}</strong>
+        {wp.title && (
+          <> · título: <em style={{ color: '#ccc' }}>{wp.title}</em></>
+        )}
+      </div>
+
       <Navbar />
       <main>
-        <Hero />
-        <Categories />
+        <Hero data={heroData} />
+        <Metrics data={metricsData} />
+        <Categories data={categoriesData} />
         <ProductHeroF4 />
         <ProductHeroF123 />
         <NeoShield />
@@ -41,7 +70,7 @@ export default function Home() {
         <ProductHeroM2 />
         <HowItWorks />
         <Nosotros />
-        <DistribuidoresCTA />
+        <DistribuidoresCTA data={distribuidoresData} />
         <ContactForm />
       </main>
       <Footer />

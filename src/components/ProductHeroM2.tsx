@@ -14,7 +14,7 @@ export default function ProductHeroM2() {
   return (
     // Dirección invertida al M1 — imagen izquierda, texto derecha (alterna como Rolex)
     <section id="sistemas-mop-m2" className="relative overflow-hidden bg-[#0A1628]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh]">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
 
         {/* ── Izquierda — imagen producto ── */}
         <motion.div
@@ -100,7 +100,7 @@ export default function ProductHeroM2() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="label-eyebrow text-[#74B9FF] mb-6"
+            className="label-eyebrow text-[#74B9FF] mb-3"
           >
             Sistema Mop M2 — Apartamentos · Oficinas · Jóvenes
           </motion.p>
@@ -113,7 +113,7 @@ export default function ProductHeroM2() {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="mb-5"
           >
-            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-white leading-tight">
+            <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] xl:text-[4.2rem] text-white">
               Tu espacio{' '}
               <span className="italic" style={{ color: '#74B9FF' }}>habla</span>
               <br />
@@ -145,7 +145,7 @@ export default function ProductHeroM2() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="text-[1rem] font-light text-white/50 leading-relaxed max-w-md mb-3"
+            className="text-[1rem] font-light text-white/60 leading-[1.75] max-w-md mb-3"
           >
             Piso impecable, ambiente fresco, bacterias eliminadas.
             En el tiempo que tarda un café.
@@ -156,7 +156,7 @@ export default function ProductHeroM2() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-[1rem] font-light text-white/40 leading-relaxed max-w-md mb-10"
+            className="text-[1rem] font-light text-white/40 leading-relaxed max-w-md mb-6"
           >
             Compacto donde otros estorban. Efectivo donde otros fallan.
             El M2 se adapta a tu espacio — chico, mediano o grande —
@@ -169,7 +169,7 @@ export default function ProductHeroM2() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="space-y-3 mb-12"
+            className="space-y-3 mb-8"
           >
             {benefits.map((b) => (
               <li key={b} className="flex items-center gap-3">

@@ -13,7 +13,7 @@ const benefits = [
 export default function ProductHeroM1() {
   return (
     <section id="sistemas-mop-m1" className="relative overflow-hidden bg-[#F5F7FA]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh]">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
 
         {/* ── Izquierda — texto editorial ── */}
         <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-20 py-20 order-2 lg:order-1">
@@ -24,7 +24,7 @@ export default function ProductHeroM1() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="label-eyebrow text-[#0076FF] mb-6"
+            className="label-eyebrow text-[#0076FF] mb-3"
           >
             Sistema Mop M1 — Hogar · Retail
           </motion.p>
@@ -37,7 +37,7 @@ export default function ProductHeroM1() {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="mb-4"
           >
-            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-[#1A1A1A] leading-tight">
+            <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] xl:text-[4.2rem] text-[#1A1A1A]">
               Rápida.{' '}
               <span className="italic text-[#0076FF]">Poderosa.</span>
               <br />
@@ -67,7 +67,7 @@ export default function ProductHeroM1() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-[1.1rem] font-light text-[#555] tracking-wide mb-8"
+            className="text-[0.95rem] font-light text-[#888] tracking-wide mb-6"
           >
             Así debió ser siempre.
           </motion.p>
@@ -78,7 +78,7 @@ export default function ProductHeroM1() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-[1rem] font-light text-[#777] leading-relaxed max-w-md mb-10"
+            className="text-[1rem] font-light text-[#666] leading-[1.75] max-w-md mb-6"
           >
             El M1 limpia a fondo sin que tú te agaches, te mojes ni te esfuerces.
             Su microfibra con NeoShield™ integrado elimina el 99.9% de bacterias
@@ -91,7 +91,7 @@ export default function ProductHeroM1() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="space-y-3 mb-12"
+            className="space-y-3 mb-8"
           >
             {benefits.map((b) => (
               <li key={b} className="flex items-center gap-3">

@@ -2,17 +2,42 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, MapPin } from 'lucide-react'
+import type { DistribuidoresSection } from '@/lib/wordpress'
 
-const zonas = ['CDMX', 'Guadalajara', 'Monterrey', 'Puebla', 'Tijuana', 'Querétaro']
+// Fallback values — used when WordPress is unreachable or field group not yet published
+const FALLBACK: DistribuidoresSection = {
+  eyebrow:  'Únete a la red',
+  headline: 'Conviértete en distribuidor MagicClean',
+  body:     'Accede a márgenes exclusivos, capacitación técnica y soporte de ventas. Expandimos nuestra red en todo México y Latinoamérica.',
+  ctaLabel: 'Quiero ser distribuidor',
+  ctaUrl:   '#contacto',
+  note:     '+ 24 zonas más disponibles a nivel nacional',
+  zones:    'CDMX, Guadalajara, Monterrey, Puebla, Tijuana, Querétaro',
+}
 
-export default function DistribuidoresCTA() {
+interface DistribuidoresCTAProps {
+  data?: DistribuidoresSection | null
+}
+
+export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
+  const eyebrow  = data?.eyebrow  || FALLBACK.eyebrow
+  const headline = data?.headline || FALLBACK.headline
+  const body     = data?.body     || FALLBACK.body
+  const ctaLabel = data?.ctaLabel || FALLBACK.ctaLabel
+  const ctaUrl   = data?.ctaUrl   || FALLBACK.ctaUrl
+  const note     = data?.note     || FALLBACK.note
+  const zonas    = (data?.zones || FALLBACK.zones)
+    .split(',')
+    .map((z) => z.trim())
+    .filter(Boolean)
+
   return (
-    <section id="distribuidores" className="relative overflow-hidden bg-[#0076FF] py-28">
+    <section id="distribuidores" className="relative overflow-hidden bg-[#0076FF] py-16">
       {/* Textura decorativa */}
       <div className="absolute inset-0 pointer-events-none opacity-10"
         style={{ backgroundImage: 'radial-gradient(circle at 80% 50%, #fff 0%, transparent 60%)' }} />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div className="relative max-w-[1440px] mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* Texto */}
@@ -22,20 +47,19 @@ export default function DistribuidoresCTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="label-eyebrow text-white/60 mb-5">Únete a la red</p>
-            <h2 className="headline-editorial text-[2.4rem] lg:text-[3.2rem] text-white mb-6 max-w-md">
-              Conviértete en distribuidor MagicClean
+            <p className="label-eyebrow text-white/60 mb-5">{eyebrow}</p>
+            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] text-white mb-6 max-w-md">
+              {headline}
             </h2>
-            <p className="text-[1rem] font-light text-white/70 leading-relaxed max-w-md mb-8">
-              Accede a márgenes exclusivos, capacitación técnica y soporte de ventas.
-              Expandimos nuestra red en todo México y Latinoamérica.
+            <p className="text-[1rem] font-light text-white/75 leading-[1.75] max-w-md mb-8">
+              {body}
             </p>
 
             <a
-              href="#contacto"
+              href={ctaUrl}
               className="inline-flex items-center gap-2.5 bg-white text-[#0076FF] px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-[#F0F5FF] transition-colors duration-300 group"
             >
-              Quiero ser distribuidor
+              {ctaLabel}
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
             </a>
           </motion.div>
@@ -59,9 +83,7 @@ export default function DistribuidoresCTA() {
                 </div>
               ))}
             </div>
-            <p className="text-[12px] font-light text-white/40 mt-4">
-              + 24 zonas más disponibles a nivel nacional
-            </p>
+            <p className="text-[12px] font-light text-white/40 mt-4">{note}</p>
           </motion.div>
         </div>
       </div>

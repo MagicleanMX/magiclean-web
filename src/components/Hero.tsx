@@ -2,10 +2,27 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import type { HeroSection } from '@/lib/wordpress'
 
 const canales = ['HOGAR', 'RETAIL', 'HORECA', 'INDUSTRIAL', 'INSTITUCIONAL']
 
-export default function Hero() {
+// Fallback values — used when WordPress is unreachable or fields are empty
+const FALLBACK: HeroSection = {
+  eyebrow:       'Proveedor B2B · Canal Profesional México',
+  headline:      'El arte de la limpieza perfecta',
+  subheadline:   'Fibras, sistemas de mop y soluciones especializadas para el canal profesional.',
+  heroMicrotext: 'Distribuidores · Retail · HORECA · Institucional · México y LATAM',
+}
+
+interface HeroProps {
+  data?: HeroSection | null
+}
+
+export default function Hero({ data }: HeroProps) {
+  const eyebrow       = data?.eyebrow       || FALLBACK.eyebrow
+  const headline      = data?.headline      || FALLBACK.headline
+  const subheadline   = data?.subheadline   || FALLBACK.subheadline
+  const heroMicrotext = data?.heroMicrotext || FALLBACK.heroMicrotext
   return (
     <section className="relative min-h-screen flex flex-col pt-[68px]">
 
@@ -20,10 +37,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 mb-8"
+            className="flex items-center gap-2 mb-5"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF2B2B] shrink-0" />
-            <span className="label-eyebrow text-[#999]">Proveedor B2B · Canal Profesional México</span>
+            <span className="label-eyebrow text-[#999]">{eyebrow}</span>
           </motion.div>
 
           {/* Headline — tagline de marca, mantener */}
@@ -31,9 +48,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="headline-editorial text-[2.8rem] sm:text-[3.6rem] lg:text-[4.2rem] xl:text-[5rem] text-[#1A1A1A] mb-5 max-w-lg"
+            className="headline-editorial text-[2.8rem] sm:text-[3.8rem] lg:text-[4.4rem] xl:text-[5.4rem] text-[#1A1A1A] mb-6 max-w-xl"
           >
-            El arte de la limpieza perfecta
+            {headline}
           </motion.h1>
 
           {/* Subheadline — con claridad B2B */}
@@ -41,9 +58,9 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-[1.05rem] font-light text-[#777] leading-relaxed max-w-sm mb-3"
+            className="text-[1rem] font-light text-[#666] leading-[1.75] max-w-sm mb-3"
           >
-            Fibras, sistemas de mop y soluciones especializadas para el canal profesional.
+            {subheadline}
           </motion.p>
 
           {/* Micro-texto B2B */}
@@ -51,9 +68,9 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-[0.85rem] font-light text-[#ADB3BA] mb-10"
+            className="text-[0.8rem] font-light text-[#B8BDC5] tracking-wide mb-8"
           >
-            Distribuidores · Retail · HORECA · Institucional · México y LATAM
+            {heroMicrotext}
           </motion.p>
 
           {/* CTAs */}
@@ -82,7 +99,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="flex items-center gap-10 mt-16 pt-10 border-t border-[#E8EAED]"
+            className="flex items-center gap-10 mt-10 pt-6 border-t border-[#E8EAED]"
           >
             {[
               { n: '3', label: 'Años de crecimiento' },
@@ -170,7 +187,7 @@ export default function Hero() {
 
       {/* Canal ticker */}
       <div className="bg-[#1A1A1A] py-3.5">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="max-w-[1440px] mx-auto px-8">
           <div className="flex items-center justify-center gap-8 flex-wrap">
             {canales.map((c, i) => (
               <span key={c} className="flex items-center gap-8">

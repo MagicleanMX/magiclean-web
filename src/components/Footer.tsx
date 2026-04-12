@@ -75,7 +75,7 @@ export default function Footer() {
     <footer className="bg-[#0A1628] text-white">
 
       {/* Main footer content */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20">
+      <div className="max-w-[1440px] mx-auto px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr_1fr] gap-12 lg:gap-8">
 
           {/* Brand column */}
@@ -151,7 +151,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/8">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-[1440px] mx-auto px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-6 flex-wrap">
             {['Aviso de privacidad', 'Términos de uso', 'Cookies'].map((item) => (
               <a
