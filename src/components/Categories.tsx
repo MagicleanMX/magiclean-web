@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react'
 const familias = [
   {
     id: 'fibras-verdes',
+    anchor: '#fibras-verdes-f1-f2-f3',
     nombre: 'Fibras Verdes',
     subtitulo: 'Limpieza Pesada y Profunda',
     descripcion: 'Alta abrasividad para cocinas industriales. Modelos F1, F2 y F3 en tres tamaños.',
@@ -19,6 +20,7 @@ const familias = [
   },
   {
     id: 'fibra-dual',
+    anchor: '#fibra-dual-f4',
     nombre: 'Fibra Esponja Dual F4',
     subtitulo: 'Dualidad Inteligente',
     descripcion: 'Fibra verde de alta abrasividad por un lado, esponja suave por el otro. El más versátil.',
@@ -32,6 +34,7 @@ const familias = [
   },
   {
     id: 'fibras-especiales',
+    anchor: '#contacto',
     nombre: 'Fibras Especiales',
     subtitulo: 'Para Cada Superficie',
     descripcion: 'F5 Negra para parrillas y hornos. F6 Blanca para baños. F7 Azul sin rayas para superficies delicadas.',
@@ -45,6 +48,7 @@ const familias = [
   },
   {
     id: 'borradores',
+    anchor: '#contacto',
     nombre: 'Borradores Mágicos',
     subtitulo: 'Borra lo Imposible',
     descripcion: 'F8 con esponja para limpieza profunda. F9 el borrador puro. Eliminan manchas sin esfuerzo.',
@@ -58,6 +62,7 @@ const familias = [
   },
   {
     id: 'sistemas-mop',
+    anchor: '#sistemas-mop-m1',
     nombre: 'Sistemas Mop',
     subtitulo: 'Trapeado Profesional',
     descripcion: 'Turbo Magic M1 con pedal, Spin Magic M2 sin pedal, Rectangular M5, Doble Función M6, Atomizador M9.',
@@ -71,6 +76,7 @@ const familias = [
   },
   {
     id: 'accesorios',
+    anchor: '#contacto',
     nombre: 'Accesorios',
     subtitulo: 'Complementos del Sistema',
     descripcion: 'Cubetas, cepillos, trapeador de silicón, recogedor-escoba y repuestos para todos los modelos.',
