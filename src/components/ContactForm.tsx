@@ -44,7 +44,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <section id="contacto" className="py-32 bg-[#0A1628]">
+      <section id="contacto-ok" className="py-32 bg-[#0A1628]">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <div className="max-w-md mx-auto text-center">
             <motion.div

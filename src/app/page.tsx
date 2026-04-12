@@ -5,6 +5,7 @@ import ProductHeroF4 from '@/components/ProductHeroF4'
 import NeoShield from '@/components/NeoShield'
 import ProductHeroM1 from '@/components/ProductHeroM1'
 import HowItWorks from '@/components/HowItWorks'
+import Nosotros from '@/components/Nosotros'
 import DistribuidoresCTA from '@/components/DistribuidoresCTA'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
@@ -12,15 +13,16 @@ import Footer from '@/components/Footer'
 /**
  * Orden de secciones — inspirado en rolex.com:
  *
- * 1. Hero            → Full-screen split. Producto estrella + headline Playfair
- * 2. Categories      → La Colección. Grid 3-col, aspect 4/5, hover overlay
- * 3. ProductHeroF4   → Editorial split izq/der. Producto F4 destacado
- * 4. NeoShield       → Nuestra Tecnología. Dark section, stats + storytelling
- * 5. ProductHeroM1   → Editorial split der/izq (alternado). Producto M1
- * 6. HowItWorks      → El Proceso. 4 pasos horizontales
- * 7. DistribuidoresCTA → Únete a la red. Banner azul full-width
- * 8. ContactForm     → Cotización. Dark section formulario
- * 9. Footer          → 4 columnas: Brand / Productos / Empresa / Contacto LATAM
+ * 1. Hero              → Full-screen split. Producto estrella + headline Playfair
+ * 2. Categories        → La Colección. Grid 3-col, 6 familias reales
+ * 3. ProductHeroF4     → Editorial split. Fibra Dual F4
+ * 4. NeoShield         → Tecnología. Dark section, stats (#tecnologia)
+ * 5. ProductHeroM1     → Editorial split alternado. Sistema Mop M1
+ * 6. HowItWorks        → El Proceso. 4 pasos (#como-funciona)
+ * 7. Nosotros          → La Empresa. Stats + valores (#nosotros)
+ * 8. DistribuidoresCTA → Red de distribuidores (#distribuidores)
+ * 9. ContactForm       → Cotización (#contacto)
+ * 10. Footer
  */
 export default function Home() {
   return (
@@ -33,6 +35,7 @@ export default function Home() {
         <NeoShield />
         <ProductHeroM1 />
         <HowItWorks />
+        <Nosotros />
         <DistribuidoresCTA />
         <ContactForm />
       </main>
