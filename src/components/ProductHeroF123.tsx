@@ -62,7 +62,7 @@ const diferenciadores = [
 
 export default function ProductHeroF123() {
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section id="fibras-verdes-f1-f2-f3" className="relative overflow-hidden bg-white">
 
       {/* ── Parte superior — headline editorial ── */}
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8 pt-24 pb-0">

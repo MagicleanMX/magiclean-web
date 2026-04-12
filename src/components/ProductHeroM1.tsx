@@ -12,7 +12,7 @@ const benefits = [
 
 export default function ProductHeroM1() {
   return (
-    <section className="relative overflow-hidden bg-[#F5F7FA]">
+    <section id="sistemas-mop-m1" className="relative overflow-hidden bg-[#F5F7FA]">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh]">
 
         {/* ── Izquierda — texto editorial ── */}

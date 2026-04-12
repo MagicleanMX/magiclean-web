@@ -124,7 +124,7 @@ export default function Categories() {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.7, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
             >
-              <a href="#contacto" className="group block cursor-pointer">
+              <a href={f.anchor} className="group block cursor-pointer">
                 {/* Imagen — aspect 4/5 */}
                 <div
                   className="relative overflow-hidden rounded-2xl mb-4"

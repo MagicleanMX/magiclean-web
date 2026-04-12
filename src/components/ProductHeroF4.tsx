@@ -12,7 +12,7 @@ const specs = [
 export default function ProductHeroF4() {
   return (
     // Editorial split — imagen izquierda, texto derecha. Sin padding vertical: edge-to-edge como Rolex
-    <section className="relative overflow-hidden bg-white">
+    <section id="fibra-dual-f4" className="relative overflow-hidden bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh]">
 
         {/* Izquierda — imagen producto (fondo de color, sin márgenes) */}

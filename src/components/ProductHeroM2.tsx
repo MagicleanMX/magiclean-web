@@ -13,7 +13,7 @@ const benefits = [
 export default function ProductHeroM2() {
   return (
     // Dirección invertida al M1 — imagen izquierda, texto derecha (alterna como Rolex)
-    <section className="relative overflow-hidden bg-[#0A1628]">
+    <section id="sistemas-mop-m2" className="relative overflow-hidden bg-[#0A1628]">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh]">
 
         {/* ── Izquierda — imagen producto ── */}
