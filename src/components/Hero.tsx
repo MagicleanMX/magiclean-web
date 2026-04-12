@@ -81,16 +81,16 @@ export default function Hero({ data }: HeroProps) {
             className="flex flex-col sm:flex-row gap-3"
           >
             <a
-              href="#productos"
-              className="inline-flex items-center justify-center bg-[#1A1A1A] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:bg-[#0076FF] transition-colors duration-300"
+              href="#contacto"
+              className="inline-flex items-center justify-center bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:bg-[#0052CC] transition-colors duration-300"
             >
-              Conocer el portafolio profesional
+              Solicitar cotización B2B
             </a>
             <a
-              href="#contacto"
+              href="#productos"
               className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
             >
-              Recibir catálogo por correo
+              Ver portafolio completo
             </a>
           </motion.div>
 

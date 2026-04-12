@@ -131,7 +131,7 @@ export default function ProductHeroF123() {
               <div className="inline-flex items-center gap-2 bg-[#0076FF]/8 border border-[#0076FF]/20 rounded-full px-4 py-2">
                 <ShieldCheck size={14} className="text-[#0076FF] shrink-0" />
                 <span className="text-[#0076FF] text-[12px] font-bold tracking-wide">
-                  NeoShield™ · 99.9% antibacterial
+                  NeoShield™ — Antibacterial permanente
                 </span>
               </div>
               <div className="inline-flex items-center gap-2 bg-green-500/8 border border-green-500/20 rounded-full px-4 py-2">

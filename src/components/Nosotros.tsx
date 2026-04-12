@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion'
 
 const stats = [
-  { n: '3',   label: 'Años de crecimiento acelerado' },
-  { n: '23',  label: 'Modelos especializados' },
-  { n: '3',   label: 'Marketplaces líderes' },
-  { n: '100%', label: 'Satisfacción garantizada' },
+  { n: '3',  label: 'Años de crecimiento acelerado' },
+  { n: '23', label: 'Modelos especializados' },
+  { n: '3',  label: 'Marketplaces líderes' },
+  { n: '5+', label: 'Líneas de producto activas' },
 ]
 
 const valores = [
@@ -28,7 +28,7 @@ const valores = [
   {
     num: '04',
     titulo: 'Crecimiento con respaldo real',
-    desc: 'Presencia activa en MercadoLibre, Amazon y Walmart Marketplace. Cada cliente es una relación que cuidamos — no un número en una hoja de cálculo.',
+    desc: 'Presencia activa en MercadoLibre, Amazon y Walmart Marketplace. Cada distribuidor tiene seguimiento directo con nuestro equipo comercial — sin intermediarios, sin formularios perdidos.',
   },
 ]
 

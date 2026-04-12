@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react'
 
 const specs = [
   { valor: '3×', etiqueta: 'Mayor durabilidad' },
-  { valor: '99.9%', etiqueta: 'Acción antibacterial' },
+  { valor: 'Dual', etiqueta: 'Caras funcionales' },
   { valor: '0', etiqueta: 'Contaminación cruzada' },
 ]
 
