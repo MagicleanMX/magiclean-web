@@ -3,6 +3,7 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 import Hero from '@/components/Hero'
 import Categories from '@/components/Categories'
 import ProductHeroF4 from '@/components/ProductHeroF4'
+import ProductHeroF123 from '@/components/ProductHeroF123'
 import NeoShield from '@/components/NeoShield'
 import ProductHeroM1 from '@/components/ProductHeroM1'
 import ProductHeroM2 from '@/components/ProductHeroM2'
@@ -34,6 +35,7 @@ export default function Home() {
         <Hero />
         <Categories />
         <ProductHeroF4 />
+        <ProductHeroF123 />
         <NeoShield />
         <ProductHeroM1 />
         <ProductHeroM2 />
