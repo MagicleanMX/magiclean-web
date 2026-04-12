@@ -26,12 +26,12 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 }
 
 const stats = [
-  { target: 15, suffix: '+', label: 'Años en el mercado' },
-  { target: 500, suffix: '+', label: 'Clientes activos' },
-  { target: 200, suffix: '+', label: 'Productos en catálogo' },
-  { target: 30, suffix: '+', label: 'Ciudades con cobertura' },
-  { target: 99, suffix: '%', label: 'Eliminación de bacterias' },
+  { target: 99, suffix: '.9%', label: 'Eliminación de bacterias' },
   { target: 3, suffix: '×', label: 'Mayor duración vs competencia' },
+  { target: 23, suffix: '', label: 'Modelos con NeoShield™' },
+  { target: 3, suffix: ' años', label: 'De I+D en laboratorio' },
+  { target: 100, suffix: '%', label: 'Protección permanente' },
+  { target: 3, suffix: '', label: 'Marketplaces líderes en México' },
 ]
 
 export default function NeoShield() {
