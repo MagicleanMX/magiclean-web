@@ -97,34 +97,73 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Derecha — imagen producto */}
+        {/* Derecha — visual editorial (mientras llega la foto real) */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.15 }}
-          className="relative bg-[#F5F7FA] order-1 lg:order-2 min-h-[50vw] lg:min-h-0 overflow-hidden"
+          className="relative order-1 lg:order-2 min-h-[50vw] lg:min-h-0 overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, #0A1628 0%, #0D2040 50%, #061018 100%)' }}
         >
-          <Image
-            src="/images/hero/hero-main.jpg"
-            alt="MagicClean — Tecnología profesional en limpieza y fibras"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="(max-width: 1024px) 100vw, 48vw"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-
-          {/* Badge NeoShield */}
-          <div className="absolute top-8 right-8 bg-white rounded-2xl px-4 py-3 shadow-sm border border-[#E8EAED] flex items-center gap-2 z-10">
-            <span className="w-2 h-2 rounded-full bg-[#FF2B2B]" />
-            <span className="text-[11px] font-bold uppercase tracking-widest text-[#1A1A1A]">NeoShield™</span>
+          {/* Glow de fondo */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full opacity-20"
+              style={{ background: 'radial-gradient(circle, #0076FF 0%, transparent 70%)' }} />
           </div>
 
-          {/* Tag producto */}
-          <div className="absolute bottom-8 left-8 bg-white rounded-xl px-4 py-3 shadow-sm border border-[#E8EAED] z-10">
-            <p className="text-[11px] font-bold text-[#1A1A1A]">Tecnología Antibacterial</p>
-            <p className="text-[10px] text-[#999] font-light">Alta durabilidad · Sin químicos adicionales</p>
+          {/* Centro — producto hero visual */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center">
+
+              {/* Círculo de producto */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="w-48 h-48 lg:w-64 lg:h-64 rounded-full mx-auto mb-8 flex items-center justify-center relative"
+                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+              >
+                <div className="w-36 h-36 lg:w-48 lg:h-48 rounded-full flex items-center justify-center"
+                  style={{ background: 'rgba(0,118,255,0.1)', border: '1px solid rgba(0,118,255,0.2)' }}
+                >
+                  <div className="text-center">
+                    <p className="font-black text-white text-3xl lg:text-4xl leading-none tracking-tight">Magic</p>
+                    <p className="font-black text-[#0076FF] text-3xl lg:text-4xl leading-none tracking-tight">Clean</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Tagline secundario */}
+              <p className="text-white/20 text-[11px] font-semibold uppercase tracking-[0.2em]">
+                Tecnología Profesional
+              </p>
+            </div>
+          </div>
+
+          {/* Badge NeoShield — top right */}
+          <div className="absolute top-8 right-8 rounded-2xl px-4 py-3 flex items-center gap-2 z-10"
+            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
+          >
+            <span className="w-2 h-2 rounded-full bg-[#FF2B2B]" />
+            <span className="text-[11px] font-bold uppercase tracking-widest text-white/70">NeoShield™</span>
+          </div>
+
+          {/* Badge 99.9% bacterias — bottom left */}
+          <motion.div
+            animate={{ opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 3, repeat: Infinity }}
+            className="absolute bottom-8 left-8 rounded-2xl px-5 py-3 z-10"
+            style={{ background: 'rgba(0,118,255,0.15)', border: '1px solid rgba(0,118,255,0.3)' }}
+          >
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#74B9FF] mb-0.5">Elimina bacterias</p>
+            <p className="text-2xl font-black text-white leading-none">99.9%</p>
+          </motion.div>
+
+          {/* Badge 3x durabilidad — bottom right */}
+          <div className="absolute bottom-8 right-8 rounded-xl px-4 py-2.5 z-10"
+            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+          >
+            <p className="text-[10px] font-bold uppercase tracking-widest text-white/30">Durabilidad</p>
+            <p className="text-lg font-black text-white leading-tight">3×</p>
           </div>
         </motion.div>
       </div>

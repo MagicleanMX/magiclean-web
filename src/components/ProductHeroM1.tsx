@@ -29,7 +29,7 @@ export default function ProductHeroM1() {
             Sistema Mop M1 — Hogar · Retail
           </motion.p>
 
-          {/* Headline editorial — Variante 4 + NeoShield */}
+          {/* Headline editorial — Variante 4 */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -45,18 +45,18 @@ export default function ProductHeroM1() {
             </h2>
           </motion.div>
 
-          {/* NeoShield claim — la gran promesa */}
+          {/* NeoShield badge */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex items-center gap-3 mb-3"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center gap-2 mb-4"
           >
-            <div className="flex items-center gap-2 bg-[#0076FF]/8 border border-[#0076FF]/20 rounded-full px-4 py-2">
-              <ShieldCheck size={15} className="text-[#0076FF] shrink-0" />
-              <span className="text-[#0076FF] text-[13px] font-bold tracking-wide">
-                Tecnología NeoShield™ — Elimina el 99.9% de bacterias
+            <div className="inline-flex items-center gap-2 bg-[#0076FF]/8 border border-[#0076FF]/20 rounded-full px-4 py-2">
+              <ShieldCheck size={14} className="text-[#0076FF] shrink-0" />
+              <span className="text-[#0076FF] text-[12px] font-bold tracking-wide">
+                NeoShield™ — Elimina el 99.9% de bacterias
               </span>
             </div>
           </motion.div>
@@ -137,17 +137,16 @@ export default function ProductHeroM1() {
         >
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-5">
 
-            {/* Glow azul suave */}
+            {/* Glow */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-96 h-96 rounded-full bg-[#0076FF]/6 blur-[100px]" />
+              <div className="w-96 h-96 rounded-full bg-[#0076FF]/5 blur-[100px]" />
             </div>
 
-            {/* Placeholder — reemplazar con imagen fal.ai del M1 */}
+            {/* Placeholder producto */}
             <div className="relative w-56 h-72 lg:w-72 lg:h-96 rounded-2xl bg-gradient-to-b from-[#F0F4FF] to-[#E8EEFF] border border-[#D0DEFF] flex items-center justify-center shadow-sm">
               <div className="text-center">
                 <p className="font-black text-[#0076FF] text-5xl lg:text-6xl leading-none">M1</p>
                 <p className="text-[#999] text-xs font-medium tracking-wider mt-2 uppercase">Sistema Mop</p>
-                {/* NeoShield mini-badge dentro del card del producto */}
                 <div className="mt-4 mx-auto inline-flex items-center gap-1.5 bg-[#0076FF]/10 rounded-full px-3 py-1">
                   <ShieldCheck size={11} className="text-[#0076FF]" />
                   <span className="text-[10px] font-bold text-[#0076FF] uppercase tracking-wide">NeoShield™</span>
@@ -155,7 +154,7 @@ export default function ProductHeroM1() {
               </div>
             </div>
 
-            {/* Badge — stat principal */}
+            {/* Badge 99.9% */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -168,7 +167,7 @@ export default function ProductHeroM1() {
               <p className="text-[10px] text-white/40 mt-1 font-light">Tecnología NeoShield™</p>
             </motion.div>
 
-            {/* Badge — rapidez */}
+            {/* Badge rapidez */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -180,7 +179,7 @@ export default function ProductHeroM1() {
               <p className="text-xl font-black text-[#1A1A1A] leading-tight">5 min</p>
             </motion.div>
 
-            {/* Badge — sin químicos */}
+            {/* Badge sin químicos */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
