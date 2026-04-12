@@ -113,7 +113,7 @@ export default function ContactForm() {
           <p className="text-[#FF2B2B] font-semibold text-xs uppercase tracking-widest mb-4">
             Hablemos
           </p>
-          <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] text-white max-w-lg mb-4">
+          <h2 className="headline-editorial text-[2rem] sm:text-[2.6rem] lg:text-[3.4rem] text-white max-w-lg mb-4">
             Tu operación merece una solución diseñada para ella.
           </h2>
           <p className="text-white/50 font-light text-base max-w-lg leading-[1.75]">

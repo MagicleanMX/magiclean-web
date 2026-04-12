@@ -72,7 +72,7 @@ export default function ProductHeroMop() {
 
             {/* Visual placeholder */}
             <div className="mb-6 flex items-end gap-4">
-              <p className="font-black text-[5rem] leading-none text-[#0076FF]">M1</p>
+              <p className="font-black text-[3.5rem] sm:text-[5rem] leading-none text-[#0076FF]">M1</p>
               <div className="mb-2">
                 <p className="text-white/60 text-[0.95rem] font-semibold leading-tight">Turbo Magic</p>
                 <p className="text-white/30 text-[12px] font-light">Con pedal · Escurrido automático</p>
@@ -121,7 +121,7 @@ export default function ProductHeroMop() {
 
             {/* Visual placeholder */}
             <div className="mb-6 flex items-end gap-4">
-              <p className="font-black text-[5rem] leading-none" style={{ color: '#74B9FF' }}>M2</p>
+              <p className="font-black text-[3.5rem] sm:text-[5rem] leading-none" style={{ color: '#74B9FF' }}>M2</p>
               <div className="mb-2">
                 <p className="text-white/60 text-[0.95rem] font-semibold leading-tight">Spin Magic</p>
                 <p className="text-white/30 text-[12px] font-light">Sin pedal · Centrifugado manual</p>

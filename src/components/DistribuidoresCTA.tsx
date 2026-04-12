@@ -48,7 +48,7 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="label-eyebrow text-white/60 mb-5">{eyebrow}</p>
-            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] text-white mb-6 max-w-md">
+            <h2 className="headline-editorial text-[2rem] sm:text-[2.6rem] lg:text-[3.4rem] text-white mb-6 max-w-md">
               {headline}
             </h2>
             <p className="text-[1rem] font-light text-white/75 leading-[1.75] max-w-md mb-8">

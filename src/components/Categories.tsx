@@ -155,7 +155,7 @@ export default function Categories({ data }: CategoriesProps) {
                 {/* Card visual — producto domina */}
                 <div
                   className="relative overflow-hidden rounded-2xl mb-4 transition-shadow duration-300 group-hover:shadow-xl"
-                  style={{ aspectRatio: '4/5', backgroundColor: f.color }}
+                  style={{ aspectRatio: '3/4', backgroundColor: f.color }}
                 >
                   {/* Subtle gradient overlay for depth */}
                   <div

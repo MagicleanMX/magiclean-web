@@ -29,7 +29,7 @@ export default function Hero({ data }: HeroProps) {
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-[52%_48%] min-h-[calc(100vh-68px)]">
 
         {/* Izquierda — contenido */}
-        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 py-20 lg:py-0 order-2 lg:order-1">
+        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 py-16 lg:py-0 order-1">
 
           {/* Eyebrow — posicionamiento B2B claro */}
           <motion.div
@@ -98,7 +98,7 @@ export default function Hero({ data }: HeroProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="flex items-center gap-10 mt-10 pt-6 border-t border-[#E8EAED]"
+            className="flex items-center gap-6 sm:gap-10 mt-10 pt-6 border-t border-[#E8EAED] flex-wrap"
           >
             {[
               { n: '3', label: 'Años de crecimiento' },
@@ -106,7 +106,7 @@ export default function Hero({ data }: HeroProps) {
               { n: '23', label: 'Modelos especializados' },
             ].map((s) => (
               <div key={s.label}>
-                <p className="text-2xl font-black text-[#1A1A1A] leading-none mb-1">{s.n}</p>
+                <p className="text-xl sm:text-2xl font-black text-[#1A1A1A] leading-none mb-1">{s.n}</p>
                 <p className="label-eyebrow text-[#999]">{s.label}</p>
               </div>
             ))}
@@ -118,7 +118,7 @@ export default function Hero({ data }: HeroProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.15 }}
-          className="relative order-1 lg:order-2 min-h-[60vw] lg:min-h-0 overflow-hidden"
+          className="relative order-2 min-h-[500px] sm:min-h-[420px] lg:min-h-0 overflow-hidden"
           style={{ background: 'linear-gradient(160deg, #0D2040 0%, #0A1628 50%, #060E1C 100%)' }}
         >
           {/* Glow suave — sin distracciones */}
@@ -128,7 +128,7 @@ export default function Hero({ data }: HeroProps) {
           </div>
 
           {/* ── Sistema de producto — grid editorial ── */}
-          <div className="absolute inset-0 flex items-center justify-center px-10 lg:px-14">
+          <div className="absolute inset-0 flex items-center justify-center px-6 sm:px-10 lg:px-14 pb-16 lg:pb-0">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
