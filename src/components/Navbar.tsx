@@ -72,6 +72,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [megaOpen, setMegaOpen] = useState(false)
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
   const megaTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
@@ -283,33 +284,41 @@ export default function Navbar() {
               </a>
             ))}
 
-            {/* Categorías mobile */}
+            {/* Categorías mobile — accordion */}
             {megaProductos.columnas.map((col) => (
-              <div key={col.titulo} className="mt-3 pt-3 border-t border-[#E8EAED]">
-                <p
-                  className="label-eyebrow px-3 mb-2 text-[10px]"
-                  style={{ color: col.color }}
+              <div key={col.titulo} className="mt-1 border-t border-[#E8EAED]">
+                <button
+                  onClick={() => setMobileExpanded(mobileExpanded === col.titulo ? null : col.titulo)}
+                  className="w-full flex items-center justify-between px-3 py-3"
                 >
-                  {col.titulo}
-                </p>
-                <div className="grid grid-cols-2 gap-1">
-                  {col.items.map((item) => (
-                    <a
-                      key={item.codigo}
-                      href="#productos"
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#F5F7FA] transition-colors"
-                    >
-                      <span
-                        className="shrink-0 w-7 h-5 rounded flex items-center justify-center text-[9px] font-black text-white"
-                        style={{ backgroundColor: col.color }}
+                  <p className="label-eyebrow text-[10px]" style={{ color: col.color }}>
+                    {col.titulo}
+                  </p>
+                  <ChevronDown
+                    size={12}
+                    className={`transition-transform duration-200 text-[#999] ${mobileExpanded === col.titulo ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {mobileExpanded === col.titulo && (
+                  <div className="grid grid-cols-2 gap-1 pb-3 px-1">
+                    {col.items.map((item) => (
+                      <a
+                        key={item.codigo}
+                        href="#productos"
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#F5F7FA] transition-colors"
                       >
-                        {item.codigo}
-                      </span>
-                      <span className="text-[12px] font-medium text-[#444]">{item.nombre}</span>
-                    </a>
-                  ))}
-                </div>
+                        <span
+                          className="shrink-0 w-7 h-5 rounded flex items-center justify-center text-[9px] font-black text-white"
+                          style={{ backgroundColor: col.color }}
+                        >
+                          {item.codigo}
+                        </span>
+                        <span className="text-[12px] font-medium text-[#444]">{item.nombre}</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
 

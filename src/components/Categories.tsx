@@ -10,6 +10,7 @@ const familias = [
     subtitulo: 'Limpieza Pesada y Profunda',
     descripcion: 'Alta abrasividad para cocinas industriales. Modelos F1, F2 y F3 en tres tamaños.',
     modelos: ['F1', 'F2', 'F3'],
+    canal: 'HORECA · Industrial · Hogar',
     badge: null,
     color: '#F0F7F0',
     accentColor: '#2D7A2D',
@@ -22,6 +23,7 @@ const familias = [
     subtitulo: 'Dualidad Inteligente',
     descripcion: 'Fibra verde de alta abrasividad por un lado, esponja suave por el otro. El más versátil.',
     modelos: ['F4'],
+    canal: 'Hogar · Retail · HORECA',
     badge: 'Más popular',
     color: '#FFFBF0',
     accentColor: '#B45309',
@@ -34,6 +36,7 @@ const familias = [
     subtitulo: 'Para Cada Superficie',
     descripcion: 'F5 Negra para parrillas y hornos. F6 Blanca para baños. F7 Azul sin rayas para superficies delicadas.',
     modelos: ['F5', 'F6', 'F7'],
+    canal: 'Hogar · HORECA · Institucional',
     badge: null,
     color: '#F0F4FF',
     accentColor: '#0052CC',
@@ -46,6 +49,7 @@ const familias = [
     subtitulo: 'Borra lo Imposible',
     descripcion: 'F8 con esponja para limpieza profunda. F9 el borrador puro. Eliminan manchas sin esfuerzo.',
     modelos: ['F8', 'F9'],
+    canal: 'Hogar · Retail',
     badge: null,
     color: '#F5F0FF',
     accentColor: '#6D28D9',
@@ -58,6 +62,7 @@ const familias = [
     subtitulo: 'Trapeado Profesional',
     descripcion: 'Turbo Magic M1 con pedal, Spin Magic M2 sin pedal, Rectangular M5, Doble Función M6, Atomizador M9.',
     modelos: ['M1', 'M2', 'M5', 'M6', 'M9'],
+    canal: 'HORECA · Industrial · Hogar',
     badge: 'HORECA Ready',
     color: '#EFF6FF',
     accentColor: '#0076FF',
@@ -70,6 +75,7 @@ const familias = [
     subtitulo: 'Complementos del Sistema',
     descripcion: 'Cubetas, cepillos, trapeador de silicón, recogedor-escoba y repuestos para todos los modelos.',
     modelos: ['M3', 'M4', 'M7', 'M16', 'M17', 'M18'],
+    canal: 'Todos los canales',
     badge: null,
     color: '#F5F7FA',
     accentColor: '#ADB3BA',
@@ -213,7 +219,7 @@ export default function Categories() {
                       <p className="label-eyebrow text-white/60 mb-1">{f.modelos.length} modelo{f.modelos.length > 1 ? 's' : ''} disponibles</p>
                       <p className="text-white font-semibold text-[15px] mb-3">{f.nombre}</p>
                       <span className="inline-flex items-center gap-1.5 text-white text-[12px] font-semibold border border-white/40 rounded-full px-4 py-1.5 hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200">
-                        Descubrir <ArrowRight size={11} />
+                        Ver familia completa <ArrowRight size={11} />
                       </span>
                     </div>
                   </div>
@@ -221,11 +227,16 @@ export default function Categories() {
 
                 {/* Info debajo */}
                 <div className="px-1">
-                  <p className="label-eyebrow text-[#999] mb-1">{f.subtitulo}</p>
-                  <p
-                    className="font-serif text-[1.05rem] font-medium text-[#1A1A1A] transition-colors duration-200"
-                    style={{ color: undefined }}
-                  >
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="label-eyebrow text-[#999]">{f.subtitulo}</p>
+                    <span
+                      className="label-eyebrow text-[9px] px-2 py-0.5 rounded-full"
+                      style={{ backgroundColor: `${f.accentColor}12`, color: f.accentColor }}
+                    >
+                      {f.canal}
+                    </span>
+                  </div>
+                  <p className="font-serif text-[1.05rem] font-medium text-[#1A1A1A] group-hover:text-[#0076FF] transition-colors duration-200">
                     {f.nombre}
                   </p>
                   <p className="text-[13px] font-light text-[#999] mt-0.5 line-clamp-2">{f.descripcion}</p>

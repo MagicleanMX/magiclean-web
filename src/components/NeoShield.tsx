@@ -70,19 +70,27 @@ export default function NeoShield() {
               a la estructura del polímero. La protección no se lava ni se deteriora.
             </p>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 mb-10">
               {[
-                'Micropartículas de plata coloidal',
-                'Acción antibacterial permanente',
-                'Certificado por laboratorio independiente',
-                'Compatible con todos los químicos de limpieza',
+                'Micropartículas de plata coloidal integradas al polímero',
+                'Acción antibacterial permanente — no se lava, no se deteriora',
+                'Validado por laboratorio certificado independiente',
+                'Compatible con todos los protocolos de higiene HORECA',
               ].map((f) => (
                 <div key={f} className="flex items-center gap-3">
-                  <span className="w-4 h-px bg-[#0076FF]" />
+                  <span className="w-4 h-px bg-[#0076FF] shrink-0" />
                   <span className="text-[13px] font-light text-white/50">{f}</span>
                 </div>
               ))}
             </div>
+
+            {/* CTA NeoShield */}
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 border border-white/20 text-white/60 hover:text-white hover:border-white/50 px-6 py-3 rounded-full text-[12px] font-semibold transition-all duration-300"
+            >
+              Recibir catálogo por correo →
+            </a>
           </motion.div>
 
           {/* Derecha — stats en grid */}

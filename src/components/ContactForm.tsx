@@ -78,13 +78,13 @@ export default function ContactForm() {
           className="mb-16"
         >
           <p className="text-[#FF2B2B] font-semibold text-xs uppercase tracking-widest mb-4">
-            Cotización
+            Conversemos
           </p>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight max-w-lg mb-4">
-            Solicita tu cotización personalizada
+          <h2 className="headline-editorial text-[2.4rem] lg:text-[3.2rem] text-white tracking-tight max-w-lg mb-4">
+            Hablemos de tu proyecto
           </h2>
           <p className="text-white/40 font-light text-lg max-w-lg leading-relaxed">
-            Miles de negocios en México confían en MagiClean. Únete al estándar profesional.
+            Cuéntanos qué necesitas. Nuestro equipo arma una propuesta personalizada en menos de 24 horas hábiles.
           </p>
         </motion.div>
 
@@ -200,8 +200,11 @@ export default function ContactForm() {
             type="submit"
             className="w-full bg-[#0076FF] text-white py-4 rounded-full font-semibold text-base hover:bg-[#0052CC] transition-colors duration-300"
           >
-            Enviar solicitud
+            Iniciar conversación
           </button>
+          <p className="text-white/25 text-[11px] font-light text-center mt-4">
+            Sin compromiso · Respuesta garantizada en 24h hábiles
+          </p>
         </motion.form>
       </div>
     </section>

@@ -81,15 +81,18 @@ export default function ProductHeroF4() {
             resistencia por un lado, esponja suave por el otro.
           </motion.p>
 
-          <motion.p
+          {/* Quote elevada */}
+          <motion.blockquote
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="text-[0.9rem] font-light text-[#999] italic mb-10"
+            className="border-l-2 border-[#0076FF] pl-5 mb-10"
           >
-            "El estándar se creó ayer. Hoy lo evolucionamos."
-          </motion.p>
+            <p className="text-[1rem] font-light text-[#555] italic leading-relaxed">
+              "El estándar se creó ayer. Hoy lo evolucionamos."
+            </p>
+          </motion.blockquote>
 
           {/* Specs — 3 métricas limpias */}
           <motion.div
@@ -120,7 +123,7 @@ export default function ProductHeroF4() {
               href="#contacto"
               className="inline-flex items-center gap-2.5 border border-[#1A1A1A] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 group"
             >
-              Solicitar muestra
+              Hablar con nuestro equipo
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
             </a>
           </motion.div>
