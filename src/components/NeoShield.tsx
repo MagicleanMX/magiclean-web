@@ -26,7 +26,7 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 }
 
 const stats = [
-  { target: 99, suffix: '.9%', label: 'Eliminación de bacterias' },
+  { target: 99, suffix: '%', label: 'Eliminación de bacterias' },
   { target: 3, suffix: '×', label: 'Mayor duración vs competencia' },
   { target: 23, suffix: '', label: 'Modelos con NeoShield™' },
   { target: 3, suffix: ' años', label: 'De I+D en laboratorio' },
@@ -62,7 +62,7 @@ export default function NeoShield() {
             <p className="text-[1rem] font-light text-white/50 leading-relaxed max-w-md mb-6">
               Desarrollada en laboratorio después de 3 años de investigación,
               NeoShield™ es la tecnología de fibra más avanzada del mercado mexicano.
-              Elimina el 99% de las bacterias sin productos químicos adicionales.
+              Elimina el 99.9% de las bacterias sin productos químicos adicionales.
             </p>
 
             <p className="text-[0.9rem] font-light text-white/30 leading-relaxed max-w-md mb-12">
