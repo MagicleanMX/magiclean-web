@@ -5,6 +5,7 @@ import Categories from '@/components/Categories'
 import ProductHeroF4 from '@/components/ProductHeroF4'
 import NeoShield from '@/components/NeoShield'
 import ProductHeroM1 from '@/components/ProductHeroM1'
+import ProductHeroM2 from '@/components/ProductHeroM2'
 import HowItWorks from '@/components/HowItWorks'
 import Nosotros from '@/components/Nosotros'
 import DistribuidoresCTA from '@/components/DistribuidoresCTA'
@@ -35,6 +36,7 @@ export default function Home() {
         <ProductHeroF4 />
         <NeoShield />
         <ProductHeroM1 />
+        <ProductHeroM2 />
         <HowItWorks />
         <Nosotros />
         <DistribuidoresCTA />
