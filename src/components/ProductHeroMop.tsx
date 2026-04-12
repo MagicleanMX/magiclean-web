@@ -1,15 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, ShieldCheck } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
-const m1Benefits = [
+const m1Specs = [
   'Cubo con pedal — escurrido sin agacharse',
-  'Mopa de microfibra incluida',
+  'Mopa de microfibra NeoShield™ incluida',
   'Compatible con repuesto M3',
 ]
 
-const m2Benefits = [
+const m2Specs = [
   'Diseño compacto — ideal para espacios medianos',
   'Centrifugado manual, sin pedal',
   'Precio imbatible en el mercado',
@@ -23,33 +23,38 @@ const masModelos = [
 
 export default function ProductHeroMop() {
   return (
-    <section id="sistemas-mop-m1" className="relative overflow-hidden bg-[#0A1628] py-20">
+    <section id="sistemas-mop-m1" className="relative overflow-hidden bg-[#0A1628]">
 
-
-      <div className="relative max-w-[1440px] mx-auto px-8">
-
-        {/* Header */}
+      {/* Header */}
+      <div className="max-w-[1440px] mx-auto px-8 pt-16 pb-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-12"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"
         >
-          <p className="label-eyebrow text-[#0076FF] mb-3">Sistemas Mop — La línea completa</p>
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-            <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] xl:text-[4.2rem] text-white max-w-lg">
-              Limpieza profesional.{' '}
-              <span className="italic text-white/80">Sin esfuerzo.</span>
+          <div>
+            <p className="label-eyebrow text-[#0076FF] mb-3">Sistemas Mop</p>
+            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-white max-w-xl">
+              Piso impecable. Sin esfuerzo.{' '}
+              <span className="italic text-[#0076FF]">Sin químicos adicionales.</span>
             </h2>
-            <p className="text-[14px] font-light text-white/50 max-w-xs leading-relaxed">
-              M1 y M2 lideran ventas en MercadoLibre y Amazon México.
-            </p>
           </div>
-        </motion.div>
 
-        {/* Cards M1 + M2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-8">
+          <a
+            href="#contacto"
+            className="inline-flex items-center gap-2.5 bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-white hover:text-[#0A1628] transition-all duration-300 group self-start lg:self-auto shrink-0"
+          >
+            Solicitar cotización
+            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
+          </a>
+        </motion.div>
+      </div>
+
+      {/* Split M1 | M2 */}
+      <div className="max-w-[1440px] mx-auto px-8 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
           {/* M1 — Turbo Magic */}
           <motion.div
@@ -57,47 +62,27 @@ export default function ProductHeroMop() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-2xl p-8 flex flex-col"
-            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+            className="relative rounded-2xl p-8"
+            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            {/* Badge */}
-            <span
-              className="absolute top-5 right-5 label-eyebrow text-[9px] px-3 py-1.5 rounded-full text-white"
-              style={{ backgroundColor: '#0076FF' }}
-            >
+            <span className="absolute top-5 right-5 label-eyebrow text-[9px] px-3 py-1.5 rounded-full text-white bg-[#0076FF]">
               Más vendido
             </span>
 
-            {/* Visual placeholder */}
-            <div className="mb-6 flex items-end gap-4">
-              <p className="font-black text-[3.5rem] sm:text-[5rem] leading-none text-[#0076FF]">M1</p>
-              <div className="mb-2">
-                <p className="text-white/80 text-[0.95rem] font-semibold leading-tight">Turbo Magic</p>
-                <p className="text-white/20 text-[12px] font-light">Con pedal · Escurrido automático</p>
-              </div>
-            </div>
+            <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">M1</p>
+            <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">Turbo Magic</p>
+            <p className="text-white/20 text-[12px] font-light mb-6">Con pedal · Escurrido automático</p>
 
-            {/* Canal */}
             <p className="label-eyebrow text-[#0076FF] text-[9px] mb-5">Retail · HORECA · Hogar</p>
 
-            {/* Benefits */}
-            <ul className="space-y-3 mb-8 flex-1">
-              {m1Benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3">
+            <ul className="space-y-3">
+              {m1Specs.map((s) => (
+                <li key={s} className="flex items-start gap-3">
                   <span className="w-4 h-px bg-[#0076FF] mt-[0.6rem] shrink-0" />
-                  <span className="text-[13px] font-light text-white/50">{b}</span>
+                  <span className="text-[13px] font-light text-white/50">{s}</span>
                 </li>
               ))}
             </ul>
-
-            {/* CTA */}
-            <a
-              href="#contacto"
-              className="inline-flex items-center gap-2.5 bg-[#0076FF] text-white px-6 py-3 rounded-full text-[13px] font-semibold hover:bg-[#0052CC] transition-colors duration-300 group self-start"
-            >
-              Quiero el M1
-              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
-            </a>
           </motion.div>
 
           {/* M2 — Spin Magic */}
@@ -106,49 +91,32 @@ export default function ProductHeroMop() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-2xl p-8 flex flex-col"
+            className="relative rounded-2xl p-8"
             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            {/* Badge */}
             <span
-              className="absolute top-5 right-5 label-eyebrow text-[9px] px-3 py-1.5 rounded-full"
-              style={{ backgroundColor: 'rgba(255,255,255,0.10)', color: 'rgba(255,255,255,0.50)' }}
+              className="absolute top-5 right-5 label-eyebrow text-[9px] px-3 py-1.5 rounded-full text-white/50"
+              style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}
             >
               Compacto
             </span>
 
-            {/* Visual placeholder */}
-            <div className="mb-6 flex items-end gap-4">
-              <p className="font-black text-[3.5rem] sm:text-[5rem] leading-none text-[#0076FF]">M2</p>
-              <div className="mb-2">
-                <p className="text-white/80 text-[0.95rem] font-semibold leading-tight">Spin Magic</p>
-                <p className="text-white/20 text-[12px] font-light">Sin pedal · Centrifugado manual</p>
-              </div>
-            </div>
+            <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">M2</p>
+            <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">Spin Magic</p>
+            <p className="text-white/20 text-[12px] font-light mb-6">Sin pedal · Centrifugado manual</p>
 
-            {/* Canal */}
-            <p className="label-eyebrow text-[#0076FF] text-[9px] mb-5">Apartamentos · Oficinas · Jóvenes</p>
+            <p className="label-eyebrow text-[#0076FF] text-[9px] mb-5">Apartamentos · Oficinas</p>
 
-            {/* Benefits */}
-            <ul className="space-y-3 mb-8 flex-1">
-              {m2Benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3">
+            <ul className="space-y-3">
+              {m2Specs.map((s) => (
+                <li key={s} className="flex items-start gap-3">
                   <span className="w-4 h-px bg-[#0076FF] mt-[0.6rem] shrink-0" />
-                  <span className="text-[13px] font-light text-white/50">{b}</span>
+                  <span className="text-[13px] font-light text-white/50">{s}</span>
                 </li>
               ))}
             </ul>
-
-            {/* CTA */}
-            <a
-              href="#contacto"
-              className="inline-flex items-center gap-2.5 text-white px-6 py-3 rounded-full text-[13px] font-semibold transition-all duration-300 group self-start hover:bg-white/8"
-              style={{ border: '1px solid rgba(255,255,255,0.20)' }}
-            >
-              Quiero el M2
-              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
-            </a>
           </motion.div>
+
         </div>
 
         {/* Más modelos */}
@@ -157,7 +125,7 @@ export default function ProductHeroMop() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap items-center gap-3"
+          className="flex flex-wrap items-center gap-3 mt-5"
         >
           <p className="label-eyebrow text-white/20 text-[9px]">También disponibles</p>
           {masModelos.map((m) => (
@@ -172,8 +140,8 @@ export default function ProductHeroMop() {
             </a>
           ))}
         </motion.div>
-
       </div>
+
     </section>
   )
 }

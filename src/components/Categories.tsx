@@ -20,7 +20,7 @@ interface CategoriesProps {
 const familias = [
   {
     id: 'fibras-verdes',
-    anchor: '#fibras-verdes-f1-f2-f3',
+    anchor: '#contacto',
     nombre: 'Fibras Verdes',
     subtitulo: 'Limpieza Pesada y Profunda',
     descripcion: 'Alta abrasividad para cocinas industriales. Modelos F1, F2 y F3 en tres tamaños.',
