@@ -2,13 +2,17 @@ import { createClient } from '@supabase/supabase-js'
 import { Resend } from 'resend'
 import { NextRequest, NextResponse } from 'next/server'
 
-// ─── Clientes ────────────────────────────────────────────────────────────────
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+// ─── Clientes (lazy — se inicializan dentro del handler, no en build time) ───
+function getSupabase() {
+  return createClient(
+    process.env.SUPABASE_URL ?? '',
+    process.env.SUPABASE_SERVICE_ROLE_KEY ?? ''
+  )
+}
 
-const resend = new Resend(process.env.RESEND_API_KEY!)
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY ?? '')
+}
 
 // ─── Tipos ───────────────────────────────────────────────────────────────────
 interface LeadPayload {
@@ -48,6 +52,8 @@ export async function POST(req: NextRequest) {
     }
 
     // 1️⃣  Guardar en Supabase
+    const supabase = getSupabase()
+    const resend = getResend()
     const { error: dbError } = await supabase.from('leads').insert([
       {
         nombre:    body.nombre.trim(),
