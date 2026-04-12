@@ -7,26 +7,57 @@ const megaProductos = {
   columnas: [
     {
       titulo: 'Fibras Abrasivas',
-      links: ['Fibra F1 — Suave', 'Fibra F2 — Media', 'Fibra F4 — Dual NeoShield™', 'Fibra F6 — Ultra fuerte'],
+      color: '#2D7A2D',
+      items: [
+        { codigo: 'F1', nombre: 'Fibra Verde Grande', detalle: '220×140mm · Limpieza pesada' },
+        { codigo: 'F2', nombre: 'Fibra Verde Mediana', detalle: '150×140mm · Limpieza pesada' },
+        { codigo: 'F3', nombre: 'Fibra Verde Chica', detalle: '135×82mm · Limpieza pesada' },
+        { codigo: 'F4', nombre: 'Fibra Esponja Dual', detalle: 'Verde + esponja · Multiusos', badge: 'Popular' },
+        { codigo: 'F5', nombre: 'Fibra Negra', detalle: 'Parrillas y hornos' },
+        { codigo: 'F6', nombre: 'Fibra Blanca Baños', detalle: 'Uso exclusivo sanitarios' },
+        { codigo: 'F7', nombre: 'Fibra Azul 0 Rayas', detalle: 'Superficies delicadas' },
+        { codigo: 'F8', nombre: 'Borrador Mágico + Esponja', detalle: 'Con esponja integrada' },
+        { codigo: 'F9', nombre: 'Borrador Mágico', detalle: 'Elimina manchas difíciles' },
+      ],
     },
     {
-      titulo: 'Microfibras',
-      links: ['Microfibra Premium', 'Microfibra para vidrios', 'Microfibra para baños'],
+      titulo: 'Sistemas Mop',
+      color: '#0076FF',
+      items: [
+        { codigo: 'M1', nombre: 'Turbo Magic', detalle: 'Cubo con pedal + microfibra', badge: 'Estrella' },
+        { codigo: 'M2', nombre: 'Spin Magic', detalle: 'Cubo sin pedal + microfibra' },
+        { codigo: 'M5', nombre: 'Mop Rectangular', detalle: 'Giratorio 360° · Rincones' },
+        { codigo: 'M6', nombre: 'Mop Doble Función', detalle: 'Separación agua sucia' },
+        { codigo: 'M9', nombre: 'Mop Atomizador', detalle: 'Spray sin baterías' },
+      ],
     },
     {
-      titulo: 'Sistemas de Mop',
-      links: ['M1 Turbo Magic', 'Cubeta Escurridor Pro', 'Mopa Plana 40cm'],
+      titulo: 'Limpieza de Baños',
+      color: '#6D28D9',
+      items: [
+        { codigo: 'M4', nombre: 'Cepillo Baño', detalle: '16 cartuchos desechables' },
+        { codigo: 'M10', nombre: 'Repuesto M4', detalle: '32 cartuchos + detergente' },
+      ],
     },
     {
-      titulo: 'Químicos',
-      links: ['Desengrasante Industrial', 'Desinfectante HORECA', 'Multiusos Neutro'],
+      titulo: 'Accesorios',
+      color: '#ADB3BA',
+      items: [
+        { codigo: 'M3', nombre: 'Repuesto Mopa', detalle: 'Compatible M1, M2 y otros' },
+        { codigo: 'M7', nombre: 'Cubeta Saldo', detalle: 'Escurrido eficiente' },
+        { codigo: 'M8', nombre: 'Cepillo Mops', detalle: 'Para bastones giratorios' },
+        { codigo: 'M16', nombre: 'Cubeta Plegable', detalle: '10 litros · Compacta' },
+        { codigo: 'M17', nombre: 'Recogedor Escoba', detalle: 'Nylon · Alta durabilidad' },
+        { codigo: 'M18', nombre: 'Trapeador Silicon', detalle: 'Goma natural · Madera y cerámica' },
+      ],
     },
   ],
   destacado: {
-    badge: 'Nuevo',
+    badge: 'Más popular',
     codigo: 'F4',
-    nombre: 'Fibra Dual F4',
-    descripcion: 'Tecnología NeoShield™ antibacterial',
+    nombre: 'Fibra Esponja Dual F4',
+    descripcion: 'Doble cara. Antibacterial. El más vendido de la línea.',
+    color: '#B45309',
   },
 }
 
@@ -107,24 +138,47 @@ export default function Navbar() {
                     {megaOpen && (
                       <div
                         className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-white border border-[#E8EAED] rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] overflow-hidden"
-                        style={{ width: 720 }}
+                        style={{ width: 860 }}
                         onMouseEnter={openMega}
                         onMouseLeave={closeMega}
                       >
                         <div className="flex">
-                          {/* Columnas de categorías */}
-                          <div className="flex-1 grid grid-cols-4 gap-0 p-7">
+                          {/* Columnas */}
+                          <div className="flex-1 grid grid-cols-4 gap-0 p-6">
                             {megaProductos.columnas.map((col) => (
                               <div key={col.titulo} className="pr-4">
-                                <p className="label-eyebrow text-[#0076FF] mb-3">{col.titulo}</p>
-                                <ul className="space-y-2">
-                                  {col.links.map((item) => (
-                                    <li key={item}>
+                                <p
+                                  className="label-eyebrow mb-3 text-[10px]"
+                                  style={{ color: col.color }}
+                                >
+                                  {col.titulo}
+                                </p>
+                                <ul className="space-y-2.5">
+                                  {col.items.map((item) => (
+                                    <li key={item.codigo}>
                                       <a
                                         href="#productos"
-                                        className="block text-[13px] text-[#666] hover:text-[#1A1A1A] transition-colors duration-150 font-light leading-snug"
+                                        className="group/item flex items-start gap-2"
                                       >
-                                        {item}
+                                        <span
+                                          className="shrink-0 w-7 h-5 rounded flex items-center justify-center text-[9px] font-black text-white mt-0.5"
+                                          style={{ backgroundColor: col.color }}
+                                        >
+                                          {item.codigo}
+                                        </span>
+                                        <div>
+                                          <p className="text-[12px] font-medium text-[#1A1A1A] group-hover/item:text-[#0076FF] transition-colors leading-tight">
+                                            {item.nombre}
+                                            {item.badge && (
+                                              <span className="ml-1.5 text-[9px] font-bold text-[#FF2B2B] bg-[#FFF0F0] px-1.5 py-0.5 rounded-full">
+                                                {item.badge}
+                                              </span>
+                                            )}
+                                          </p>
+                                          <p className="text-[10px] text-[#999] font-light leading-tight mt-0.5">
+                                            {item.detalle}
+                                          </p>
+                                        </div>
                                       </a>
                                     </li>
                                   ))}
@@ -134,30 +188,49 @@ export default function Navbar() {
                           </div>
 
                           {/* Producto destacado */}
-                          <div className="w-44 bg-[#F5F7FA] flex flex-col items-center justify-center gap-3 p-6 text-center border-l border-[#E8EAED]">
-                            <span className="label-eyebrow text-[#FF2B2B]">
+                          <div className="w-44 bg-[#FFFBF0] flex flex-col items-center justify-center gap-3 p-6 text-center border-l border-[#E8EAED]">
+                            <span className="label-eyebrow text-[#FF2B2B] text-[9px]">
                               {megaProductos.destacado.badge}
                             </span>
-                            <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center border border-[#E8EAED]">
-                              <span className="font-black text-[#0076FF] text-xl leading-none">
+                            <div
+                              className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center border border-[#E8EAED]"
+                              style={{ boxShadow: `0 4px 20px ${megaProductos.destacado.color}30` }}
+                            >
+                              <span
+                                className="font-black text-xl leading-none"
+                                style={{ color: megaProductos.destacado.color }}
+                              >
                                 {megaProductos.destacado.codigo}
                               </span>
                             </div>
                             <div>
-                              <p className="text-[13px] font-semibold text-[#1A1A1A]">
+                              <p className="text-[12px] font-semibold text-[#1A1A1A] leading-snug">
                                 {megaProductos.destacado.nombre}
                               </p>
-                              <p className="text-[11px] text-[#999] font-light mt-0.5 leading-snug">
+                              <p className="text-[10px] text-[#999] font-light mt-1 leading-snug">
                                 {megaProductos.destacado.descripcion}
                               </p>
                             </div>
                             <a
                               href="#productos"
-                              className="text-[12px] font-semibold text-[#0076FF] hover:underline underline-offset-2"
+                              className="text-[11px] font-semibold text-[#0076FF] hover:underline underline-offset-2"
                             >
                               Ver más →
                             </a>
                           </div>
+                        </div>
+
+                        {/* Footer del mega menú */}
+                        <div className="border-t border-[#E8EAED] px-6 py-3 bg-[#F5F7FA] flex items-center justify-between">
+                          <p className="text-[11px] text-[#999] font-light">
+                            <span className="font-semibold text-[#1A1A1A]">23 modelos</span> disponibles · Línea Fibras y Línea Mops
+                          </p>
+                          <a
+                            href="#contacto"
+                            className="text-[11px] font-semibold text-[#0076FF] hover:underline underline-offset-2"
+                          >
+                            Solicitar catálogo completo →
+                          </a>
                         </div>
                       </div>
                     )}
@@ -196,7 +269,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-[68px] z-40 bg-white border-b border-[#E8EAED] shadow-lg lg:hidden">
+        <div className="fixed inset-x-0 top-[68px] z-40 bg-white border-b border-[#E8EAED] shadow-lg lg:hidden overflow-y-auto max-h-[calc(100vh-68px)]">
           <div className="px-6 py-6 flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
@@ -210,22 +283,35 @@ export default function Navbar() {
               </a>
             ))}
 
-            {/* Mobile categories */}
-            <div className="mt-2 pt-4 border-t border-[#E8EAED]">
-              <p className="label-eyebrow text-[#999] px-3 mb-3">Categorías</p>
-              <div className="grid grid-cols-2 gap-1">
-                {megaProductos.columnas.map((col) => (
-                  <a
-                    key={col.titulo}
-                    href="#productos"
-                    onClick={() => setMobileOpen(false)}
-                    className="px-3 py-2.5 rounded-lg text-[13px] font-medium text-[#444] hover:bg-[#F5F7FA] hover:text-[#0076FF] transition-colors"
-                  >
-                    {col.titulo}
-                  </a>
-                ))}
+            {/* Categorías mobile */}
+            {megaProductos.columnas.map((col) => (
+              <div key={col.titulo} className="mt-3 pt-3 border-t border-[#E8EAED]">
+                <p
+                  className="label-eyebrow px-3 mb-2 text-[10px]"
+                  style={{ color: col.color }}
+                >
+                  {col.titulo}
+                </p>
+                <div className="grid grid-cols-2 gap-1">
+                  {col.items.map((item) => (
+                    <a
+                      key={item.codigo}
+                      href="#productos"
+                      onClick={() => setMobileOpen(false)}
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#F5F7FA] transition-colors"
+                    >
+                      <span
+                        className="shrink-0 w-7 h-5 rounded flex items-center justify-center text-[9px] font-black text-white"
+                        style={{ backgroundColor: col.color }}
+                      >
+                        {item.codigo}
+                      </span>
+                      <span className="text-[12px] font-medium text-[#444]">{item.nombre}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
 
             <a
               href="#contacto"

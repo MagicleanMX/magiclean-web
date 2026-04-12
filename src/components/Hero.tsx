@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const canales = ['HOGAR', 'RETAIL', 'HORECA', 'INDUSTRIAL', 'INSTITUCIONAL']
 
@@ -67,7 +68,7 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Stats mínimos — estilo Rolex: números elegantes */}
+          {/* Stats mínimos */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -92,29 +93,36 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.15 }}
-          className="relative bg-[#F5F7FA] order-1 lg:order-2 min-h-[50vw] lg:min-h-0"
+          className="relative bg-[#F5F7FA] order-1 lg:order-2 min-h-[50vw] lg:min-h-0 overflow-hidden"
         >
-          {/* Placeholder imagen — será reemplazado por foto real del producto */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-            {/* Badge flotante — NeoShield */}
-            <div className="absolute top-8 right-8 bg-white rounded-2xl px-4 py-3 shadow-sm border border-[#E8EAED] flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#FF2B2B]" />
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#1A1A1A]">NeoShield™</span>
-            </div>
+          {/* Imagen real del hero — coloca hero-main.jpg en public/images/hero/ */}
+          <Image
+            src="/images/hero/hero-main.jpg"
+            alt="MagicClean — Tecnología profesional en limpieza"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 48vw"
+            onError={(e) => {
+              // Fallback: oculta la imagen si no existe, muestra placeholder
+              const target = e.target as HTMLImageElement
+              target.style.display = 'none'
+            }}
+          />
 
-            {/* Producto placeholder */}
-            <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full bg-white shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-[#E8EAED] flex items-center justify-center">
-              <div className="text-center">
-                <p className="font-black text-[#0076FF] text-4xl lg:text-5xl leading-none">F4</p>
-                <p className="text-[#999] text-xs font-medium mt-1 tracking-wide">MagicClean</p>
-              </div>
-            </div>
+          {/* Overlay sutil para texto legible sobre la foto */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
 
-            {/* Tag producto abajo */}
-            <div className="absolute bottom-8 left-8 bg-white rounded-xl px-4 py-3 shadow-sm border border-[#E8EAED]">
-              <p className="text-[11px] font-bold text-[#1A1A1A]">Fibra Dual F4</p>
-              <p className="text-[10px] text-[#999] font-light">Antibacterial · Alta durabilidad</p>
-            </div>
+          {/* Badge flotante — NeoShield */}
+          <div className="absolute top-8 right-8 bg-white rounded-2xl px-4 py-3 shadow-sm border border-[#E8EAED] flex items-center gap-2 z-10">
+            <span className="w-2 h-2 rounded-full bg-[#FF2B2B]" />
+            <span className="text-[11px] font-bold uppercase tracking-widest text-[#1A1A1A]">NeoShield™</span>
+          </div>
+
+          {/* Tag producto abajo */}
+          <div className="absolute bottom-8 left-8 bg-white rounded-xl px-4 py-3 shadow-sm border border-[#E8EAED] z-10">
+            <p className="text-[11px] font-bold text-[#1A1A1A]">Tecnología Profesional</p>
+            <p className="text-[10px] text-[#999] font-light">Antibacterial · Alta durabilidad</p>
           </div>
         </motion.div>
       </div>
