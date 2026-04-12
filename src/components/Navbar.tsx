@@ -7,7 +7,7 @@ const megaProductos = {
   columnas: [
     {
       titulo: 'Fibras Abrasivas',
-      color: '#2D7A2D',
+      color: '#FF2B2B',
       items: [
         { codigo: 'F1', nombre: 'Fibra Verde Grande', detalle: '220×140mm · Limpieza pesada' },
         { codigo: 'F2', nombre: 'Fibra Verde Mediana', detalle: '150×140mm · Limpieza pesada' },
@@ -33,7 +33,7 @@ const megaProductos = {
     },
     {
       titulo: 'Limpieza de Baños',
-      color: '#6D28D9',
+      color: '#0076FF',
       items: [
         { codigo: 'M4', nombre: 'Cepillo Baño', detalle: '16 cartuchos desechables' },
         { codigo: 'M10', nombre: 'Repuesto M4', detalle: '32 cartuchos + detergente' },
@@ -41,7 +41,7 @@ const megaProductos = {
     },
     {
       titulo: 'Accesorios',
-      color: '#ADB3BA',
+      color: '#1A1A1A',
       items: [
         { codigo: 'M3', nombre: 'Repuesto Mopa', detalle: 'Compatible M1, M2 y otros' },
         { codigo: 'M7', nombre: 'Cubeta Saldo', detalle: 'Escurrido eficiente' },
@@ -57,7 +57,7 @@ const megaProductos = {
     codigo: 'F4',
     nombre: 'Fibra Esponja Dual F4',
     descripcion: 'Doble cara. Antibacterial. El más vendido de la línea.',
-    color: '#B45309',
+    color: '#FF2B2B',
   },
 }
 
@@ -176,7 +176,7 @@ export default function Navbar() {
                                               </span>
                                             )}
                                           </p>
-                                          <p className="text-[10px] text-[#999] font-light leading-tight mt-0.5">
+                                          <p className="text-[10px] text-[#666666] font-light leading-tight mt-0.5">
                                             {item.detalle}
                                           </p>
                                         </div>
@@ -208,7 +208,7 @@ export default function Navbar() {
                               <p className="text-[12px] font-semibold text-[#1A1A1A] leading-snug">
                                 {megaProductos.destacado.nombre}
                               </p>
-                              <p className="text-[10px] text-[#999] font-light mt-1 leading-snug">
+                              <p className="text-[10px] text-[#666666] font-light mt-1 leading-snug">
                                 {megaProductos.destacado.descripcion}
                               </p>
                             </div>
@@ -223,7 +223,7 @@ export default function Navbar() {
 
                         {/* Footer del mega menú */}
                         <div className="border-t border-[#E8EAED] px-6 py-3 bg-[#F5F7FA] flex items-center justify-between">
-                          <p className="text-[11px] text-[#999] font-light">
+                          <p className="text-[11px] text-[#666666] font-light">
                             <span className="font-semibold text-[#1A1A1A]">23 modelos</span> disponibles · Línea Fibras y Línea Mops
                           </p>
                           <a
@@ -280,7 +280,7 @@ export default function Navbar() {
                 className="flex items-center justify-between px-3 py-3 rounded-xl text-[15px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA] hover:text-[#0076FF] transition-colors"
               >
                 {link.label}
-                {link.mega && <ChevronDown size={14} className="text-[#999]" />}
+                {link.mega && <ChevronDown size={14} className="text-[#666666]" />}
               </a>
             ))}
 
@@ -296,7 +296,7 @@ export default function Navbar() {
                   </p>
                   <ChevronDown
                     size={12}
-                    className={`transition-transform duration-200 text-[#999] ${mobileExpanded === col.titulo ? 'rotate-180' : ''}`}
+                    className={`transition-transform duration-200 text-[#666666] ${mobileExpanded === col.titulo ? 'rotate-180' : ''}`}
                   />
                 </button>
                 {mobileExpanded === col.titulo && (

@@ -40,13 +40,13 @@ export default function WhatsAppButton() {
               </div>
               <button
                 onClick={() => setOpen(false)}
-                className="text-[#999] hover:text-[#1A1A1A] transition-colors"
+                className="text-[#666666] hover:text-[#1A1A1A] transition-colors"
               >
                 <X size={14} />
               </button>
             </div>
 
-            <p className="text-[12px] font-light text-[#777] leading-relaxed mb-3">
+            <p className="text-[12px] font-light text-[#666666] leading-relaxed mb-3">
               ¿Tienes preguntas sobre el portafolio o quieres cotizar? Escríbenos.
             </p>
 

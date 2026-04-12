@@ -57,7 +57,7 @@ export default function Hero({ data }: HeroProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-[1rem] font-light text-[#666] leading-[1.75] max-w-sm mb-3"
+            className="text-[1rem] font-light text-[#666666] leading-[1.75] max-w-sm mb-3"
           >
             {subheadline}
           </motion.p>
@@ -107,7 +107,7 @@ export default function Hero({ data }: HeroProps) {
             ].map((s) => (
               <div key={s.label}>
                 <p className="text-xl sm:text-2xl font-black text-[#1A1A1A] leading-none mb-1">{s.n}</p>
-                <p className="label-eyebrow text-[#999]">{s.label}</p>
+                <p className="label-eyebrow text-[#666666]">{s.label}</p>
               </div>
             ))}
           </motion.div>
@@ -180,14 +180,14 @@ export default function Hero({ data }: HeroProps) {
                       <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: row.fibra.dot }} />
                       <div>
                         <p className="text-white font-black text-[11px] leading-none tracking-tight">{row.fibra.codes}</p>
-                        <p className="text-white/25 text-[9px] font-light mt-0.5">{row.fibra.name}</p>
+                        <p className="text-white/20 text-[9px] font-light mt-0.5">{row.fibra.name}</p>
                       </div>
                     </div>
                     <div className="px-5 py-3.5 flex items-center gap-2.5" style={{ background: 'rgba(0,118,255,0.03)' }}>
                       <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: row.mop.dot }} />
                       <div>
                         <p className="text-white font-black text-[11px] leading-none tracking-tight">{row.mop.codes}</p>
-                        <p className="text-white/25 text-[9px] font-light mt-0.5">{row.mop.name}</p>
+                        <p className="text-white/20 text-[9px] font-light mt-0.5">{row.mop.name}</p>
                       </div>
                     </div>
                   </div>
@@ -201,7 +201,7 @@ export default function Hero({ data }: HeroProps) {
               </div>
 
               {/* NeoShield note */}
-              <p className="text-white/15 text-[9px] font-light text-center mt-4 tracking-wide">
+              <p className="text-white/20 text-[9px] font-light text-center mt-4 tracking-wide">
                 Todos con tecnología NeoShield™ · Antibacterial permanente
               </p>
             </motion.div>
@@ -227,7 +227,7 @@ export default function Hero({ data }: HeroProps) {
             className="absolute bottom-8 right-8 rounded-xl px-4 py-2.5 z-10"
             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            <p className="text-[9px] font-bold uppercase tracking-widest text-white/30">Durabilidad</p>
+            <p className="text-[9px] font-bold uppercase tracking-widest text-white/20">Durabilidad</p>
             <p className="text-lg font-black text-white leading-tight">3×</p>
           </motion.div>
         </motion.div>

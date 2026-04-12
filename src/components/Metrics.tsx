@@ -41,7 +41,7 @@ export default function Metrics({ data }: MetricsProps) {
               <p className="font-black text-white text-[2.8rem] lg:text-[3.4rem] leading-none mb-2 tracking-tight">
                 {item.value}
               </p>
-              <p className="label-eyebrow text-white/40 text-[10px]">
+              <p className="label-eyebrow text-white/50 text-[10px]">
                 {item.label}
               </p>
             </motion.div>

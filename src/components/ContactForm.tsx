@@ -83,12 +83,12 @@ export default function ContactForm() {
               <h2 className="text-3xl font-bold text-white mb-4">
                 Solicitud enviada con éxito.
               </h2>
-              <p className="text-white/40 font-light text-base leading-relaxed">
+              <p className="text-white/50 font-light text-base leading-relaxed">
                 Nuestro equipo especializado revisará tu solicitud y te contactará en{' '}
-                <span className="text-white/70">menos de 24 horas hábiles</span> con una
+                <span className="text-white/80">menos de 24 horas hábiles</span> con una
                 propuesta adaptada a tu operación.
               </p>
-              <p className="text-white/25 text-xs mt-6">
+              <p className="text-white/20 text-xs mt-6">
                 Revisa tu bandeja de entrada — te enviamos una confirmación.
               </p>
             </motion.div>
@@ -273,7 +273,7 @@ export default function ContactForm() {
             )}
           </button>
 
-          <p className="text-white/25 text-[11px] font-light text-center mt-4">
+          <p className="text-white/20 text-[11px] font-light text-center mt-4">
             Sin compromiso · Sin intermediarios · Propuesta personalizada en 24h hábiles
           </p>
         </motion.form>

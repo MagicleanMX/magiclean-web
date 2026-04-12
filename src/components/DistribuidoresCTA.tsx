@@ -78,7 +78,7 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
                   key={z}
                   className="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors duration-200 rounded-xl px-4 py-3 cursor-default"
                 >
-                  <MapPin size={12} className="text-white/60 shrink-0" />
+                  <MapPin size={12} className="text-white/50 shrink-0" />
                   <span className="text-[13px] font-medium text-white">{z}</span>
                 </div>
               ))}

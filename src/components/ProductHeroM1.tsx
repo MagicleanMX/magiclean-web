@@ -67,7 +67,7 @@ export default function ProductHeroM1() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-[0.95rem] font-light text-[#888] tracking-wide mb-6"
+            className="text-[0.95rem] font-light text-[#666666] tracking-wide mb-6"
           >
             Así debió ser siempre.
           </motion.p>
@@ -78,7 +78,7 @@ export default function ProductHeroM1() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-[1rem] font-light text-[#666] leading-[1.75] max-w-md mb-6"
+            className="text-[1rem] font-light text-[#666666] leading-[1.75] max-w-md mb-6"
           >
             El M1 limpia a fondo sin que tú te agaches, te mojes ni te esfuerces.
             Su microfibra con NeoShield™ integrado elimina el 99.9% de bacterias
@@ -98,7 +98,7 @@ export default function ProductHeroM1() {
                 <span className="w-5 h-5 rounded-full bg-[#0076FF]/10 flex items-center justify-center shrink-0">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0076FF]" />
                 </span>
-                <span className="text-[14px] font-light text-[#555]">{b}</span>
+                <span className="text-[14px] font-light text-[#666666]">{b}</span>
               </li>
             ))}
           </motion.ul>
@@ -120,7 +120,7 @@ export default function ProductHeroM1() {
             </a>
             <a
               href="#contacto"
-              className="inline-flex items-center gap-2.5 border border-[#1A1A1A]/20 text-[#555] px-8 py-3.5 rounded-full text-[13px] font-semibold hover:border-[#1A1A1A] hover:text-[#1A1A1A] transition-all duration-300"
+              className="inline-flex items-center gap-2.5 border border-[#1A1A1A]/20 text-[#666666] px-8 py-3.5 rounded-full text-[13px] font-semibold hover:border-[#1A1A1A] hover:text-[#1A1A1A] transition-all duration-300"
             >
               Solicitar muestra
             </a>
@@ -137,16 +137,12 @@ export default function ProductHeroM1() {
         >
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-5">
 
-            {/* Glow */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-96 h-96 rounded-full bg-[#0076FF]/5 blur-[100px]" />
-            </div>
 
             {/* Placeholder producto */}
             <div className="relative w-56 h-72 lg:w-72 lg:h-96 rounded-2xl bg-gradient-to-b from-[#F0F4FF] to-[#E8EEFF] border border-[#D0DEFF] flex items-center justify-center shadow-sm">
               <div className="text-center">
                 <p className="font-black text-[#0076FF] text-5xl lg:text-6xl leading-none">M1</p>
-                <p className="text-[#999] text-xs font-medium tracking-wider mt-2 uppercase">Sistema Mop</p>
+                <p className="text-[#666666] text-xs font-medium tracking-wider mt-2 uppercase">Sistema Mop</p>
                 <div className="mt-4 mx-auto inline-flex items-center gap-1.5 bg-[#0076FF]/10 rounded-full px-3 py-1">
                   <ShieldCheck size={11} className="text-[#0076FF]" />
                   <span className="text-[10px] font-bold text-[#0076FF] uppercase tracking-wide">NeoShield™</span>
@@ -156,39 +152,39 @@ export default function ProductHeroM1() {
 
             {/* Badge 99.9% */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="bg-[#0A1628] text-white rounded-2xl px-6 py-4 text-center shadow-xl"
             >
-              <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">Elimina bacterias</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-white/50 mb-1">Elimina bacterias</p>
               <p className="text-3xl font-black leading-none">99.9%</p>
-              <p className="text-[10px] text-white/40 mt-1 font-light">Tecnología NeoShield™</p>
+              <p className="text-[10px] text-white/50 mt-1 font-light">Tecnología NeoShield™</p>
             </motion.div>
 
             {/* Badge rapidez */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
               className="absolute bottom-8 left-8 bg-white border border-[#E8EAED] rounded-xl px-4 py-2.5 shadow-sm"
             >
-              <p className="text-[10px] font-bold uppercase tracking-widest text-[#555]">Listo en</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#666666]">Listo en</p>
               <p className="text-xl font-black text-[#1A1A1A] leading-tight">5 min</p>
             </motion.div>
 
             {/* Badge sin químicos */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.7 }}
               className="absolute top-8 right-8 bg-white border border-[#E8EAED] rounded-xl px-4 py-2.5 shadow-sm"
             >
               <p className="text-[10px] font-bold uppercase tracking-widest text-[#0076FF]">Sin químicos</p>
-              <p className="text-[10px] font-light text-[#999]">adicionales</p>
+              <p className="text-[10px] font-light text-[#666666]">adicionales</p>
             </motion.div>
 
           </div>

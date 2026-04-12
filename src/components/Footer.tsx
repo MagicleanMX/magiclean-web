@@ -91,7 +91,7 @@ export default function Footer() {
               </span>
             </a>
 
-            <p className="text-[13px] font-light text-white/35 leading-relaxed max-w-[220px] mb-6">
+            <p className="text-[13px] font-light text-white/50 leading-relaxed max-w-[220px] mb-6">
               Proveedor B2B de soluciones de limpieza profesional para retail,
               mayoreo, HORECA e institucional en México y LATAM.
             </p>
@@ -100,11 +100,11 @@ export default function Footer() {
             <div className="flex flex-col gap-2 mb-8">
               <span className="inline-flex items-center gap-2 self-start">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF2B2B]" />
-                <span className="label-eyebrow text-white/30 text-[9px]">NeoShield™ Technology</span>
+                <span className="label-eyebrow text-white/20 text-[9px]">NeoShield™ Technology</span>
               </span>
               <span className="inline-flex items-center gap-2 self-start">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0076FF]" />
-                <span className="label-eyebrow text-white/30 text-[9px]">MercadoLibre · Amazon · Walmart</span>
+                <span className="label-eyebrow text-white/20 text-[9px]">MercadoLibre · Amazon · Walmart</span>
               </span>
             </div>
 
@@ -119,7 +119,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.nombre}
-                    className="w-8 h-8 rounded-full bg-white/8 hover:bg-[#0076FF] flex items-center justify-center text-white/40 hover:text-white transition-all duration-200"
+                    className="w-8 h-8 rounded-full bg-white/8 hover:bg-[#0076FF] flex items-center justify-center text-white/50 hover:text-white transition-all duration-200"
                   >
                     {s.icon}
                   </a>
@@ -131,13 +131,13 @@ export default function Footer() {
           {/* Link columns */}
           {cols.map((col) => (
             <div key={col.titulo}>
-              <p className="label-eyebrow text-white/25 mb-6">{col.titulo}</p>
+              <p className="label-eyebrow text-white/20 mb-6">{col.titulo}</p>
               <ul className="space-y-3.5">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-[13px] font-light text-white/40 hover:text-white transition-colors duration-200 leading-snug block"
+                      className="text-[13px] font-light text-white/50 hover:text-white transition-colors duration-200 leading-snug block"
                     >
                       {link.label}
                     </a>
@@ -163,7 +163,7 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <p className="text-[11px] font-light text-white/15">
+          <p className="text-[11px] font-light text-white/20">
             © {new Date().getFullYear()} MagicClean S.A. de C.V. · México · Todos los derechos reservados.
           </p>
         </div>

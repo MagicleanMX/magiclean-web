@@ -11,7 +11,6 @@ const specs = [
 
 export default function ProductHeroF4() {
   return (
-    // Editorial split — imagen izquierda, texto derecha. Sin padding vertical: edge-to-edge como Rolex
     <section id="fibra-dual-f4" className="relative overflow-hidden bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2">
 
@@ -21,15 +20,8 @@ export default function ProductHeroF4() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative min-h-[65vw] sm:min-h-[55vw] lg:min-h-0 order-1 overflow-hidden"
-          style={{ background: '#080500' }}
+          className="relative min-h-[65vw] sm:min-h-[55vw] lg:min-h-0 order-1 overflow-hidden bg-[#0A1628]"
         >
-          {/* Glow cálido — amber para F4 */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-[500px] h-[500px] rounded-full blur-[120px]"
-              style={{ background: 'radial-gradient(circle, rgba(180,83,9,0.25) 0%, transparent 65%)' }} />
-          </div>
-
           {/* Badge popular — top left */}
           <div className="absolute top-6 left-6 flex items-center gap-2 bg-[#FF2B2B] text-white px-3.5 py-2 rounded-full z-20">
             <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
@@ -39,11 +31,11 @@ export default function ProductHeroF4() {
           {/* Contenido principal */}
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8 z-10">
 
-            {/* Código F4 — el héroe visual */}
+            {/* Código F4 — héroe tipográfico */}
             <div className="text-center">
               <p
-                className="font-black leading-none tracking-tight"
-                style={{ fontSize: 'clamp(4.5rem, 14vw, 8rem)', color: '#B45309' }}
+                className="font-black leading-none tracking-tight text-[#0076FF]"
+                style={{ fontSize: 'clamp(4.5rem, 14vw, 8rem)' }}
               >
                 F4
               </p>
@@ -53,13 +45,13 @@ export default function ProductHeroF4() {
             </div>
 
             {/* Separador */}
-            <div className="w-12 h-px" style={{ backgroundColor: 'rgba(180,83,9,0.4)' }} />
+            <div className="w-12 h-px bg-[#0076FF]/40" />
 
             {/* Las dos caras — swatches de material */}
             <div className="flex gap-5">
               <motion.div
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex flex-col items-center gap-2.5"
@@ -71,12 +63,12 @@ export default function ProductHeroF4() {
                     border: '1px solid rgba(45,122,45,0.35)',
                   }}
                 />
-                <p className="label-eyebrow text-white/25 text-[9px]">Abrasiva</p>
+                <p className="label-eyebrow text-white/20 text-[9px]">Abrasiva</p>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: 12 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="flex flex-col items-center gap-2.5"
@@ -88,18 +80,9 @@ export default function ProductHeroF4() {
                     border: '1px solid rgba(200,185,122,0.25)',
                   }}
                 />
-                <p className="label-eyebrow text-white/25 text-[9px]">Esponja</p>
+                <p className="label-eyebrow text-white/20 text-[9px]">Esponja</p>
               </motion.div>
             </div>
-          </div>
-
-          {/* Spec badge — bottom right */}
-          <div
-            className="absolute bottom-6 right-6 rounded-xl px-4 py-2.5 z-20"
-            style={{ background: 'rgba(180,83,9,0.15)', border: '1px solid rgba(180,83,9,0.3)' }}
-          >
-            <p className="label-eyebrow text-[9px] mb-0.5" style={{ color: '#D97706' }}>Durabilidad</p>
-            <p className="text-xl font-black text-white leading-tight">3×</p>
           </div>
         </motion.div>
 
@@ -111,13 +94,13 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="label-eyebrow text-[#FF2B2B] mb-3"
+            className="label-eyebrow text-[#0076FF] mb-3"
           >
             Fibras Abrasivas — NeoShield™
           </motion.p>
 
           <motion.h2
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -132,10 +115,10 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[1rem] font-light text-[#666] leading-[1.75] max-w-md mb-5"
+            className="text-[1rem] font-light text-[#666666] leading-[1.75] max-w-md mb-5"
           >
-            La dualidad inteligente que tu cocina necesita. Fibra abrasiva de alta
-            resistencia por un lado, esponja suave por el otro.
+            Fibra abrasiva de alta resistencia por un lado, esponja suave por el otro.
+            Un producto. Dos herramientas.
           </motion.p>
 
           {/* Quote elevada */}
@@ -146,14 +129,14 @@ export default function ProductHeroF4() {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="border-l-2 border-[#0076FF] pl-5 mb-6"
           >
-            <p className="text-[0.95rem] font-light text-[#666] italic leading-[1.7]">
+            <p className="text-[0.95rem] font-light text-[#666666] italic leading-[1.7]">
               "El estándar se creó ayer. Hoy lo evolucionamos."
             </p>
           </motion.blockquote>
 
           {/* Specs — 3 métricas limpias */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -164,12 +147,12 @@ export default function ProductHeroF4() {
                 <p className="font-black text-[#1A1A1A] text-2xl lg:text-3xl leading-none mb-1">
                   {s.valor}
                 </p>
-                <p className="label-eyebrow text-[#999] text-[9px]">{s.etiqueta}</p>
+                <p className="label-eyebrow text-[#666666] text-[9px]">{s.etiqueta}</p>
               </div>
             ))}
           </motion.div>
 
-          {/* CTA — outlined, estilo Rolex */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
