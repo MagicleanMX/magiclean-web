@@ -1,24 +1,24 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ShieldCheck } from 'lucide-react'
 
-const features = [
-  'Cubo de alta resistencia UV',
-  'Mopa de microfibra premium 360°',
-  'Mecanismo de escurrido patentado',
-  'Compatible con todos los pisos',
+const benefits = [
+  'Sin agacharte. Sin mojarte las manos.',
+  'Microfibra NeoShield™ activa en cada pasada.',
+  'Compatible con todo tipo de pisos.',
+  'Escurrido fácil — sin esfuerzo.',
 ]
 
 export default function ProductHeroM1() {
   return (
-    // Editorial split — texto izquierda, imagen derecha. Dirección opuesta a F4 (como Rolex alterna)
     <section className="relative overflow-hidden bg-[#F5F7FA]">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh]">
 
-        {/* Izquierda — texto editorial */}
+        {/* ── Izquierda — texto editorial ── */}
         <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-20 py-20 order-2 lg:order-1">
 
+          {/* Eyebrow */}
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -26,100 +26,175 @@ export default function ProductHeroM1() {
             transition={{ duration: 0.6 }}
             className="label-eyebrow text-[#0076FF] mb-6"
           >
-            Sistemas de Mop — Colección Pro
+            Sistema Mop M1 — Hogar · Retail
           </motion.p>
 
-          <motion.h2
+          {/* Headline editorial — Variante 4 + NeoShield */}
+          <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="headline-editorial text-[2.4rem] lg:text-[3.2rem] xl:text-[3.8rem] text-[#1A1A1A] mb-6"
+            className="mb-4"
           >
-            Turbo Magic<br />
-            <span className="italic text-[#0076FF]">M1</span>
-          </motion.h2>
+            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-[#1A1A1A] leading-tight">
+              Rápida.{' '}
+              <span className="italic text-[#0076FF]">Poderosa.</span>
+              <br />
+              Sin rodillas en el suelo.
+            </h2>
+          </motion.div>
 
+          {/* NeoShield claim — la gran promesa */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="flex items-center gap-3 mb-3"
+          >
+            <div className="flex items-center gap-2 bg-[#0076FF]/8 border border-[#0076FF]/20 rounded-full px-4 py-2">
+              <ShieldCheck size={15} className="text-[#0076FF] shrink-0" />
+              <span className="text-[#0076FF] text-[13px] font-bold tracking-wide">
+                Tecnología NeoShield™ — Elimina el 99.9% de bacterias
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Segunda línea narrativa */}
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[1rem] font-light text-[#777] leading-relaxed max-w-md mb-10"
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-[1.1rem] font-light text-[#555] tracking-wide mb-8"
           >
-            El sistema de trapeado que cambió los estándares del sector.
-            Diseñado para rendimiento continuo en entornos de alta demanda.
+            Así debió ser siempre.
           </motion.p>
 
-          {/* Features list — como Rolex enumera características técnicas */}
-          <motion.ul
+          {/* Párrafo narrativo */}
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-[1rem] font-light text-[#777] leading-relaxed max-w-md mb-10"
+          >
+            El M1 limpia a fondo sin que tú te agaches, te mojes ni te esfuerces.
+            Su microfibra con NeoShield™ integrado elimina el 99.9% de bacterias
+            en cada pasada — sin químicos adicionales, sin complicaciones.
+          </motion.p>
+
+          {/* Benefits */}
+          <motion.ul
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.35 }}
             className="space-y-3 mb-12"
           >
-            {features.map((f, i) => (
-              <li key={f} className="flex items-center gap-3">
+            {benefits.map((b) => (
+              <li key={b} className="flex items-center gap-3">
                 <span className="w-5 h-5 rounded-full bg-[#0076FF]/10 flex items-center justify-center shrink-0">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0076FF]" />
                 </span>
-                <span className="text-[14px] font-light text-[#555]">{f}</span>
+                <span className="text-[14px] font-light text-[#555]">{b}</span>
               </li>
             ))}
           </motion.ul>
 
-          {/* CTA */}
+          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4"
           >
             <a
               href="#contacto"
-              className="inline-flex items-center gap-2.5 border border-[#1A1A1A] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 group"
+              className="inline-flex items-center gap-2.5 bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-[#0052CC] transition-all duration-300 group"
             >
-              Explorar soluciones para tu canal
+              Quiero el M1 en mi tienda
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
+            </a>
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2.5 border border-[#1A1A1A]/20 text-[#555] px-8 py-3.5 rounded-full text-[13px] font-semibold hover:border-[#1A1A1A] hover:text-[#1A1A1A] transition-all duration-300"
+            >
+              Solicitar muestra
             </a>
           </motion.div>
         </div>
 
-        {/* Derecha — imagen producto */}
+        {/* ── Derecha — imagen producto ── */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative bg-white min-h-[55vw] lg:min-h-0 order-1 lg:order-2"
+          className="relative bg-white min-h-[55vw] lg:min-h-0 order-1 lg:order-2 overflow-hidden"
         >
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-5">
-            {/* Glow */}
+
+            {/* Glow azul suave */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-80 h-80 rounded-full bg-[#0076FF]/6 blur-[80px]" />
+              <div className="w-96 h-96 rounded-full bg-[#0076FF]/6 blur-[100px]" />
             </div>
 
-            {/* Producto */}
-            <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-2xl bg-[#F5F7FA] border border-[#E8EAED] flex items-center justify-center shadow-sm">
+            {/* Placeholder — reemplazar con imagen fal.ai del M1 */}
+            <div className="relative w-56 h-72 lg:w-72 lg:h-96 rounded-2xl bg-gradient-to-b from-[#F0F4FF] to-[#E8EEFF] border border-[#D0DEFF] flex items-center justify-center shadow-sm">
               <div className="text-center">
-                <p className="font-black text-[#0076FF] text-4xl lg:text-5xl leading-none">M1</p>
-                <p className="text-[#999] text-xs font-medium tracking-wider mt-2">Turbo Magic</p>
+                <p className="font-black text-[#0076FF] text-5xl lg:text-6xl leading-none">M1</p>
+                <p className="text-[#999] text-xs font-medium tracking-wider mt-2 uppercase">Sistema Mop</p>
+                {/* NeoShield mini-badge dentro del card del producto */}
+                <div className="mt-4 mx-auto inline-flex items-center gap-1.5 bg-[#0076FF]/10 rounded-full px-3 py-1">
+                  <ShieldCheck size={11} className="text-[#0076FF]" />
+                  <span className="text-[10px] font-bold text-[#0076FF] uppercase tracking-wide">NeoShield™</span>
+                </div>
               </div>
             </div>
 
-            {/* Spec badge */}
-            <div className="bg-[#F5F7FA] border border-[#E8EAED] rounded-xl px-5 py-3 text-center">
-              <p className="font-black text-[#1A1A1A] text-xl leading-none">360°</p>
-              <p className="label-eyebrow text-[#999] text-[9px] mt-1">Escurrido único</p>
-            </div>
+            {/* Badge — stat principal */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-[#0A1628] text-white rounded-2xl px-6 py-4 text-center shadow-xl"
+            >
+              <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">Elimina bacterias</p>
+              <p className="text-3xl font-black leading-none">99.9%</p>
+              <p className="text-[10px] text-white/40 mt-1 font-light">Tecnología NeoShield™</p>
+            </motion.div>
 
-            {/* Canales badge */}
-            <div className="absolute bottom-8 right-8 bg-[#0076FF] text-white rounded-xl px-4 py-2.5">
-              <p className="text-[10px] font-bold uppercase tracking-widest">HORECA Ready</p>
-            </div>
+            {/* Badge — rapidez */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="absolute bottom-8 left-8 bg-white border border-[#E8EAED] rounded-xl px-4 py-2.5 shadow-sm"
+            >
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#555]">Listo en</p>
+              <p className="text-xl font-black text-[#1A1A1A] leading-tight">5 min</p>
+            </motion.div>
+
+            {/* Badge — sin químicos */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="absolute top-8 right-8 bg-white border border-[#E8EAED] rounded-xl px-4 py-2.5 shadow-sm"
+            >
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#0076FF]">Sin químicos</p>
+              <p className="text-[10px] font-light text-[#999]">adicionales</p>
+            </motion.div>
+
           </div>
         </motion.div>
+
       </div>
     </section>
   )
