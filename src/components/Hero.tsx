@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import type { HeroSection } from '@/lib/wordpress'
 
 const canales = ['HOGAR', 'RETAIL', 'HORECA', 'INDUSTRIAL', 'INSTITUCIONAL']
@@ -114,74 +113,123 @@ export default function Hero({ data }: HeroProps) {
           </motion.div>
         </div>
 
-        {/* Derecha — visual editorial (mientras llega la foto real) */}
+        {/* Derecha — portafolio editorial (slot para foto de producto) */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.15 }}
-          className="relative order-1 lg:order-2 min-h-[50vw] lg:min-h-0 overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #0A1628 0%, #0D2040 50%, #061018 100%)' }}
+          className="relative order-1 lg:order-2 min-h-[60vw] lg:min-h-0 overflow-hidden"
+          style={{ background: 'linear-gradient(160deg, #0D2040 0%, #0A1628 50%, #060E1C 100%)' }}
         >
-          {/* Glow de fondo */}
+          {/* Glow suave — sin distracciones */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full opacity-20"
-              style={{ background: 'radial-gradient(circle, #0076FF 0%, transparent 70%)' }} />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-10"
+              style={{ background: 'radial-gradient(circle, #0076FF 0%, transparent 65%)' }} />
           </div>
 
-          {/* Centro — producto hero visual */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
+          {/* ── Sistema de producto — grid editorial ── */}
+          <div className="absolute inset-0 flex items-center justify-center px-10 lg:px-14">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full max-w-[340px]"
+            >
+              {/* Header del panel */}
+              <div className="flex items-center justify-between mb-6">
+                <p className="label-eyebrow text-white/20 text-[9px] tracking-[0.25em]">Portafolio completo</p>
+                <p className="label-eyebrow text-white/20 text-[9px] tracking-[0.15em]">23 modelos</p>
+              </div>
 
-              {/* Círculo de producto */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-48 h-48 lg:w-64 lg:h-64 rounded-full mx-auto mb-8 flex items-center justify-center relative"
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
-              >
-                <div className="w-36 h-36 lg:w-48 lg:h-48 rounded-full flex items-center justify-center"
-                  style={{ background: 'rgba(0,118,255,0.1)', border: '1px solid rgba(0,118,255,0.2)' }}
-                >
-                  <div className="text-center">
-                    <p className="font-black text-white text-3xl lg:text-4xl leading-none tracking-tight">Magic</p>
-                    <p className="font-black text-[#0076FF] text-3xl lg:text-4xl leading-none tracking-tight">Clean</p>
+              {/* Tabla de producto — 2 columnas */}
+              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
+
+                {/* Header columnas */}
+                <div className="grid grid-cols-2">
+                  <div className="px-5 py-3 flex items-center gap-2" style={{ background: 'rgba(255,43,43,0.08)', borderBottom: '1px solid rgba(255,255,255,0.06)', borderRight: '1px solid rgba(255,255,255,0.06)' }}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF2B2B]" />
+                    <p className="label-eyebrow text-[#FF2B2B] text-[9px]">Línea Fibras</p>
+                  </div>
+                  <div className="px-5 py-3 flex items-center gap-2" style={{ background: 'rgba(0,118,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0076FF]" />
+                    <p className="label-eyebrow text-[#0076FF] text-[9px]">Línea Mops</p>
                   </div>
                 </div>
-              </motion.div>
 
-              {/* Tagline secundario */}
-              <p className="text-white/20 text-[11px] font-semibold uppercase tracking-[0.2em]">
-                Tecnología Profesional
+                {/* Filas de producto */}
+                {[
+                  {
+                    fibra: { codes: 'F1 · F2 · F3', name: 'Fibras Verdes', dot: '#2D7A2D' },
+                    mop:   { codes: 'M1', name: 'Turbo Magic', star: true, dot: '#0076FF' },
+                  },
+                  {
+                    fibra: { codes: 'F4', name: 'Dual ★', dot: '#B45309' },
+                    mop:   { codes: 'M2', name: 'Spin Magic', star: true, dot: '#74B9FF' },
+                  },
+                  {
+                    fibra: { codes: 'F5 · F6 · F7', name: 'Especiales', dot: '#0052CC' },
+                    mop:   { codes: 'M5 · M6', name: 'Rect. y Doble', dot: '#0076FF' },
+                  },
+                  {
+                    fibra: { codes: 'F8 · F9', name: 'Borradores', dot: '#6D28D9' },
+                    mop:   { codes: 'M9', name: 'Atomizador', dot: '#0076FF' },
+                  },
+                ].map((row, i) => (
+                  <div key={i} className="grid grid-cols-2" style={{ borderBottom: i < 3 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
+                    <div className="px-5 py-3.5 flex items-center gap-2.5" style={{ borderRight: '1px solid rgba(255,255,255,0.05)', background: 'rgba(255,255,255,0.01)' }}>
+                      <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: row.fibra.dot }} />
+                      <div>
+                        <p className="text-white font-black text-[11px] leading-none tracking-tight">{row.fibra.codes}</p>
+                        <p className="text-white/25 text-[9px] font-light mt-0.5">{row.fibra.name}</p>
+                      </div>
+                    </div>
+                    <div className="px-5 py-3.5 flex items-center gap-2.5" style={{ background: 'rgba(0,118,255,0.03)' }}>
+                      <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: row.mop.dot }} />
+                      <div>
+                        <p className="text-white font-black text-[11px] leading-none tracking-tight">{row.mop.codes}</p>
+                        <p className="text-white/25 text-[9px] font-light mt-0.5">{row.mop.name}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+                {/* Footer — accesorios */}
+                <div className="px-5 py-3 flex items-center gap-2" style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                  <p className="text-white/20 text-[10px] font-light">M3 · M4 · M7 · M8 · M10 · M16 · M17 · M18 — Accesorios</p>
+                </div>
+              </div>
+
+              {/* NeoShield note */}
+              <p className="text-white/15 text-[9px] font-light text-center mt-4 tracking-wide">
+                Todos con tecnología NeoShield™ · Antibacterial permanente
               </p>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Badge NeoShield — top right */}
-          <div className="absolute top-8 right-8 rounded-2xl px-4 py-3 flex items-center gap-2 z-10"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
-          >
-            <span className="w-2 h-2 rounded-full bg-[#FF2B2B]" />
-            <span className="text-[11px] font-bold uppercase tracking-widest text-white/70">NeoShield™</span>
-          </div>
-
-          {/* Badge 99.9% bacterias — bottom left */}
+          {/* Badge 99.9% — bottom left */}
           <motion.div
-            animate={{ opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 3, repeat: Infinity }}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
             className="absolute bottom-8 left-8 rounded-2xl px-5 py-3 z-10"
-            style={{ background: 'rgba(0,118,255,0.15)', border: '1px solid rgba(0,118,255,0.3)' }}
+            style={{ background: 'rgba(0,118,255,0.15)', border: '1px solid rgba(0,118,255,0.25)' }}
           >
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#74B9FF] mb-0.5">Elimina bacterias</p>
+            <p className="text-[9px] font-bold uppercase tracking-widest text-[#74B9FF] mb-0.5">Elimina bacterias</p>
             <p className="text-2xl font-black text-white leading-none">99.9%</p>
           </motion.div>
 
-          {/* Badge 3x durabilidad — bottom right */}
-          <div className="absolute bottom-8 right-8 rounded-xl px-4 py-2.5 z-10"
+          {/* Badge 3× — bottom right */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="absolute bottom-8 right-8 rounded-xl px-4 py-2.5 z-10"
             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            <p className="text-[10px] font-bold uppercase tracking-widest text-white/30">Durabilidad</p>
+            <p className="text-[9px] font-bold uppercase tracking-widest text-white/30">Durabilidad</p>
             <p className="text-lg font-black text-white leading-tight">3×</p>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 
