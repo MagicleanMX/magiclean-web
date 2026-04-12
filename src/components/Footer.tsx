@@ -104,7 +104,7 @@ export default function Footer() {
               </span>
               <span className="inline-flex items-center gap-2 self-start">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0076FF]" />
-                <span className="label-eyebrow text-white/30 text-[9px]">15+ Años en el mercado</span>
+                <span className="label-eyebrow text-white/30 text-[9px]">MercadoLibre · Amazon · Walmart</span>
               </span>
             </div>
 

@@ -22,7 +22,7 @@ const siteUrl = 'https://magiclean-web.vercel.app'
 export const metadata: Metadata = {
   title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
   description:
-    'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional. Tecnología NeoShield™ antibacterial. 15+ años · 500+ clientes · 23 modelos.',
+    'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional. Tecnología NeoShield™ antibacterial. Líderes en MercadoLibre y Amazon · 23 modelos · México y LATAM.',
   keywords: [
     'fibras de limpieza profesional',
     'sistemas de mop',

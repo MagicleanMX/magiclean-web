@@ -3,32 +3,32 @@
 import { motion } from 'framer-motion'
 
 const stats = [
-  { n: '15+', label: 'Años en el mercado' },
-  { n: '500+', label: 'Clientes activos' },
-  { n: '30+', label: 'Ciudades con cobertura' },
-  { n: '5', label: 'Canales de distribución' },
+  { n: '3',   label: 'Años de crecimiento acelerado' },
+  { n: '23',  label: 'Modelos especializados' },
+  { n: '3',   label: 'Marketplaces líderes' },
+  { n: '100%', label: 'Satisfacción garantizada' },
 ]
 
 const valores = [
   {
     num: '01',
-    titulo: 'NeoShield™: 3 años de I+D exclusivo',
-    desc: 'Desarrollamos tecnología de fibra antibacterial propia, validada en laboratorio. La protección no se lava ni se deteriora — está en la estructura del polímero.',
+    titulo: 'Tecnología NeoShield™ — Desarrollada para ganar',
+    desc: 'Fibra antibacterial con micropartículas integradas al polímero. No se lava, no se deteriora. La misma tecnología que nos llevó a liderar en MercadoLibre y Amazon.',
   },
   {
     num: '02',
-    titulo: 'Red activa en 30+ ciudades',
-    desc: 'Entrega directa en CDMX, Guadalajara y Monterrey en 48h. Cobertura nacional por red de distribuidores y exportaciones activas a LATAM.',
+    titulo: 'Nacimos en e-commerce. Ahora vamos al retail.',
+    desc: 'Nuestro M2 es uno de los mops más vendidos en MercadoLibre y Amazon México. El M1 crece con fuerza. Y apenas estamos entrando al canal retail y distribución.',
   },
   {
     num: '03',
-    titulo: 'Un portafolio para cada canal',
-    desc: '23 modelos entre fibras, mops y accesorios. Hogar, retail, HORECA, industrial e institucional — cada canal tiene su solución específica.',
+    titulo: '23 modelos. Un portafolio para cada canal.',
+    desc: 'Fibras, sistemas mop y accesorios para hogar, retail, HORECA e institucional. Cada producto diseñado con propósito — no fabricamos volumen, fabricamos soluciones.',
   },
   {
     num: '04',
-    titulo: 'Soporte técnico de por vida',
-    desc: 'Capacitación de producto, reposición garantizada y acompañamiento de ventas para cada distribuidor. No vendemos y nos desaparecemos.',
+    titulo: 'Crecimiento con respaldo real',
+    desc: 'Presencia activa en MercadoLibre, Amazon y Walmart Marketplace. Cada cliente es una relación que cuidamos — no un número en una hoja de cálculo.',
   },
 ]
 
@@ -47,12 +47,14 @@ export default function Nosotros() {
         >
           <p className="label-eyebrow text-[#0076FF] mb-4">La Empresa</p>
           <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] text-[#1A1A1A] mb-6">
-            Construimos el estándar profesional de la limpieza en México
+            No vinimos a repetir
+            lo de siempre.
+            <span className="italic text-[#0076FF]"> Vinimos a cambiarlo.</span>
           </h2>
           <p className="text-[1.05rem] font-light text-[#777] leading-relaxed">
-            Más de 15 años desarrollando y distribuyendo soluciones para quienes no pueden
-            permitirse que el equipo falle. Desde una cocina de hotel en Monterrey hasta
-            una línea de producción en Guadalajara.
+            MagicClean nació hace 3 años con una convicción: que la limpieza profesional
+            merecía mejor tecnología, mejor diseño y mejor precio. Hoy nuestros productos
+            lideran en MercadoLibre y Amazon — y el retail es el siguiente capítulo.
           </p>
         </motion.div>
 
@@ -74,7 +76,7 @@ export default function Nosotros() {
           ))}
         </motion.div>
 
-        {/* Valores — grid 2x2 */}
+        {/* Valores */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {valores.map((v, i) => (
             <motion.div
@@ -96,29 +98,48 @@ export default function Nosotros() {
           ))}
         </div>
 
+        {/* Marketplaces — logos textuales */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-20 pt-16 border-t border-[#E8EAED]"
+        >
+          <p className="label-eyebrow text-[#999] mb-8 text-center">Ya disponibles en</p>
+          <div className="flex flex-wrap items-center justify-center gap-10">
+            {['MercadoLibre', 'Amazon', 'Walmart'].map((m) => (
+              <span key={m} className="text-[1.1rem] font-bold text-[#1A1A1A]/40 hover:text-[#0076FF] transition-colors duration-300 cursor-default">
+                {m}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20 pt-16 border-t border-[#E8EAED] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+          className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
         >
           <div>
             <p className="font-semibold text-[#1A1A1A] text-[1.1rem] mb-1">
-              ¿Listo para distribuir MagicClean?
+              ¿Quieres ser parte de este crecimiento?
             </p>
             <p className="text-[14px] font-light text-[#999]">
-              Únete a la red de más de 500 distribuidores activos en México.
+              Distribuidores, retail y HORECA — hablemos.
             </p>
           </div>
           <a
             href="#contacto"
             className="shrink-0 inline-flex items-center bg-[#1A1A1A] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-[#0076FF] transition-colors duration-300"
           >
-            Conocer cómo trabajamos
+            Iniciar conversación
           </a>
         </motion.div>
+
       </div>
     </section>
   )

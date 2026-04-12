@@ -85,9 +85,9 @@ export default function Hero() {
             className="flex items-center gap-10 mt-16 pt-10 border-t border-[#E8EAED]"
           >
             {[
-              { n: '15+', label: 'Años en el mercado' },
-              { n: '500+', label: 'Clientes activos' },
-              { n: '23', label: 'Modelos de producto' },
+              { n: '3', label: 'Años de crecimiento' },
+              { n: 'ML · AMZ · WMT', label: 'Marketplaces activos' },
+              { n: '23', label: 'Modelos especializados' },
             ].map((s) => (
               <div key={s.label}>
                 <p className="text-2xl font-black text-[#1A1A1A] leading-none mb-1">{s.n}</p>
