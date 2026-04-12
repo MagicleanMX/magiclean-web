@@ -7,10 +7,10 @@ import type { CategoriesSection } from '@/lib/wordpress'
 // Fallback values — used when WordPress is unreachable or field group not yet published
 const FALLBACK: CategoriesSection = {
   eyebrow:  'La Colección',
-  headline: 'Productos MagicClean',
+  headline: 'Un portafolio completo. Un solo proveedor.',
   ctaText:  'Ver catálogo completo',
   ctaLink:  '#contacto',
-  microtext: '23 modelos · 2 líneas de producto',
+  microtext: 'Fibras, sistemas mop y accesorios — todo con NeoShield™. Para hogar, retail, HORECA e institucional.',
 }
 
 interface CategoriesProps {
@@ -123,21 +123,19 @@ export default function Categories({ data }: CategoriesProps) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12"
         >
-          <div>
+          <div className="max-w-xl">
             <p className="label-eyebrow text-[#0076FF] mb-3">{eyebrow}</p>
-            <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] max-w-sm">
+            <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] mb-4">
               {headline}
             </h2>
+            <p className="text-[1rem] font-light text-[#666666] leading-[1.75]">{microtext}</p>
           </div>
-          <div className="flex flex-col items-start lg:items-end gap-2">
-            <a
-              href={ctaLink}
-              className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0076FF] hover:gap-3 transition-all duration-200"
-            >
-              {ctaText} <ArrowRight size={14} />
-            </a>
-            <p className="label-eyebrow text-[#666666]">{microtext}</p>
-          </div>
+          <a
+            href={ctaLink}
+            className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0076FF] hover:gap-3 transition-all duration-200 self-start lg:self-end shrink-0"
+          >
+            {ctaText} <ArrowRight size={14} />
+          </a>
         </motion.div>
 
         {/* Grid — 6 familias */}

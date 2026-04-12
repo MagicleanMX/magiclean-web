@@ -8,8 +8,8 @@ const canales = ['HOGAR', 'RETAIL', 'HORECA', 'INDUSTRIAL', 'INSTITUCIONAL']
 // Fallback values — used when WordPress is unreachable or fields are empty
 const FALLBACK: HeroSection = {
   eyebrow:       'Proveedor B2B · Canal Profesional México',
-  headline:      'El arte de la limpieza perfecta',
-  subheadline:   'Fibras, sistemas de mop y soluciones especializadas para el canal profesional.',
+  headline:      'Fibras que duran. Tecnología que protege.',
+  subheadline:   '23 modelos con NeoShield™ — la única tecnología antibacterial certificada para el canal profesional en México. Más duración. Cero contaminación cruzada. Un solo proveedor.',
   heroMicrotext: 'Distribuidores · Retail · HORECA · Institucional · México y LATAM',
 }
 
@@ -83,7 +83,7 @@ export default function Hero({ data }: HeroProps) {
               href="#contacto"
               className="inline-flex items-center justify-center bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:bg-[#0052CC] transition-colors duration-300"
             >
-              Solicitar cotización B2B
+              Solicitar cotización
             </a>
             <a
               href="#productos"

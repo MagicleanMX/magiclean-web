@@ -8,7 +8,7 @@ import type { DistribuidoresSection } from '@/lib/wordpress'
 const FALLBACK: DistribuidoresSection = {
   eyebrow:  'Únete a la red',
   headline: 'Conviértete en distribuidor MagicClean',
-  body:     'Accede a márgenes exclusivos, capacitación técnica y soporte de ventas. Expandimos nuestra red en todo México y Latinoamérica.',
+  body:     'Márgenes competitivos. Capacitación técnica sobre NeoShield™. Soporte de ventas dedicado. Logística a todo México. Mínimo de pedido inicial: consultar. Tiempos de entrega: 3-5 días hábiles zona metro, 5-8 días resto del país.',
   ctaLabel: 'Quiero ser distribuidor',
   ctaUrl:   '#contacto',
   note:     '+ 24 zonas más disponibles a nivel nacional',

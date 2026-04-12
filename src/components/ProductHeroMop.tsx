@@ -36,10 +36,13 @@ export default function ProductHeroMop() {
         >
           <div>
             <p className="label-eyebrow text-[#0076FF] mb-3">Sistemas Mop</p>
-            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-white max-w-xl">
+            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-white max-w-xl mb-4">
               Piso impecable. Sin esfuerzo.{' '}
               <span className="italic text-[#0076FF]">Sin químicos adicionales.</span>
             </h2>
+            <p className="text-[1rem] font-light text-white/50 leading-[1.75] max-w-lg">
+              Dos sistemas con microfibra NeoShield™. El M1 para quien exige potencia. El M2 para quien necesita eficiencia.
+            </p>
           </div>
 
           <a

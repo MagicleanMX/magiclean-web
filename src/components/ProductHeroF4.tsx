@@ -106,8 +106,8 @@ export default function ProductHeroF4() {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4.2rem] text-[#1A1A1A] mb-6"
           >
-            Fibra Esponja<br />
-            <span className="italic text-[#0076FF]">Dual F4</span>
+            Dos superficies.<br />
+            <span className="italic text-[#0076FF]">Un estándar.</span>
           </motion.h2>
 
           <motion.p
@@ -163,7 +163,7 @@ export default function ProductHeroF4() {
               href="#contacto"
               className="inline-flex items-center gap-2.5 border border-[#1A1A1A] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 group"
             >
-              Hablar con nuestro equipo
+              Solicitar muestra
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
             </a>
           </motion.div>

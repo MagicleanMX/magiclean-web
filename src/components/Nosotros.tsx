@@ -17,8 +17,8 @@ const valores = [
   },
   {
     num: '02',
-    titulo: 'Nacimos en e-commerce. Ahora vamos al retail.',
-    desc: 'Nuestro M2 es uno de los mops más vendidos en MercadoLibre y Amazon México. El M1 crece con fuerza. Y apenas estamos entrando al canal retail y distribución.',
+    titulo: 'Del e-commerce al canal profesional.',
+    desc: 'Nuestro M2 es uno de los mops más vendidos en Amazon México. El M1 crece con fuerza. Y apenas estamos empezando en retail y distribución.',
   },
   {
     num: '03',
@@ -47,14 +47,14 @@ export default function Nosotros() {
         >
           <p className="label-eyebrow text-[#0076FF] mb-3">La Empresa</p>
           <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] mb-6">
-            No vinimos a repetir
-            lo de siempre.
-            <span className="italic text-[#0076FF]"> Vinimos a cambiarlo.</span>
+            El estándar que faltaba.
+            <span className="italic text-[#0076FF]"> Lo estamos construyendo.</span>
           </h2>
           <p className="text-[1rem] font-light text-[#666666] leading-[1.75]">
-            MagicClean nació hace 3 años con una convicción: que la limpieza profesional
-            merecía mejor tecnología, mejor diseño y mejor precio. Hoy nuestros productos
-            lideran en MercadoLibre y Amazon — y el retail es el siguiente capítulo.
+            MagicClean nació con una idea simple: que la limpieza profesional merecía mejor
+            tecnología, mejor diseño y mejor precio. Desarrollamos NeoShield™ — tecnología
+            antibacterial propia — y la integramos en cada producto. Hoy operamos en los 3
+            marketplaces líderes de México. El siguiente capítulo es la distribución a escala nacional.
           </p>
         </motion.div>
 
