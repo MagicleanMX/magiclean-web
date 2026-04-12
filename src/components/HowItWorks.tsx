@@ -40,7 +40,7 @@ export default function HowItWorks() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10"
         >
           <div>
-            <p className="label-eyebrow text-[#FF2B2B] mb-3">El Proceso</p>
+            <p className="label-eyebrow text-[#0076FF] mb-3">El Proceso</p>
             <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] max-w-xs">
               Simple y transparente
             </h2>
@@ -73,7 +73,7 @@ export default function HowItWorks() {
               <h3 className="font-serif text-[1.05rem] font-medium text-[#1A1A1A] mb-2.5">
                 {p.titulo}
               </h3>
-              <p className="text-[13px] font-light text-[#777] leading-[1.7]">
+              <p className="text-[13px] font-light text-[#666666] leading-[1.7]">
                 {p.desc}
               </p>
             </motion.div>

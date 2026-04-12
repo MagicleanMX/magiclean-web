@@ -73,8 +73,8 @@ export default function ContactForm() {
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="max-w-md mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               <div className="w-16 h-16 rounded-full bg-[#0076FF]/20 flex items-center justify-center mx-auto mb-6">

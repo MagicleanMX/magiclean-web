@@ -51,7 +51,7 @@ export default function Nosotros() {
             lo de siempre.
             <span className="italic text-[#0076FF]"> Vinimos a cambiarlo.</span>
           </h2>
-          <p className="text-[1rem] font-light text-[#666] leading-[1.75]">
+          <p className="text-[1rem] font-light text-[#666666] leading-[1.75]">
             MagicClean nació hace 3 años con una convicción: que la limpieza profesional
             merecía mejor tecnología, mejor diseño y mejor precio. Hoy nuestros productos
             lideran en MercadoLibre y Amazon — y el retail es el siguiente capítulo.
@@ -71,7 +71,7 @@ export default function Nosotros() {
               <p className="font-black text-[3.4rem] lg:text-[4rem] text-[#1A1A1A] leading-none mb-2">
                 {s.n}
               </p>
-              <p className="label-eyebrow text-[#999]">{s.label}</p>
+              <p className="label-eyebrow text-[#666666]">{s.label}</p>
             </div>
           ))}
         </motion.div>
@@ -92,7 +92,7 @@ export default function Nosotros() {
               </div>
               <div>
                 <p className="font-semibold text-[#1A1A1A] text-[0.95rem] mb-2">{v.titulo}</p>
-                <p className="text-[13.5px] font-light text-[#666] leading-[1.7]">{v.desc}</p>
+                <p className="text-[13.5px] font-light text-[#666666] leading-[1.7]">{v.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -106,7 +106,7 @@ export default function Nosotros() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-10 pt-8 border-t border-[#E8EAED]"
         >
-          <p className="label-eyebrow text-[#999] mb-8 text-center">Ya disponibles en</p>
+          <p className="label-eyebrow text-[#666666] mb-8 text-center">Ya disponibles en</p>
           <div className="flex flex-wrap items-center justify-center gap-10">
             {['MercadoLibre', 'Amazon', 'Walmart'].map((m) => (
               <span key={m} className="text-[1.1rem] font-bold text-[#1A1A1A]/40 hover:text-[#0076FF] transition-colors duration-300 cursor-default">
@@ -128,7 +128,7 @@ export default function Nosotros() {
             <p className="font-semibold text-[#1A1A1A] text-[1.1rem] mb-1">
               ¿Quieres ser parte de este crecimiento?
             </p>
-            <p className="text-[14px] font-light text-[#999]">
+            <p className="text-[14px] font-light text-[#666666]">
               Distribuidores, retail y HORECA — hablemos.
             </p>
           </div>

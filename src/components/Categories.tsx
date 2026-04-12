@@ -124,7 +124,7 @@ export default function Categories({ data }: CategoriesProps) {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12"
         >
           <div>
-            <p className="label-eyebrow text-[#FF2B2B] mb-3">{eyebrow}</p>
+            <p className="label-eyebrow text-[#0076FF] mb-3">{eyebrow}</p>
             <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] max-w-sm">
               {headline}
             </h2>
@@ -136,7 +136,7 @@ export default function Categories({ data }: CategoriesProps) {
             >
               {ctaText} <ArrowRight size={14} />
             </a>
-            <p className="label-eyebrow text-[#999]">{microtext}</p>
+            <p className="label-eyebrow text-[#666666]">{microtext}</p>
           </div>
         </motion.div>
 
@@ -244,7 +244,7 @@ export default function Categories({ data }: CategoriesProps) {
                   <p className="font-serif text-[1.15rem] font-medium text-[#1A1A1A] group-hover:text-[#0076FF] transition-colors duration-200 leading-snug mb-1">
                     {f.nombre}
                   </p>
-                  <p className="text-[12.5px] font-light text-[#999] leading-snug">
+                  <p className="text-[12.5px] font-light text-[#666666] leading-snug">
                     {f.subtitulo}
                   </p>
                 </div>

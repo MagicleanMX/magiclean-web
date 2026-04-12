@@ -11,7 +11,7 @@ const niveles = [
     descripcion: 'Máxima potencia. Grasa difícil, cocinas industriales, líneas de producción.',
     canal: 'Industrial · HORECA',
     barras: 3,
-    color: '#0052CC',
+    color: '#0076FF',
   },
   {
     codigo: 'F2',
@@ -27,7 +27,7 @@ const niveles = [
     descripcion: 'Suavidad inteligente. Cuida tus utensilios y superficies del día a día.',
     canal: 'Hogar · Retail · Ama de casa',
     barras: 1,
-    color: '#74B9FF',
+    color: '#0076FF',
   },
 ]
 
@@ -102,7 +102,7 @@ export default function ProductHeroF123() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[1rem] font-light text-[#666] leading-[1.75] max-w-md mb-8"
+              className="text-[1rem] font-light text-[#666666] leading-[1.75] max-w-md mb-8"
             >
               En MagicClean nos comprometemos a cuidar lo que tú cuidas.
               Esa sartén que elegiste con cuidado, esa olla que usas cada día —
@@ -115,7 +115,7 @@ export default function ProductHeroF123() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.25 }}
-              className="text-[0.95rem] font-light text-[#555] tracking-wide mb-6 italic"
+              className="text-[0.95rem] font-light text-[#666666] tracking-wide mb-6 italic"
             >
               "Fuerza que limpia. Tecnología que cuida."
             </motion.p>
@@ -134,9 +134,9 @@ export default function ProductHeroF123() {
                   NeoShield™ — Antibacterial permanente
                 </span>
               </div>
-              <div className="inline-flex items-center gap-2 bg-green-500/8 border border-green-500/20 rounded-full px-4 py-2">
-                <Leaf size={14} className="text-green-600 shrink-0" />
-                <span className="text-green-700 text-[12px] font-bold tracking-wide">
+              <div className="inline-flex items-center gap-2 bg-[#1A1A1A]/6 border border-[#1A1A1A]/10 rounded-full px-4 py-2">
+                <Leaf size={14} className="text-[#666666] shrink-0" />
+                <span className="text-[#666666] text-[12px] font-bold tracking-wide">
                   30% Eco-Friendly
                 </span>
               </div>
@@ -162,13 +162,13 @@ export default function ProductHeroF123() {
 
           {/* Derecha — los 5 diferenciadores */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.2 }}
             className="pt-4"
           >
-            <p className="text-[#999] text-[11px] font-semibold uppercase tracking-widest mb-6">
+            <p className="text-[#666666] text-[11px] font-semibold uppercase tracking-widest mb-6">
               Lo que ninguna otra fibra tiene junto
             </p>
             <div className="space-y-0">
@@ -186,7 +186,7 @@ export default function ProductHeroF123() {
                     <p className="text-[14px] font-semibold text-[#1A1A1A] leading-snug mb-0.5">
                       {d.titulo}
                     </p>
-                    <p className="text-[12px] font-light text-[#999]">{d.sub}</p>
+                    <p className="text-[12px] font-light text-[#666666]">{d.sub}</p>
                   </div>
                 </motion.div>
               ))}
@@ -204,7 +204,7 @@ export default function ProductHeroF123() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-[#999] text-[11px] font-semibold uppercase tracking-widest mb-8 text-center"
+            className="text-[#666666] text-[11px] font-semibold uppercase tracking-widest mb-8 text-center"
           >
             Tres niveles. Una sola tecnología.
           </motion.p>
@@ -247,7 +247,7 @@ export default function ProductHeroF123() {
                   {n.canal}
                 </p>
 
-                <p className="text-[13px] font-light text-[#777] leading-relaxed mb-5">
+                <p className="text-[13px] font-light text-[#666666] leading-relaxed mb-5">
                   {n.descripcion}
                 </p>
 
@@ -268,7 +268,7 @@ export default function ProductHeroF123() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-center text-[#999] text-[13px] font-light mt-6 max-w-lg mx-auto"
+            className="text-center text-[#666666] text-[13px] font-light mt-6 max-w-lg mx-auto"
           >
             Los tres niveles comparten la misma tecnología NeoShield™,
             la misma durabilidad 3x y el mismo compromiso de no rayar

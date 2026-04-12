@@ -47,11 +47,11 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="label-eyebrow text-white/60 mb-5">{eyebrow}</p>
+            <p className="label-eyebrow text-[#FF2B2B] mb-5">{eyebrow}</p>
             <h2 className="headline-editorial text-[2rem] sm:text-[2.6rem] lg:text-[3.4rem] text-white mb-6 max-w-md">
               {headline}
             </h2>
-            <p className="text-[1rem] font-light text-white/75 leading-[1.75] max-w-md mb-8">
+            <p className="text-[1rem] font-light text-white/80 leading-[1.75] max-w-md mb-8">
               {body}
             </p>
 
@@ -83,7 +83,7 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
                 </div>
               ))}
             </div>
-            <p className="text-[12px] font-light text-white/40 mt-4">{note}</p>
+            <p className="text-[12px] font-light text-white/50 mt-4">{note}</p>
           </motion.div>
         </div>
       </div>

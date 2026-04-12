@@ -39,7 +39,7 @@ export default function Hero({ data }: HeroProps) {
             className="flex items-center gap-2 mb-5"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF2B2B] shrink-0" />
-            <span className="label-eyebrow text-[#999]">{eyebrow}</span>
+            <span className="label-eyebrow text-[#0076FF]">{eyebrow}</span>
           </motion.div>
 
           {/* Headline — tagline de marca, mantener */}
@@ -159,19 +159,19 @@ export default function Hero({ data }: HeroProps) {
                 {/* Filas de producto */}
                 {[
                   {
-                    fibra: { codes: 'F1 · F2 · F3', name: 'Fibras Verdes', dot: '#2D7A2D' },
+                    fibra: { codes: 'F1 · F2 · F3', name: 'Fibras Verdes', dot: '#FF2B2B' },
                     mop:   { codes: 'M1', name: 'Turbo Magic', star: true, dot: '#0076FF' },
                   },
                   {
-                    fibra: { codes: 'F4', name: 'Dual ★', dot: '#B45309' },
-                    mop:   { codes: 'M2', name: 'Spin Magic', star: true, dot: '#74B9FF' },
+                    fibra: { codes: 'F4', name: 'Dual ★', dot: '#FF2B2B' },
+                    mop:   { codes: 'M2', name: 'Spin Magic', star: true, dot: '#0076FF' },
                   },
                   {
-                    fibra: { codes: 'F5 · F6 · F7', name: 'Especiales', dot: '#0052CC' },
+                    fibra: { codes: 'F5 · F6 · F7', name: 'Especiales', dot: '#FF2B2B' },
                     mop:   { codes: 'M5 · M6', name: 'Rect. y Doble', dot: '#0076FF' },
                   },
                   {
-                    fibra: { codes: 'F8 · F9', name: 'Borradores', dot: '#6D28D9' },
+                    fibra: { codes: 'F8 · F9', name: 'Borradores', dot: '#FF2B2B' },
                     mop:   { codes: 'M9', name: 'Atomizador', dot: '#0076FF' },
                   },
                 ].map((row, i) => (
@@ -215,7 +215,7 @@ export default function Hero({ data }: HeroProps) {
             className="absolute bottom-8 left-8 rounded-2xl px-5 py-3 z-10"
             style={{ background: 'rgba(0,118,255,0.15)', border: '1px solid rgba(0,118,255,0.25)' }}
           >
-            <p className="text-[9px] font-bold uppercase tracking-widest text-[#74B9FF] mb-0.5">Elimina bacterias</p>
+            <p className="text-[9px] font-bold uppercase tracking-widest text-white/80 mb-0.5">Elimina bacterias</p>
             <p className="text-2xl font-black text-white leading-none">99.9%</p>
           </motion.div>
 

@@ -53,19 +53,19 @@ export default function NeoShield() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="label-eyebrow text-[#FF2B2B] mb-3">Nuestra Tecnología</p>
+            <p className="label-eyebrow text-[#0076FF] mb-3">Nuestra Tecnología</p>
 
             <h2 className="headline-editorial text-[3rem] lg:text-[4.2rem] xl:text-[5rem] text-white mb-7">
               NeoShield™
             </h2>
 
-            <p className="text-[1rem] font-light text-white/55 leading-[1.75] max-w-md mb-5">
+            <p className="text-[1rem] font-light text-white/50 leading-[1.75] max-w-md mb-5">
               Desarrollada en laboratorio después de 3 años de investigación,
               NeoShield™ es la tecnología de fibra más avanzada del mercado mexicano.
               Elimina el 99.9% de las bacterias sin productos químicos adicionales.
             </p>
 
-            <p className="text-[0.9rem] font-light text-white/30 leading-relaxed max-w-md mb-8">
+            <p className="text-[0.9rem] font-light text-white/20 leading-relaxed max-w-md mb-8">
               Cada fibra incorpora micropartículas de plata coloidal enlazadas
               a la estructura del polímero. La protección no se lava ni se deteriora.
             </p>
@@ -87,7 +87,7 @@ export default function NeoShield() {
             {/* CTA NeoShield */}
             <a
               href="#contacto"
-              className="inline-flex items-center gap-2 border border-white/20 text-white/60 hover:text-white hover:border-white/50 px-6 py-3 rounded-full text-[12px] font-semibold transition-all duration-300"
+              className="inline-flex items-center gap-2 border border-white/20 text-white/50 hover:text-white hover:border-white/50 px-6 py-3 rounded-full text-[12px] font-semibold transition-all duration-300"
             >
               Recibir catálogo por correo →
             </a>
@@ -109,7 +109,7 @@ export default function NeoShield() {
                 <p className="font-black text-white text-[2.4rem] lg:text-[3rem] leading-none mb-2">
                   <Counter target={s.target} suffix={s.suffix} />
                 </p>
-                <p className="label-eyebrow text-white/30 text-[9px]">{s.label}</p>
+                <p className="label-eyebrow text-white/20 text-[9px]">{s.label}</p>
               </div>
             ))}
           </motion.div>

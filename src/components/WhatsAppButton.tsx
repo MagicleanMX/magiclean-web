@@ -20,9 +20,9 @@ export default function WhatsAppButton() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: 8, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 8, scale: 0.95 }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
             transition={{ duration: 0.2 }}
             className="bg-white rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.15)] border border-[#E8EAED] p-4 w-64"
           >
