@@ -164,7 +164,7 @@ export default function ProductHeroM2() {
               href="#contacto"
               className="inline-flex items-center gap-2.5 bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-bold hover:bg-white hover:text-[#0A1628] transition-all duration-300 group"
             >
-              Quiero el M2
+              Solicitar cotización
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
             </a>
             <a

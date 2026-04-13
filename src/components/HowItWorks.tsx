@@ -49,7 +49,7 @@ export default function HowItWorks() {
             href="#contacto"
             className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0076FF] hover:gap-3 transition-all duration-200 self-start lg:self-auto"
           >
-            Iniciar ahora <ArrowRight size={14} />
+            Solicitar cotización <ArrowRight size={14} />
           </a>
         </motion.div>
 

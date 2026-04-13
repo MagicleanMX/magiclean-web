@@ -8,7 +8,7 @@ import type { CategoriesSection } from '@/lib/wordpress'
 const FALLBACK: CategoriesSection = {
   eyebrow:  'La Colección',
   headline: 'Un portafolio completo. Un solo proveedor.',
-  ctaText:  'Ver catálogo completo',
+  ctaText:  'Ver portafolio completo',
   ctaLink:  '#contacto',
   microtext: 'Fibras, sistemas mop y accesorios — todo con NeoShield™. Para hogar, retail, HORECA e institucional.',
 }

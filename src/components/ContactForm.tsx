@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle, Loader2 } from 'lucide-react'
 
@@ -32,6 +32,15 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  // Pre-seleccionar canal si viene de ?canal=distribuidor (link "Quiero ser distribuidor")
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const canalParam = params.get('canal')
+    if (canalParam) {
+      setFormData((prev) => ({ ...prev, canal: canalParam }))
+    }
+  }, [])
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -269,7 +278,7 @@ export default function ContactForm() {
                 Enviando solicitud…
               </>
             ) : (
-              'Iniciar conversación'
+              'Solicitar cotización'
             )}
           </button>
 

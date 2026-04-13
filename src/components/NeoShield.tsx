@@ -84,13 +84,6 @@ export default function NeoShield() {
               ))}
             </div>
 
-            {/* CTA NeoShield */}
-            <a
-              href="#contacto"
-              className="inline-flex items-center gap-2 border border-white/20 text-white/50 hover:text-white hover:border-white/50 px-6 py-3 rounded-full text-[12px] font-semibold transition-all duration-300"
-            >
-              Recibir catálogo por correo →
-            </a>
           </motion.div>
 
           {/* Derecha — stats en grid */}

@@ -115,7 +115,7 @@ export default function ProductHeroM1() {
               href="#contacto"
               className="inline-flex items-center gap-2.5 bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-[#0052CC] transition-all duration-300 group"
             >
-              Quiero el M1 en mi tienda
+              Solicitar cotización
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
             </a>
             <a

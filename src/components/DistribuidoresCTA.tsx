@@ -10,7 +10,7 @@ const FALLBACK: DistribuidoresSection = {
   headline: 'Conviértete en distribuidor MagicClean',
   body:     'Márgenes competitivos. Capacitación técnica sobre NeoShield™. Soporte de ventas dedicado. Logística a todo México. Mínimo de pedido inicial: consultar. Tiempos de entrega: 3-5 días hábiles zona metro, 5-8 días resto del país.',
   ctaLabel: 'Quiero ser distribuidor',
-  ctaUrl:   '#contacto',
+  ctaUrl:   '?canal=distribuidor#contacto',
   note:     '+ 24 zonas más disponibles a nivel nacional',
   zones:    'CDMX, Guadalajara, Monterrey, Puebla, Tijuana, Querétaro',
 }
