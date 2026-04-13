@@ -32,16 +32,29 @@ import { getWPSettings, getHeroSection, getCategoriesSection, getDistribuidoresS
  * 11. Nosotros          → Historia de marca (#nosotros)
  * 12. ContactForm       → Formulario de cierre (#contacto)
  * 13. Footer
+ *
+ * WordPress/GraphQL fetches are skipped entirely when WP_GRAPHQL_URL is not
+ * set (e.g. Vercel production without a connected WP instance). Components
+ * receive null and render their hardcoded fallback content directly.
+ * This guarantees the SSR HTML is identical to the client-rendered HTML —
+ * no failed network calls, no empty states, correct content for crawlers/SEO.
  */
+
+const WP_CONNECTED = !!process.env.WP_GRAPHQL_URL
+
 export default async function Home() {
-  const wp                 = await getWPSettings()
-  const heroData           = await getHeroSection()
-  const categoriesData     = await getCategoriesSection()
-  const distribuidoresData = await getDistribuidoresSection()
+  // Only hit WordPress when the env var is actually configured.
+  // When missing, skip fetches and let every component use its static fallback.
+  const [wp, heroData, categoriesData, distribuidoresData] = await Promise.all([
+    WP_CONNECTED ? getWPSettings()            : Promise.resolve({ title: '', description: '', url: '' }),
+    WP_CONNECTED ? getHeroSection()           : Promise.resolve(null),
+    WP_CONNECTED ? getCategoriesSection()     : Promise.resolve(null),
+    WP_CONNECTED ? getDistribuidoresSection() : Promise.resolve(null),
+  ])
 
   return (
     <>
-      {process.env.NODE_ENV === 'development' && (
+      {process.env.NODE_ENV === 'development' && WP_CONNECTED && (
         <div
           style={{
             position: 'fixed', bottom: 12, left: 12, zIndex: 9999,
