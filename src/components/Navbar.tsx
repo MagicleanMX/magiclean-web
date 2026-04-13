@@ -68,6 +68,13 @@ const navLinks = [
   { label: 'Empresa', href: '#nosotros', mega: false },
 ]
 
+const mobileLinks = [
+  { label: 'Productos', href: '#productos' },
+  { label: 'Tecnología', href: '#tecnologia' },
+  { label: 'Distribuidores', href: '#distribuidores' },
+  { label: 'Contacto', href: '#contacto' },
+]
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -268,64 +275,24 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — 4 links planos */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-[68px] z-40 bg-white border-b border-[#E8EAED] shadow-lg lg:hidden overflow-y-auto max-h-[calc(100vh-68px)]">
-          <div className="px-6 py-6 flex flex-col gap-1">
-            {navLinks.map((link) => (
+        <div className="fixed inset-x-0 top-[68px] z-40 bg-white border-b border-[#E8EAED] shadow-lg lg:hidden">
+          <div className="px-6 py-5 flex flex-col gap-1">
+            {mobileLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-between px-3 py-3 rounded-xl text-[15px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA] hover:text-[#0076FF] transition-colors"
+                className="flex items-center px-3 py-3.5 rounded-xl text-[15px] font-medium text-[#1A1A1A] hover:bg-[#F5F7FA] hover:text-[#0076FF] transition-colors"
               >
                 {link.label}
-                {link.mega && <ChevronDown size={14} className="text-[#666666]" />}
               </a>
             ))}
-
-            {/* Categorías mobile — accordion */}
-            {megaProductos.columnas.map((col) => (
-              <div key={col.titulo} className="mt-1 border-t border-[#E8EAED]">
-                <button
-                  onClick={() => setMobileExpanded(mobileExpanded === col.titulo ? null : col.titulo)}
-                  className="w-full flex items-center justify-between px-3 py-3"
-                >
-                  <p className="label-eyebrow text-[10px]" style={{ color: col.color }}>
-                    {col.titulo}
-                  </p>
-                  <ChevronDown
-                    size={12}
-                    className={`transition-transform duration-200 text-[#666666] ${mobileExpanded === col.titulo ? 'rotate-180' : ''}`}
-                  />
-                </button>
-                {mobileExpanded === col.titulo && (
-                  <div className="grid grid-cols-2 gap-1 pb-3 px-1">
-                    {col.items.map((item) => (
-                      <a
-                        key={item.codigo}
-                        href="#productos"
-                        onClick={() => setMobileOpen(false)}
-                        className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#F5F7FA] transition-colors"
-                      >
-                        <span
-                          className="shrink-0 w-7 h-5 rounded flex items-center justify-center text-[9px] font-black text-white"
-                          style={{ backgroundColor: col.color }}
-                        >
-                          {item.codigo}
-                        </span>
-                        <span className="text-[12px] font-medium text-[#444]">{item.nombre}</span>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-
             <a
               href="#contacto"
               onClick={() => setMobileOpen(false)}
-              className="mt-4 bg-[#0076FF] text-white px-6 py-3.5 rounded-full text-[14px] font-semibold text-center hover:bg-[#0052CC] transition-colors"
+              className="mt-3 bg-[#0076FF] text-white px-6 py-3.5 rounded-full text-[14px] font-semibold text-center hover:bg-[#1A1A1A] transition-colors"
             >
               Solicitar cotización
             </a>

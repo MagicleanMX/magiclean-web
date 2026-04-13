@@ -13,6 +13,7 @@ import DistribuidoresCTA from '@/components/DistribuidoresCTA'
 import Nosotros from '@/components/Nosotros'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
+import StickyCtaBar from '@/components/StickyCtaBar'
 import { getWPSettings, getHeroSection, getCategoriesSection, getDistribuidoresSection } from '@/lib/wordpress'
 
 /**
@@ -75,6 +76,7 @@ export default async function Home() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <StickyCtaBar />
     </>
   )
 }

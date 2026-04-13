@@ -98,7 +98,7 @@ export default function Hero({ data }: HeroProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.65 }}
-            className="flex items-center gap-6 sm:gap-10 mt-10 pt-6 border-t border-[#E8EAED] flex-wrap"
+            className="hidden sm:flex items-center gap-6 sm:gap-10 mt-10 pt-6 border-t border-[#E8EAED] flex-wrap"
           >
             {[
               { n: '3', label: 'Años de crecimiento' },
@@ -129,11 +129,28 @@ export default function Hero({ data }: HeroProps) {
 
           {/* ── Sistema de producto — grid editorial ── */}
           <div className="absolute inset-0 flex items-center justify-center px-6 sm:px-10 lg:px-14 pb-16 lg:pb-0">
+
+            {/* Mobile — texto simple */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="block sm:hidden text-center"
+            >
+              <p className="font-black text-white leading-none mb-3"
+                style={{ fontSize: 'clamp(4rem, 20vw, 6rem)' }}>23</p>
+              <p className="text-white/50 text-[1rem] font-light mb-4">modelos</p>
+              <p className="label-eyebrow text-white/20 text-[9px] tracking-[0.25em]">
+                NeoShield™ · México y LATAM
+              </p>
+            </motion.div>
+
+            {/* Desktop — tabla editorial */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full max-w-[340px]"
+              className="hidden sm:block w-full max-w-[340px]"
             >
               {/* Header del panel */}
               <div className="flex items-center justify-between mb-6">
@@ -205,6 +222,7 @@ export default function Hero({ data }: HeroProps) {
                 Todos con tecnología NeoShield™ · Antibacterial permanente
               </p>
             </motion.div>
+
           </div>
 
           {/* Badge 99.9% — bottom left */}

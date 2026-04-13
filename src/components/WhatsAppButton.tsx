@@ -1,20 +1,38 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 
-// Reemplazar con el número real cuando esté disponible
 const WHATSAPP_NUMBER = '5215512345678'
 const WHATSAPP_MESSAGE = 'Hola, me interesa conocer el portafolio profesional de MagicClean.'
 
 export default function WhatsAppButton() {
   const [open, setOpen] = useState(false)
+  const [scrollVisible, setScrollVisible] = useState(true)
+  const lastScrollY = useRef(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY
+      // Show when scrolling up or near top; hide when scrolling down
+      setScrollVisible(currentY < lastScrollY.current || currentY < 80)
+      lastScrollY.current = currentY
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    // md:hidden — solo visible en pantallas < 768px
+    <div className="md:hidden fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"
+      style={{ transition: 'opacity 0.3s, transform 0.3s',
+               opacity: scrollVisible ? 1 : 0,
+               transform: scrollVisible ? 'translateY(0)' : 'translateY(12px)',
+               pointerEvents: scrollVisible ? 'auto' : 'none' }}
+    >
 
       {/* Tooltip / mini tarjeta */}
       <AnimatePresence>
@@ -73,9 +91,7 @@ export default function WhatsAppButton() {
         className="w-14 h-14 rounded-full bg-[#25D366] shadow-[0_4px_20px_rgba(37,211,102,0.4)] flex items-center justify-center relative"
         aria-label="Contactar por WhatsApp"
       >
-        {/* Pulse ring */}
         <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
-
         {open ? (
           <X size={22} className="text-white relative z-10" />
         ) : (
