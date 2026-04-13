@@ -17,3 +17,7 @@ out/
 *.pem
 npm-debug.log*
 .vercel
+tsconfig.tsbuildinfo
+
+# WordPress theme (separate project — not part of Next.js app)
+magiclean-theme/
