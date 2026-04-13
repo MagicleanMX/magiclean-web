@@ -10,7 +10,7 @@ export default function SocialProof() {
       <div className="max-w-[1440px] mx-auto px-8">
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -24,19 +24,21 @@ export default function SocialProof() {
 
         {/* Marketplaces — prominentes */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="flex flex-wrap items-center gap-10 mb-14 pb-14 border-b border-[#E8EAED]"
+          className="flex flex-wrap items-center gap-4 mb-14 pb-14 border-b border-[#E8EAED]"
         >
           {MARKETPLACES.map((m) => (
-            <span
+            <div
               key={m}
-              className="text-[1.5rem] lg:text-[1.8rem] font-black text-[#1A1A1A]/25 hover:text-[#0076FF] transition-colors duration-300 cursor-default"
+              className="group px-6 py-3.5 rounded-xl bg-[#F5F7FA] border border-[#E8EAED] hover:border-[#0076FF]/30 hover:bg-[#F0F5FF] transition-all duration-300 cursor-default"
             >
-              {m}
-            </span>
+              <span className="text-[1.1rem] lg:text-[1.3rem] font-black text-[#666666] group-hover:text-[#0076FF] transition-colors duration-300">
+                {m}
+              </span>
+            </div>
           ))}
         </motion.div>
 
@@ -45,7 +47,7 @@ export default function SocialProof() {
           {METRICAS.map((m, i) => (
             <motion.div
               key={m.label}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
@@ -64,7 +66,7 @@ export default function SocialProof() {
         {/* TODO: Agregar testimonios de distribuidores reales */}
 
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}

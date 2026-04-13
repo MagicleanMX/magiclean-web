@@ -12,11 +12,11 @@ export default function ElProblema() {
       <div className="max-w-[1440px] mx-auto px-8">
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-14"
+          className="mb-8"
         >
           <p className="label-eyebrow text-[#0076FF] mb-3">El problema real</p>
           <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-[#1A1A1A] max-w-xl">
@@ -30,7 +30,7 @@ export default function ElProblema() {
             return (
               <motion.div
                 key={titulo}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 1, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}

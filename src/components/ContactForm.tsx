@@ -17,7 +17,7 @@ interface FormData {
 const inputClass =
   'w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/25 text-sm focus:outline-none focus:border-[#0076FF] transition-colors duration-300'
 
-const labelClass = 'block text-white/50 text-xs font-semibold uppercase tracking-widest mb-2'
+const labelClass = 'block text-white/70 text-xs font-semibold uppercase tracking-widest mb-2'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -125,7 +125,7 @@ export default function ContactForm() {
           <h2 className="headline-editorial text-[2rem] sm:text-[2.6rem] lg:text-[3.4rem] text-white max-w-lg mb-4">
             Tu operación merece una solución diseñada para ella.
           </h2>
-          <p className="text-white/50 font-light text-base max-w-lg leading-[1.75]">
+          <p className="text-white/60 font-light text-base max-w-lg leading-[1.75]">
             No tenemos catálogos genéricos. Cuéntanos qué operas, cuánto volumen manejas
             y qué te duele hoy en tu proceso de limpieza. Te respondemos en menos de
             24 horas hábiles con una propuesta específica.
