@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import type { CategoriesSection } from '@/lib/wordpress'
+import { FAMILIAS } from '@/lib/products'
 
 // Fallback values — used when WordPress is unreachable or field group not yet published
 const FALLBACK: CategoriesSection = {
@@ -17,92 +18,6 @@ interface CategoriesProps {
   data?: CategoriesSection | null
 }
 
-const familias = [
-  {
-    id: 'fibras-verdes',
-    anchor: '#contacto',
-    nombre: 'Fibras Verdes',
-    subtitulo: 'Limpieza Pesada y Profunda',
-    descripcion: 'Alta abrasividad para cocinas industriales. Modelos F1, F2 y F3 en tres tamaños.',
-    modelos: ['F1', 'F2', 'F3'],
-    canal: 'HORECA · Industrial · Hogar',
-    badge: null,
-    color: '#F0F7F0',
-    accentColor: '#2D7A2D',
-    abrasividad: 5,
-    usos: ['Cocinas industriales', 'Ollas y sartenes', 'Superficies de acero'],
-  },
-  {
-    id: 'fibra-dual',
-    anchor: '#fibra-dual-f4',
-    nombre: 'Fibra Esponja Dual F4',
-    subtitulo: 'Dualidad Inteligente',
-    descripcion: 'Fibra verde de alta abrasividad por un lado, esponja suave por el otro. El más versátil.',
-    modelos: ['F4'],
-    canal: 'Hogar · Retail · HORECA',
-    badge: 'Más popular',
-    color: '#FFFBF0',
-    accentColor: '#B45309',
-    abrasividad: 5,
-    usos: ['Vajilla', 'Ollas y sartenes', 'Encimeras de cocina'],
-  },
-  {
-    id: 'fibras-especiales',
-    anchor: '#contacto',
-    nombre: 'Fibras Especiales',
-    subtitulo: 'Para Cada Superficie',
-    descripcion: 'F5 Negra para parrillas y hornos. F6 Blanca para baños. F7 Azul sin rayas para superficies delicadas.',
-    modelos: ['F5', 'F6', 'F7'],
-    canal: 'Hogar · HORECA · Institucional',
-    badge: null,
-    color: '#F0F4FF',
-    accentColor: '#0052CC',
-    abrasividad: null,
-    usos: ['Parrillas y hornos', 'Baños', 'Cristal y cerámica'],
-  },
-  {
-    id: 'borradores',
-    anchor: '#contacto',
-    nombre: 'Borradores Mágicos',
-    subtitulo: 'Borra lo Imposible',
-    descripcion: 'F8 con esponja para limpieza profunda. F9 el borrador puro. Eliminan manchas sin esfuerzo.',
-    modelos: ['F8', 'F9'],
-    canal: 'Hogar · Retail',
-    badge: null,
-    color: '#F5F0FF',
-    accentColor: '#6D28D9',
-    abrasividad: null,
-    usos: ['Manchas difíciles', 'Paredes', 'Electrodomésticos'],
-  },
-  {
-    id: 'sistemas-mop',
-    anchor: '#sistemas-mop-m1',
-    nombre: 'Sistemas Mop',
-    subtitulo: 'Trapeado Profesional',
-    descripcion: 'Turbo Magic M1 con pedal, Spin Magic M2 sin pedal, Rectangular M5, Doble Función M6, Atomizador M9.',
-    modelos: ['M1', 'M2', 'M5', 'M6', 'M9'],
-    canal: 'HORECA · Industrial · Hogar',
-    badge: 'HORECA Ready',
-    color: '#EFF6FF',
-    accentColor: '#0076FF',
-    abrasividad: null,
-    usos: ['Pisos comerciales', 'Hoteles y restaurantes', 'Uso doméstico'],
-  },
-  {
-    id: 'accesorios',
-    anchor: '#contacto',
-    nombre: 'Accesorios',
-    subtitulo: 'Complementos del Sistema',
-    descripcion: 'Cubetas, cepillos, trapeador de silicón, recogedor-escoba y repuestos para todos los modelos.',
-    modelos: ['M3', 'M4', 'M7', 'M16', 'M17', 'M18'],
-    canal: 'Todos los canales',
-    badge: null,
-    color: '#F5F7FA',
-    accentColor: '#ADB3BA',
-    abrasividad: null,
-    usos: ['Repuestos mopa', 'Cepillo de baño', 'Cubeta plegable'],
-  },
-]
 
 export default function Categories({ data }: CategoriesProps) {
   const eyebrow  = data?.eyebrow  || FALLBACK.eyebrow
@@ -112,7 +27,7 @@ export default function Categories({ data }: CategoriesProps) {
   const microtext = data?.microtext || FALLBACK.microtext
 
   return (
-    <section id="productos" className="py-20 bg-white">
+    <section id="productos" className="section-standard bg-white">
       <div className="max-w-[1440px] mx-auto px-8">
 
         {/* Header */}
@@ -140,7 +55,7 @@ export default function Categories({ data }: CategoriesProps) {
 
         {/* Grid — 6 familias */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {familias.map((f, i) => (
+          {FAMILIAS.map((f, i) => (
             <motion.div
               key={f.id}
               initial={{ opacity: 0, y: 24 }}

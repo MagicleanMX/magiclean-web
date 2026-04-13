@@ -91,7 +91,10 @@ export default function Footer() {
               </span>
             </a>
 
-            <p className="text-[13px] font-light text-white/50 leading-relaxed max-w-[220px] mb-6">
+            <p className="text-[13px] font-semibold text-white/70 leading-snug max-w-[220px] mb-2">
+              Fibras que duran. Tecnología que protege.
+            </p>
+            <p className="text-[12px] font-light text-white/30 leading-relaxed max-w-[220px] mb-6">
               Proveedor B2B de soluciones de limpieza profesional para retail,
               mayoreo, HORECA e institucional en México y LATAM.
             </p>
@@ -99,7 +102,9 @@ export default function Footer() {
             {/* Badges */}
             <div className="flex flex-col gap-2 mb-8">
               <span className="inline-flex items-center gap-2 self-start">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF2B2B]" />
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#0076FF" aria-hidden="true">
+                  <path d="M12 2L3.5 6.5V12c0 5.1 3.84 9.87 8.5 11.1C16.66 21.87 20.5 17.1 20.5 12V6.5L12 2z"/>
+                </svg>
                 <span className="label-eyebrow text-white/20 text-[9px]">NeoShield™ Technology</span>
               </span>
               <span className="inline-flex items-center gap-2 self-start">

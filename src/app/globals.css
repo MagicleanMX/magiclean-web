@@ -52,3 +52,7 @@ body {
   letter-spacing: 0.20em;
   text-transform: uppercase;
 }
+
+/* Section vertical rhythm */
+.section-standard { padding: 5rem 0; }
+.section-premium  { padding: 6rem 0; }

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import type { HeroSection } from '@/lib/wordpress'
 
-const canales = ['HOGAR', 'RETAIL', 'HORECA', 'INDUSTRIAL', 'INSTITUCIONAL']
+import { CANALES } from '@/lib/products'
 
 // Fallback values — used when WordPress is unreachable or fields are empty
 const FALLBACK: HeroSection = {
@@ -255,10 +255,10 @@ export default function Hero({ data }: HeroProps) {
       <div className="bg-[#1A1A1A] py-3.5">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="flex items-center justify-center gap-8 flex-wrap">
-            {canales.map((c, i) => (
+            {CANALES.map((c, i) => (
               <span key={c} className="flex items-center gap-8">
                 <span className="label-eyebrow text-white/50 text-[10px]">{c}</span>
-                {i < canales.length - 1 && (
+                {i < CANALES.length - 1 && (
                   <span className="text-white/20 select-none text-xs">·</span>
                 )}
               </span>

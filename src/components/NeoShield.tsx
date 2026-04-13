@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 import { motion } from 'framer-motion'
+import { ShieldIcon } from '@/components/NeoShieldMark'
+import { NEOSHIELD_STATS, NEOSHIELD_FEATURES } from '@/lib/products'
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
   const [value, setValue] = useState(0)
@@ -25,25 +27,16 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
   return <span ref={ref}>{value}{suffix}</span>
 }
 
-const stats = [
-  { target: 99, suffix: '%', label: 'Eliminación de bacterias' },
-  { target: 3, suffix: '×', label: 'Mayor duración vs competencia' },
-  { target: 23, suffix: '', label: 'Modelos con NeoShield™' },
-  { target: 3, suffix: ' años', label: 'De I+D en laboratorio' },
-  { target: 100, suffix: '%', label: 'Protección permanente' },
-  { target: 3, suffix: '', label: 'Marketplaces líderes en México' },
-]
-
 export default function NeoShield() {
   return (
-    <section id="tecnologia" className="relative overflow-hidden bg-[#0A1628] py-24">
+    <section id="tecnologia" className="section-premium relative overflow-hidden bg-[#0A1628]">
       {/* Glow decorativo */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#0076FF]/8 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-[#FF2B2B]/5 blur-[100px] pointer-events-none" />
 
       <div className="relative max-w-[1440px] mx-auto px-8">
 
-        {/* Split: texto izquierda / stats derecha — como Rolex "Our Watchmaking" */}
+        {/* Split: texto izquierda / stats derecha */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* Izquierda — storytelling */}
@@ -55,7 +48,8 @@ export default function NeoShield() {
           >
             <p className="label-eyebrow text-[#0076FF] mb-3">Nuestra Tecnología</p>
 
-            <h2 className="headline-editorial text-[3rem] lg:text-[4.2rem] xl:text-[5rem] text-white mb-7">
+            <h2 className="headline-editorial text-[3rem] lg:text-[4.2rem] xl:text-[5rem] text-white mb-7 flex items-center gap-4 flex-wrap">
+              <ShieldIcon size={40} color="#0076FF" />
               NeoShield™
             </h2>
 
@@ -71,12 +65,7 @@ export default function NeoShield() {
             </p>
 
             <div className="flex flex-col gap-3 mb-8">
-              {[
-                'Micropartículas de plata coloidal integradas al polímero',
-                'Acción antibacterial permanente — no se lava, no se deteriora',
-                'Validado por laboratorio certificado independiente',
-                'Compatible con todos los protocolos de higiene HORECA',
-              ].map((f) => (
+              {NEOSHIELD_FEATURES.map((f) => (
                 <div key={f} className="flex items-center gap-3">
                   <span className="w-4 h-px bg-[#0076FF] shrink-0" />
                   <span className="text-[13px] font-light text-white/50">{f}</span>
@@ -94,7 +83,7 @@ export default function NeoShield() {
             transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="grid grid-cols-2 gap-px bg-white/8 rounded-2xl overflow-hidden border border-white/8"
           >
-            {stats.map((s, i) => (
+            {NEOSHIELD_STATS.map((s) => (
               <div
                 key={s.label}
                 className="bg-[#0A1628] px-7 py-7 hover:bg-[#0d1f38] transition-colors duration-300"

@@ -2,18 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-
-const metricas = [
-  { n: '3+',              label: 'Marketplaces activos' },
-  { n: '23',              label: 'Modelos en portafolio' },
-  { n: 'CDMX · GDL · MTY', label: 'Cobertura nacional' },
-]
-
-const marketplaces = ['MercadoLibre', 'Amazon', 'Walmart']
+import { MARKETPLACES, METRICAS } from '@/lib/products'
 
 export default function SocialProof() {
   return (
-    <section className="py-20 bg-white">
+    <section className="section-standard bg-white">
       <div className="max-w-[1440px] mx-auto px-8">
 
         <motion.div
@@ -37,7 +30,7 @@ export default function SocialProof() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="flex flex-wrap items-center gap-10 mb-14 pb-14 border-b border-[#E8EAED]"
         >
-          {marketplaces.map((m) => (
+          {MARKETPLACES.map((m) => (
             <span
               key={m}
               className="text-[1.5rem] lg:text-[1.8rem] font-black text-[#1A1A1A]/25 hover:text-[#0076FF] transition-colors duration-300 cursor-default"
@@ -49,7 +42,7 @@ export default function SocialProof() {
 
         {/* Métricas */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-14">
-          {metricas.map((m, i) => (
+          {METRICAS.map((m, i) => (
             <motion.div
               key={m.label}
               initial={{ opacity: 0, y: 16 }}

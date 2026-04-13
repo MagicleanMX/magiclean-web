@@ -1,40 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-const stats = [
-  { n: '3',  label: 'Años de crecimiento acelerado' },
-  { n: '23', label: 'Modelos especializados' },
-  { n: '3',  label: 'Marketplaces líderes' },
-  { n: '5+', label: 'Líneas de producto activas' },
-]
-
-const valores = [
-  {
-    num: '01',
-    titulo: 'Tecnología NeoShield™ — Desarrollada para ganar',
-    desc: 'Fibra antibacterial con micropartículas integradas al polímero. No se lava, no se deteriora. La misma tecnología que nos llevó a liderar en MercadoLibre y Amazon.',
-  },
-  {
-    num: '02',
-    titulo: 'Del e-commerce al canal profesional.',
-    desc: 'Nuestro M2 es uno de los mops más vendidos en Amazon México. El M1 crece con fuerza. Y apenas estamos empezando en retail y distribución.',
-  },
-  {
-    num: '03',
-    titulo: '23 modelos. Un portafolio para cada canal.',
-    desc: 'Fibras, sistemas mop y accesorios para hogar, retail, HORECA e institucional. Cada producto diseñado con propósito — no fabricamos volumen, fabricamos soluciones.',
-  },
-  {
-    num: '04',
-    titulo: 'Crecimiento con respaldo real',
-    desc: 'Presencia activa en MercadoLibre, Amazon y Walmart Marketplace. Cada distribuidor tiene seguimiento directo con nuestro equipo comercial — sin intermediarios, sin formularios perdidos.',
-  },
-]
+import { NOSOTROS_STATS, NOSOTROS_VALORES, MARKETPLACES } from '@/lib/products'
 
 export default function Nosotros() {
   return (
-    <section id="nosotros" className="py-20 bg-white">
+    <section id="nosotros" className="section-standard bg-white">
       <div className="max-w-[1440px] mx-auto px-8">
 
         {/* Header */}
@@ -66,7 +37,7 @@ export default function Nosotros() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10 pb-10 border-b border-[#E8EAED]"
         >
-          {stats.map((s) => (
+          {NOSOTROS_STATS.map((s) => (
             <div key={s.label}>
               <p className="font-black text-[3.4rem] lg:text-[4rem] text-[#1A1A1A] leading-none mb-2">
                 {s.n}
@@ -78,7 +49,7 @@ export default function Nosotros() {
 
         {/* Valores */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {valores.map((v, i) => (
+          {NOSOTROS_VALORES.map((v, i) => (
             <motion.div
               key={v.num}
               initial={{ opacity: 0, y: 20 }}
@@ -108,7 +79,7 @@ export default function Nosotros() {
         >
           <p className="label-eyebrow text-[#666666] mb-8 text-center">Ya disponibles en</p>
           <div className="flex flex-wrap items-center justify-center gap-10">
-            {['MercadoLibre', 'Amazon', 'Walmart'].map((m) => (
+            {MARKETPLACES.map((m) => (
               <span key={m} className="text-[1.1rem] font-bold text-[#1A1A1A]/40 hover:text-[#0076FF] transition-colors duration-300 cursor-default">
                 {m}
               </span>
