@@ -8,15 +8,10 @@
  */
 
 // ─── Base URL ─────────────────────────────────────────────────────────────────
+// Resolved lazily inside fetchGraphQL so a missing env var never crashes the
+// build — all callers have try/catch and fall back to hardcoded content.
 
 const WP_GRAPHQL_URL = process.env.WP_GRAPHQL_URL
-
-if (!WP_GRAPHQL_URL) {
-  throw new Error(
-    '[wordpress.ts] WP_GRAPHQL_URL is not defined. ' +
-    'Add WP_GRAPHQL_URL=http://magiclean-wordpress.local/graphql to .env.local'
-  )
-}
 
 // ─── Generic fetch ────────────────────────────────────────────────────────────
 
@@ -30,7 +25,10 @@ export async function fetchGraphQL<T>(
   variables?: Record<string, unknown>,
   revalidate: number | false = 3600
 ): Promise<T> {
-  const res = await fetch(WP_GRAPHQL_URL as string, {
+  if (!WP_GRAPHQL_URL) {
+    throw new Error('[WPGraphQL] WP_GRAPHQL_URL not set — using fallback content')
+  }
+  const res = await fetch(WP_GRAPHQL_URL, {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify({ query, variables }),
@@ -222,12 +220,16 @@ const SETTINGS_QUERY = /* GraphQL */ `
 `
 
 export async function getWPSettings(): Promise<WPGeneralSettings> {
-  const data = await fetchGraphQL<{ generalSettings: WPGeneralSettings }>(
-    SETTINGS_QUERY,
-    undefined,
-    false   // static — never changes
-  )
-  return data.generalSettings
+  try {
+    const data = await fetchGraphQL<{ generalSettings: WPGeneralSettings }>(
+      SETTINGS_QUERY,
+      undefined,
+      false
+    )
+    return data.generalSettings
+  } catch {
+    return { title: '', description: '', url: '' }
+  }
 }
 
 // ── Hero section ──────────────────────────────────────────────────────────────
