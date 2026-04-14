@@ -207,6 +207,7 @@ export default function ContactForm() {
                 id="canal"
                 name="canal"
                 required
+                aria-required="true"
                 value={formData.canal}
                 onChange={handleChange}
                 className={`${inputClass} appearance-none cursor-pointer`}

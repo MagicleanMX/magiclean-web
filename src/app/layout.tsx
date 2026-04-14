@@ -79,6 +79,30 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['Organization', 'LocalBusiness'],
+  name: 'MagicClean',
+  legalName: 'MagicClean S.A. de C.V.',
+  url: siteUrl,
+  logo: `${siteUrl}/images/logo.png`,
+  telephone: '+525571553635',
+  email: 'datos@magicleanproducts.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Calle 3, No. 47, Local 109, Col. Industrial Alce Blanco',
+    addressLocality: 'Naucalpan de Juárez',
+    addressRegion: 'Estado de México',
+    postalCode: '53370',
+    addressCountry: 'MX',
+  },
+  sameAs: [
+    'https://www.facebook.com/magiclean',
+    'https://www.instagram.com/magiclean',
+    'https://www.linkedin.com/company/magiclean',
+  ],
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -87,6 +111,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${montserrat.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <CookieBanner />
         <ConsentAwareAnalytics />
