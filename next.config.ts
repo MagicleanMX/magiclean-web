@@ -1,12 +1,6 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  turbopack: {
-    root: process.env.VERCEL ? '/vercel/path0' : '/Users/jacobolevy/Desktop/magicclean',
-  },
   async headers() {
     return [
       {

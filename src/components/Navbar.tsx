@@ -128,6 +128,10 @@ export default function Navbar() {
                     onMouseLeave={closeMega}
                   >
                     <button
+                      aria-expanded={megaOpen}
+                      aria-haspopup="true"
+                      aria-controls="mega-menu-productos"
+                      onClick={() => setMegaOpen((prev) => !prev)}
                       className={`flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                         megaOpen
                           ? 'text-[#0076FF] bg-[#F0F5FF]'
@@ -145,10 +149,14 @@ export default function Navbar() {
                     {/* Mega dropdown */}
                     {megaOpen && (
                       <div
+                        id="mega-menu-productos"
+                        role="menu"
+                        aria-label="Productos MagicClean"
                         className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-white border border-[#E8EAED] rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] overflow-hidden"
                         style={{ width: 860 }}
                         onMouseEnter={openMega}
                         onMouseLeave={closeMega}
+                        onKeyDown={(e) => { if (e.key === 'Escape') setMegaOpen(false) }}
                       >
                         <div className="flex">
                           {/* Columnas */}
@@ -166,6 +174,7 @@ export default function Navbar() {
                                     <li key={item.codigo}>
                                       <a
                                         href="#productos"
+                                        role="menuitem"
                                         className="group/item flex items-start gap-2"
                                       >
                                         <span
@@ -221,6 +230,7 @@ export default function Navbar() {
                             </div>
                             <a
                               href="#productos"
+                              role="menuitem"
                               className="text-[11px] font-semibold text-[#0076FF] hover:underline underline-offset-2"
                             >
                               Ver más →
@@ -235,6 +245,7 @@ export default function Navbar() {
                           </p>
                           <a
                             href="#contacto"
+                            role="menuitem"
                             className="text-[11px] font-semibold text-[#0076FF] hover:underline underline-offset-2"
                           >
                             Solicitar catálogo completo →

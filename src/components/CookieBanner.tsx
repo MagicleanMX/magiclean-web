@@ -17,9 +17,9 @@ export default function CookieBanner() {
 
   function accept(value: CookieConsent) {
     localStorage.setItem(CONSENT_KEY, value)
+    // Notify ConsentAwareAnalytics in the same session without a page reload
+    window.dispatchEvent(new CustomEvent('cookie-consent-updated', { detail: value }))
     setVisible(false)
-    // If Vercel Analytics (@vercel/analytics) is added in the future,
-    // initialize it here only when value === 'all'.
   }
 
   if (!visible) return null
