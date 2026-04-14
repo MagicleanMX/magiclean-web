@@ -76,24 +76,126 @@ const mobileLinks = [
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled]     = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [megaOpen, setMegaOpen] = useState(false)
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
-  const megaTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [megaOpen, setMegaOpen]     = useState(false)
 
+  // DOM refs
+  const megaTriggerRef = useRef<HTMLButtonElement>(null)
+  const megaPanelRef   = useRef<HTMLDivElement>(null)
+  const hamburgerRef   = useRef<HTMLButtonElement>(null)
+  const mobileMenuRef  = useRef<HTMLDivElement>(null)
+  const megaTimeout    = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // Track whether the menu was opened via keyboard so hover closes don't steal focus
+  const megaViaKeyboard   = useRef(false)
+  const mobileViaKeyboard = useRef(false)
+
+  // ── Scroll shadow ──────────────────────────────────────────────────────────
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
+  // ── Mega-menu: focus first menuitem after keyboard open ────────────────────
+  useEffect(() => {
+    if (megaOpen && megaViaKeyboard.current) {
+      const first = megaPanelRef.current?.querySelector<HTMLElement>('[role="menuitem"]')
+      first?.focus()
+    }
+    // Reset flag when menu closes (whether hover or keyboard)
+    if (!megaOpen) megaViaKeyboard.current = false
+  }, [megaOpen])
+
+  // ── Mobile menu: focus first item after keyboard open ─────────────────────
+  useEffect(() => {
+    if (mobileOpen && mobileViaKeyboard.current) {
+      const first = mobileMenuRef.current?.querySelector<HTMLElement>('a, button')
+      first?.focus()
+    }
+    if (!mobileOpen) mobileViaKeyboard.current = false
+  }, [mobileOpen])
+
+  // ── Hover helpers (desktop mega-menu) ─────────────────────────────────────
   const openMega = () => {
     if (megaTimeout.current) clearTimeout(megaTimeout.current)
     setMegaOpen(true)
   }
   const closeMega = () => {
     megaTimeout.current = setTimeout(() => setMegaOpen(false), 120)
+  }
+
+  // ── Keyboard navigation inside the mega-menu panel ────────────────────────
+  function handleMegaKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
+    const items = Array.from(
+      megaPanelRef.current?.querySelectorAll<HTMLElement>('[role="menuitem"]') ?? []
+    )
+    const idx = items.indexOf(document.activeElement as HTMLElement)
+
+    switch (e.key) {
+      case 'Escape':
+        e.preventDefault()
+        setMegaOpen(false)
+        // Return focus to trigger only on Escape (not on hover-close or Tab)
+        megaTriggerRef.current?.focus()
+        break
+      case 'ArrowDown':
+        e.preventDefault()
+        items[idx < items.length - 1 ? idx + 1 : 0]?.focus()
+        break
+      case 'ArrowUp':
+        e.preventDefault()
+        items[idx > 0 ? idx - 1 : items.length - 1]?.focus()
+        break
+      case 'Home':
+        e.preventDefault()
+        items[0]?.focus()
+        break
+      case 'End':
+        e.preventDefault()
+        items[items.length - 1]?.focus()
+        break
+      case 'Tab':
+        // Close menu but let Tab move focus naturally — do NOT steal focus
+        setMegaOpen(false)
+        break
+    }
+  }
+
+  // ── Focus trap + Escape for mobile menu ───────────────────────────────────
+  function handleMobileKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
+    if (!mobileMenuRef.current) return
+
+    const focusable = Array.from(
+      mobileMenuRef.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')
+    )
+    const first  = focusable[0]
+    const last   = focusable[focusable.length - 1]
+    const active = document.activeElement
+
+    if (e.key === 'Escape') {
+      e.preventDefault()
+      setMobileOpen(false)
+      hamburgerRef.current?.focus()
+      return
+    }
+
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        // Shift+Tab on first element → wrap to last
+        if (active === first) {
+          e.preventDefault()
+          last?.focus()
+        }
+      } else {
+        // Tab on last element → wrap to first
+        if (active === last) {
+          e.preventDefault()
+          first?.focus()
+        }
+      }
+    }
   }
 
   return (
@@ -127,10 +229,18 @@ export default function Navbar() {
                     onMouseEnter={openMega}
                     onMouseLeave={closeMega}
                   >
+                    {/* Trigger button — keyboard: Enter/Space toggle; hover: openMega/closeMega */}
                     <button
+                      ref={megaTriggerRef}
                       aria-expanded={megaOpen}
                       aria-haspopup="true"
                       aria-controls="mega-menu-productos"
+                      onKeyDown={(e) => {
+                        // Flag keyboard activation before onClick fires
+                        if ((e.key === 'Enter' || e.key === ' ') && !megaOpen) {
+                          megaViaKeyboard.current = true
+                        }
+                      }}
                       onClick={() => setMegaOpen((prev) => !prev)}
                       className={`flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                         megaOpen
@@ -149,6 +259,7 @@ export default function Navbar() {
                     {/* Mega dropdown */}
                     {megaOpen && (
                       <div
+                        ref={megaPanelRef}
                         id="mega-menu-productos"
                         role="menu"
                         aria-label="Productos MagicClean"
@@ -156,7 +267,7 @@ export default function Navbar() {
                         style={{ width: 860 }}
                         onMouseEnter={openMega}
                         onMouseLeave={closeMega}
-                        onKeyDown={(e) => { if (e.key === 'Escape') setMegaOpen(false) }}
+                        onKeyDown={handleMegaKeyDown}
                       >
                         <div className="flex">
                           {/* Columnas */}
@@ -275,9 +386,17 @@ export default function Navbar() {
                 Solicitar cotización
               </a>
               <button
-                onClick={() => setMobileOpen(!mobileOpen)}
+                ref={hamburgerRef}
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-menu"
+                aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
+                onKeyDown={(e) => {
+                  if ((e.key === 'Enter' || e.key === ' ') && !mobileOpen) {
+                    mobileViaKeyboard.current = true
+                  }
+                }}
+                onClick={() => setMobileOpen((prev) => !prev)}
                 className="lg:hidden p-2 text-[#1A1A1A] hover:text-[#0076FF] transition-colors"
-                aria-label="Abrir menú"
               >
                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
@@ -286,9 +405,14 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu — 4 links planos */}
+      {/* Mobile menu — focus trap active while open */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-[68px] z-40 bg-white border-b border-[#E8EAED] shadow-lg lg:hidden">
+        <div
+          id="mobile-menu"
+          ref={mobileMenuRef}
+          onKeyDown={handleMobileKeyDown}
+          className="fixed inset-x-0 top-[68px] z-40 bg-white border-b border-[#E8EAED] shadow-lg lg:hidden"
+        >
           <div className="px-6 py-5 flex flex-col gap-1">
             {mobileLinks.map((link) => (
               <a
