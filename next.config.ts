@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  turbopack: {
+    root: '/Users/jacobolevy/Desktop/magicclean',
+  },
   async headers() {
     return [
       {
