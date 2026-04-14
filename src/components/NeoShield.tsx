@@ -75,25 +75,48 @@ export default function NeoShield() {
 
           </motion.div>
 
-          {/* Derecha — stats en grid */}
+          {/* Derecha — imagen tecnología + stats */}
           <motion.div
             initial={{ opacity: 1, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="grid grid-cols-2 gap-px bg-white/8 rounded-2xl overflow-hidden border border-white/8"
+            className="flex flex-col gap-5"
           >
-            {NEOSHIELD_STATS.map((s) => (
-              <div
-                key={s.label}
-                className="bg-[#0A1628] px-7 py-7 hover:bg-[#0d1f38] transition-colors duration-300"
-              >
-                <p className="font-black text-white text-[2.4rem] lg:text-[3rem] leading-none mb-2">
-                  <Counter target={s.target} suffix={s.suffix} />
+            {/* === SLOT DE IMAGEN TECNOLOGÍA 16:9 === */}
+            <div
+              className="relative overflow-hidden rounded-2xl"
+              style={{ aspectRatio: '16/9', backgroundColor: '#060e1e' }}
+            >
+              {/* <Image src="/neoshield-tech.webp" alt="Microscopía NeoShield™ — micropartículas de plata coloidal" fill className="object-cover object-center" /> */}
+
+              {/* Placeholder premium */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 select-none pointer-events-none">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0076FF" strokeWidth="1.5" opacity="0.3">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <circle cx="11" cy="11" r="3" />
+                </svg>
+                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0076FF]/30">
+                  Microscopía NeoShield™
                 </p>
-                <p className="label-eyebrow text-white/40 text-[10px]">{s.label}</p>
               </div>
-            ))}
+            </div>
+
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 gap-px bg-white/8 rounded-2xl overflow-hidden border border-white/8">
+              {NEOSHIELD_STATS.map((s) => (
+                <div
+                  key={s.label}
+                  className="bg-[#0A1628] px-7 py-7 hover:bg-[#0d1f38] transition-colors duration-300"
+                >
+                  <p className="font-black text-white text-[2.4rem] lg:text-[3rem] leading-none mb-2">
+                    <Counter target={s.target} suffix={s.suffix} />
+                  </p>
+                  <p className="label-eyebrow text-white/40 text-[10px]">{s.label}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

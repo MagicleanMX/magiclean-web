@@ -67,9 +67,18 @@ export default function Categories({ data }: CategoriesProps) {
 
                 {/* Card visual — producto domina */}
                 <div
-                  className="relative overflow-hidden rounded-2xl mb-4 transition-shadow duration-300 group-hover:shadow-xl"
+                  className="relative overflow-hidden rounded-2xl mb-4 transition-all duration-[400ms] ease-out group-hover:shadow-2xl group-hover:scale-[1.03]"
                   style={{ aspectRatio: '3/4', backgroundColor: f.color }}
                 >
+                  {/* === SLOT DE IMAGEN — descomentar cuando llegue la foto === */}
+                  {/* <Image
+                        src={`/products/${f.id}.webp`}
+                        alt={f.nombre}
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      /> */}
+
                   {/* Subtle gradient overlay for depth */}
                   <div
                     className="absolute inset-0"

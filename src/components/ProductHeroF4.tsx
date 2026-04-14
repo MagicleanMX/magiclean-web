@@ -20,8 +20,11 @@ export default function ProductHeroF4() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative min-h-[65vw] sm:min-h-[55vw] lg:min-h-0 order-1 overflow-hidden bg-[#0A1628]"
+          className="relative order-1 overflow-hidden bg-[#0A1628] aspect-[4/5] lg:aspect-auto"
         >
+          {/* === SLOT DE IMAGEN — descomentar cuando llegue la foto === */}
+          {/* <Image src="/products/f4-hero.webp" alt="F4 Fibra Esponja Dual — NeoShield™" fill className="object-cover object-center" priority /> */}
+
           {/* Badge popular — top left */}
           <div className="absolute top-6 left-6 flex items-center gap-2 bg-[#FF2B2B] text-white px-3.5 py-2 rounded-full z-20">
             <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
