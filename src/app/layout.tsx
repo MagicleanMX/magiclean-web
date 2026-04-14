@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Montserrat, Playfair_Display } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import CookieBanner from '@/components/CookieBanner'
+import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
 import './globals.css'
 
 const montserrat = Montserrat({
@@ -87,6 +89,8 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         <CookieBanner />
+        <ConsentAwareAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   )
