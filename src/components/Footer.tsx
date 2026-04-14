@@ -158,13 +158,17 @@ export default function Footer() {
       <div className="border-t border-white/8">
         <div className="max-w-[1440px] mx-auto px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-6 flex-wrap">
-            {['Aviso de privacidad', 'Términos de uso', 'Cookies'].map((item) => (
+            {[
+              { label: 'Aviso de privacidad', href: '/aviso-de-privacidad' },
+              { label: 'Términos de uso', href: '/terminos-de-uso' },
+              { label: 'Cookies', href: '/aviso-de-privacidad#cookies' },
+            ].map((item) => (
               <a
-                key={item}
-                href="#"
+                key={item.label}
+                href={item.href}
                 className="text-[11px] font-light text-white/20 hover:text-white/50 transition-colors duration-200"
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </div>
