@@ -65,27 +65,47 @@ export default function ProductHeroMop() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-2xl p-8"
+            className="relative rounded-2xl overflow-hidden"
             style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            <span className="absolute top-5 right-5 label-eyebrow text-[10px] px-3 py-1.5 rounded-full text-white bg-[#0076FF]">
-              Más vendido
-            </span>
+            {/* === SLOT DE IMAGEN 3:4 === */}
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
+              <div className="absolute inset-0 bg-[#060e1e]" />
+              {/* <Image src="/products/m1-product.webp" alt="M1 Turbo Magic" fill className="object-cover object-center" /> */}
 
-            <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">M1</p>
-            <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">Turbo Magic</p>
-            <p className="text-white/50 font-normal text-[13px] mb-6">Con pedal · Escurrido automático</p>
+              {/* Placeholder premium */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 select-none pointer-events-none">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0076FF" strokeWidth="1.5" opacity="0.3">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                  <circle cx="12" cy="13" r="4" />
+                </svg>
+                <p className="font-black text-[3rem] leading-none text-[#0076FF]/15">M1</p>
+                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0076FF]/20">imagen próximamente</p>
+              </div>
 
-            <p className="label-eyebrow text-[#0076FF] text-[10px] mb-5">Retail · HORECA · Hogar</p>
+              {/* Badge superpuesto */}
+              <span className="absolute top-5 right-5 label-eyebrow text-[10px] px-3 py-1.5 rounded-full text-white bg-[#0076FF] z-10">
+                Más vendido
+              </span>
+            </div>
 
-            <ul className="space-y-3">
-              {m1Specs.map((s) => (
-                <li key={s} className="flex items-start gap-3">
-                  <span className="w-4 h-px bg-[#0076FF] mt-[0.6rem] shrink-0" />
-                  <span className="text-[13px] font-normal text-white/50">{s}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Texto debajo de la imagen */}
+            <div className="p-8">
+              <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">M1</p>
+              <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">Turbo Magic</p>
+              <p className="text-white/50 font-normal text-[13px] mb-6">Con pedal · Escurrido automático</p>
+
+              <p className="label-eyebrow text-[#0076FF] text-[10px] mb-5">Retail · HORECA · Hogar</p>
+
+              <ul className="space-y-3">
+                {m1Specs.map((s) => (
+                  <li key={s} className="flex items-start gap-3">
+                    <span className="w-4 h-px bg-[#0076FF] mt-[0.6rem] shrink-0" />
+                    <span className="text-[13px] font-normal text-white/50">{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
 
           {/* M2 — Spin Magic */}
@@ -94,30 +114,50 @@ export default function ProductHeroMop() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-2xl p-8"
+            className="relative rounded-2xl overflow-hidden"
             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            <span
-              className="absolute top-5 right-5 label-eyebrow text-[10px] px-3 py-1.5 rounded-full text-white/50"
-              style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}
-            >
-              Compacto
-            </span>
+            {/* === SLOT DE IMAGEN 3:4 === */}
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
+              <div className="absolute inset-0 bg-[#060e1e]" />
+              {/* <Image src="/products/m2-product.webp" alt="M2 Spin Magic" fill className="object-cover object-center" /> */}
 
-            <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">M2</p>
-            <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">Spin Magic</p>
-            <p className="text-white/50 font-normal text-[13px] mb-6">Sin pedal · Centrifugado manual</p>
+              {/* Placeholder premium */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 select-none pointer-events-none">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0076FF" strokeWidth="1.5" opacity="0.3">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                  <circle cx="12" cy="13" r="4" />
+                </svg>
+                <p className="font-black text-[3rem] leading-none text-[#0076FF]/15">M2</p>
+                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0076FF]/20">imagen próximamente</p>
+              </div>
 
-            <p className="label-eyebrow text-[#0076FF] text-[10px] mb-5">Apartamentos · Oficinas</p>
+              {/* Badge superpuesto */}
+              <span
+                className="absolute top-5 right-5 label-eyebrow text-[10px] px-3 py-1.5 rounded-full text-white/50 z-10"
+                style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}
+              >
+                Compacto
+              </span>
+            </div>
 
-            <ul className="space-y-3">
-              {m2Specs.map((s) => (
-                <li key={s} className="flex items-start gap-3">
-                  <span className="w-4 h-px bg-[#0076FF] mt-[0.6rem] shrink-0" />
-                  <span className="text-[13px] font-normal text-white/50">{s}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Texto debajo de la imagen */}
+            <div className="p-8">
+              <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">M2</p>
+              <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">Spin Magic</p>
+              <p className="text-white/50 font-normal text-[13px] mb-6">Sin pedal · Centrifugado manual</p>
+
+              <p className="label-eyebrow text-[#0076FF] text-[10px] mb-5">Apartamentos · Oficinas</p>
+
+              <ul className="space-y-3">
+                {m2Specs.map((s) => (
+                  <li key={s} className="flex items-start gap-3">
+                    <span className="w-4 h-px bg-[#0076FF] mt-[0.6rem] shrink-0" />
+                    <span className="text-[13px] font-normal text-white/50">{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
 
         </div>
