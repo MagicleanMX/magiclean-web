@@ -42,12 +42,12 @@ export default function Hero({ data }: HeroProps) {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-[1rem] font-light text-[#666666] leading-[1.75] max-w-sm mb-3">
+          <p className="text-[1rem] font-normal text-[#666666] leading-[1.75] max-w-sm mb-3">
             {subheadline}
           </p>
 
           {/* Micro-texto B2B */}
-          <p className="text-[0.8rem] font-light text-[#B8BDC5] tracking-wide mb-8">
+          <p className="text-[0.8rem] font-normal text-[#8B92A0] tracking-wide mb-8">
             {heroMicrotext}
           </p>
 

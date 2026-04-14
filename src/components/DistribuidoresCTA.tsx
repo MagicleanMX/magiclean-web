@@ -32,7 +32,7 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
     .filter(Boolean)
 
   return (
-    <section id="distribuidores" className="relative overflow-hidden bg-[#0076FF] py-16">
+    <section id="distribuidores" className="relative overflow-hidden bg-[#0060DF] py-16">
       {/* Textura decorativa */}
       <div className="absolute inset-0 pointer-events-none opacity-10"
         style={{ backgroundImage: 'radial-gradient(circle at 80% 50%, #fff 0%, transparent 60%)' }} />
@@ -51,7 +51,7 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
             <h2 className="headline-editorial text-[2rem] sm:text-[2.6rem] lg:text-[3.4rem] text-white mb-6 max-w-md">
               {headline}
             </h2>
-            <p className="text-[1rem] font-light text-white/80 leading-[1.75] max-w-md mb-8">
+            <p className="text-[1rem] font-normal text-white leading-[1.75] max-w-md mb-8">
               {body}
             </p>
 
@@ -71,7 +71,7 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="label-eyebrow text-white/50 mb-5">Zonas disponibles</p>
+            <p className="label-eyebrow text-white mb-5">Zonas disponibles</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {zonas.map((z) => (
                 <div
@@ -83,7 +83,7 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
                 </div>
               ))}
             </div>
-            <p className="text-[12px] font-light text-white/50 mt-4">{note}</p>
+            <p className="text-[12px] font-normal text-white/50 mt-4">{note}</p>
           </motion.div>
         </div>
       </div>

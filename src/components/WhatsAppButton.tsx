@@ -53,7 +53,7 @@ export default function WhatsAppButton() {
                 </div>
                 <div>
                   <p className="font-semibold text-[#1A1A1A] text-[13px] leading-tight">MagicClean</p>
-                  <p className="text-[10px] text-[#25D366] font-medium">En línea ahora</p>
+                  <p className="text-[10px] text-[#167A35] font-medium">En línea ahora</p>
                 </div>
               </div>
               <button
@@ -65,7 +65,7 @@ export default function WhatsAppButton() {
               </button>
             </div>
 
-            <p className="text-[12px] font-light text-[#666666] leading-relaxed mb-3">
+            <p className="text-[13px] font-normal text-[#666666] leading-relaxed mb-3">
               ¿Tienes preguntas sobre el portafolio o quieres cotizar? Escríbenos.
             </p>
 

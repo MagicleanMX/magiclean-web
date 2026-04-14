@@ -48,7 +48,7 @@ export default function HowItWorks() {
               <h3 className="font-serif text-[1.05rem] font-medium text-[#1A1A1A] mb-2.5">
                 {p.titulo}
               </h3>
-              <p className="text-[13px] font-light text-[#666666] leading-[1.7]">
+              <p className="text-[13px] font-normal text-[#666666] leading-[1.7]">
                 {p.desc}
               </p>
             </motion.div>

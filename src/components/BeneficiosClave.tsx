@@ -55,7 +55,7 @@ export default function BeneficiosClave() {
                 </p>
                 <p className="font-semibold text-[#1A1A1A] text-[1.05rem] mb-5">{titulo}</p>
 
-                <p className="text-[13.5px] font-light text-[#666666] leading-[1.75] mb-8 flex-1">
+                <p className="text-[13.5px] font-normal text-[#666666] leading-[1.75] mb-8 flex-1">
                   {descripcion}
                 </p>
 

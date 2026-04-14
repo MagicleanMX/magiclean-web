@@ -43,7 +43,7 @@ export default function ElProblema() {
                 <h3 className="font-serif text-[1.15rem] font-medium text-[#1A1A1A] mb-3 leading-snug">
                   {titulo}
                 </h3>
-                <p className="text-[14px] font-light text-[#666666] leading-[1.75]">
+                <p className="text-[14px] font-normal text-[#666666] leading-[1.75]">
                   {desc}
                 </p>
               </motion.div>
