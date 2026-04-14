@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Montserrat, Playfair_Display } from 'next/font/google'
+import CookieBanner from '@/components/CookieBanner'
 import './globals.css'
 
 const montserrat = Montserrat({
@@ -83,7 +84,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${montserrat.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   )
 }
