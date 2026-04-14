@@ -21,7 +21,7 @@ export default function Nosotros() {
             El estándar que faltaba.
             <span className="italic text-[#0076FF]"> Lo estamos construyendo.</span>
           </h2>
-          <p className="text-[1rem] font-light text-[#666666] leading-[1.75]">
+          <p className="text-[1rem] font-normal text-[#666666] leading-[1.75]">
             MagicClean nació con una idea simple: que la limpieza profesional merecía mejor
             tecnología, mejor diseño y mejor precio. Desarrollamos NeoShield™ — tecnología
             antibacterial propia — y la integramos en cada producto. Hoy operamos en los 3
@@ -63,7 +63,7 @@ export default function Nosotros() {
               </div>
               <div>
                 <p className="font-semibold text-[#1A1A1A] text-[0.95rem] mb-2">{v.titulo}</p>
-                <p className="text-[13.5px] font-light text-[#666666] leading-[1.7]">{v.desc}</p>
+                <p className="text-[13.5px] font-normal text-[#666666] leading-[1.7]">{v.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -99,7 +99,7 @@ export default function Nosotros() {
             <p className="font-semibold text-[#1A1A1A] text-[1.1rem] mb-1">
               ¿Quieres ser parte de este crecimiento?
             </p>
-            <p className="text-[14px] font-light text-[#666666]">
+            <p className="text-[14px] font-normal text-[#666666]">
               Distribuidores, retail y HORECA — hablemos.
             </p>
           </div>

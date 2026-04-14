@@ -298,12 +298,12 @@ export default function Navbar() {
                                           <p className="text-[12px] font-medium text-[#1A1A1A] group-hover/item:text-[#0076FF] transition-colors leading-tight">
                                             {item.nombre}
                                             {item.badge && (
-                                              <span className="ml-1.5 text-[9px] font-bold text-[#FF2B2B] bg-[#FFF0F0] px-1.5 py-0.5 rounded-full">
+                                              <span className="ml-1.5 text-[10px] font-bold text-[#FF2B2B] bg-[#FFF0F0] px-1.5 py-0.5 rounded-full">
                                                 {item.badge}
                                               </span>
                                             )}
                                           </p>
-                                          <p className="text-[10px] text-[#666666] font-light leading-tight mt-0.5">
+                                          <p className="text-[11px] text-[#666666] font-normal leading-tight mt-0.5">
                                             {item.detalle}
                                           </p>
                                         </div>
@@ -317,7 +317,7 @@ export default function Navbar() {
 
                           {/* Producto destacado */}
                           <div className="w-44 bg-[#FFFBF0] flex flex-col items-center justify-center gap-3 p-6 text-center border-l border-[#E8EAED]">
-                            <span className="label-eyebrow text-[#FF2B2B] text-[9px]">
+                            <span className="label-eyebrow text-[#FF2B2B] text-[10px]">
                               {megaProductos.destacado.badge}
                             </span>
                             <div
@@ -335,7 +335,7 @@ export default function Navbar() {
                               <p className="text-[12px] font-semibold text-[#1A1A1A] leading-snug">
                                 {megaProductos.destacado.nombre}
                               </p>
-                              <p className="text-[10px] text-[#666666] font-light mt-1 leading-snug">
+                              <p className="text-[11px] text-[#666666] font-normal mt-1 leading-snug">
                                 {megaProductos.destacado.descripcion}
                               </p>
                             </div>
@@ -351,7 +351,7 @@ export default function Navbar() {
 
                         {/* Footer del mega menú */}
                         <div className="border-t border-[#E8EAED] px-6 py-3 bg-[#F5F7FA] flex items-center justify-between">
-                          <p className="text-[11px] text-[#666666] font-light">
+                          <p className="text-[11px] text-[#666666] font-normal">
                             <span className="font-semibold text-[#1A1A1A]">23 modelos</span> disponibles · Línea Fibras y Línea Mops
                           </p>
                           <a

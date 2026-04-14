@@ -19,13 +19,13 @@ export default function TerminosDeUso() {
         {/* Header */}
         <div className="bg-[#0A1628] text-white pt-32 pb-14 px-6">
           <div className="max-w-3xl mx-auto">
-            <p className="text-xs font-semibold tracking-widest text-white/40 uppercase mb-3">
+            <p className="text-xs font-semibold tracking-widest text-white/50 uppercase mb-3">
               Aviso Legal
             </p>
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight mb-4">
               Términos de Uso
             </h1>
-            <p className="text-sm text-white/50 font-light">
+            <p className="text-sm text-white/50 font-normal">
               Condiciones generales de uso del sitio web magicleanproducts.com ·{' '}
               Última actualización:{' '}
               <time dateTime="2025-04-13">13 de abril de 2025</time>
@@ -41,7 +41,7 @@ export default function TerminosDeUso() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               1. Aceptación de los términos
             </h2>
-            <p className="text-sm font-light leading-relaxed text-[#444]">
+            <p className="text-sm font-normalleading-relaxed text-[#444]">
               Al acceder y utilizar este sitio web operado por{' '}
               <strong className="font-semibold text-[#1A1A1A]">MagicClean S.A. de C.V.</strong>,
               usted acepta quedar vinculado por los presentes Términos de Uso. Si no está de
@@ -54,7 +54,7 @@ export default function TerminosDeUso() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               2. Objeto del sitio
             </h2>
-            <p className="text-sm font-light leading-relaxed text-[#444]">
+            <p className="text-sm font-normalleading-relaxed text-[#444]">
               Este sitio web tiene como finalidad presentar el portafolio de productos de
               limpieza profesional de MagicClean S.A. de C.V. y facilitar el contacto con
               distribuidores, clientes de canal retail, institucional y HORECA en México y LATAM.
@@ -68,14 +68,14 @@ export default function TerminosDeUso() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               3. Propiedad intelectual
             </h2>
-            <p className="text-sm font-light leading-relaxed text-[#444] mb-3">
+            <p className="text-sm font-normalleading-relaxed text-[#444] mb-3">
               Todos los contenidos de este sitio —incluyendo textos, imágenes, logotipos,
               marcas, diseños, íconos, código fuente y la marca{' '}
               <strong className="font-semibold">NeoShield™</strong>— son propiedad exclusiva
               de MagicClean S.A. de C.V. o de sus licenciantes, y están protegidos por la
               Ley Federal del Derecho de Autor y demás legislación aplicable en México.
             </p>
-            <p className="text-sm font-light leading-relaxed text-[#444]">
+            <p className="text-sm font-normalleading-relaxed text-[#444]">
               Queda estrictamente prohibida la reproducción, distribución, modificación o
               uso comercial de cualquier contenido sin autorización previa y por escrito
               del Responsable.
@@ -87,11 +87,11 @@ export default function TerminosDeUso() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               4. Uso permitido y restricciones
             </h2>
-            <p className="text-sm font-light leading-relaxed text-[#444] mb-4">
+            <p className="text-sm font-normalleading-relaxed text-[#444] mb-4">
               El usuario se compromete a utilizar el sitio de conformidad con la ley y estos
               términos. Queda prohibido:
             </p>
-            <ul className="list-disc list-inside text-sm font-light text-[#444] space-y-1.5 leading-relaxed ml-1">
+            <ul className="list-disc list-inside text-sm font-normaltext-[#444] space-y-1.5 leading-relaxed ml-1">
               <li>Utilizar el sitio para fines ilegales o no autorizados.</li>
               <li>Intentar acceder de forma no autorizada a sistemas o bases de datos.</li>
               <li>Enviar spam, contenido malicioso o realizar ataques informáticos.</li>
@@ -105,7 +105,7 @@ export default function TerminosDeUso() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               5. Formularios de contacto y cotización
             </h2>
-            <p className="text-sm font-light leading-relaxed text-[#444]">
+            <p className="text-sm font-normalleading-relaxed text-[#444]">
               El envío de un formulario de contacto o cotización a través de este sitio no
               constituye la aceptación de un pedido ni la celebración de un contrato.
               MagicClean S.A. de C.V. se reserva el derecho de aceptar o rechazar cualquier
@@ -119,16 +119,16 @@ export default function TerminosDeUso() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               6. Limitación de responsabilidad
             </h2>
-            <p className="text-sm font-light leading-relaxed text-[#444] mb-3">
+            <p className="text-sm font-normalleading-relaxed text-[#444] mb-3">
               MagicClean S.A. de C.V. no será responsable por:
             </p>
-            <ul className="list-disc list-inside text-sm font-light text-[#444] space-y-1.5 leading-relaxed ml-1">
+            <ul className="list-disc list-inside text-sm font-normaltext-[#444] space-y-1.5 leading-relaxed ml-1">
               <li>Daños derivados del uso o imposibilidad de uso del sitio.</li>
               <li>Interrupciones, errores técnicos o fallas en el servicio de hospedaje.</li>
               <li>Contenido de sitios web de terceros enlazados desde este sitio.</li>
               <li>Decisiones comerciales tomadas con base en la información publicada.</li>
             </ul>
-            <p className="text-sm font-light leading-relaxed text-[#444] mt-3">
+            <p className="text-sm font-normalleading-relaxed text-[#444] mt-3">
               La información de productos, precios y disponibilidad publicada en este sitio
               es de carácter referencial y puede cambiar sin previo aviso.
             </p>
@@ -139,7 +139,7 @@ export default function TerminosDeUso() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               7. Enlaces a sitios externos
             </h2>
-            <p className="text-sm font-light leading-relaxed text-[#444]">
+            <p className="text-sm font-normalleading-relaxed text-[#444]">
               Este sitio puede contener enlaces a plataformas de terceros (MercadoLibre,
               Amazon, redes sociales). MagicClean S.A. de C.V. no controla ni se responsabiliza
               por el contenido, políticas de privacidad o prácticas de dichos sitios. El acceso
@@ -152,7 +152,7 @@ export default function TerminosDeUso() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               8. Legislación aplicable y jurisdicción
             </h2>
-            <p className="text-sm font-light leading-relaxed text-[#444]">
+            <p className="text-sm font-normalleading-relaxed text-[#444]">
               Estos Términos de Uso se rigen por las leyes vigentes en los{' '}
               <strong className="font-semibold">Estados Unidos Mexicanos</strong>. Para
               cualquier controversia derivada del uso de este sitio, las partes se someten
@@ -167,7 +167,7 @@ export default function TerminosDeUso() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               9. Modificaciones
             </h2>
-            <p className="text-sm font-light leading-relaxed text-[#444]">
+            <p className="text-sm font-normalleading-relaxed text-[#444]">
               MagicClean S.A. de C.V. se reserva el derecho de modificar estos Términos de
               Uso en cualquier momento. Los cambios entrarán en vigor en el momento de su
               publicación en este sitio. El uso continuado del sitio después de publicarse
@@ -180,7 +180,7 @@ export default function TerminosDeUso() {
             <p className="text-xs font-semibold tracking-widest text-[#0076FF] uppercase mb-3">
               Contacto legal
             </p>
-            <p className="text-sm font-light text-[#444] leading-relaxed">
+            <p className="text-sm font-normaltext-[#444] leading-relaxed">
               Para consultas sobre estos términos, escríbanos a{' '}
               <a
                 href="mailto:datos@magicleanproducts.com"

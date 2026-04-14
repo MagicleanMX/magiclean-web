@@ -39,7 +39,7 @@ export default function ProductHeroF4() {
               >
                 F4
               </p>
-              <p className="label-eyebrow text-white/20 text-[9px] tracking-[0.3em] mt-2">
+              <p className="label-eyebrow text-white/30 text-[10px] tracking-[0.3em] mt-2" aria-hidden="true">
                 FIBRA ESPONJA DUAL
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function ProductHeroF4() {
                     border: '1px solid rgba(45,122,45,0.35)',
                   }}
                 />
-                <p className="label-eyebrow text-white/20 text-[9px]">Abrasiva</p>
+                <p className="label-eyebrow text-white/30 text-[10px]" aria-hidden="true">Abrasiva</p>
               </motion.div>
 
               <motion.div
@@ -80,7 +80,7 @@ export default function ProductHeroF4() {
                     border: '1px solid rgba(200,185,122,0.25)',
                   }}
                 />
-                <p className="label-eyebrow text-white/20 text-[9px]">Esponja</p>
+                <p className="label-eyebrow text-white/30 text-[10px]" aria-hidden="true">Esponja</p>
               </motion.div>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[1rem] font-light text-[#666666] leading-[1.75] max-w-md mb-5"
+            className="text-[1rem] font-normal text-[#666666] leading-[1.75] max-w-md mb-5"
           >
             Fibra abrasiva de alta resistencia por un lado, esponja suave por el otro.
             Un producto. Dos herramientas.
@@ -129,7 +129,7 @@ export default function ProductHeroF4() {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="border-l-2 border-[#0076FF] pl-5 mb-6"
           >
-            <p className="text-[0.95rem] font-light text-[#666666] italic leading-[1.7]">
+            <p className="text-[0.95rem] font-normal text-[#666666] italic leading-[1.7]">
               "El estándar se creó ayer. Hoy lo evolucionamos."
             </p>
           </motion.blockquote>
@@ -147,7 +147,7 @@ export default function ProductHeroF4() {
                 <p className="font-black text-[#1A1A1A] text-2xl lg:text-3xl leading-none mb-1">
                   {s.valor}
                 </p>
-                <p className="label-eyebrow text-[#666666] text-[9px]">{s.etiqueta}</p>
+                <p className="label-eyebrow text-[#666666] text-[10px]">{s.etiqueta}</p>
               </div>
             ))}
           </motion.div>

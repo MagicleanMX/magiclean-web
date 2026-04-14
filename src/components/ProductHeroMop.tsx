@@ -40,7 +40,7 @@ export default function ProductHeroMop() {
               Piso impecable. Sin esfuerzo.{' '}
               <span className="italic text-[#0076FF]">Sin químicos adicionales.</span>
             </h2>
-            <p className="text-[1rem] font-light text-white/50 leading-[1.75] max-w-lg">
+            <p className="text-[1rem] font-normal text-white/50 leading-[1.75] max-w-lg">
               Dos sistemas con microfibra NeoShield™. El M1 para quien exige potencia. El M2 para quien necesita eficiencia.
             </p>
           </div>
@@ -68,21 +68,21 @@ export default function ProductHeroMop() {
             className="relative rounded-2xl p-8"
             style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            <span className="absolute top-5 right-5 label-eyebrow text-[9px] px-3 py-1.5 rounded-full text-white bg-[#0076FF]">
+            <span className="absolute top-5 right-5 label-eyebrow text-[10px] px-3 py-1.5 rounded-full text-white bg-[#0076FF]">
               Más vendido
             </span>
 
             <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">M1</p>
             <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">Turbo Magic</p>
-            <p className="text-white/20 text-[12px] font-light mb-6">Con pedal · Escurrido automático</p>
+            <p className="text-white/50 font-normal text-[13px] mb-6">Con pedal · Escurrido automático</p>
 
-            <p className="label-eyebrow text-[#0076FF] text-[9px] mb-5">Retail · HORECA · Hogar</p>
+            <p className="label-eyebrow text-[#0076FF] text-[10px] mb-5">Retail · HORECA · Hogar</p>
 
             <ul className="space-y-3">
               {m1Specs.map((s) => (
                 <li key={s} className="flex items-start gap-3">
                   <span className="w-4 h-px bg-[#0076FF] mt-[0.6rem] shrink-0" />
-                  <span className="text-[13px] font-light text-white/50">{s}</span>
+                  <span className="text-[13px] font-normal text-white/50">{s}</span>
                 </li>
               ))}
             </ul>
@@ -98,7 +98,7 @@ export default function ProductHeroMop() {
             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
             <span
-              className="absolute top-5 right-5 label-eyebrow text-[9px] px-3 py-1.5 rounded-full text-white/50"
+              className="absolute top-5 right-5 label-eyebrow text-[10px] px-3 py-1.5 rounded-full text-white/50"
               style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}
             >
               Compacto
@@ -106,15 +106,15 @@ export default function ProductHeroMop() {
 
             <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">M2</p>
             <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">Spin Magic</p>
-            <p className="text-white/20 text-[12px] font-light mb-6">Sin pedal · Centrifugado manual</p>
+            <p className="text-white/50 font-normal text-[13px] mb-6">Sin pedal · Centrifugado manual</p>
 
-            <p className="label-eyebrow text-[#0076FF] text-[9px] mb-5">Apartamentos · Oficinas</p>
+            <p className="label-eyebrow text-[#0076FF] text-[10px] mb-5">Apartamentos · Oficinas</p>
 
             <ul className="space-y-3">
               {m2Specs.map((s) => (
                 <li key={s} className="flex items-start gap-3">
                   <span className="w-4 h-px bg-[#0076FF] mt-[0.6rem] shrink-0" />
-                  <span className="text-[13px] font-light text-white/50">{s}</span>
+                  <span className="text-[13px] font-normal text-white/50">{s}</span>
                 </li>
               ))}
             </ul>
@@ -130,7 +130,7 @@ export default function ProductHeroMop() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-wrap items-center gap-3 mt-5"
         >
-          <p className="label-eyebrow text-white/20 text-[9px]">También disponibles</p>
+          <p className="label-eyebrow text-white/30 text-[10px]" aria-hidden="true">También disponibles</p>
           {masModelos.map((m) => (
             <a
               key={m.codigo}
@@ -138,8 +138,8 @@ export default function ProductHeroMop() {
               className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 hover:border-white/20 transition-colors duration-200"
               style={{ border: '1px solid rgba(255,255,255,0.08)' }}
             >
-              <span className="font-black text-[11px] text-white/50">{m.codigo}</span>
-              <span className="text-[11px] font-light text-white/20">{m.nombre}</span>
+              <span className="font-black text-[13px] text-white/50">{m.codigo}</span>
+              <span className="text-[13px] font-normal text-white/50">{m.nombre}</span>
             </a>
           ))}
         </motion.div>

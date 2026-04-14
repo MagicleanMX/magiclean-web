@@ -53,13 +53,13 @@ export default function NeoShield() {
               NeoShield™
             </h2>
 
-            <p className="text-[1rem] font-light text-white/50 leading-[1.75] max-w-md mb-5">
+            <p className="text-[1rem] font-normal text-white/50 leading-[1.75] max-w-md mb-5">
               Desarrollada en laboratorio después de 3 años de investigación,
               NeoShield™ es la tecnología de fibra más avanzada del mercado mexicano.
               Elimina el 99% de las bacterias sin productos químicos adicionales.
             </p>
 
-            <p className="text-[0.9rem] font-light text-white/20 leading-relaxed max-w-md mb-8">
+            <p className="text-[0.9rem] font-normal text-white/50 leading-relaxed max-w-md mb-8">
               Cada fibra incorpora micropartículas de plata coloidal enlazadas
               a la estructura del polímero. La protección no se lava ni se deteriora.
             </p>
@@ -68,7 +68,7 @@ export default function NeoShield() {
               {NEOSHIELD_FEATURES.map((f) => (
                 <div key={f} className="flex items-center gap-3">
                   <span className="w-4 h-px bg-[#0076FF] shrink-0" />
-                  <span className="text-[13px] font-light text-white/50">{f}</span>
+                  <span className="text-[13px] font-normal text-white/50">{f}</span>
                 </div>
               ))}
             </div>
@@ -91,7 +91,7 @@ export default function NeoShield() {
                 <p className="font-black text-white text-[2.4rem] lg:text-[3rem] leading-none mb-2">
                   <Counter target={s.target} suffix={s.suffix} />
                 </p>
-                <p className="label-eyebrow text-white/20 text-[9px]">{s.label}</p>
+                <p className="label-eyebrow text-white/40 text-[10px]">{s.label}</p>
               </div>
             ))}
           </motion.div>

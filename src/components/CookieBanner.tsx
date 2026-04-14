@@ -33,7 +33,7 @@ export default function CookieBanner() {
     >
       <div className="max-w-[1440px] mx-auto px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-4">
         {/* Text */}
-        <p className="text-[13px] font-light text-white/70 leading-relaxed flex-1">
+        <p className="text-[13px] font-normal text-white/70 leading-relaxed flex-1">
           Este sitio utiliza cookies técnicas y de análisis para mejorar tu experiencia.
           Consulta nuestro{' '}
           <Link

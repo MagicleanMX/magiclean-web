@@ -29,7 +29,7 @@ export default function NotFound() {
             </p>
 
             {/* Eyebrow */}
-            <p className="text-xs font-semibold tracking-widest text-white/30 uppercase mb-4 -mt-10">
+            <p className="text-xs font-semibold tracking-widest text-white/50 uppercase mb-4 -mt-10">
               Error 404
             </p>
 
@@ -39,7 +39,7 @@ export default function NotFound() {
             </h1>
 
             {/* Subtítulo */}
-            <p className="text-base font-light text-white/50 leading-relaxed mb-10">
+            <p className="text-base font-normal text-white/50 leading-relaxed mb-10">
               La página que buscas no existe o fue movida.
               <br />
               Verifica la URL o regresa al inicio.
