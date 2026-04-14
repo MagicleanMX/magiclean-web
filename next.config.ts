@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   turbopack: {
-    root: '/Users/jacobolevy/Desktop/magicclean',
+    root: process.env.VERCEL ? '/vercel/path0' : '/Users/jacobolevy/Desktop/magicclean',
   },
   async headers() {
     return [
