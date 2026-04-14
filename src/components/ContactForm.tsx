@@ -12,6 +12,7 @@ interface FormData {
   canal: string
   ciudad: string
   mensaje: string
+  website: string // honeypot — invisible para humanos, los bots lo llenan
 }
 
 const inputClass =
@@ -28,6 +29,7 @@ export default function ContactForm() {
     canal: '',
     ciudad: '',
     mensaje: '',
+    website: '', // honeypot
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -253,6 +255,18 @@ export default function ContactForm() {
               disabled={loading}
             />
           </div>
+
+          {/* Honeypot anti-spam — invisible para humanos, los bots lo llenan */}
+          <input
+            type="text"
+            name="website"
+            value={formData.website}
+            onChange={handleChange}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
+          />
 
           {/* Error message */}
           {error && (

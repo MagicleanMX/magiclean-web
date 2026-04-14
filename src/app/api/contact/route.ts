@@ -14,16 +14,51 @@ function getResend() {
   return new Resend(process.env.RESEND_API_KEY ?? '')
 }
 
+// ─── Rate limiting — máximo 5 envíos por IP por hora ─────────────────────────
+interface RateEntry { count: number; resetAt: number }
+const rateLimitMap = new Map<string, RateEntry>()
+const RATE_LIMIT     = 5
+const RATE_WINDOW_MS = 60 * 60 * 1000 // 1 hora
+
+// Limpieza periódica: elimina IPs cuyo ventana ya expiró
+setInterval(() => {
+  const now = Date.now()
+  for (const [ip, entry] of rateLimitMap) {
+    if (now >= entry.resetAt) rateLimitMap.delete(ip)
+  }
+}, RATE_WINDOW_MS)
+
+function checkRateLimit(ip: string): boolean {
+  const now  = Date.now()
+  const entry = rateLimitMap.get(ip)
+
+  if (!entry || now >= entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS })
+    return true
+  }
+  if (entry.count >= RATE_LIMIT) return false
+  entry.count++
+  return true
+}
+
 // ─── Tipos ───────────────────────────────────────────────────────────────────
 interface LeadPayload {
-  nombre: string
-  empresa: string
-  email: string
+  nombre:   string
+  empresa:  string
+  email:    string
   telefono?: string
-  canal: string
-  ciudad: string
+  canal:    string
+  ciudad:   string
   mensaje?: string
+  website?: string // honeypot — debe llegar vacío siempre
 }
+
+// ─── Constantes de validación ─────────────────────────────────────────────────
+const CANAL_WHITELIST = new Set([
+  'distribuidor', 'horeca', 'retail', 'institucional', 'hogar', 'otro',
+])
+
+const HTML_PATTERN = /<[^>]*>|<script/i
 
 // ─── Sanitiza texto para inserción en HTML de email ──────────────────────────
 function escapeHtml(text: string): string {
@@ -33,6 +68,41 @@ function escapeHtml(text: string): string {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;')
+}
+
+// ─── Validación estricta ──────────────────────────────────────────────────────
+function validatePayload(body: LeadPayload): string | null {
+  const { nombre, empresa, email, telefono, canal, ciudad, mensaje } = body
+
+  if (!nombre?.trim())                         return 'El campo "nombre" es obligatorio.'
+  if (nombre.trim().length > 100)              return 'El nombre no puede superar 100 caracteres.'
+  if (HTML_PATTERN.test(nombre))               return 'El nombre contiene caracteres no permitidos.'
+
+  if (!empresa?.trim())                        return 'El campo "empresa" es obligatorio.'
+  if (empresa.trim().length > 200)             return 'La empresa no puede superar 200 caracteres.'
+  if (HTML_PATTERN.test(empresa))              return 'La empresa contiene caracteres no permitidos.'
+
+  if (!email?.trim())                          return 'El campo "email" es obligatorio.'
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) return 'El email no tiene un formato válido.'
+  if (HTML_PATTERN.test(email))                return 'El email contiene caracteres no permitidos.'
+
+  if (telefono) {
+    if (!/^[0-9+\s\-().]{1,20}$/.test(telefono.trim())) return 'El teléfono solo puede contener números, +, espacios y guiones (máx. 20).'
+  }
+
+  if (!canal?.trim())                          return 'El campo "canal" es obligatorio.'
+  if (!CANAL_WHITELIST.has(canal))             return 'El canal seleccionado no es válido.'
+
+  if (!ciudad?.trim())                         return 'El campo "ciudad" es obligatorio.'
+  if (ciudad.trim().length > 100)              return 'La ciudad no puede superar 100 caracteres.'
+  if (HTML_PATTERN.test(ciudad))               return 'La ciudad contiene caracteres no permitidos.'
+
+  if (mensaje) {
+    if (mensaje.trim().length > 2000)          return 'El mensaje no puede superar 2000 caracteres.'
+    if (HTML_PATTERN.test(mensaje))            return 'El mensaje contiene caracteres no permitidos.'
+  }
+
+  return null
 }
 
 // ─── Labels para el correo ───────────────────────────────────────────────────
@@ -48,17 +118,31 @@ const CANAL_LABELS: Record<string, string> = {
 // ─── POST /api/contact ───────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
+    // ── Rate limiting ──
+    const ip =
+      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+      req.headers.get('x-real-ip') ??
+      'unknown'
+
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json(
+        { error: 'Demasiados envíos. Intenta en una hora.' },
+        { status: 429 }
+      )
+    }
+
     const body: LeadPayload = await req.json()
 
-    // Validación mínima
-    const required = ['nombre', 'empresa', 'email', 'canal', 'ciudad']
-    for (const field of required) {
-      if (!body[field as keyof LeadPayload]?.trim()) {
-        return NextResponse.json(
-          { error: `El campo "${field}" es obligatorio.` },
-          { status: 400 }
-        )
-      }
+    // ── Honeypot: si el campo "website" tiene contenido es un bot ──
+    if (body.website) {
+      // Responder 200 para no alertar al bot; no guardamos ni enviamos nada
+      return NextResponse.json({ success: true })
+    }
+
+    // ── Validación estricta ──
+    const validationError = validatePayload(body)
+    if (validationError) {
+      return NextResponse.json({ error: validationError }, { status: 400 })
     }
 
     // 1️⃣  Guardar en Supabase
