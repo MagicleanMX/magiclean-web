@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="200" height="40" role="img" aria-label="MagicClean">
+  <title>MagicClean</title>
+  <circle cx="16" cy="20" r="14" fill="#FF2B2B"/>
+  <text x="16" y="25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="16" fill="#ffffff" text-anchor="middle">M</text>
+  <text x="38" y="27" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="22" fill="#1A1A1A" letter-spacing="-0.5">Magi</text>
+  <text x="96" y="27" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="22" fill="#0076FF" letter-spacing="-0.5">Clean</text>
+</svg>
