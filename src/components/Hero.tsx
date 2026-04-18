@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import type { HeroSection } from '@/lib/wordpress'
 import { CANALES } from '@/lib/products'
 
@@ -87,19 +88,14 @@ export default function Hero({ data }: HeroProps) {
           className="relative order-2 overflow-hidden aspect-[4/5] lg:aspect-auto"
           style={{ backgroundColor: '#0A1628' }}
         >
-          {/* === SLOT DE IMAGEN — descomentar cuando llegue la foto === */}
-          {/* <Image src="/hero-desktop.webp" alt="MagicClean — Fibras NeoShield™" fill className="object-cover object-center" priority /> */}
-
-          {/* Placeholder premium */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 select-none pointer-events-none">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0076FF" strokeWidth="1.5" opacity="0.3">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-              <circle cx="12" cy="13" r="4" />
-            </svg>
-            <p className="font-black text-[0.65rem] uppercase tracking-[0.25em] text-[#0076FF]/30">
-              Fotografía próximamente
-            </p>
-          </div>
+          <Image
+            src="/images/hero/hero-main.png"
+            alt="MagicClean — Fibra verde flotando sobre mármol"
+            fill
+            sizes="(max-width: 1024px) 100vw, 48vw"
+            className="object-cover object-center"
+            priority
+          />
         </div>
       </div>
 
