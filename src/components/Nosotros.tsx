@@ -10,7 +10,7 @@ export default function Nosotros() {
 
         {/* Header */}
         <motion.div
-          initial={{ opacity: 1, y: 20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -31,7 +31,7 @@ export default function Nosotros() {
 
         {/* Banner corporativo panorámico */}
         <motion.div
-          initial={{ opacity: 1, y: 16 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -60,7 +60,7 @@ export default function Nosotros() {
 
         {/* Stats */}
         <motion.div
-          initial={{ opacity: 1, y: 16 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
@@ -81,7 +81,7 @@ export default function Nosotros() {
           {NOSOTROS_VALORES.map((v, i) => (
             <motion.div
               key={v.num}
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
@@ -100,7 +100,7 @@ export default function Nosotros() {
 
         {/* Marketplaces — logos textuales */}
         <motion.div
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -118,7 +118,7 @@ export default function Nosotros() {
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
