@@ -51,9 +51,11 @@ export const metadata: Metadata = {
     title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
     description:
       'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional en México y LATAM.',
+    // TODO: Replace OG image with correct 1200x630 version after photo production.
+    // Current asset is 2752x1536 and wrong aspect ratio.
     images: [
       {
-        url: '/images/hero/hero-main.jpg',
+        url: '/images/hero/hero-main.png',
         width: 1200,
         height: 630,
         alt: 'MagicClean — Tecnología profesional en limpieza',
@@ -65,7 +67,7 @@ export const metadata: Metadata = {
     title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
     description:
       'Fibras, sistemas de mop y soluciones para distribuidores, retail, HORECA e institucional.',
-    images: ['/images/hero/hero-main.jpg'],
+    images: ['/images/hero/hero-main.png'],
   },
   robots: {
     index: true,
