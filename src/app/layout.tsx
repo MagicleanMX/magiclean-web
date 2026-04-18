@@ -87,7 +87,7 @@ const jsonLd = {
   name: 'MagicClean',
   legalName: 'MagicClean S.A. de C.V.',
   url: siteUrl,
-  logo: `${siteUrl}/images/logo.png`,
+  logo: `${siteUrl}/images/logo.svg`,
   telephone: '+525571553635',
   email: 'datos@magicleanproducts.com',
   address: {
