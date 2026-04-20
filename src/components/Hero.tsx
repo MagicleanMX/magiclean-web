@@ -90,7 +90,7 @@ export default function Hero({ data }: HeroProps) {
         >
           <Image
             src="/images/hero/hero-main.webp"
-            alt="MagicClean — Fibra verde flotando sobre mármol"
+            alt="Fibra verde abrasiva MagicClean flotando sobre encimera de mármol en una cocina profesional iluminada por luz natural."
             fill
             sizes="(max-width: 1024px) 100vw, 48vw"
             className="object-cover object-center"
