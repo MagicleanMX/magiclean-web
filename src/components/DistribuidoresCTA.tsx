@@ -32,7 +32,7 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
     .filter(Boolean)
 
   return (
-    <section id="distribuidores" className="relative overflow-hidden bg-[#0060DF] py-16">
+    <section id="distribuidores" className="relative overflow-hidden bg-[var(--color-primary-dark)] py-16">
       {/* Textura decorativa */}
       <div className="absolute inset-0 pointer-events-none opacity-10"
         style={{ backgroundImage: 'radial-gradient(circle at 80% 50%, #fff 0%, transparent 60%)' }} />
