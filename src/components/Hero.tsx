@@ -89,7 +89,7 @@ export default function Hero({ data }: HeroProps) {
           style={{ backgroundColor: '#0A1628' }}
         >
           <Image
-            src="/images/hero/hero-main.png"
+            src="/images/hero/hero-main.webp"
             alt="MagicClean — Fibra verde flotando sobre mármol"
             fill
             sizes="(max-width: 1024px) 100vw, 48vw"
