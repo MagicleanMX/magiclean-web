@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
-
-const siteUrl = 'https://magiclean-web.vercel.app'
+import { siteUrl } from '@/lib/config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

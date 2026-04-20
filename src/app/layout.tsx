@@ -3,6 +3,7 @@ import { Montserrat, Playfair_Display } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import CookieBanner from '@/components/CookieBanner'
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
+import { siteUrl } from '@/lib/config'
 import './globals.css'
 
 const montserrat = Montserrat({
@@ -19,8 +20,6 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
   display: 'swap',
 })
-
-const siteUrl = 'https://magiclean-web.vercel.app'
 
 export const metadata: Metadata = {
   title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
