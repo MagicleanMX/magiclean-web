@@ -24,3 +24,6 @@ magiclean-theme/
 
 # OG image intermediate output (regenerated from og-image.source.svg via rsvg-convert)
 public/og-image.png
+
+# Sentry Config File
+.env.sentry-build-plugin
