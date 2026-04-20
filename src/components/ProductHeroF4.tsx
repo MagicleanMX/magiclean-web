@@ -32,7 +32,7 @@ export default function ProductHeroF4() {
           {/* Lightbox blanco — producto real */}
           <div className="absolute inset-8 lg:inset-12 bg-white rounded-3xl overflow-hidden">
             <Image
-              src="/images/products/F4.jpg"
+              src="/images/products/F4.webp"
               alt="F4 — Fibra Esponja Dual NeoShield™. Esponja amarilla de un lado, fibra abrasiva verde del otro."
               fill
               sizes="(max-width: 1024px) 80vw, 40vw"
