@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
@@ -14,7 +15,7 @@ export default function ProductHeroF4() {
     <section id="fibra-dual-f4" className="relative overflow-hidden bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2">
 
-        {/* Izquierda — composición editorial Dual */}
+        {/* Izquierda — producto en showroom navy con lightbox blanco */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -22,70 +23,28 @@ export default function ProductHeroF4() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="relative order-1 overflow-hidden bg-[#0A1628] aspect-[4/5] lg:aspect-auto"
         >
-          {/* === SLOT DE IMAGEN — descomentar cuando llegue la foto === */}
-          {/* <Image src="/products/f4-hero.webp" alt="F4 Fibra Esponja Dual — NeoShield™" fill className="object-cover object-center" priority /> */}
-
-          {/* Badge popular — top left */}
+          {/* Badge popular — top left, sobre la navy */}
           <div className="absolute top-6 left-6 flex items-center gap-2 bg-[#FF2B2B] text-white px-3.5 py-2 rounded-full z-20">
             <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
             <span className="text-[10px] font-bold uppercase tracking-widest">Más popular</span>
           </div>
 
-          {/* Contenido principal */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8 z-10">
+          {/* Lightbox blanco — producto real */}
+          <div className="absolute inset-8 lg:inset-12 bg-white rounded-3xl overflow-hidden">
+            <Image
+              src="/images/products/F4.jpg"
+              alt="F4 — Fibra Esponja Dual NeoShield™. Esponja amarilla de un lado, fibra abrasiva verde del otro."
+              fill
+              sizes="(max-width: 1024px) 80vw, 40vw"
+              className="object-contain p-6 lg:p-10"
+              priority
+            />
+          </div>
 
-            {/* Código F4 — héroe tipográfico */}
-            <div className="text-center">
-              <p
-                className="font-black leading-none tracking-tight text-[#0076FF]"
-                style={{ fontSize: 'clamp(4.5rem, 14vw, 8rem)' }}
-              >
-                F4
-              </p>
-              <p className="label-eyebrow text-white/30 text-[10px] tracking-[0.3em] mt-2" aria-hidden="true">
-                FIBRA ESPONJA DUAL
-              </p>
-            </div>
-
-            {/* Separador */}
-            <div className="w-12 h-px bg-[#0076FF]/40" />
-
-            {/* Las dos caras — swatches de material */}
-            <div className="flex gap-5">
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col items-center gap-2.5"
-              >
-                <div
-                  className="w-16 h-16 lg:w-20 lg:h-20 rounded-xl"
-                  style={{
-                    background: 'linear-gradient(135deg, #1e5c1e 0%, #0f300f 100%)',
-                    border: '1px solid rgba(45,122,45,0.35)',
-                  }}
-                />
-                <p className="label-eyebrow text-white/30 text-[10px]" aria-hidden="true">Abrasiva</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex flex-col items-center gap-2.5"
-              >
-                <div
-                  className="w-16 h-16 lg:w-20 lg:h-20 rounded-xl"
-                  style={{
-                    background: 'linear-gradient(135deg, #c8b97a 0%, #a09058 100%)',
-                    border: '1px solid rgba(200,185,122,0.25)',
-                  }}
-                />
-                <p className="label-eyebrow text-white/30 text-[10px]" aria-hidden="true">Esponja</p>
-              </motion.div>
-            </div>
+          {/* Código F4 — firma minimalista bottom-left */}
+          <div className="absolute bottom-6 left-6 z-10 flex items-end gap-3">
+            <p className="font-black leading-none tracking-tight text-white text-[2.4rem]">F4</p>
+            <p className="label-eyebrow text-white/40 text-[10px] pb-1">FIBRA ESPONJA DUAL</p>
           </div>
         </motion.div>
 
