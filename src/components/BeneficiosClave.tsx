@@ -21,9 +21,10 @@ export default function BeneficiosClave() {
         >
           <div>
             <p className="label-eyebrow text-[#0076FF] mb-3">Por qué MagicClean</p>
-            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-[#1A1A1A] max-w-lg">
+            <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-[#1A1A1A] max-w-lg mb-5">
               Tecnología que se demuestra. Beneficios que se miden.
             </h2>
+            <NeoShieldBadge />
           </div>
           <a
             href="#tecnologia"
@@ -55,11 +56,9 @@ export default function BeneficiosClave() {
                 </p>
                 <p className="font-semibold text-[#1A1A1A] text-[1.05rem] mb-5">{titulo}</p>
 
-                <p className="text-[13.5px] font-normal text-[#666666] leading-[1.75] mb-8 flex-1">
+                <p className="text-[13.5px] font-normal text-[#666666] leading-[1.75] flex-1">
                   {descripcion}
                 </p>
-
-                <NeoShieldBadge />
               </motion.div>
             )
           })}
