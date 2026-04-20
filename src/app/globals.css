@@ -13,9 +13,6 @@
   /* Typography */
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
-
-  /* Spacing scale */
-  --section-y: 9rem;
 }
 
 html {
