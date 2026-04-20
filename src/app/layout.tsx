@@ -3,6 +3,7 @@ import { Montserrat, Playfair_Display } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import CookieBanner from '@/components/CookieBanner'
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
+import { siteUrl } from '@/lib/config'
 import './globals.css'
 
 const montserrat = Montserrat({
@@ -19,8 +20,6 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
   display: 'swap',
 })
-
-const siteUrl = 'https://magiclean-web.vercel.app'
 
 export const metadata: Metadata = {
   title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
@@ -51,12 +50,14 @@ export const metadata: Metadata = {
     title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
     description:
       'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional en México y LATAM.',
+    // TODO(design): replace /og-image.jpg placeholder with final art after photo production.
+    // Current image is a brand-color placeholder generated from public/og-image.source.svg.
     images: [
       {
-        url: '/images/hero/hero-main.jpg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'MagicClean — Tecnología profesional en limpieza',
+        alt: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
       },
     ],
   },
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
     title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
     description:
       'Fibras, sistemas de mop y soluciones para distribuidores, retail, HORECA e institucional.',
-    images: ['/images/hero/hero-main.jpg'],
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -85,7 +86,7 @@ const jsonLd = {
   name: 'MagicClean',
   legalName: 'MagicClean S.A. de C.V.',
   url: siteUrl,
-  logo: `${siteUrl}/images/logo.png`,
+  logo: `${siteUrl}/images/logo.svg`,
   telephone: '+525571553635',
   email: 'datos@magicleanproducts.com',
   address: {

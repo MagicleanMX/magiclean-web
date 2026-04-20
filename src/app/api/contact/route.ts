@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { Resend } from 'resend'
 import { NextRequest, NextResponse } from 'next/server'
+import { checkRateLimit } from '@/lib/rate-limit'
 
 // ─── Clientes (lazy — se inicializan dentro del handler, no en build time) ───
 function getSupabase() {
@@ -12,33 +13,6 @@ function getSupabase() {
 
 function getResend() {
   return new Resend(process.env.RESEND_API_KEY ?? '')
-}
-
-// ─── Rate limiting — máximo 5 envíos por IP por hora ─────────────────────────
-interface RateEntry { count: number; resetAt: number }
-const rateLimitMap = new Map<string, RateEntry>()
-const RATE_LIMIT     = 5
-const RATE_WINDOW_MS = 60 * 60 * 1000 // 1 hora
-
-// Limpieza periódica: elimina IPs cuyo ventana ya expiró
-setInterval(() => {
-  const now = Date.now()
-  for (const [ip, entry] of rateLimitMap) {
-    if (now >= entry.resetAt) rateLimitMap.delete(ip)
-  }
-}, RATE_WINDOW_MS)
-
-function checkRateLimit(ip: string): boolean {
-  const now  = Date.now()
-  const entry = rateLimitMap.get(ip)
-
-  if (!entry || now >= entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS })
-    return true
-  }
-  if (entry.count >= RATE_LIMIT) return false
-  entry.count++
-  return true
 }
 
 // ─── Tipos ───────────────────────────────────────────────────────────────────
@@ -124,10 +98,20 @@ export async function POST(req: NextRequest) {
       req.headers.get('x-real-ip') ??
       'unknown'
 
-    if (!checkRateLimit(ip)) {
+    const rl = await checkRateLimit(ip)
+    if (rl && !rl.success) {
+      const retryAfterSec = Math.max(1, Math.ceil((rl.reset - Date.now()) / 1000))
       return NextResponse.json(
         { error: 'Demasiados envíos. Intenta en una hora.' },
-        { status: 429 }
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(retryAfterSec),
+            'X-RateLimit-Limit': String(rl.limit),
+            'X-RateLimit-Remaining': String(rl.remaining),
+            'X-RateLimit-Reset': String(rl.reset),
+          },
+        }
       )
     }
 

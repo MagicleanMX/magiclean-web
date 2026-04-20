@@ -28,7 +28,7 @@ export default function ProductHeroMop() {
       {/* Header */}
       <div className="max-w-[1440px] mx-auto px-8 pt-16 pb-10">
         <motion.div
-          initial={{ opacity: 1, y: 16 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -61,7 +61,7 @@ export default function ProductHeroMop() {
 
           {/* M1 — Turbo Magic */}
           <motion.div
-            initial={{ opacity: 1, y: 16 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -110,7 +110,7 @@ export default function ProductHeroMop() {
 
           {/* M2 — Spin Magic */}
           <motion.div
-            initial={{ opacity: 1, y: 16 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -164,7 +164,7 @@ export default function ProductHeroMop() {
 
         {/* Más modelos */}
         <motion.div
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}

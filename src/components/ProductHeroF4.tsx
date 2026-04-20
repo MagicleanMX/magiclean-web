@@ -16,7 +16,7 @@ export default function ProductHeroF4() {
 
         {/* Izquierda — composición editorial Dual */}
         <motion.div
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -53,7 +53,7 @@ export default function ProductHeroF4() {
             {/* Las dos caras — swatches de material */}
             <div className="flex gap-5">
               <motion.div
-                initial={{ opacity: 1, y: 16 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -70,7 +70,7 @@ export default function ProductHeroF4() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 1, y: 16 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -93,7 +93,7 @@ export default function ProductHeroF4() {
         <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-20 py-20 order-2 bg-white">
 
           <motion.p
-            initial={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -103,7 +103,7 @@ export default function ProductHeroF4() {
           </motion.p>
 
           <motion.h2
-            initial={{ opacity: 1, y: 16 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -114,7 +114,7 @@ export default function ProductHeroF4() {
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -126,7 +126,7 @@ export default function ProductHeroF4() {
 
           {/* Quote elevada */}
           <motion.blockquote
-            initial={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.25 }}
@@ -139,7 +139,7 @@ export default function ProductHeroF4() {
 
           {/* Specs — 3 métricas limpias */}
           <motion.div
-            initial={{ opacity: 1, y: 16 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -157,7 +157,7 @@ export default function ProductHeroF4() {
 
           {/* CTA */}
           <motion.div
-            initial={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
