@@ -4,13 +4,13 @@ export const CANALES = ['HOGAR', 'RETAIL', 'HORECA', 'INDUSTRIAL', 'INSTITUCIONA
 export const MARKETPLACES = ['MercadoLibre', 'Amazon', 'Walmart'] as const
 
 // ─── NeoShield™ ───────────────────────────────────────────────────────────────
+// Only tech-differentiating stats live here. Portfolio breadth (23 models) and
+// distribution reach (3 marketplaces) are owned by Hero/SocialProof/Nosotros.
 export const NEOSHIELD_STATS = [
   { target: 99,  suffix: '%',     label: 'Eliminación de bacterias' },
   { target: 3,   suffix: '×',     label: 'Mayor duración vs competencia' },
-  { target: 23,  suffix: '',      label: 'Modelos con NeoShield™' },
   { target: 3,   suffix: ' años', label: 'De I+D en laboratorio' },
   { target: 100, suffix: '%',     label: 'Protección permanente' },
-  { target: 3,   suffix: '',      label: 'Marketplaces líderes en México' },
 ] as const
 
 export const NEOSHIELD_FEATURES = [
