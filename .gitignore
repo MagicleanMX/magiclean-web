@@ -21,3 +21,6 @@ tsconfig.tsbuildinfo
 
 # WordPress theme (separate project — not part of Next.js app)
 magiclean-theme/
+
+# OG image intermediate output (regenerated from og-image.source.svg via rsvg-convert)
+public/og-image.png
