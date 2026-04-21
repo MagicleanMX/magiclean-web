@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const cols = [
   {
     titulo: 'Productos',
@@ -81,14 +83,14 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2.5 mb-6 group">
-              <div className="w-7 h-7 rounded-full bg-[#FF2B2B] flex items-center justify-center">
-                <span className="text-white font-black text-[11px] leading-none">M</span>
-              </div>
-              <span className="text-[1.1rem] tracking-tight">
-                <span className="font-black text-white">Magi</span>
-                <span className="font-black text-[#0076FF]">Clean</span>
-              </span>
+            <a href="#" aria-label="MagiClean — inicio" className="inline-flex items-center mb-6 group">
+              <Image
+                src="/images/brand/logo/magiclean-logo.webp"
+                alt="MagiClean — Limpieza profesional"
+                width={2000}
+                height={610}
+                className="h-12 w-auto"
+              />
             </a>
 
             <p className="text-[13px] font-semibold text-white/70 leading-snug max-w-[220px] mb-2">
