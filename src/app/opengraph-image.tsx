@@ -13,7 +13,7 @@ function dataUrl(rel: string): string {
 
 export default async function Image() {
   const logo = dataUrl('public/images/brand/logo/magiclean-logo.png')
-  const neoshield = dataUrl('public/images/brand/neoshield/neoshield-badge-og.png')
+  const neoshield = dataUrl('public/images/brand/neoshield/neoshield-badge.png')
 
   return new ImageResponse(
     (
