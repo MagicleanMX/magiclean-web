@@ -15,7 +15,7 @@ export default function ProductHeroF4() {
     <section id="fibra-dual-f4" className="relative overflow-hidden bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2">
 
-        {/* Izquierda — producto en showroom navy con lightbox blanco */}
+        {/* Izquierda — producto directo sobre navy, respirando */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -23,23 +23,22 @@ export default function ProductHeroF4() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="relative order-1 overflow-hidden bg-[#0A1628] aspect-[4/5] lg:aspect-auto"
         >
-          {/* Badge popular — top left, sobre la navy */}
+          {/* Badge popular — top left */}
           <div className="absolute top-6 left-6 flex items-center gap-2 bg-[#FF2B2B] text-white px-3.5 py-2 rounded-full z-20">
             <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
             <span className="text-[10px] font-bold uppercase tracking-widest">Más popular</span>
           </div>
 
-          {/* Lightbox blanco — producto real */}
-          <div className="absolute inset-8 lg:inset-12 bg-white rounded-3xl overflow-hidden">
-            <Image
-              src="/images/products/F4.webp"
-              alt="F4 — Fibra Esponja Dual NeoShield™. Esponja amarilla de un lado, fibra abrasiva verde del otro."
-              fill
-              sizes="(max-width: 1024px) 80vw, 40vw"
-              className="object-contain p-6 lg:p-10"
-              priority
-            />
-          </div>
+          {/* Producto real — directo sobre navy con depth */}
+          <Image
+            src="/images/products/F4.webp"
+            alt="F4 — Fibra Esponja Dual NeoShield™. Esponja amarilla de un lado, fibra abrasiva verde del otro."
+            fill
+            sizes="(max-width: 1024px) 80vw, 40vw"
+            className="object-contain p-16 lg:p-24 xl:p-32"
+            style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }}
+            priority
+          />
 
           {/* Código F4 — firma minimalista bottom-left */}
           <div className="absolute bottom-6 left-6 z-10 flex items-end gap-3">
