@@ -36,19 +36,24 @@ export default async function Image() {
         <div
           style={{
             marginTop: 40,
-            fontSize: 32,
+            fontSize: 30,
             fontWeight: 500,
             color: '#1F2937',
             textAlign: 'center',
             letterSpacing: '-0.01em',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            lineHeight: 1.2,
           }}
         >
-          Limpieza profesional con tecnología NeoShield™
+          <div>Limpieza profesional con</div>
+          <div>tecnología NeoShield™</div>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={neoshield}
-          width={200}
+          width={260}
           alt=""
           style={{ position: 'absolute', bottom: 40, right: 40 }}
         />
