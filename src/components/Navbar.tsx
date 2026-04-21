@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 
@@ -209,14 +210,15 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-[68px]">
 
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2.5 shrink-0 group">
-              <div className="w-7 h-7 rounded-full bg-[#FF2B2B] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <span className="text-white font-black text-[11px] leading-none select-none">M</span>
-              </div>
-              <span className="text-[1.2rem] tracking-tight leading-none">
-                <span className="font-black text-[#1A1A1A]">Magi</span>
-                <span className="font-black text-[#0076FF]">Clean</span>
-              </span>
+            <a href="#" aria-label="MagiClean — inicio" className="flex items-center shrink-0 group">
+              <Image
+                src="/images/brand/logo/magiclean-logo.webp"
+                alt="MagiClean — Limpieza profesional"
+                width={2000}
+                height={610}
+                priority
+                className="h-8 lg:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
             </a>
 
             {/* Desktop Nav */}
