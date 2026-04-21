@@ -50,23 +50,14 @@ export const metadata: Metadata = {
     title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
     description:
       'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional en México y LATAM.',
-    // TODO(design): replace /og-image.jpg placeholder with final art after photo production.
-    // Current image is a brand-color placeholder generated from public/og-image.source.svg.
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
-      },
-    ],
+    // Image auto-populated from src/app/opengraph-image.tsx (next/og ImageResponse).
   },
   twitter: {
     card: 'summary_large_image',
     title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
     description:
       'Fibras, sistemas de mop y soluciones para distribuidores, retail, HORECA e institucional.',
-    images: ['/og-image.jpg'],
+    // Twitter image also auto-populated from src/app/opengraph-image.tsx.
   },
   robots: {
     index: true,
