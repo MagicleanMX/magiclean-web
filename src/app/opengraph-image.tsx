@@ -48,7 +48,7 @@ export default async function Image() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={neoshield}
-          width={140}
+          width={200}
           alt=""
           style={{ position: 'absolute', bottom: 40, right: 40 }}
         />
