@@ -8,17 +8,19 @@ import './globals.css'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  weight: ['400', '500', '600', '700', '900'],
   variable: '--font-montserrat',
   display: 'swap',
+  preload: false,
 })
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '700'],
   style: ['normal', 'italic'],
   variable: '--font-playfair',
   display: 'swap',
+  preload: true,
 })
 
 export const metadata: Metadata = {
