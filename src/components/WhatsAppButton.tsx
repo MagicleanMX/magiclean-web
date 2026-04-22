@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
+import { track, AnalyticsEvents } from '@/lib/analytics'
 
 const WHATSAPP_NUMBER = '5215512345678'
 const WHATSAPP_MESSAGE = 'Hola, me interesa conocer el portafolio profesional de MagicClean.'
@@ -73,6 +74,7 @@ export default function WhatsAppButton() {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track(AnalyticsEvents.WhatsAppClick, { location: 'tooltip_cta' })}
               className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#20c55e] text-white py-2.5 rounded-xl text-[12px] font-semibold transition-colors duration-200"
             >
               <svg width="14" height="14" fill="white" viewBox="0 0 24 24">
@@ -86,7 +88,10 @@ export default function WhatsAppButton() {
 
       {/* Botón flotante */}
       <motion.button
-        onClick={() => setOpen(!open)}
+        onClick={() => {
+          if (!open) track(AnalyticsEvents.WhatsAppClick, { location: 'sticky_fab' })
+          setOpen(!open)
+        }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         className="w-14 h-14 rounded-full bg-[#25D366] shadow-[0_4px_20px_rgba(37,211,102,0.4)] flex items-center justify-center relative"

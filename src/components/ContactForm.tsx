@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle, Loader2 } from 'lucide-react'
+import { track, AnalyticsEvents } from '@/lib/analytics'
 
 interface FormData {
   nombre: string
@@ -72,6 +73,10 @@ export default function ContactForm() {
         return
       }
 
+      track(AnalyticsEvents.ContactFormSubmit, {
+        channel: formData.canal,
+        source: 'contact_form',
+      })
       setSubmitted(true)
     } catch {
       setError('Error de conexión. Verifica tu internet e intenta de nuevo.')
