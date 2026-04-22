@@ -18,7 +18,7 @@ export default function HowItWorks() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10"
         >
           <div>
-            <p className="label-eyebrow text-[#0076FF] mb-3">El Proceso</p>
+            <p className="label-eyebrow text-[#0052CC] mb-3">El Proceso</p>
             <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] max-w-xs">
               Simple y transparente
             </h2>

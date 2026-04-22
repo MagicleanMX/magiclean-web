@@ -34,7 +34,7 @@ export default function Hero({ data }: HeroProps) {
           {/* Eyebrow — azul como en secciones premium */}
           <div className="flex items-center gap-2 mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#0076FF] shrink-0" />
-            <span className="label-eyebrow text-[#0076FF]">{eyebrow}</span>
+            <span className="label-eyebrow text-[#0052CC]">{eyebrow}</span>
           </div>
 
           {/* Headline */}
@@ -48,7 +48,7 @@ export default function Hero({ data }: HeroProps) {
           </p>
 
           {/* Micro-texto B2B */}
-          <p className="text-[0.8rem] font-normal text-[#8B92A0] tracking-wide mb-8">
+          <p className="text-[0.8rem] font-normal text-[#6B7280] tracking-wide mb-8">
             {heroMicrotext}
           </p>
 

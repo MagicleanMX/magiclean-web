@@ -20,7 +20,7 @@ export default function BeneficiosClave() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14"
         >
           <div>
-            <p className="label-eyebrow text-[#0076FF] mb-3">Por qué MagicClean</p>
+            <p className="label-eyebrow text-[#0052CC] mb-3">Por qué MagicClean</p>
             <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-[#1A1A1A] max-w-lg mb-5">
               Tecnología que se demuestra. Beneficios que se miden.
             </h2>

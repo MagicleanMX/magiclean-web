@@ -16,7 +16,7 @@ export default function SocialProof() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12"
         >
-          <p className="label-eyebrow text-[#0076FF] mb-3">Presencia verificada</p>
+          <p className="label-eyebrow text-[#0052CC] mb-3">Presencia verificada</p>
           <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-[#1A1A1A] max-w-xl">
             Donde ya estamos. Y a dónde vamos.
           </h2>

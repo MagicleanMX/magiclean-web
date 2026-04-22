@@ -43,7 +43,7 @@ export default function ProductHeroF4() {
           {/* Código F4 — firma minimalista bottom-left */}
           <div className="absolute bottom-6 left-6 z-10 flex items-end gap-3">
             <p className="font-black leading-none tracking-tight text-white text-[2.4rem]">F4</p>
-            <p className="label-eyebrow text-white/40 text-[10px] pb-1">FIBRA ESPONJA DUAL</p>
+            <p className="label-eyebrow text-white/70 text-[10px] pb-1">FIBRA ESPONJA DUAL</p>
           </div>
         </motion.div>
 
@@ -55,7 +55,7 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="label-eyebrow text-[#0076FF] mb-3"
+            className="label-eyebrow text-[#0052CC] mb-3"
           >
             Fibras Abrasivas — NeoShield™
           </motion.p>

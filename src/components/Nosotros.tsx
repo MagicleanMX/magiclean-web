@@ -16,7 +16,7 @@ export default function Nosotros() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl mb-6"
         >
-          <p className="label-eyebrow text-[#0076FF] mb-3">La Empresa</p>
+          <p className="label-eyebrow text-[#0052CC] mb-3">La Empresa</p>
           <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] mb-6">
             El estándar que faltaba.
             <span className="italic text-[#0076FF]"> Lo estamos construyendo.</span>

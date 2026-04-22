@@ -39,7 +39,7 @@ export default function Categories({ data }: CategoriesProps) {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12"
         >
           <div className="max-w-xl">
-            <p className="label-eyebrow text-[#0076FF] mb-3">{eyebrow}</p>
+            <p className="label-eyebrow text-[#0052CC] mb-3">{eyebrow}</p>
             <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] mb-4">
               {headline}
             </h2>
