@@ -11,8 +11,10 @@ export default function CookieBanner() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const stored = localStorage.getItem(CONSENT_KEY)
-    if (!stored) setVisible(true)
+    // One-shot sync from localStorage on mount; setVisible runs at most once
+    // so it cannot trigger a render cycle.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (!localStorage.getItem(CONSENT_KEY)) setVisible(true)
   }, [])
 
   function accept(value: CookieConsent) {

@@ -18,7 +18,7 @@ export default function HowItWorks() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10"
         >
           <div>
-            <p className="label-eyebrow text-[#0076FF] mb-3">El Proceso</p>
+            <p className="label-eyebrow text-[#0052CC] mb-3">El Proceso</p>
             <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] max-w-xs">
               Simple y transparente
             </h2>
@@ -40,7 +40,7 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative border-t-2 border-[#E0E3E8] pt-8 pr-0 lg:pr-8 pb-0 group hover:border-[#0076FF] transition-colors duration-300"
+              className="relative border-t-2 border-border-strong pt-8 pr-0 lg:pr-8 pb-0 group hover:border-[#0076FF] transition-colors duration-300"
             >
               <p className="font-black text-[5rem] leading-none text-[#E8EAED] select-none mb-4 group-hover:text-[#D8E4FF] transition-colors duration-300">
                 {p.num}
@@ -48,7 +48,7 @@ export default function HowItWorks() {
               <h3 className="font-serif text-[1.05rem] font-medium text-[#1A1A1A] mb-2.5">
                 {p.titulo}
               </h3>
-              <p className="text-[13px] font-normal text-[#666666] leading-[1.7]">
+              <p className="text-[13px] font-normal text-ink-muted leading-[1.7]">
                 {p.desc}
               </p>
             </motion.div>

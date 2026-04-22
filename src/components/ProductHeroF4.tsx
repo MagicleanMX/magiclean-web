@@ -43,7 +43,7 @@ export default function ProductHeroF4() {
           {/* Código F4 — firma minimalista bottom-left */}
           <div className="absolute bottom-6 left-6 z-10 flex items-end gap-3">
             <p className="font-black leading-none tracking-tight text-white text-[2.4rem]">F4</p>
-            <p className="label-eyebrow text-white/40 text-[10px] pb-1">FIBRA ESPONJA DUAL</p>
+            <p className="label-eyebrow text-white/70 text-[10px] pb-1">FIBRA ESPONJA DUAL</p>
           </div>
         </motion.div>
 
@@ -55,7 +55,7 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="label-eyebrow text-[#0076FF] mb-3"
+            className="label-eyebrow text-[#0052CC] mb-3"
           >
             Fibras Abrasivas — NeoShield™
           </motion.p>
@@ -76,7 +76,7 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[1rem] font-normal text-[#666666] leading-[1.75] max-w-md mb-5"
+            className="text-[1rem] font-normal text-ink-muted leading-[1.75] max-w-md mb-5"
           >
             Fibra abrasiva de alta resistencia por un lado, esponja suave por el otro.
             Un producto. Dos herramientas.
@@ -90,8 +90,8 @@ export default function ProductHeroF4() {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="border-l-2 border-[#0076FF] pl-5 mb-6"
           >
-            <p className="text-[0.95rem] font-normal text-[#666666] italic leading-[1.7]">
-              "El estándar se creó ayer. Hoy lo evolucionamos."
+            <p className="text-[0.95rem] font-normal text-ink-muted italic leading-[1.7]">
+              &ldquo;El estándar se creó ayer. Hoy lo evolucionamos.&rdquo;
             </p>
           </motion.blockquote>
 
@@ -108,7 +108,7 @@ export default function ProductHeroF4() {
                 <p className="font-black text-[#1A1A1A] text-2xl lg:text-3xl leading-none mb-1">
                   {s.valor}
                 </p>
-                <p className="label-eyebrow text-[#666666] text-[10px]">{s.etiqueta}</p>
+                <p className="label-eyebrow text-ink-muted text-[10px]">{s.etiqueta}</p>
               </div>
             ))}
           </motion.div>

@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
         headers: [
           { key: 'Strict-Transport-Security',  value: 'max-age=63072000; includeSubDomains; preload' },
           { key: 'X-Content-Type-Options',     value: 'nosniff' },
-          { key: 'X-Frame-Options',            value: 'SAMEORIGIN' },
+          // X-Frame-Options removed: CSP `frame-ancestors 'none'` below is stricter and covers it
           { key: 'X-XSS-Protection',           value: '0' },
           { key: 'Referrer-Policy',            value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy',         value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()' },
@@ -28,7 +28,8 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob:",
-              "connect-src 'self' https://*.supabase.co https://api.resend.com",
+              "connect-src 'self' https://*.supabase.co https://api.resend.com https://*.sentry.io https://*.ingest.sentry.io https://vitals.vercel-insights.com https://*.vercel-scripts.com",
+              "worker-src 'self' blob:",
               "frame-ancestors 'none'",
             ].join('; '),
           },

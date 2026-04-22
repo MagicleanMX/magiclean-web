@@ -57,7 +57,7 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
 
             <a
               href={ctaUrl}
-              className="inline-flex items-center gap-2.5 bg-white text-[#0076FF] px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-[#F0F5FF] transition-colors duration-300 group"
+              className="inline-flex items-center gap-2.5 bg-white text-[#0076FF] px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-surface-blue transition-colors duration-300 group"
             >
               {ctaLabel}
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />

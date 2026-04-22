@@ -113,7 +113,7 @@ export default function NeoShield() {
                   <p className="font-black text-white text-[2.4rem] lg:text-[3rem] leading-none mb-2">
                     <Counter target={s.target} suffix={s.suffix} />
                   </p>
-                  <p className="label-eyebrow text-white/40 text-[10px]">{s.label}</p>
+                  <p className="label-eyebrow text-white/70 text-[10px]">{s.label}</p>
                 </div>
               ))}
             </div>

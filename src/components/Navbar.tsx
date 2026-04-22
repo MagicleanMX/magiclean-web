@@ -246,7 +246,7 @@ export default function Navbar() {
                       onClick={() => setMegaOpen((prev) => !prev)}
                       className={`flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                         megaOpen
-                          ? 'text-[#0076FF] bg-[#F0F5FF]'
+                          ? 'text-[#0076FF] bg-surface-blue'
                           : 'text-[#1A1A1A] hover:text-[#0076FF] hover:bg-[#F5F7FA]'
                       }`}
                     >
@@ -300,12 +300,12 @@ export default function Navbar() {
                                           <p className="text-[12px] font-medium text-[#1A1A1A] group-hover/item:text-[#0076FF] transition-colors leading-tight">
                                             {item.nombre}
                                             {item.badge && (
-                                              <span className="ml-1.5 text-[10px] font-bold text-[#FF2B2B] bg-[#FFF0F0] px-1.5 py-0.5 rounded-full">
+                                              <span className="ml-1.5 text-[10px] font-bold text-[#FF2B2B] bg-surface-red px-1.5 py-0.5 rounded-full">
                                                 {item.badge}
                                               </span>
                                             )}
                                           </p>
-                                          <p className="text-[11px] text-[#666666] font-normal leading-tight mt-0.5">
+                                          <p className="text-[11px] text-ink-muted font-normal leading-tight mt-0.5">
                                             {item.detalle}
                                           </p>
                                         </div>
@@ -318,7 +318,7 @@ export default function Navbar() {
                           </div>
 
                           {/* Producto destacado */}
-                          <div className="w-44 bg-[#FFFBF0] flex flex-col items-center justify-center gap-3 p-6 text-center border-l border-[#E8EAED]">
+                          <div className="w-44 bg-surface-cream flex flex-col items-center justify-center gap-3 p-6 text-center border-l border-[#E8EAED]">
                             <span className="label-eyebrow text-[#FF2B2B] text-[10px]">
                               {megaProductos.destacado.badge}
                             </span>
@@ -337,7 +337,7 @@ export default function Navbar() {
                               <p className="text-[12px] font-semibold text-[#1A1A1A] leading-snug">
                                 {megaProductos.destacado.nombre}
                               </p>
-                              <p className="text-[11px] text-[#666666] font-normal mt-1 leading-snug">
+                              <p className="text-[11px] text-ink-muted font-normal mt-1 leading-snug">
                                 {megaProductos.destacado.descripcion}
                               </p>
                             </div>
@@ -353,7 +353,7 @@ export default function Navbar() {
 
                         {/* Footer del mega menú */}
                         <div className="border-t border-[#E8EAED] px-6 py-3 bg-[#F5F7FA] flex items-center justify-between">
-                          <p className="text-[11px] text-[#666666] font-normal">
+                          <p className="text-[11px] text-ink-muted font-normal">
                             <span className="font-semibold text-[#1A1A1A]">23 modelos</span> disponibles · Línea Fibras y Línea Mops
                           </p>
                           <a

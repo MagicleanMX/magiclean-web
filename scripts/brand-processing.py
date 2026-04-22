@@ -3,7 +3,7 @@
 Brand asset processing — Pillow-only (no external deps, no numpy).
 
 Extracts transparent PNG + WebP from the 3 raster sources in
-`public/images/brand/_source/` using per-asset color-keying:
+`audit-evidence/brand-sources/` using per-asset color-keying:
 
   • magiclean-logo.source.png  → white-background threshold (lum 210-235)
                                  + chroma boost (40-80) to preserve red/blue letter edges.
@@ -26,7 +26,8 @@ except ImportError:
     sys.exit("Pillow required: pip install pillow")
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "public/images/brand/_source"
+# Sources moved out of public/ to keep them off the deploy surface.
+SRC = ROOT / "audit-evidence/brand-sources"
 DST = ROOT / "public/images/brand"
 
 

@@ -6,9 +6,21 @@
   --color-primary-dark: #0052CC;
   --color-accent: #FF2B2B;
   --color-deep: #0A1628;
+  --color-deep-darker: #060e1e;
   --color-ink: #1A1A1A;
+  --color-ink-legal: #444444;
+  --color-ink-muted: #666666;
+  --color-ink-subtle: #6B7280;
   --color-surface: #F5F7FA;
+  --color-surface-alt: #FAFAFA;
+  --color-surface-blue: #F0F5FF;
+  --color-surface-cream: #FFFBF0;
+  --color-surface-red: #FFF0F0;
   --color-border: #E8EAED;
+  --color-border-strong: #E0E3E8;
+
+  /* Third-party brand (WhatsApp) */
+  --color-whatsapp: #25D366;
 
   /* Typography */
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
