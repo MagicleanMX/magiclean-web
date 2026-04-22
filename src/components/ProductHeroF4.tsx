@@ -91,7 +91,7 @@ export default function ProductHeroF4() {
             className="border-l-2 border-[#0076FF] pl-5 mb-6"
           >
             <p className="text-[0.95rem] font-normal text-[#666666] italic leading-[1.7]">
-              "El estándar se creó ayer. Hoy lo evolucionamos."
+              &ldquo;El estándar se creó ayer. Hoy lo evolucionamos.&rdquo;
             </p>
           </motion.blockquote>
 

@@ -43,7 +43,7 @@ export default function AvisoDePrivacidad() {
             </h2>
             <p className="text-sm font-normal leading-relaxed text-[#444] mb-4">
               <strong className="font-semibold text-[#1A1A1A]">MagicClean S.A. de C.V.</strong>{' '}
-              (en adelante, <em>"el Responsable"</em>) es el responsable del tratamiento
+              (en adelante, <em>&ldquo;el Responsable&rdquo;</em>) es el responsable del tratamiento
               de sus datos personales.
             </p>
             <ul className="text-sm font-normal text-[#444] space-y-1.5 leading-relaxed">
