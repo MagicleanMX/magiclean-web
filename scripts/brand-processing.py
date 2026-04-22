@@ -3,7 +3,7 @@
 Brand asset processing — Pillow-only (no external deps, no numpy).
 
 Extracts transparent PNG + WebP from the 3 raster sources in
-`audit-evidence/brand-sources/` using per-asset color-keying:
+`project-log/brand-sources/` using per-asset color-keying:
 
   • magiclean-logo.source.png  → white-background threshold (lum 210-235)
                                  + chroma boost (40-80) to preserve red/blue letter edges.
@@ -27,7 +27,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parent.parent
 # Sources moved out of public/ to keep them off the deploy surface.
-SRC = ROOT / "audit-evidence/brand-sources"
+SRC = ROOT / "project-log/brand-sources"
 DST = ROOT / "public/images/brand"
 
 
