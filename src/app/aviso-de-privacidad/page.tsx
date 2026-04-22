@@ -41,12 +41,12 @@ export default function AvisoDePrivacidad() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               I. Identidad y domicilio del Responsable
             </h2>
-            <p className="text-sm font-normal leading-relaxed text-[#444] mb-4">
+            <p className="text-sm font-normal leading-relaxed text-ink-legal mb-4">
               <strong className="font-semibold text-[#1A1A1A]">MagicClean S.A. de C.V.</strong>{' '}
               (en adelante, <em>&ldquo;el Responsable&rdquo;</em>) es el responsable del tratamiento
               de sus datos personales.
             </p>
-            <ul className="text-sm font-normal text-[#444] space-y-1.5 leading-relaxed">
+            <ul className="text-sm font-normal text-ink-legal space-y-1.5 leading-relaxed">
               <li>
                 <span className="font-semibold text-[#1A1A1A]">Domicilio:</span>{' '}
                 Calle 3, No. 47, Local 109, Col. Industrial Alce Blanco,
@@ -75,7 +75,7 @@ export default function AvisoDePrivacidad() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               II. Datos personales que se recaban
             </h2>
-            <p className="text-sm font-normal leading-relaxed text-[#444] mb-4">
+            <p className="text-sm font-normal leading-relaxed text-ink-legal mb-4">
               El Responsable recaba los siguientes datos personales, los cuales{' '}
               <strong className="font-semibold">no son de naturaleza sensible</strong>:
             </p>
@@ -84,7 +84,7 @@ export default function AvisoDePrivacidad() {
               <p className="text-xs font-semibold tracking-widest text-[#0076FF] uppercase mb-2">
                 A. Formulario de contacto / cotización
               </p>
-              <ul className="list-disc list-inside text-sm font-normal text-[#444] space-y-1 leading-relaxed ml-1">
+              <ul className="list-disc list-inside text-sm font-normal text-ink-legal space-y-1 leading-relaxed ml-1">
                 <li>Nombre completo</li>
                 <li>Empresa u organización</li>
                 <li>Correo electrónico</li>
@@ -99,7 +99,7 @@ export default function AvisoDePrivacidad() {
               <p className="text-xs font-semibold tracking-widest text-[#0076FF] uppercase mb-2">
                 B. Datos de navegación (cookies y tecnologías similares)
               </p>
-              <ul className="list-disc list-inside text-sm font-normal text-[#444] space-y-1 leading-relaxed ml-1">
+              <ul className="list-disc list-inside text-sm font-normal text-ink-legal space-y-1 leading-relaxed ml-1">
                 <li>Dirección IP</li>
                 <li>Tipo y versión de navegador</li>
                 <li>Páginas visitadas y tiempo de permanencia</li>
@@ -118,7 +118,7 @@ export default function AvisoDePrivacidad() {
               <p className="text-xs font-semibold tracking-widest text-[#1A1A1A] uppercase mb-3">
                 Finalidades necesarias (no requieren consentimiento)
               </p>
-              <ul className="list-disc list-inside text-sm font-normal text-[#444] space-y-1.5 leading-relaxed ml-1">
+              <ul className="list-disc list-inside text-sm font-normal text-ink-legal space-y-1.5 leading-relaxed ml-1">
                 <li>Atender y responder solicitudes de cotización y contacto comercial.</li>
                 <li>Elaborar y enviar propuestas comerciales personalizadas.</li>
                 <li>Dar seguimiento a prospectos y distribuidores potenciales.</li>
@@ -129,12 +129,12 @@ export default function AvisoDePrivacidad() {
               <p className="text-xs font-semibold tracking-widest text-[#0076FF] uppercase mb-3">
                 Finalidades no necesarias (requieren consentimiento)
               </p>
-              <ul className="list-disc list-inside text-sm font-normal text-[#444] space-y-1.5 leading-relaxed ml-1">
+              <ul className="list-disc list-inside text-sm font-normal text-ink-legal space-y-1.5 leading-relaxed ml-1">
                 <li>Envío de comunicaciones de marketing y promociones comerciales.</li>
                 <li>Información sobre nuevos productos y lanzamientos.</li>
                 <li>Invitaciones a participar en encuestas de satisfacción.</li>
               </ul>
-              <p className="text-xs text-[#666] mt-3 leading-relaxed">
+              <p className="text-xs text-ink-muted mt-3 leading-relaxed">
                 Si no desea que sus datos sean tratados para estas finalidades, puede
                 manifestarlo en cualquier momento escribiendo a{' '}
                 <a
@@ -153,7 +153,7 @@ export default function AvisoDePrivacidad() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               IV. Transferencias de datos personales
             </h2>
-            <p className="text-sm font-normal leading-relaxed text-[#444] mb-4">
+            <p className="text-sm font-normal leading-relaxed text-ink-legal mb-4">
               El Responsable podrá compartir sus datos con los siguientes terceros,
               únicamente para los fines descritos en este aviso:
             </p>
@@ -166,7 +166,7 @@ export default function AvisoDePrivacidad() {
                     <th className="text-left py-2 font-semibold text-[#1A1A1A] text-xs uppercase tracking-wide">Finalidad</th>
                   </tr>
                 </thead>
-                <tbody className="text-[#444] font-light">
+                <tbody className="text-ink-legal font-light">
                   <tr className="border-b border-[#E8EAED]">
                     <td className="py-3 pr-4">Supabase Inc.</td>
                     <td className="py-3 pr-4">EE.UU.</td>
@@ -180,7 +180,7 @@ export default function AvisoDePrivacidad() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#666] mt-4 leading-relaxed">
+            <p className="text-xs text-ink-muted mt-4 leading-relaxed">
               El Responsable <strong className="font-semibold">no vende, cede ni comercializa</strong> datos
               personales a terceros con fines distintos a los señalados. Dichas transferencias no
               requieren consentimiento por ser necesarias para la relación comercial (art. 37 LFPDPPP).
@@ -192,7 +192,7 @@ export default function AvisoDePrivacidad() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               V. Derechos ARCO y cómo ejercerlos
             </h2>
-            <p className="text-sm font-normal leading-relaxed text-[#444] mb-4">
+            <p className="text-sm font-normal leading-relaxed text-ink-legal mb-4">
               Usted tiene derecho a <strong className="font-semibold">Acceder, Rectificar, Cancelar u Oponerse</strong>{' '}
               (derechos ARCO) al tratamiento de sus datos personales, así como a revocar
               el consentimiento otorgado para finalidades no necesarias.
@@ -211,16 +211,16 @@ export default function AvisoDePrivacidad() {
               <p className="text-xs text-white/60 mt-1">Atención: Responsable de Datos Personales</p>
             </div>
 
-            <p className="text-sm font-normal text-[#444] mb-3 leading-relaxed">
+            <p className="text-sm font-normal text-ink-legal mb-3 leading-relaxed">
               Su solicitud debe incluir:
             </p>
-            <ul className="list-disc list-inside text-sm font-normal text-[#444] space-y-1 leading-relaxed ml-1 mb-4">
+            <ul className="list-disc list-inside text-sm font-normal text-ink-legal space-y-1 leading-relaxed ml-1 mb-4">
               <li>Nombre completo</li>
               <li>Correo electrónico registrado</li>
               <li>Derecho que desea ejercer</li>
               <li>Copia de identificación oficial vigente</li>
             </ul>
-            <p className="text-sm font-normal text-[#444] leading-relaxed">
+            <p className="text-sm font-normal text-ink-legal leading-relaxed">
               El Responsable responderá su solicitud en un plazo máximo de{' '}
               <strong className="font-semibold">20 días hábiles</strong> contados a partir
               de su recepción, conforme al artículo 32 de la LFPDPPP.
@@ -232,7 +232,7 @@ export default function AvisoDePrivacidad() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               VI. Uso de cookies y tecnologías de rastreo
             </h2>
-            <p className="text-sm font-normal leading-relaxed text-[#444] mb-4">
+            <p className="text-sm font-normal leading-relaxed text-ink-legal mb-4">
               Este sitio web utiliza cookies para mejorar la experiencia del usuario y analizar
               el tráfico. Las cookies empleadas son:
             </p>
@@ -241,7 +241,7 @@ export default function AvisoDePrivacidad() {
                 <span className="mt-0.5 w-2 h-2 rounded-full bg-[#0076FF] shrink-0" />
                 <div>
                   <p className="text-sm font-semibold text-[#1A1A1A]">Cookies técnicas (necesarias)</p>
-                  <p className="text-sm font-normal text-[#444] leading-relaxed">
+                  <p className="text-sm font-normal text-ink-legal leading-relaxed">
                     Indispensables para el funcionamiento del sitio. No pueden desactivarse.
                   </p>
                 </div>
@@ -250,14 +250,14 @@ export default function AvisoDePrivacidad() {
                 <span className="mt-0.5 w-2 h-2 rounded-full bg-[#0076FF] shrink-0" />
                 <div>
                   <p className="text-sm font-semibold text-[#1A1A1A]">Cookies de analítica (Vercel Analytics)</p>
-                  <p className="text-sm font-normal text-[#444] leading-relaxed">
+                  <p className="text-sm font-normal text-ink-legal leading-relaxed">
                     Recopilan datos de navegación de forma anonimizada para entender el uso del sitio.
                     No se utilizan para publicidad ni segmentación comercial.
                   </p>
                 </div>
               </div>
             </div>
-            <p className="text-xs text-[#666] mt-4 leading-relaxed">
+            <p className="text-xs text-ink-muted mt-4 leading-relaxed">
               Este sitio <strong className="font-semibold">no utiliza cookies de publicidad</strong>{' '}
               ni comparte datos de navegación con redes publicitarias de terceros.
               Puede configurar su navegador para rechazar cookies, aunque esto puede afectar
@@ -270,7 +270,7 @@ export default function AvisoDePrivacidad() {
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               VII. Cambios al aviso de privacidad
             </h2>
-            <p className="text-sm font-normal leading-relaxed text-[#444]">
+            <p className="text-sm font-normal leading-relaxed text-ink-legal">
               El Responsable se reserva el derecho de modificar este aviso de privacidad
               en cualquier momento. Cualquier cambio será publicado en esta página con la
               fecha de actualización correspondiente. Le recomendamos revisarlo periódicamente.

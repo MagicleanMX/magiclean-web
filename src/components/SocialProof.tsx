@@ -33,9 +33,9 @@ export default function SocialProof() {
           {MARKETPLACES.map((m) => (
             <div
               key={m}
-              className="group px-6 py-3.5 rounded-xl bg-[#F5F7FA] border border-[#E8EAED] hover:border-[#0076FF]/30 hover:bg-[#F0F5FF] transition-all duration-300 cursor-default"
+              className="group px-6 py-3.5 rounded-xl bg-[#F5F7FA] border border-[#E8EAED] hover:border-[#0076FF]/30 hover:bg-surface-blue transition-all duration-300 cursor-default"
             >
-              <span className="text-[1.1rem] lg:text-[1.3rem] font-black text-[#666666] group-hover:text-[#0076FF] transition-colors duration-300">
+              <span className="text-[1.1rem] lg:text-[1.3rem] font-black text-ink-muted group-hover:text-[#0076FF] transition-colors duration-300">
                 {m}
               </span>
             </div>
@@ -58,7 +58,7 @@ export default function SocialProof() {
               >
                 {m.n}
               </p>
-              <p className="label-eyebrow text-[#666666]">{m.label}</p>
+              <p className="label-eyebrow text-ink-muted">{m.label}</p>
             </motion.div>
           ))}
         </div>

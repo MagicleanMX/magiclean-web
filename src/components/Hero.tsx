@@ -43,12 +43,12 @@ export default function Hero({ data }: HeroProps) {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-[1rem] font-normal text-[#666666] leading-[1.75] max-w-sm mb-3">
+          <p className="text-[1rem] font-normal text-ink-muted leading-[1.75] max-w-sm mb-3">
             {subheadline}
           </p>
 
           {/* Micro-texto B2B */}
-          <p className="text-[0.8rem] font-normal text-[#6B7280] tracking-wide mb-8">
+          <p className="text-[0.8rem] font-normal text-ink-subtle tracking-wide mb-8">
             {heroMicrotext}
           </p>
 
@@ -77,7 +77,7 @@ export default function Hero({ data }: HeroProps) {
             ].map((s) => (
               <div key={s.label}>
                 <p className="text-xl sm:text-2xl font-black text-[#1A1A1A] leading-none mb-1">{s.n}</p>
-                <p className="label-eyebrow text-[#666666]">{s.label}</p>
+                <p className="label-eyebrow text-ink-muted">{s.label}</p>
               </div>
             ))}
           </div>

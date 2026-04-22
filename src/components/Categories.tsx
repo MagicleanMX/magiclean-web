@@ -43,7 +43,7 @@ export default function Categories({ data }: CategoriesProps) {
             <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] mb-4">
               {headline}
             </h2>
-            <p className="text-[1rem] font-normal text-[#666666] leading-[1.75]">{microtext}</p>
+            <p className="text-[1rem] font-normal text-ink-muted leading-[1.75]">{microtext}</p>
           </div>
           <a
             href={ctaLink}
@@ -166,7 +166,7 @@ export default function Categories({ data }: CategoriesProps) {
                   <p className="font-serif text-[1.15rem] font-medium text-[#1A1A1A] group-hover:text-[#0076FF] transition-colors duration-200 leading-snug mb-1">
                     {f.nombre}
                   </p>
-                  <p className="text-[12.5px] font-normal text-[#666666] leading-snug">
+                  <p className="text-[12.5px] font-normal text-ink-muted leading-snug">
                     {f.subtitulo}
                   </p>
                 </div>

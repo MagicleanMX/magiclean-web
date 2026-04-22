@@ -70,7 +70,7 @@ export default function ProductHeroMop() {
           >
             {/* === SLOT DE IMAGEN 3:4 === */}
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
-              <div className="absolute inset-0 bg-[#060e1e]" />
+              <div className="absolute inset-0 bg-deep-darker" />
               {/* <Image src="/products/m1-product.webp" alt="M1 Turbo Magic" fill className="object-cover object-center" /> */}
 
               {/* Placeholder premium */}
@@ -119,7 +119,7 @@ export default function ProductHeroMop() {
           >
             {/* === SLOT DE IMAGEN 3:4 === */}
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
-              <div className="absolute inset-0 bg-[#060e1e]" />
+              <div className="absolute inset-0 bg-deep-darker" />
               {/* <Image src="/products/m2-product.webp" alt="M2 Spin Magic" fill className="object-cover object-center" /> */}
 
               {/* Placeholder premium */}

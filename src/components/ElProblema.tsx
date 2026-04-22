@@ -34,16 +34,16 @@ export default function ElProblema() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                className="border-t-2 border-[#E0E3E8] pt-8 pr-0 md:pr-14 pb-8 md:pb-0"
+                className="border-t-2 border-border-strong pt-8 pr-0 md:pr-14 pb-8 md:pb-0"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#FFF0F0] flex items-center justify-center mb-6">
+                <div className="w-10 h-10 rounded-xl bg-surface-red flex items-center justify-center mb-6">
                   <Icon size={20} className="text-[#FF2B2B]" />
                 </div>
 
                 <h3 className="font-serif text-[1.15rem] font-medium text-[#1A1A1A] mb-3 leading-snug">
                   {titulo}
                 </h3>
-                <p className="text-[14px] font-normal text-[#666666] leading-[1.75]">
+                <p className="text-[14px] font-normal text-ink-muted leading-[1.75]">
                   {desc}
                 </p>
               </motion.div>

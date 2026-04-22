@@ -21,7 +21,7 @@ export default function Nosotros() {
             El estándar que faltaba.
             <span className="italic text-[#0076FF]"> Lo estamos construyendo.</span>
           </h2>
-          <p className="text-[1rem] font-normal text-[#666666] leading-[1.75]">
+          <p className="text-[1rem] font-normal text-ink-muted leading-[1.75]">
             MagicClean nació con una idea simple: que la limpieza profesional merecía mejor
             tecnología, mejor diseño y mejor precio. Desarrollamos NeoShield™ — tecnología
             antibacterial propia — y la integramos en cada producto. Hoy operamos en los 3
@@ -71,7 +71,7 @@ export default function Nosotros() {
               <p className="font-black text-[3.4rem] lg:text-[4rem] text-[#1A1A1A] leading-none mb-2">
                 {s.n}
               </p>
-              <p className="label-eyebrow text-[#666666]">{s.label}</p>
+              <p className="label-eyebrow text-ink-muted">{s.label}</p>
             </div>
           ))}
         </motion.div>
@@ -87,12 +87,12 @@ export default function Nosotros() {
               transition={{ duration: 0.7, delay: i * 0.1 }}
               className="flex gap-5"
             >
-              <div className="shrink-0 w-10 h-10 rounded-full bg-[#F0F5FF] flex items-center justify-center mt-0.5">
+              <div className="shrink-0 w-10 h-10 rounded-full bg-surface-blue flex items-center justify-center mt-0.5">
                 <span className="font-black text-[#0076FF] text-[12px]">{v.num}</span>
               </div>
               <div>
                 <p className="font-semibold text-[#1A1A1A] text-[0.95rem] mb-2">{v.titulo}</p>
-                <p className="text-[13.5px] font-normal text-[#666666] leading-[1.7]">{v.desc}</p>
+                <p className="text-[13.5px] font-normal text-ink-muted leading-[1.7]">{v.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -106,7 +106,7 @@ export default function Nosotros() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-10 pt-8 border-t border-[#E8EAED]"
         >
-          <p className="label-eyebrow text-[#666666] mb-8 text-center">Ya disponibles en</p>
+          <p className="label-eyebrow text-ink-muted mb-8 text-center">Ya disponibles en</p>
           <div className="flex flex-wrap items-center justify-center gap-10">
             {MARKETPLACES.map((m) => (
               <span key={m} className="text-[1.1rem] font-bold text-[#1A1A1A]/40 hover:text-[#0076FF] transition-colors duration-300 cursor-default">
@@ -128,7 +128,7 @@ export default function Nosotros() {
             <p className="font-semibold text-[#1A1A1A] text-[1.1rem] mb-1">
               ¿Quieres ser parte de este crecimiento?
             </p>
-            <p className="text-[14px] font-normal text-[#666666]">
+            <p className="text-[14px] font-normal text-ink-muted">
               Distribuidores, retail y HORECA — hablemos.
             </p>
           </div>
