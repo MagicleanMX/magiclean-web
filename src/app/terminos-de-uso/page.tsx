@@ -4,9 +4,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Términos de Uso — MagicClean S.A. de C.V.',
+  title: 'Términos de Uso — Prolim BH, SA de CV',
   description:
-    'Términos y condiciones de uso del sitio web de MagicClean S.A. de C.V.',
+    'Términos y condiciones de uso del sitio web magicleanproducts.com, operado por Prolim BH, SA de CV (titular de la marca MagiClean®).',
   robots: { index: true, follow: true },
 }
 
@@ -43,7 +43,7 @@ export default function TerminosDeUso() {
             </h2>
             <p className="text-sm font-normal leading-relaxed text-ink-legal">
               Al acceder y utilizar este sitio web operado por{' '}
-              <strong className="font-semibold text-[#1A1A1A]">MagicClean S.A. de C.V.</strong>,
+              <strong className="font-semibold text-[#1A1A1A]">Prolim BH, SA de CV</strong>,
               usted acepta quedar vinculado por los presentes Términos de Uso. Si no está de
               acuerdo con alguna de estas condiciones, le pedimos abstenerse de utilizar el sitio.
             </p>
@@ -56,7 +56,7 @@ export default function TerminosDeUso() {
             </h2>
             <p className="text-sm font-normal leading-relaxed text-ink-legal">
               Este sitio web tiene como finalidad presentar el portafolio de productos de
-              limpieza profesional de MagicClean S.A. de C.V. y facilitar el contacto con
+              limpieza profesional de Prolim BH, SA de CV y facilitar el contacto con
               distribuidores, clientes de canal retail, institucional y HORECA en México y LATAM.
               El sitio es de carácter <strong className="font-semibold">informativo y comercial B2B</strong>;
               no constituye una tienda en línea con transacciones directas al consumidor final.
@@ -66,19 +66,28 @@ export default function TerminosDeUso() {
           {/* 3. Propiedad intelectual */}
           <section>
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
-              3. Propiedad intelectual
+              3. Propiedad intelectual y marcas registradas
             </h2>
             <p className="text-sm font-normal leading-relaxed text-ink-legal mb-3">
-              Todos los contenidos de este sitio —incluyendo textos, imágenes, logotipos,
-              marcas, diseños, íconos, código fuente y la marca{' '}
-              <strong className="font-semibold">NeoShield™</strong>— son propiedad exclusiva
-              de MagicClean S.A. de C.V. o de sus licenciantes, y están protegidos por la
-              Ley Federal del Derecho de Autor y demás legislación aplicable en México.
+              Todos los contenidos de este sitio —incluyendo textos, imágenes, diseños,
+              íconos y código fuente— son propiedad de{' '}
+              <strong className="font-semibold">Prolim BH, SA de CV</strong>{' '}
+              o de sus licenciantes, y están protegidos por la Ley Federal del Derecho
+              de Autor y demás legislación aplicable en México.
+            </p>
+            <p className="text-sm font-normal leading-relaxed text-ink-legal mb-3">
+              <strong className="font-semibold">MagiClean®</strong> es marca registrada
+              ante el Instituto Mexicano de la Propiedad Industrial (IMPI) a nombre de
+              Prolim BH, SA de CV.{' '}
+              <strong className="font-semibold">NeoShield™</strong> es marca en proceso
+              de registro ante el IMPI a nombre de Prolim BH, SA de CV. Cualquier uso no
+              autorizado de estas marcas constituye una violación a la Ley Federal de
+              Protección a la Propiedad Industrial.
             </p>
             <p className="text-sm font-normal leading-relaxed text-ink-legal">
               Queda estrictamente prohibida la reproducción, distribución, modificación o
-              uso comercial de cualquier contenido sin autorización previa y por escrito
-              del Responsable.
+              uso comercial de cualquier contenido, marca o signo distintivo sin
+              autorización previa y por escrito de Prolim BH, SA de CV.
             </p>
           </section>
 
@@ -108,7 +117,7 @@ export default function TerminosDeUso() {
             <p className="text-sm font-normal leading-relaxed text-ink-legal">
               El envío de un formulario de contacto o cotización a través de este sitio no
               constituye la aceptación de un pedido ni la celebración de un contrato.
-              MagicClean S.A. de C.V. se reserva el derecho de aceptar o rechazar cualquier
+              Prolim BH, SA de CV se reserva el derecho de aceptar o rechazar cualquier
               solicitud comercial. Las propuestas enviadas por nuestro equipo tendrán validez
               según los términos indicados en cada cotización formal.
             </p>
@@ -120,7 +129,7 @@ export default function TerminosDeUso() {
               6. Limitación de responsabilidad
             </h2>
             <p className="text-sm font-normal leading-relaxed text-ink-legal mb-3">
-              MagicClean S.A. de C.V. no será responsable por:
+              Prolim BH, SA de CV no será responsable por:
             </p>
             <ul className="list-disc list-inside text-sm font-normal text-ink-legal space-y-1.5 leading-relaxed ml-1">
               <li>Daños derivados del uso o imposibilidad de uso del sitio.</li>
@@ -141,7 +150,7 @@ export default function TerminosDeUso() {
             </h2>
             <p className="text-sm font-normal leading-relaxed text-ink-legal">
               Este sitio puede contener enlaces a plataformas de terceros (MercadoLibre,
-              Amazon, redes sociales). MagicClean S.A. de C.V. no controla ni se responsabiliza
+              Amazon, redes sociales). Prolim BH, SA de CV no controla ni se responsabiliza
               por el contenido, políticas de privacidad o prácticas de dichos sitios. El acceso
               a estos enlaces es bajo responsabilidad del usuario.
             </p>
@@ -168,7 +177,7 @@ export default function TerminosDeUso() {
               9. Modificaciones
             </h2>
             <p className="text-sm font-normal leading-relaxed text-ink-legal">
-              MagicClean S.A. de C.V. se reserva el derecho de modificar estos Términos de
+              Prolim BH, SA de CV se reserva el derecho de modificar estos Términos de
               Uso en cualquier momento. Los cambios entrarán en vigor en el momento de su
               publicación en este sitio. El uso continuado del sitio después de publicarse
               las modificaciones implica la aceptación de los nuevos términos.

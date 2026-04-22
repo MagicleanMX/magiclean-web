@@ -175,7 +175,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="text-[11px] font-normal text-white/70">
-            © {new Date().getFullYear()} MagicClean S.A. de C.V. · México · Todos los derechos reservados.
+            © {new Date().getFullYear()} Prolim BH, SA de CV · MagiClean® marca registrada · México
           </p>
         </div>
       </div>

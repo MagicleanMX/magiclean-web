@@ -4,9 +4,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Aviso de Privacidad — MagicClean S.A. de C.V.',
+  title: 'Aviso de Privacidad — Prolim BH, SA de CV',
   description:
-    'Aviso de Privacidad de MagicClean S.A. de C.V. conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.',
+    'Aviso de Privacidad de Prolim BH, SA de CV conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.',
   robots: { index: true, follow: true },
 }
 
@@ -42,7 +42,7 @@ export default function AvisoDePrivacidad() {
               I. Identidad y domicilio del Responsable
             </h2>
             <p className="text-sm font-normal leading-relaxed text-ink-legal mb-4">
-              <strong className="font-semibold text-[#1A1A1A]">MagicClean S.A. de C.V.</strong>{' '}
+              <strong className="font-semibold text-[#1A1A1A]">Prolim BH, SA de CV</strong>{' '}
               (en adelante, <em>&ldquo;el Responsable&rdquo;</em>) es el responsable del tratamiento
               de sus datos personales.
             </p>
