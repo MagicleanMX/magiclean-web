@@ -2,10 +2,12 @@
 
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Download } from 'lucide-react'
 import { CATEGORY_COLORS, getChipColor } from '@/lib/categoryColors'
 import type { ProductCategoria } from '@/lib/categoryColors'
 import productsData from '@/lib/products.json'
+import { track, AnalyticsEvents } from '@/lib/analytics'
+import { CATALOG_PDFS } from '@/lib/catalog-assets'
 
 type Product = {
   sku: string
@@ -294,18 +296,37 @@ export default function Navbar() {
                           ))}
                         </div>
 
-                        {/* Footer del mega menú */}
-                        <div className="border-t border-[#E8EAED] px-5 py-2.5 bg-[#F5F7FA] flex items-center justify-between">
+                        {/* Footer del mega menú — 2 líneas: info + acciones */}
+                        <div className="border-t border-[#E8EAED] px-5 py-3 bg-[#F5F7FA] space-y-2">
                           <p className="text-[11px] text-ink-muted font-normal">
                             <span className="font-semibold text-[#1A1A1A]">{products.length} soluciones</span> disponibles · Línea Fibras y Línea Mops
                           </p>
-                          <a
-                            href="#contacto"
-                            role="menuitem"
-                            className="text-[11px] font-semibold text-[#0076FF] hover:underline underline-offset-2"
-                          >
-                            Solicitar catálogo completo →
-                          </a>
+                          <div className="flex items-center justify-between gap-3">
+                            <div className="flex items-center gap-2">
+                              {CATALOG_PDFS.map((pdf) => (
+                                <a
+                                  key={pdf.id}
+                                  href={pdf.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  role="menuitem"
+                                  aria-label={`Descargar ${pdf.label} en PDF, ${pdf.sizeA11y}`}
+                                  onClick={() => track(AnalyticsEvents.CatalogDownload, { catalog: pdf.id })}
+                                  className="inline-flex items-center gap-1 px-2 py-1 text-[10px] font-medium text-ink-muted hover:text-[#0076FF] border border-[#E8EAED] hover:border-[#0076FF] rounded transition-colors duration-200"
+                                >
+                                  <Download size={10} />
+                                  {pdf.labelShort} ({pdf.sizeLabel})
+                                </a>
+                              ))}
+                            </div>
+                            <a
+                              href="#contacto"
+                              role="menuitem"
+                              className="text-[11px] font-semibold text-[#0076FF] hover:underline underline-offset-2"
+                            >
+                              Solicitar catálogo profesional →
+                            </a>
+                          </div>
                         </div>
                       </div>
                     )}

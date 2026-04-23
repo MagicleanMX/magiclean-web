@@ -1,6 +1,22 @@
-import Image from 'next/image'
+'use client'
 
-const cols = [
+import Image from 'next/image'
+import { track, AnalyticsEvents } from '@/lib/analytics'
+import { CATALOG_PDFS, type CatalogId } from '@/lib/catalog-assets'
+
+type FooterLink = {
+  label: string
+  href: string
+  external?: boolean
+  analyticsId?: CatalogId
+}
+
+type FooterCol = {
+  titulo: string
+  links: FooterLink[]
+}
+
+const cols: FooterCol[] = [
   {
     titulo: 'Productos',
     links: [
@@ -19,7 +35,12 @@ const cols = [
       { label: 'Tecnología NeoShield™', href: '#tecnologia' },
       { label: 'Cómo funciona', href: '#como-funciona' },
       { label: 'Red de Distribuidores', href: '#distribuidores' },
-      { label: 'Catálogo completo', href: '#contacto' },
+      ...CATALOG_PDFS.map((pdf) => ({
+        label: `${pdf.label} (${pdf.sizeLabel})`,
+        href: pdf.url,
+        external: true,
+        analyticsId: pdf.id,
+      })),
     ],
   },
   {
@@ -144,6 +165,10 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      {...(link.external && { target: '_blank', rel: 'noopener noreferrer' })}
+                      {...(link.analyticsId && {
+                        onClick: () => track(AnalyticsEvents.CatalogDownload, { catalog: link.analyticsId as CatalogId }),
+                      })}
                       className="text-[13px] font-normal text-white/50 hover:text-white transition-colors duration-200 leading-snug block"
                     >
                       {link.label}
