@@ -3,6 +3,30 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import productsData from '@/lib/products.json'
+
+type Product = {
+  sku: string
+  nombre: string
+  destacado: boolean
+  imagen_path: string | null
+}
+
+const products = productsData as Product[]
+
+function getProduct(sku: string): Product {
+  const p = products.find((x) => x.sku === sku)
+  if (!p) throw new Error(`Product ${sku} not found in products.json`)
+  return p
+}
+
+function requireImagePath(p: Product): string {
+  if (!p.imagen_path) throw new Error(`${p.sku}.imagen_path missing — required by ProductHeroF4`)
+  return p.imagen_path
+}
+
+const F4 = getProduct('F4')
+const F4_IMAGE_SRC = requireImagePath(F4)
 
 const specs = [
   { valor: '3×', etiqueta: 'Mayor durabilidad' },
@@ -24,14 +48,16 @@ export default function ProductHeroF4() {
           className="relative order-1 overflow-hidden bg-[#0A1628] aspect-[4/5] lg:aspect-auto"
         >
           {/* Badge popular — top left */}
-          <div className="absolute top-6 left-6 flex items-center gap-2 bg-[#FF2B2B] text-white px-3.5 py-2 rounded-full z-20">
-            <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
-            <span className="text-[10px] font-bold uppercase tracking-widest">Más popular</span>
-          </div>
+          {F4.destacado && (
+            <div className="absolute top-6 left-6 flex items-center gap-2 bg-[#FF2B2B] text-white px-3.5 py-2 rounded-full z-20">
+              <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+              <span className="text-[10px] font-bold uppercase tracking-widest">Más popular</span>
+            </div>
+          )}
 
           {/* Producto real — directo sobre navy con depth */}
           <Image
-            src="/images/products/F4.webp"
+            src={F4_IMAGE_SRC}
             alt="F4 — Fibra Esponja Dual NeoShield™. Esponja amarilla de un lado, fibra abrasiva verde del otro."
             fill
             sizes="(max-width: 1024px) 80vw, 40vw"
@@ -42,8 +68,8 @@ export default function ProductHeroF4() {
 
           {/* Código F4 — firma minimalista bottom-left */}
           <div className="absolute bottom-6 left-6 z-10 flex items-end gap-3">
-            <p className="font-black leading-none tracking-tight text-white text-[2.4rem]">F4</p>
-            <p className="label-eyebrow text-white/70 text-[10px] pb-1">FIBRA ESPONJA DUAL</p>
+            <p className="font-black leading-none tracking-tight text-white text-[2.4rem]">{F4.sku}</p>
+            <p className="label-eyebrow text-white/70 text-[10px] pb-1">{F4.nombre.toUpperCase()}</p>
           </div>
         </motion.div>
 

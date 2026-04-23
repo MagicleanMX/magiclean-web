@@ -2,6 +2,38 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import productsData from '@/lib/products.json'
+
+type Product = {
+  sku: string
+  nombre: string
+  variante: string | null
+  categoria: 'fibras' | 'mops' | 'accesorios' | 'repuestos'
+  estado: 'activo' | 'descontinuado' | 'en_desarrollo'
+}
+
+const products = productsData as Product[]
+const productsBySku = new Map(products.map((p) => [p.sku, p]))
+
+function getProduct(sku: string): Product {
+  const p = productsBySku.get(sku)
+  if (!p) throw new Error(`Product ${sku} not found in products.json`)
+  return p
+}
+
+const M1 = getProduct('M1')
+const M2 = getProduct('M2')
+
+// Footer "También disponibles": resto de mops para piso, excluyendo M1/M2 (heros)
+// y M4 (Dispositivo Limpieza Baños — funcionalmente baño, no piso).
+const ALSO_AVAILABLE_SKUS = ['M5', 'M6', 'M9', 'M18']
+const masModelos = ALSO_AVAILABLE_SKUS.map((sku) => {
+  const p = getProduct(sku)
+  return {
+    codigo: p.sku,
+    nombre: p.variante ? `${p.nombre} · ${p.variante}` : p.nombre,
+  }
+})
 
 const m1Specs = [
   'Cubo con pedal — escurrido sin agacharse',
@@ -13,12 +45,6 @@ const m2Specs = [
   'Diseño compacto — ideal para espacios medianos',
   'Centrifugado manual, sin pedal',
   'Precio imbatible en el mercado',
-]
-
-const masModelos = [
-  { codigo: 'M5', nombre: 'Rectangular' },
-  { codigo: 'M6', nombre: 'Doble Función' },
-  { codigo: 'M9', nombre: 'Atomizador' },
 ]
 
 export default function ProductHeroMop() {
@@ -79,7 +105,7 @@ export default function ProductHeroMop() {
                   <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                   <circle cx="12" cy="13" r="4" />
                 </svg>
-                <p className="font-black text-[3rem] leading-none text-[#0076FF]/15">M1</p>
+                <p className="font-black text-[3rem] leading-none text-[#0076FF]/15">{M1.sku}</p>
                 <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0076FF]/20">imagen próximamente</p>
               </div>
 
@@ -91,8 +117,8 @@ export default function ProductHeroMop() {
 
             {/* Texto debajo de la imagen */}
             <div className="p-8">
-              <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">M1</p>
-              <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">Turbo Magic</p>
+              <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">{M1.sku}</p>
+              <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">{M1.nombre}</p>
               <p className="text-white/50 font-normal text-[13px] mb-6">Con pedal · Escurrido automático</p>
 
               <p className="label-eyebrow text-[#0076FF] text-[10px] mb-5">Retail · HORECA · Hogar</p>
@@ -128,7 +154,7 @@ export default function ProductHeroMop() {
                   <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                   <circle cx="12" cy="13" r="4" />
                 </svg>
-                <p className="font-black text-[3rem] leading-none text-[#0076FF]/15">M2</p>
+                <p className="font-black text-[3rem] leading-none text-[#0076FF]/15">{M2.sku}</p>
                 <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0076FF]/20">imagen próximamente</p>
               </div>
 
@@ -143,8 +169,8 @@ export default function ProductHeroMop() {
 
             {/* Texto debajo de la imagen */}
             <div className="p-8">
-              <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">M2</p>
-              <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">Spin Magic</p>
+              <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">{M2.sku}</p>
+              <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">{M2.nombre}</p>
               <p className="text-white/50 font-normal text-[13px] mb-6">Sin pedal · Centrifugado manual</p>
 
               <p className="label-eyebrow text-[#0076FF] text-[10px] mb-5">Apartamentos · Oficinas</p>
