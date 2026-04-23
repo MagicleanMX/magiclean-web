@@ -297,7 +297,7 @@ export default function Navbar() {
                         {/* Footer del mega menú */}
                         <div className="border-t border-[#E8EAED] px-5 py-2.5 bg-[#F5F7FA] flex items-center justify-between">
                           <p className="text-[11px] text-ink-muted font-normal">
-                            <span className="font-semibold text-[#1A1A1A]">{products.length} modelos</span> disponibles · Línea Fibras y Línea Mops
+                            <span className="font-semibold text-[#1A1A1A]">{products.length} soluciones</span> disponibles · Línea Fibras y Línea Mops
                           </p>
                           <a
                             href="#contacto"

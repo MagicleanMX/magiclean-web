@@ -26,7 +26,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
   description:
-    'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional. Tecnología NeoShield™ antibacterial. Líderes en MercadoLibre y Amazon · 23 modelos · México y LATAM.',
+    'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional. Tecnología NeoShield™ antibacterial. Líderes en MercadoLibre y Amazon · 23 soluciones profesionales · México y LATAM.',
   keywords: [
     'fibras de limpieza profesional',
     'sistemas de mop',
