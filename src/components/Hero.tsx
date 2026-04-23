@@ -8,7 +8,7 @@ import { CANALES } from '@/lib/products'
 const FALLBACK: HeroSection = {
   eyebrow:       'Proveedor B2B · Canal Profesional México',
   headline:      'Fibras que duran. Tecnología que protege.',
-  subheadline:   '23 modelos con NeoShield™ — la única tecnología antibacterial certificada para el canal profesional en México. Más duración. Cero contaminación cruzada. Un solo proveedor.',
+  subheadline:   '23 soluciones profesionales con NeoShield™ — la única tecnología antibacterial certificada para el canal profesional en México. Más duración. Cero contaminación cruzada. Un solo proveedor.',
   heroMicrotext: 'Distribuidores · Retail · HORECA · Institucional · México y LATAM',
 }
 
