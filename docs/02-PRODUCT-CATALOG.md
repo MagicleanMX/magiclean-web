@@ -1,25 +1,28 @@
 # 02 — Catálogo de Productos MagiClean
 
-**Última actualización:** 2026-04-21
+**Última actualización:** 2026-04-23
 
-> **Advertencia de integridad:** El catálogo real del negocio tiene 24 SKUs, pero el código tiene divergencias pendientes de consolidar en Sprint B.
+> **Catálogo consolidado en Sprint B (2026-04-23).** Landing web y `src/lib/products.json` tienen **23 SKUs activos**. Catálogo comercial físico (PDFs en `public/docs/`) tiene **24 SKUs totales**. La diferencia es **M7 (Q-Beta) excluido intencional** por proceso de descontinuación en curso — NO es divergencia pendiente, es decisión de posicionamiento B2B. Cuando M7 termine de saldarse, queda discontinuado permanente.
 
-## Fuentes de verdad actuales
+## Fuentes de verdad (post Sprint B)
 
 | Fuente | Cuenta | Estado |
 |---|---|---|
-| `src/lib/products.ts` | 20 SKUs | Hardcoded, faltan M8, M10, y repuestos |
-| `src/components/Navbar.tsx` mega-menú | 22 SKUs | Hardcoded, divergente de products.ts |
-| Copy "23 modelos" en 4 lugares | 23 | Número histórico no verificado |
-| PDFs físicos (Catalogo_Fibras, Catalogo_Mops) | 24 SKUs | No están en repo todavía (en Desktop del dueño) |
-| **Realidad del negocio** | **24 SKUs** | Source of truth pendiente de consolidar |
+| **`src/lib/products.json`** | **23 SKUs activos** | **Source of truth del landing**. Consolidado en Sprint B. M7 excluido intencional. |
+| `src/components/Navbar.tsx` mega-menú | 23 SKUs | Lee de `products.json`. Migrado en Sprint B (`4b40db3`). |
+| `src/components/Categories.tsx` | 23 SKUs | Lee de `products.json`. Migrado en Sprint B (`843c8df`). |
+| `src/components/ProductHero*.tsx` | 23 SKUs | Lee de `products.json`. Migrado en Sprint B (`ceb42e6`). |
+| Copy público web | "23 soluciones" | Unificado en T8a (`8568386`, `45655dc`). |
+| PDFs físicos (`public/docs/Catalogo_Fibras.pdf` + `Catalogo_Mops.pdf`) | 24 SKUs | En repo desde T9 (`b5219f1`). Incluyen M7 hasta agotar stock — descontinuación en curso. |
+| `src/lib/products.ts` (legacy `FAMILIAS`) | 23 en copy hardcoded | Deprecated. Eliminación pendiente en T12. |
 
-## Divergencias a resolver en Sprint B
+## Sprint B — estado
 
-1. Dueño sube `Catalogo_Fibras.pdf` y `Catalogo_Mops.pdf` al repo bajo `public/docs/`
-2. Claude Code estructura `products.json` como source of truth único
-3. Navbar, Categories, ProductHero* todos leen del mismo archivo
-4. Copy "23 modelos" se actualiza al número real
+1. ~~Dueño sube `Catalogo_Fibras.pdf` y `Catalogo_Mops.pdf`~~ ✅ En `public/docs/` desde T9.
+2. ~~`products.json` como source of truth único~~ ✅ En `src/lib/products.json` con 23 SKUs activos.
+3. ~~Navbar, Categories, ProductHero* leen del mismo archivo~~ ✅ Migrados (`4b40db3`, `843c8df`, `ceb42e6`).
+4. ~~Copy "23 modelos" → número real~~ ✅ Unificado a "23 soluciones" (`8568386`, `45655dc`).
+5. Eliminar `FAMILIAS` deprecated en `products.ts` — pendiente en T12.
 
 ## Líneas de producto
 
@@ -47,7 +50,7 @@
 | M4 | Dispositivo baños | Escobilla WC con cartuchos | Solo texto |
 | M5 | Squeezed Magic | Mop plano con escurridor | Chip en ProductHeroMop |
 | M6 | Speed Clean | Mop triangular spin | Chip |
-| M7 | Q-Beta | Mop plano giratorio 360° | Solo texto |
+| M7 | Q-Beta | Mop plano giratorio 360° | **EXCLUIDO DEL LANDING** — descontinuación en curso (saldando inventario). Aparece en PDF físico hasta agotar stock. |
 | M8 | [pendiente confirmar] | [pendiente] | NO EN CÓDIGO |
 | M9 | Atomized Magic | Mop con atomizador | Chip |
 | M10 | Repuestos M4 | 32 cartuchos + detergente | NO EN CÓDIGO (solo Navbar) |
@@ -82,4 +85,4 @@ Ficha técnica en `project-log/decisions/` cuando el dueño la suba.
 
 ---
 
-**Próxima revisión:** Sprint B (consolidación de source of truth)
+**Próxima revisión:** Sprint D (voice dual + fotografía profesional), o cuando M7 termine de saldarse para marcarlo discontinuado permanente.

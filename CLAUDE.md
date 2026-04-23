@@ -73,7 +73,7 @@ Estas reglas NO se saltan sin autorización explícita del dueño en el chat act
 4. **NO mergear a `main`** desde ninguna branch sin OK explícito.
 5. **NO borrar logos, badges o assets de marca** en `public/images/brand/` sin confirmación (excepto `_source/` que ya fueron movidos a `project-log/brand-sources/` en Sprint A).
 6. **NO cambiar emails, dominios, WhatsApp sin autorización**. Los valores actuales pueden ser placeholders — verificar con el dueño.
-7. **NO modificar `src/lib/products.ts`** sin confirmar con el dueño. El catálogo real tiene 24 SKUs, el archivo tiene 20, Navbar 22. Hay divergencia pendiente de consolidar en Sprint B.
+7. **NO modificar `src/lib/products.ts`** sin confirmar con el dueño. Source of truth consolidado en `src/lib/products.json` (23 SKUs activos en landing). Catálogo comercial físico tiene 24 SKUs totales — M7 (Q-Beta) excluido intencional de la landing por descontinuación en curso. `FAMILIAS` deprecated en `products.ts` pendiente de eliminar en T12.
 8. **NO escribir `MagiClean S.A. de C.V.`** o variantes (entidad ficticia). Razón social es siempre `Prolim BH, SA de CV`.
 9. **NO incluir RFC en la landing pública** (decisión del dueño).
 10. **Si una instrucción de branching genera conflictos técnicos**, parar y preguntar al dueño antes de cambiar la estrategia de branch. No decidir solo (lección aprendida en fix legal del 2026-04-21).
@@ -177,7 +177,7 @@ Cada sección combina ambas capas. No separar por sección.
 - **Branch activa al día 2026-04-21:** `fix/sprint-a-technical-debt` con 9 commits desde `feat/brand-identity` (8 de Sprint A + 1 de fix legal), esperando review del dueño
 - **Performance mobile Lighthouse:** 77 (post Sprint A, subió desde 59)
 - **Color contrast fails:** 3 restantes (requieren decisión del dueño sobre colores de marca)
-- **Catálogo de productos:** sin consolidar (20 en code / 22 en Navbar / "23" en copy / 24 real) — Sprint B pendiente
+- **Catálogo de productos:** consolidado en Sprint B (2026-04-23). Source of truth: `src/lib/products.json` con 23 SKUs activos. Catálogo comercial físico tiene 24 totales (M7 excluido intencional de landing — descontinuación en curso). Copy público dice "23 soluciones".
 
 ---
 

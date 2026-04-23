@@ -45,7 +45,7 @@
 
 ### Sprint B — Consolidar catálogo source of truth
 
-- Crear `products.json` con 24 SKUs reales
+- Crear `products.json` con SKUs activos para landing (23 — M7 excluido por descontinuación)
 - Unificar Navbar / Categories / ProductHero* contra ese archivo
 - Agregar sección Logística con presentaciones
 - Linkear PDFs descargables de catálogo
@@ -70,7 +70,7 @@
 - Copy ajustado a dual voice por sección
 - Fichas técnicas descargables por SKU top
 - Cleanup de "MagicClean" (doble C) → "MagiClean" global con review
-- **Pre-requisito:** fotografía profesional de 10-24 SKUs
+- **Pre-requisito:** fotografía profesional de 10-23 SKUs activos (M7 fuera de landing)
 - **ETA:** 2-3 días Claude Code + fotografía externa
 
 ### Sprint E — Preparación lanzamiento
@@ -105,7 +105,7 @@
 ### Media prioridad
 
 - [ ] Subir `Catalogo_Fibras.pdf` + `Catalogo_Mops.pdf` al repo bajo `public/docs/`
-- [ ] Validar los 24 SKUs reales (products.ts tiene 20)
+- [x] Validar los SKUs reales → **Landing: 23 activos (M7 excluido). Catálogo físico: 24 totales. Consolidado 2026-04-23.**
 - [ ] Decidir 10 SKUs prioritarios para fotografía profesional
 - [ ] Contratar fotógrafo profesional CDMX (USD 200-400)
 
