@@ -95,7 +95,7 @@ export default function ProductHeroMop() {
             style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
             {/* === SLOT DE IMAGEN 3:4 — placeholder editorial hasta llegada de foto === */}
-            <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4/3' }}>
               <div className="absolute inset-0 bg-deep-darker" />
               {/* Cuando llegue la foto: comentar este bloque placeholder y descomentar el <Image> */}
               {/* <Image src="/products/m1-product.webp" alt="M1 Turbo Magic" fill className="object-cover object-center" /> */}
@@ -151,7 +151,7 @@ export default function ProductHeroMop() {
             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
             {/* === SLOT DE IMAGEN 3:4 — placeholder editorial hasta llegada de foto === */}
-            <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4/3' }}>
               <div className="absolute inset-0 bg-deep-darker" />
               {/* Cuando llegue la foto: comentar este bloque placeholder y descomentar el <Image> */}
               {/* <Image src="/products/m2-product.webp" alt="M2 Spin Magic" fill className="object-cover object-center" /> */}
