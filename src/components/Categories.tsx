@@ -3,7 +3,21 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import type { CategoriesSection } from '@/lib/wordpress'
-import { FAMILIAS } from '@/lib/products'
+import productsData from '@/lib/products.json'
+
+type ProductCategoria = 'fibras' | 'mops' | 'accesorios' | 'repuestos'
+
+type Product = {
+  sku: string
+  nombre: string
+  variante: string | null
+  categoria: ProductCategoria
+  estado: 'activo' | 'descontinuado' | 'en_desarrollo'
+}
+
+const products = productsData as Product[]
+const productsBySku = new Map(products.map((p) => [p.sku, p]))
+const activeProducts = products.filter((p) => p.estado === 'activo')
 
 // Fallback values — used when WordPress is unreachable or field group not yet published
 const FALLBACK: CategoriesSection = {
@@ -14,16 +28,130 @@ const FALLBACK: CategoriesSection = {
   microtext: 'Fibras, sistemas mop y accesorios — todo con NeoShield™. Para hogar, retail, HORECA e institucional.',
 }
 
+// Subset of `destacado: true` highlighted as "Popular" in this UI surface.
+// Kept in sync with the Navbar BADGES_NAVBAR set.
+const BADGES_CATEGORIES = new Set(['F4', 'F5', 'F7', 'M1', 'M2'])
+
+// Cards rendered as wide hero variant: sole popular SKU in their sub-grupo.
+const FEATURED_CARDS = new Set(['F4', 'F5'])
+
+type Subgrupo = { id: string; titulo: string; color: string; skus: string[] }
+type Section =
+  | { kind: 'with-subgrupos'; id: ProductCategoria; titulo: string; color: string; subgrupos: Subgrupo[] }
+  | { kind: 'flat';           id: ProductCategoria; titulo: string; color: string }
+
+const SECTIONS: Section[] = [
+  {
+    kind: 'with-subgrupos',
+    id: 'fibras',
+    titulo: 'Fibras Abrasivas',
+    color: '#1A1A1A',
+    subgrupos: [
+      { id: 'ligero',  titulo: 'Uso Ligero',    color: '#3B82F6', skus: ['F6', 'F7', 'F8', 'F9'] },
+      { id: 'medio',   titulo: 'Uso Medio',     color: '#10B981', skus: ['F1', 'F2', 'F3'] },
+      { id: 'esponja', titulo: 'Fibra Esponja', color: '#F59E0B', skus: ['F4'] },
+      { id: 'pesado',  titulo: 'Uso Pesado',    color: '#1A1A1A', skus: ['F5'] },
+    ],
+  },
+  { kind: 'flat', id: 'mops',       titulo: 'Sistemas Mop',         color: '#0076FF' },
+  { kind: 'flat', id: 'accesorios', titulo: 'Accesorios',           color: '#374151' },
+  { kind: 'flat', id: 'repuestos',  titulo: 'Repuestos Originales', color: '#9CA3AF' },
+]
+
+function activeBySection(cat: ProductCategoria): Product[] {
+  return activeProducts.filter((p) => p.categoria === cat)
+}
+
 interface CategoriesProps {
   data?: CategoriesSection | null
 }
 
+function ProductCard({
+  product,
+  chipColor,
+  bgColor,
+  delay,
+  featured = false,
+}: {
+  product: Product
+  chipColor: string
+  bgColor: string
+  delay: number
+  featured?: boolean
+}) {
+  const nombreFull = product.variante ? `${product.nombre} · ${product.variante}` : product.nombre
+  const isPopular  = BADGES_CATEGORIES.has(product.sku)
+
+  const aspectClass  = featured ? 'aspect-[2/1]'   : 'aspect-square'
+  const borderClass  = featured ? 'border-2'       : 'border'
+  const colSpanClass = featured ? 'sm:col-span-2'  : ''
+  const ghostClass   = featured ? 'text-[5.5rem]'  : 'text-[2.6rem] tracking-tighter'
+  const nombreClass  = featured ? 'text-[14px] font-semibold' : 'text-[13px] font-medium'
+  const cardBorderColor = featured ? bgColor : '#E8EAED'
+
+  return (
+    <motion.a
+      href={`#contacto?producto=${product.sku}`}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] }}
+      className={`group block ${colSpanClass}`}
+    >
+      {/* Card visual con slot reservado para foto futura */}
+      <div
+        className={`relative overflow-hidden rounded-2xl ${aspectClass} ${borderClass} transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-0.5`}
+        style={{
+          background:  `linear-gradient(160deg, ${bgColor}14 0%, #FFFFFF 70%)`,
+          borderColor: cardBorderColor,
+        }}
+      >
+        {/* SKU chip top-left */}
+        <span
+          className="absolute top-3 left-3 inline-flex items-center justify-center min-w-[32px] h-6 px-2 rounded text-[10px] font-black text-white z-10"
+          style={{ backgroundColor: chipColor }}
+        >
+          {product.sku}
+        </span>
+
+        {/* Popular badge top-right */}
+        {isPopular && (
+          <span className="absolute top-3 right-3 text-[9px] font-bold text-[#FF2B2B] bg-surface-red px-2 py-0.5 rounded-full z-10">
+            Popular
+          </span>
+        )}
+
+        {/* Ghost SKU — typographic backdrop until product photo arrives */}
+        <p
+          className={`absolute inset-0 flex items-center justify-center font-black ${ghostClass} leading-none select-none pointer-events-none`}
+          style={{ color: `${bgColor}1F` }}
+        >
+          {product.sku}
+        </p>
+
+        {/* T11 reserva: NeoShield badge va en esquina inferior-derecha del slot */}
+      </div>
+
+      {/* Info debajo */}
+      <div className="px-1 mt-3">
+        {featured && (
+          <span className="block label-eyebrow text-[9px] mb-1" style={{ color: bgColor }}>
+            Producto destacado
+          </span>
+        )}
+        <p className={`${nombreClass} text-[#1A1A1A] group-hover:text-[#0076FF] transition-colors leading-snug`}>
+          {nombreFull}
+        </p>
+      </div>
+    </motion.a>
+  )
+}
 
 export default function Categories({ data }: CategoriesProps) {
-  const eyebrow  = data?.eyebrow  || FALLBACK.eyebrow
-  const headline = data?.headline || FALLBACK.headline
-  const ctaText  = data?.ctaText  || FALLBACK.ctaText
-  const ctaLink  = data?.ctaLink  || FALLBACK.ctaLink
+  const eyebrow   = data?.eyebrow   || FALLBACK.eyebrow
+  const headline  = data?.headline  || FALLBACK.headline
+  const ctaText   = data?.ctaText   || FALLBACK.ctaText
+  const ctaLink   = data?.ctaLink   || FALLBACK.ctaLink
   const microtext = data?.microtext || FALLBACK.microtext
 
   return (
@@ -53,126 +181,80 @@ export default function Categories({ data }: CategoriesProps) {
           </a>
         </motion.div>
 
-        {/* Grid — 6 familias */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {FAMILIAS.map((f, i) => (
-            <motion.div
-              key={f.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.7, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <a href={f.anchor} className="group block cursor-pointer">
+        {/* Sections — 4 niveles: Fibras (sub-grupos por uso), Mops, Accesorios, Repuestos */}
+        <div className="space-y-16">
+          {SECTIONS.map((section) => {
+            const sectionCount = activeBySection(section.id).length
 
-                {/* Card visual — producto domina */}
+            return (
+              <div key={section.id}>
+                {/* Section header — line divider con cap sólido al inicio (Bloomberg-style) */}
                 <div
-                  className="relative overflow-hidden rounded-2xl mb-4 transition-all duration-[400ms] ease-out group-hover:shadow-2xl group-hover:scale-[1.03]"
-                  style={{ aspectRatio: '3/4', backgroundColor: f.color }}
+                  className="relative flex items-baseline gap-4 mb-7 pb-3 border-b-2"
+                  style={{ borderColor: `${section.color}20` }}
                 >
-                  {/* === SLOT DE IMAGEN — descomentar cuando llegue la foto === */}
-                  {/* <Image
-                        src={`/products/${f.id}.webp`}
-                        alt={f.nombre}
-                        fill
-                        className="object-cover object-center"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      /> */}
-
-                  {/* Subtle gradient overlay for depth */}
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: `linear-gradient(160deg, ${f.accentColor}08 0%, transparent 60%)` }}
+                  <span
+                    className="absolute bottom-0 left-0 w-12 h-[3px] -mb-[2px]"
+                    style={{ backgroundColor: section.color }}
                   />
-
-                  {/* Ghost large letter — typographic backdrop */}
-                  <p
-                    className="absolute inset-0 flex items-center justify-center font-black text-[11rem] leading-none select-none pointer-events-none"
-                    style={{ color: `${f.accentColor}12` }}
+                  <h3
+                    className="text-[1.6rem] lg:text-[2rem] font-black tracking-tight"
+                    style={{ color: section.color }}
                   >
-                    {f.modelos[0].charAt(0)}
-                  </p>
-
-                  {/* Badge — refined pill top-left */}
-                  {f.badge && (
-                    <span
-                      className="absolute top-5 left-5 label-eyebrow text-[9px] px-3 py-1.5 rounded-full text-white z-10"
-                      style={{ backgroundColor: f.accentColor }}
-                    >
-                      {f.badge}
-                    </span>
-                  )}
-
-                  {/* Model count — top-right */}
-                  <span className="absolute top-5 right-5 label-eyebrow text-[9px] px-2.5 py-1 rounded-full z-10"
-                    style={{ backgroundColor: `${f.accentColor}15`, color: f.accentColor }}
-                  >
-                    {f.modelos.length} modelo{f.modelos.length > 1 ? 's' : ''}
+                    {section.titulo}
+                  </h3>
+                  <span className="text-[12px] font-medium text-ink-muted">
+                    {sectionCount} {sectionCount === 1 ? 'solución' : 'soluciones'}
                   </span>
-
-                  {/* Product codes — centered, editorial */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 z-10">
-                    <div className="flex flex-wrap justify-center gap-2.5">
-                      {f.modelos.slice(0, 4).map((m) => (
-                        <div
-                          key={m}
-                          className="rounded-xl px-4 py-3 flex items-center justify-center"
-                          style={{
-                            backgroundColor: `${f.accentColor}10`,
-                            border: `1px solid ${f.accentColor}20`,
-                          }}
-                        >
-                          <span
-                            className="font-black text-[1.1rem] leading-none tracking-tight"
-                            style={{ color: f.accentColor }}
-                          >
-                            {m}
-                          </span>
-                        </div>
-                      ))}
-                      {f.modelos.length > 4 && (
-                        <div
-                          className="rounded-xl px-4 py-3 flex items-center justify-center"
-                          style={{
-                            backgroundColor: `${f.accentColor}08`,
-                            border: `1px solid ${f.accentColor}15`,
-                          }}
-                        >
-                          <span
-                            className="font-bold text-[0.85rem] leading-none"
-                            style={{ color: `${f.accentColor}80` }}
-                          >
-                            +{f.modelos.length - 4}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Hover CTA — slides up from bottom */}
-                  <div className="absolute inset-x-0 bottom-0 p-5 z-20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                    <div
-                      className="rounded-xl px-4 py-3 flex items-center justify-between"
-                      style={{ backgroundColor: f.accentColor }}
-                    >
-                      <span className="text-white text-[12px] font-semibold">Ver familia</span>
-                      <ArrowRight size={13} className="text-white/80" />
-                    </div>
-                  </div>
                 </div>
 
-                {/* Info debajo — limpia, tipografía fuerte */}
-                <div className="px-1">
-                  <p className="font-serif text-[1.15rem] font-medium text-[#1A1A1A] group-hover:text-[#0076FF] transition-colors duration-200 leading-snug mb-1">
-                    {f.nombre}
-                  </p>
-                  <p className="text-[12.5px] font-normal text-ink-muted leading-snug">
-                    {f.subtitulo}
-                  </p>
-                </div>
-              </a>
-            </motion.div>
-          ))}
+                {section.kind === 'with-subgrupos' ? (
+                  <div className="space-y-10">
+                    {section.subgrupos.map((sg) => (
+                      <div key={sg.id}>
+                        {/* Sub-grupo eyebrow + separator */}
+                        <div className="flex items-center gap-3 mb-5">
+                          <span className="label-eyebrow text-[10px]" style={{ color: sg.color }}>
+                            {sg.titulo}
+                          </span>
+                          <span className="flex-1 h-px" style={{ backgroundColor: `${sg.color}30` }} />
+                        </div>
+
+                        <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,200px))] gap-5 justify-start">
+                          {sg.skus.map((sku, i) => {
+                            const p = productsBySku.get(sku)
+                            if (!p || p.estado !== 'activo') return null
+                            return (
+                              <ProductCard
+                                key={p.sku}
+                                product={p}
+                                chipColor={sg.color}
+                                bgColor={sg.color}
+                                delay={i * 0.05}
+                                featured={FEATURED_CARDS.has(p.sku)}
+                              />
+                            )
+                          })}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,200px))] gap-5 justify-start">
+                    {activeBySection(section.id).map((p, i) => (
+                      <ProductCard
+                        key={p.sku}
+                        product={p}
+                        chipColor={section.color}
+                        bgColor={section.color}
+                        delay={i * 0.05}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
