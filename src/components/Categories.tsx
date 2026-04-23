@@ -7,6 +7,7 @@ import { CATEGORY_COLORS, FIBRAS_SUBGRUPOS } from '@/lib/categoryColors'
 import type { FibraSubgrupo, ProductCategoria } from '@/lib/categoryColors'
 import productsData from '@/lib/products.json'
 import { track, AnalyticsEvents } from '@/lib/analytics'
+import { CATALOG_PDFS, type CatalogId } from '@/lib/catalog-assets'
 
 type Product = {
   sku: string
@@ -143,7 +144,7 @@ function ProductCard({
 }
 
 function CatalogCTABlock({ ctaText, ctaLink }: { ctaText: string; ctaLink: string }) {
-  const handlePdfClick = (catalog: 'fibras' | 'mops') => {
+  const handlePdfClick = (catalog: CatalogId) => {
     track(AnalyticsEvents.CatalogDownload, { catalog })
   }
 
@@ -156,28 +157,20 @@ function CatalogCTABlock({ ctaText, ctaLink }: { ctaText: string; ctaLink: strin
         {ctaText} <ArrowRight size={16} />
       </a>
       <div className="flex flex-col sm:flex-row gap-2">
-        <a
-          href="/docs/Catalogo_Fibras.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Descargar Catálogo Fibras en PDF, 12 megabytes"
-          onClick={() => handlePdfClick('fibras')}
-          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-[12px] font-medium text-ink-muted hover:text-[#0076FF] border border-[#E8EAED] hover:border-[#0076FF] rounded-md transition-colors duration-200"
-        >
-          <Download size={12} />
-          Catálogo Fibras (PDF · 12MB)
-        </a>
-        <a
-          href="/docs/Catalogo_Mops.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Descargar Catálogo Mops en PDF, 3 megabytes"
-          onClick={() => handlePdfClick('mops')}
-          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-[12px] font-medium text-ink-muted hover:text-[#0076FF] border border-[#E8EAED] hover:border-[#0076FF] rounded-md transition-colors duration-200"
-        >
-          <Download size={12} />
-          Catálogo Mops (PDF · 3MB)
-        </a>
+        {CATALOG_PDFS.map((pdf) => (
+          <a
+            key={pdf.id}
+            href={pdf.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Descargar ${pdf.label} en PDF, ${pdf.sizeA11y}`}
+            onClick={() => handlePdfClick(pdf.id)}
+            className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-[12px] font-medium text-ink-muted hover:text-[#0076FF] border border-[#E8EAED] hover:border-[#0076FF] rounded-md transition-colors duration-200"
+          >
+            <Download size={12} />
+            {pdf.label} ({pdf.sizeLabel})
+          </a>
+        ))}
       </div>
     </div>
   )
