@@ -94,19 +94,26 @@ export default function ProductHeroMop() {
             className="relative rounded-2xl overflow-hidden"
             style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            {/* === SLOT DE IMAGEN 3:4 === */}
+            {/* === SLOT DE IMAGEN 3:4 — placeholder editorial hasta llegada de foto === */}
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
               <div className="absolute inset-0 bg-deep-darker" />
+              {/* Cuando llegue la foto: comentar este bloque placeholder y descomentar el <Image> */}
               {/* <Image src="/products/m1-product.webp" alt="M1 Turbo Magic" fill className="object-cover object-center" /> */}
 
-              {/* Placeholder premium */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 select-none pointer-events-none">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0076FF" strokeWidth="1.5" opacity="0.3">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                  <circle cx="12" cy="13" r="4" />
-                </svg>
-                <p className="font-black text-[3rem] leading-none text-[#0076FF]/15">{M1.sku}</p>
-                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0076FF]/20">imagen próximamente</p>
+              {/* Bloomberg-cap — firma visual top-left */}
+              <span className="absolute top-0 left-0 w-12 h-[3px] bg-[#0076FF] z-20" />
+
+              {/* Placeholder editorial — composición tipográfica monumental */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none px-6">
+                <p className="text-white/15 text-[0.875rem] sm:text-[1rem] font-medium uppercase tracking-[0.35em] mb-4 text-center leading-tight">
+                  {M1.nombre.toUpperCase()}
+                </p>
+                <p className="font-black text-[#0076FF]/15 leading-none tracking-tight text-[clamp(8rem,15vw,14rem)]">
+                  {M1.sku}
+                </p>
+                <p className="label-eyebrow text-[#0076FF]/40 text-[10px] mt-4">
+                  NeoShield™ Engineered
+                </p>
               </div>
 
               {/* Badge superpuesto */}
@@ -143,19 +150,26 @@ export default function ProductHeroMop() {
             className="relative rounded-2xl overflow-hidden"
             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            {/* === SLOT DE IMAGEN 3:4 === */}
+            {/* === SLOT DE IMAGEN 3:4 — placeholder editorial hasta llegada de foto === */}
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
               <div className="absolute inset-0 bg-deep-darker" />
+              {/* Cuando llegue la foto: comentar este bloque placeholder y descomentar el <Image> */}
               {/* <Image src="/products/m2-product.webp" alt="M2 Spin Magic" fill className="object-cover object-center" /> */}
 
-              {/* Placeholder premium */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 select-none pointer-events-none">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0076FF" strokeWidth="1.5" opacity="0.3">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                  <circle cx="12" cy="13" r="4" />
-                </svg>
-                <p className="font-black text-[3rem] leading-none text-[#0076FF]/15">{M2.sku}</p>
-                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#0076FF]/20">imagen próximamente</p>
+              {/* Bloomberg-cap — firma visual top-left */}
+              <span className="absolute top-0 left-0 w-12 h-[3px] bg-[#0076FF] z-20" />
+
+              {/* Placeholder editorial — composición tipográfica monumental */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center select-none pointer-events-none px-6">
+                <p className="text-white/15 text-[0.875rem] sm:text-[1rem] font-medium uppercase tracking-[0.35em] mb-4 text-center leading-tight">
+                  {M2.nombre.toUpperCase()}
+                </p>
+                <p className="font-black text-[#0076FF]/15 leading-none tracking-tight text-[clamp(8rem,15vw,14rem)]">
+                  {M2.sku}
+                </p>
+                <p className="label-eyebrow text-[#0076FF]/40 text-[10px] mt-4">
+                  NeoShield™ Engineered
+                </p>
               </div>
 
               {/* Badge superpuesto */}
