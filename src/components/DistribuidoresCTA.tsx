@@ -1,17 +1,28 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, MapPin } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import type { DistribuidoresSection } from '@/lib/wordpress'
+
+// Info logística (tiempos, MOQ, cobertura) vive en <Logistica />. Esta sección
+// es 100% CTA de reclutamiento B2B. Si WordPress envía `zones` lo ignoramos —
+// la cobertura se muestra en la sección anterior como 3 tiers temporales.
+
+const BENEFITS = [
+  { label: 'Márgenes competitivos', detail: 'Estructura B2B optimizada' },
+  { label: 'Capacitación técnica',  detail: 'Producto y NeoShield™' },
+  { label: 'Soporte dedicado',      detail: 'Ventas + postventa' },
+  { label: 'Marca editorial',       detail: 'Premium en canal B2B' },
+]
 
 // Fallback values — used when WordPress is unreachable or field group not yet published
 const FALLBACK: DistribuidoresSection = {
   eyebrow:  'Únete a la red',
   headline: 'Conviértete en distribuidor MagicClean',
-  body:     'Márgenes competitivos. Capacitación técnica sobre NeoShield™. Soporte de ventas dedicado. Logística a todo México. Mínimo de pedido inicial: consultar. Tiempos de entrega: 3-5 días hábiles zona metro, 5-8 días resto del país.',
+  body:     'Márgenes competitivos frente a multinacionales. Capacitación técnica sobre NeoShield™. Soporte de ventas dedicado. Una marca B2B con recorrido en marketplaces y visión editorial para el canal.',
   ctaLabel: 'Quiero ser distribuidor',
   ctaUrl:   '?canal=distribuidor#contacto',
-  note:     '+ 24 zonas más disponibles a nivel nacional',
+  note:     'Cobertura operativa y tiempos de entrega detallados en la sección anterior.',
   zones:    'CDMX, Guadalajara, Monterrey, Puebla, Tijuana, Querétaro',
 }
 
@@ -26,10 +37,6 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
   const ctaLabel = data?.ctaLabel || FALLBACK.ctaLabel
   const ctaUrl   = data?.ctaUrl   || FALLBACK.ctaUrl
   const note     = data?.note     || FALLBACK.note
-  const zonas    = (data?.zones || FALLBACK.zones)
-    .split(',')
-    .map((z) => z.trim())
-    .filter(Boolean)
 
   return (
     <section id="distribuidores" className="relative overflow-hidden bg-[var(--color-primary-dark)] py-16">
@@ -64,22 +71,22 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
             </a>
           </motion.div>
 
-          {/* Zonas disponibles */}
+          {/* Beneficios como distribuidor */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="label-eyebrow text-white mb-5">Zonas disponibles</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {zonas.map((z) => (
+            <p className="label-eyebrow text-white mb-5">Qué recibes como distribuidor</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {BENEFITS.map((b) => (
                 <div
-                  key={z}
-                  className="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors duration-200 rounded-xl px-4 py-3 cursor-default"
+                  key={b.label}
+                  className="bg-white/10 hover:bg-white/20 transition-colors duration-200 rounded-xl px-4 py-3 cursor-default"
                 >
-                  <MapPin size={12} className="text-white/50 shrink-0" />
-                  <span className="text-[13px] font-medium text-white">{z}</span>
+                  <p className="text-[13px] font-semibold text-white">{b.label}</p>
+                  <p className="text-[11px] font-normal text-white/60 mt-0.5">{b.detail}</p>
                 </div>
               ))}
             </div>
