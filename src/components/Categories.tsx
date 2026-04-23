@@ -1,11 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Download } from 'lucide-react'
 import type { CategoriesSection } from '@/lib/wordpress'
 import { CATEGORY_COLORS, FIBRAS_SUBGRUPOS } from '@/lib/categoryColors'
 import type { FibraSubgrupo, ProductCategoria } from '@/lib/categoryColors'
 import productsData from '@/lib/products.json'
+import { track, AnalyticsEvents } from '@/lib/analytics'
 
 type Product = {
   sku: string
@@ -23,7 +24,7 @@ const activeProducts = products.filter((p) => p.estado === 'activo')
 const FALLBACK: CategoriesSection = {
   eyebrow:  'La Colección',
   headline: 'Un portafolio completo. Un solo proveedor.',
-  ctaText:  'Ver portafolio completo',
+  ctaText:  'Solicitar Catálogo Profesional',
   ctaLink:  '#contacto',
   microtext: 'Fibras, sistemas mop y accesorios — todo con NeoShield™. Para hogar, retail, HORECA e institucional.',
 }
@@ -141,6 +142,47 @@ function ProductCard({
   )
 }
 
+function CatalogCTABlock({ ctaText, ctaLink }: { ctaText: string; ctaLink: string }) {
+  const handlePdfClick = (catalog: 'fibras' | 'mops') => {
+    track(AnalyticsEvents.CatalogDownload, { catalog })
+  }
+
+  return (
+    <div className="flex flex-col gap-3 self-start lg:self-end shrink-0">
+      <a
+        href={ctaLink}
+        className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#0076FF] hover:bg-[#0052CC] text-white text-[14px] font-semibold rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"
+      >
+        {ctaText} <ArrowRight size={16} />
+      </a>
+      <div className="flex flex-col sm:flex-row gap-2">
+        <a
+          href="/docs/Catalogo_Fibras.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Descargar Catálogo Fibras en PDF, 12 megabytes"
+          onClick={() => handlePdfClick('fibras')}
+          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-[12px] font-medium text-ink-muted hover:text-[#0076FF] border border-[#E8EAED] hover:border-[#0076FF] rounded-md transition-colors duration-200"
+        >
+          <Download size={12} />
+          Catálogo Fibras (PDF · 12MB)
+        </a>
+        <a
+          href="/docs/Catalogo_Mops.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Descargar Catálogo Mops en PDF, 3 megabytes"
+          onClick={() => handlePdfClick('mops')}
+          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-[12px] font-medium text-ink-muted hover:text-[#0076FF] border border-[#E8EAED] hover:border-[#0076FF] rounded-md transition-colors duration-200"
+        >
+          <Download size={12} />
+          Catálogo Mops (PDF · 3MB)
+        </a>
+      </div>
+    </div>
+  )
+}
+
 export default function Categories({ data }: CategoriesProps) {
   const eyebrow   = data?.eyebrow   || FALLBACK.eyebrow
   const headline  = data?.headline  || FALLBACK.headline
@@ -167,12 +209,7 @@ export default function Categories({ data }: CategoriesProps) {
             </h2>
             <p className="text-[1rem] font-normal text-ink-muted leading-[1.75]">{microtext}</p>
           </div>
-          <a
-            href={ctaLink}
-            className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0076FF] hover:gap-3 transition-all duration-200 self-start lg:self-end shrink-0"
-          >
-            {ctaText} <ArrowRight size={14} />
-          </a>
+          <CatalogCTABlock ctaText={ctaText} ctaLink={ctaLink} />
         </motion.div>
 
         {/* Sections — 4 niveles: Fibras (sub-grupos por uso), Mops, Accesorios, Repuestos */}
