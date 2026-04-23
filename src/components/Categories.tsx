@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import type { CategoriesSection } from '@/lib/wordpress'
+import { CATEGORY_COLORS, FIBRAS_SUBGRUPOS } from '@/lib/categoryColors'
+import type { FibraSubgrupo, ProductCategoria } from '@/lib/categoryColors'
 import productsData from '@/lib/products.json'
-
-type ProductCategoria = 'fibras' | 'mops' | 'accesorios' | 'repuestos'
 
 type Product = {
   sku: string
@@ -35,9 +35,8 @@ const BADGES_CATEGORIES = new Set(['F4', 'F5', 'F7', 'M1', 'M2'])
 // Cards rendered as wide hero variant: sole popular SKU in their sub-grupo.
 const FEATURED_CARDS = new Set(['F4', 'F5'])
 
-type Subgrupo = { id: string; titulo: string; color: string; skus: string[] }
 type Section =
-  | { kind: 'with-subgrupos'; id: ProductCategoria; titulo: string; color: string; subgrupos: Subgrupo[] }
+  | { kind: 'with-subgrupos'; id: ProductCategoria; titulo: string; color: string; subgrupos: readonly FibraSubgrupo[] }
   | { kind: 'flat';           id: ProductCategoria; titulo: string; color: string }
 
 const SECTIONS: Section[] = [
@@ -45,17 +44,12 @@ const SECTIONS: Section[] = [
     kind: 'with-subgrupos',
     id: 'fibras',
     titulo: 'Fibras Abrasivas',
-    color: '#1A1A1A',
-    subgrupos: [
-      { id: 'ligero',  titulo: 'Uso Ligero',    color: '#3B82F6', skus: ['F6', 'F7', 'F8', 'F9'] },
-      { id: 'medio',   titulo: 'Uso Medio',     color: '#10B981', skus: ['F1', 'F2', 'F3'] },
-      { id: 'esponja', titulo: 'Fibra Esponja', color: '#F59E0B', skus: ['F4'] },
-      { id: 'pesado',  titulo: 'Uso Pesado',    color: '#1A1A1A', skus: ['F5'] },
-    ],
+    color: CATEGORY_COLORS.fibras,
+    subgrupos: FIBRAS_SUBGRUPOS,
   },
-  { kind: 'flat', id: 'mops',       titulo: 'Sistemas Mop',         color: '#0076FF' },
-  { kind: 'flat', id: 'accesorios', titulo: 'Accesorios',           color: '#374151' },
-  { kind: 'flat', id: 'repuestos',  titulo: 'Repuestos Originales', color: '#9CA3AF' },
+  { kind: 'flat', id: 'mops',       titulo: 'Sistemas Mop',         color: CATEGORY_COLORS.mops },
+  { kind: 'flat', id: 'accesorios', titulo: 'Accesorios',           color: CATEGORY_COLORS.accesorios },
+  { kind: 'flat', id: 'repuestos',  titulo: 'Repuestos Originales', color: CATEGORY_COLORS.repuestos },
 ]
 
 function activeBySection(cat: ProductCategoria): Product[] {

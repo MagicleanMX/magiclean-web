@@ -3,9 +3,9 @@
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
+import { CATEGORY_COLORS, getChipColor } from '@/lib/categoryColors'
+import type { ProductCategoria } from '@/lib/categoryColors'
 import productsData from '@/lib/products.json'
-
-type ProductCategoria = 'fibras' | 'mops' | 'accesorios' | 'repuestos'
 
 type Product = {
   sku: string
@@ -17,11 +17,11 @@ type Product = {
 
 const products = productsData as Product[]
 
-const CATEGORIA_CONFIG: Record<ProductCategoria, { titulo: string; color: string }> = {
-  fibras:     { titulo: 'Fibras Abrasivas',     color: '#FF2B2B' },
-  mops:       { titulo: 'Sistemas Mop',         color: '#0076FF' },
-  accesorios: { titulo: 'Accesorios',           color: '#1A1A1A' },
-  repuestos:  { titulo: 'Repuestos Originales', color: '#9CA3AF' },
+const CATEGORIA_TITULOS: Record<ProductCategoria, string> = {
+  fibras:     'Fibras Abrasivas',
+  mops:       'Sistemas Mop',
+  accesorios: 'Accesorios',
+  repuestos:  'Repuestos Originales',
 }
 
 const CATEGORIA_ORDER: ProductCategoria[] = ['fibras', 'mops', 'accesorios', 'repuestos']
@@ -33,14 +33,15 @@ const BADGES_NAVBAR = new Set(['F4', 'F5', 'F7', 'M1', 'M2'])
 
 const megaProductos = {
   columnas: CATEGORIA_ORDER.map((cat) => ({
-    titulo: CATEGORIA_CONFIG[cat].titulo,
-    color:  CATEGORIA_CONFIG[cat].color,
+    titulo: CATEGORIA_TITULOS[cat],
+    color:  CATEGORY_COLORS[cat],
     items:  products
       .filter((p) => p.categoria === cat && p.estado === 'activo')
       .map((p) => ({
-        codigo: p.sku,
-        nombre: p.variante ? `${p.nombre} · ${p.variante}` : p.nombre,
-        badge:  BADGES_NAVBAR.has(p.sku) ? 'Popular' : undefined,
+        codigo:    p.sku,
+        nombre:    p.variante ? `${p.nombre} · ${p.variante}` : p.nombre,
+        badge:     BADGES_NAVBAR.has(p.sku) ? 'Popular' : undefined,
+        chipColor: getChipColor(p.sku, p.categoria),
       })),
   })),
 }
@@ -273,7 +274,7 @@ export default function Navbar() {
                                     >
                                       <span
                                         className="shrink-0 inline-flex items-center justify-center min-w-[28px] h-5 px-1.5 rounded text-[9px] font-black text-white mt-0.5"
-                                        style={{ backgroundColor: col.color }}
+                                        style={{ backgroundColor: item.chipColor }}
                                       >
                                         {item.codigo}
                                       </span>
