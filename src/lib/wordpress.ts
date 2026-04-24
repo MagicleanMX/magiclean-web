@@ -325,7 +325,7 @@ export interface CategoriesSection {
   headline: string   // e.g. "Productos MagicClean"
   ctaText:  string   // e.g. "Ver catálogo completo"
   ctaLink:  string   // e.g. "#contacto"
-  microtext: string  // e.g. "23 modelos · 2 líneas de producto"
+  microtext: string  // e.g. "23 soluciones · 2 líneas de producto"
 }
 
 const CATEGORIES_QUERY = /* GraphQL */ `

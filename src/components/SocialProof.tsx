@@ -16,7 +16,7 @@ export default function SocialProof() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12"
         >
-          <p className="label-eyebrow text-[#0076FF] mb-3">Presencia verificada</p>
+          <p className="label-eyebrow text-[#0052CC] mb-3">Presencia verificada</p>
           <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-[#1A1A1A] max-w-xl">
             Donde ya estamos. Y a dónde vamos.
           </h2>
@@ -33,9 +33,9 @@ export default function SocialProof() {
           {MARKETPLACES.map((m) => (
             <div
               key={m}
-              className="group px-6 py-3.5 rounded-xl bg-[#F5F7FA] border border-[#E8EAED] hover:border-[#0076FF]/30 hover:bg-[#F0F5FF] transition-all duration-300 cursor-default"
+              className="group px-6 py-3.5 rounded-xl bg-[#F5F7FA] border border-[#E8EAED] hover:border-[#0076FF]/30 hover:bg-surface-blue transition-all duration-300 cursor-default"
             >
-              <span className="text-[1.1rem] lg:text-[1.3rem] font-black text-[#666666] group-hover:text-[#0076FF] transition-colors duration-300">
+              <span className="text-[1.1rem] lg:text-[1.3rem] font-black text-ink-muted group-hover:text-[#0076FF] transition-colors duration-300">
                 {m}
               </span>
             </div>
@@ -58,7 +58,7 @@ export default function SocialProof() {
               >
                 {m.n}
               </p>
-              <p className="label-eyebrow text-[#666666]">{m.label}</p>
+              <p className="label-eyebrow text-ink-muted">{m.label}</p>
             </motion.div>
           ))}
         </div>

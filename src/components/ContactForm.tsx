@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle, Loader2 } from 'lucide-react'
+import { track, AnalyticsEvents } from '@/lib/analytics'
 
 interface FormData {
   nombre: string
@@ -40,6 +41,8 @@ export default function ContactForm() {
     const params = new URLSearchParams(window.location.search)
     const canalParam = params.get('canal')
     if (canalParam) {
+      // One-shot read of a URL param on mount; setFormData runs at most once.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData((prev) => ({ ...prev, canal: canalParam }))
     }
   }, [])
@@ -70,6 +73,10 @@ export default function ContactForm() {
         return
       }
 
+      track(AnalyticsEvents.ContactFormSubmit, {
+        channel: formData.canal,
+        source: 'contact_form',
+      })
       setSubmitted(true)
     } catch {
       setError('Error de conexión. Verifica tu internet e intenta de nuevo.')

@@ -8,34 +8,36 @@ import './globals.css'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  weight: ['400', '500', '600', '700', '900'],
   variable: '--font-montserrat',
   display: 'swap',
+  preload: false,
 })
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '700'],
   style: ['normal', 'italic'],
   variable: '--font-playfair',
   display: 'swap',
+  preload: true,
 })
 
 export const metadata: Metadata = {
   title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
   description:
-    'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional. Tecnología NeoShield™ antibacterial. Líderes en MercadoLibre y Amazon · 23 modelos · México y LATAM.',
+    'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional. Tecnología NeoShield™ antibacterial. Líderes en MercadoLibre y Amazon · 23 soluciones profesionales · México y LATAM.',
   keywords: [
     'fibras de limpieza profesional',
     'sistemas de mop',
     'proveedor HORECA México',
     'distribuidor productos de limpieza',
-    'fibra antibacterial NeoShield',
+    'fibra antibacterial NeoShield™',
     'MagicClean México',
     'limpieza industrial',
     'productos de limpieza B2B',
   ],
-  authors: [{ name: 'MagicClean S.A. de C.V.' }],
+  authors: [{ name: 'Prolim BH, SA de CV' }],
   creator: 'MagicClean',
   publisher: 'MagicClean',
   metadataBase: new URL(siteUrl),
@@ -74,8 +76,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'LocalBusiness'],
-  name: 'MagicClean',
-  legalName: 'MagicClean S.A. de C.V.',
+  name: 'Prolim BH, SA de CV',
+  legalName: 'Prolim BH, SA de CV',
   url: siteUrl,
   logo: `${siteUrl}/images/logo.svg`,
   telephone: '+525571553635',
@@ -87,6 +89,11 @@ const jsonLd = {
     addressRegion: 'Estado de México',
     postalCode: '53370',
     addressCountry: 'MX',
+  },
+  brand: {
+    '@type': 'Brand',
+    name: 'MagiClean',
+    logo: `${siteUrl}/images/logo.svg`,
   },
   sameAs: [
     'https://www.facebook.com/magiclean',

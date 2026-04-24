@@ -10,6 +10,7 @@ import ProductHeroMop from '@/components/ProductHeroMop'
 import SocialProof from '@/components/SocialProof'
 import HowItWorks from '@/components/HowItWorks'
 import DistribuidoresCTA from '@/components/DistribuidoresCTA'
+import Logistica from '@/components/Logistica'
 import Nosotros from '@/components/Nosotros'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
@@ -28,10 +29,11 @@ import { getWPSettings, getHeroSection, getCategoriesSection, getDistribuidoresS
  *  7. ProductHeroMop    → Sistemas Mop M1 + M2 consolidados (#sistemas-mop-m1)
  *  8. SocialProof       → Presencia verificada · marketplaces · métricas
  *  9. HowItWorks        → El proceso, simple y transparente (#como-funciona)
- * 10. DistribuidoresCTA → CTA red B2B (#distribuidores)
- * 11. Nosotros          → Historia de marca (#nosotros)
- * 12. ContactForm       → Formulario de cierre (#contacto)
- * 13. Footer
+ * 10. Logistica         → Operación honesta: tiempos, cobertura, presentaciones (#logistica)
+ * 11. DistribuidoresCTA → CTA red B2B (#distribuidores)
+ * 12. Nosotros          → Historia de marca (#nosotros)
+ * 13. ContactForm       → Formulario de cierre (#contacto)
+ * 14. Footer
  *
  * WordPress/GraphQL fetches are skipped entirely when WP_GRAPHQL_URL is not
  * set (e.g. Vercel production without a connected WP instance). Components
@@ -83,6 +85,7 @@ export default async function Home() {
         <ProductHeroMop />
         <SocialProof />
         <HowItWorks />
+        <Logistica />
         <DistribuidoresCTA data={distribuidoresData} />
         <Nosotros />
         <ContactForm />

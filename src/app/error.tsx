@@ -1,5 +1,6 @@
 'use client'
 import { useEffect } from 'react'
+import Link from 'next/link'
 import * as Sentry from '@sentry/nextjs'
 
 export default function Error({
@@ -33,12 +34,12 @@ export default function Error({
           >
             Reintentar
           </button>
-          <a
+          <Link
             href="/"
             className="border border-white/20 hover:border-white/40 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
           >
             Volver al inicio
-          </a>
+          </Link>
         </div>
       </div>
     </main>

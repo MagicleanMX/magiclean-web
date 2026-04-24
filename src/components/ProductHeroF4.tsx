@@ -3,6 +3,30 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import productsData from '@/lib/products.json'
+
+type Product = {
+  sku: string
+  nombre: string
+  destacado: boolean
+  imagen_path: string | null
+}
+
+const products = productsData as Product[]
+
+function getProduct(sku: string): Product {
+  const p = products.find((x) => x.sku === sku)
+  if (!p) throw new Error(`Product ${sku} not found in products.json`)
+  return p
+}
+
+function requireImagePath(p: Product): string {
+  if (!p.imagen_path) throw new Error(`${p.sku}.imagen_path missing — required by ProductHeroF4`)
+  return p.imagen_path
+}
+
+const F4 = getProduct('F4')
+const F4_IMAGE_SRC = requireImagePath(F4)
 
 const specs = [
   { valor: '3×', etiqueta: 'Mayor durabilidad' },
@@ -24,14 +48,16 @@ export default function ProductHeroF4() {
           className="relative order-1 overflow-hidden bg-[#0A1628] aspect-[4/5] lg:aspect-auto"
         >
           {/* Badge popular — top left */}
-          <div className="absolute top-6 left-6 flex items-center gap-2 bg-[#FF2B2B] text-white px-3.5 py-2 rounded-full z-20">
-            <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
-            <span className="text-[10px] font-bold uppercase tracking-widest">Más popular</span>
-          </div>
+          {F4.destacado && (
+            <div className="absolute top-6 left-6 flex items-center gap-2 bg-[#FF2B2B] text-white px-3.5 py-2 rounded-full z-20">
+              <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+              <span className="text-[10px] font-bold uppercase tracking-widest">Más popular</span>
+            </div>
+          )}
 
           {/* Producto real — directo sobre navy con depth */}
           <Image
-            src="/images/products/F4.webp"
+            src={F4_IMAGE_SRC}
             alt="F4 — Fibra Esponja Dual NeoShield™. Esponja amarilla de un lado, fibra abrasiva verde del otro."
             fill
             sizes="(max-width: 1024px) 80vw, 40vw"
@@ -42,8 +68,8 @@ export default function ProductHeroF4() {
 
           {/* Código F4 — firma minimalista bottom-left */}
           <div className="absolute bottom-6 left-6 z-10 flex items-end gap-3">
-            <p className="font-black leading-none tracking-tight text-white text-[2.4rem]">F4</p>
-            <p className="label-eyebrow text-white/40 text-[10px] pb-1">FIBRA ESPONJA DUAL</p>
+            <p className="font-black leading-none tracking-tight text-white text-[2.4rem]">{F4.sku}</p>
+            <p className="label-eyebrow text-white/70 text-[10px] pb-1">{F4.nombre.toUpperCase()}</p>
           </div>
         </motion.div>
 
@@ -55,7 +81,7 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="label-eyebrow text-[#0076FF] mb-3"
+            className="label-eyebrow text-[#0052CC] mb-3"
           >
             Fibras Abrasivas — NeoShield™
           </motion.p>
@@ -76,7 +102,7 @@ export default function ProductHeroF4() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[1rem] font-normal text-[#666666] leading-[1.75] max-w-md mb-5"
+            className="text-[1rem] font-normal text-ink-muted leading-[1.75] max-w-md mb-5"
           >
             Fibra abrasiva de alta resistencia por un lado, esponja suave por el otro.
             Un producto. Dos herramientas.
@@ -90,8 +116,8 @@ export default function ProductHeroF4() {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="border-l-2 border-[#0076FF] pl-5 mb-6"
           >
-            <p className="text-[0.95rem] font-normal text-[#666666] italic leading-[1.7]">
-              "El estándar se creó ayer. Hoy lo evolucionamos."
+            <p className="text-[0.95rem] font-normal text-ink-muted italic leading-[1.7]">
+              &ldquo;El estándar se creó ayer. Hoy lo evolucionamos.&rdquo;
             </p>
           </motion.blockquote>
 
@@ -108,7 +134,7 @@ export default function ProductHeroF4() {
                 <p className="font-black text-[#1A1A1A] text-2xl lg:text-3xl leading-none mb-1">
                   {s.valor}
                 </p>
-                <p className="label-eyebrow text-[#666666] text-[10px]">{s.etiqueta}</p>
+                <p className="label-eyebrow text-ink-muted text-[10px]">{s.etiqueta}</p>
               </div>
             ))}
           </motion.div>

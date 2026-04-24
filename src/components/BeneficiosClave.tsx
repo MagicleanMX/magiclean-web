@@ -9,7 +9,7 @@ const ICONS: LucideIcon[] = [Zap, Shield, Leaf]
 
 export default function BeneficiosClave() {
   return (
-    <section className="section-premium bg-[#FAFAFA]">
+    <section className="section-premium bg-surface-alt">
       <div className="max-w-[1440px] mx-auto px-8">
 
         <motion.div
@@ -20,7 +20,7 @@ export default function BeneficiosClave() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14"
         >
           <div>
-            <p className="label-eyebrow text-[#0076FF] mb-3">Por qué MagicClean</p>
+            <p className="label-eyebrow text-[#0052CC] mb-3">Por qué MagicClean</p>
             <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-[#1A1A1A] max-w-lg mb-5">
               Tecnología que se demuestra. Beneficios que se miden.
             </h2>
@@ -46,7 +46,7 @@ export default function BeneficiosClave() {
                 transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                 className="bg-white rounded-2xl p-10 border border-[#E8EAED] flex flex-col"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#F0F5FF] flex items-center justify-center mb-8">
+                <div className="w-10 h-10 rounded-xl bg-surface-blue flex items-center justify-center mb-8">
                   <Icon size={20} className="text-[#0076FF]" />
                 </div>
 
@@ -56,7 +56,7 @@ export default function BeneficiosClave() {
                 </p>
                 <p className="font-semibold text-[#1A1A1A] text-[1.05rem] mb-5">{titulo}</p>
 
-                <p className="text-[13.5px] font-normal text-[#666666] leading-[1.75] flex-1">
+                <p className="text-[13.5px] font-normal text-ink-muted leading-[1.75] flex-1">
                   {descripcion}
                 </p>
               </motion.div>

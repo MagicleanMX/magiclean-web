@@ -2,64 +2,50 @@
 
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Download } from 'lucide-react'
+import { CATEGORY_COLORS, getChipColor } from '@/lib/categoryColors'
+import type { ProductCategoria } from '@/lib/categoryColors'
+import productsData from '@/lib/products.json'
+import { track, AnalyticsEvents } from '@/lib/analytics'
+import { CATALOG_PDFS } from '@/lib/catalog-assets'
+
+type Product = {
+  sku: string
+  nombre: string
+  variante: string | null
+  categoria: ProductCategoria
+  estado: 'activo' | 'descontinuado' | 'en_desarrollo'
+}
+
+const products = productsData as Product[]
+
+const CATEGORIA_TITULOS: Record<ProductCategoria, string> = {
+  fibras:     'Fibras Abrasivas',
+  mops:       'Sistemas Mop',
+  accesorios: 'Accesorios',
+  repuestos:  'Repuestos Originales',
+}
+
+const CATEGORIA_ORDER: ProductCategoria[] = ['fibras', 'mops', 'accesorios', 'repuestos']
+
+// SKUs que muestran badge "Popular" en el mega-menú.
+// Subconjunto de los `destacado: true` del JSON: separa "ganador comercial"
+// (dato del catálogo) de "qué resaltamos en este componente" (decisión de UI).
+const BADGES_NAVBAR = new Set(['F4', 'F5', 'F7', 'M1', 'M2'])
 
 const megaProductos = {
-  columnas: [
-    {
-      titulo: 'Fibras Abrasivas',
-      color: '#FF2B2B',
-      items: [
-        { codigo: 'F1', nombre: 'Fibra Verde Grande', detalle: '220×140mm · Limpieza pesada' },
-        { codigo: 'F2', nombre: 'Fibra Verde Mediana', detalle: '150×140mm · Limpieza pesada' },
-        { codigo: 'F3', nombre: 'Fibra Verde Chica', detalle: '135×82mm · Limpieza pesada' },
-        { codigo: 'F4', nombre: 'Fibra Esponja Dual', detalle: 'Verde + esponja · Multiusos', badge: 'Popular' },
-        { codigo: 'F5', nombre: 'Fibra Negra', detalle: 'Parrillas y hornos' },
-        { codigo: 'F6', nombre: 'Fibra Blanca Baños', detalle: 'Uso exclusivo sanitarios' },
-        { codigo: 'F7', nombre: 'Fibra Azul 0 Rayas', detalle: 'Superficies delicadas' },
-        { codigo: 'F8', nombre: 'Borrador Mágico + Esponja', detalle: 'Con esponja integrada' },
-        { codigo: 'F9', nombre: 'Borrador Mágico', detalle: 'Elimina manchas difíciles' },
-      ],
-    },
-    {
-      titulo: 'Sistemas Mop',
-      color: '#0076FF',
-      items: [
-        { codigo: 'M1', nombre: 'Turbo Magic', detalle: 'Cubo con pedal + microfibra', badge: 'Estrella' },
-        { codigo: 'M2', nombre: 'Spin Magic', detalle: 'Cubo sin pedal + microfibra' },
-        { codigo: 'M5', nombre: 'Mop Rectangular', detalle: 'Giratorio 360° · Rincones' },
-        { codigo: 'M6', nombre: 'Mop Doble Función', detalle: 'Separación agua sucia' },
-        { codigo: 'M9', nombre: 'Mop Atomizador', detalle: 'Spray sin baterías' },
-      ],
-    },
-    {
-      titulo: 'Limpieza de Baños',
-      color: '#0076FF',
-      items: [
-        { codigo: 'M4', nombre: 'Cepillo Baño', detalle: '16 cartuchos desechables' },
-        { codigo: 'M10', nombre: 'Repuesto M4', detalle: '32 cartuchos + detergente' },
-      ],
-    },
-    {
-      titulo: 'Accesorios',
-      color: '#1A1A1A',
-      items: [
-        { codigo: 'M3', nombre: 'Repuesto Mopa', detalle: 'Compatible M1, M2 y otros' },
-        { codigo: 'M7', nombre: 'Cubeta Saldo', detalle: 'Escurrido eficiente' },
-        { codigo: 'M8', nombre: 'Cepillo Mops', detalle: 'Para bastones giratorios' },
-        { codigo: 'M16', nombre: 'Cubeta Plegable', detalle: '10 litros · Compacta' },
-        { codigo: 'M17', nombre: 'Recogedor Escoba', detalle: 'Nylon · Alta durabilidad' },
-        { codigo: 'M18', nombre: 'Trapeador Silicon', detalle: 'Goma natural · Madera y cerámica' },
-      ],
-    },
-  ],
-  destacado: {
-    badge: 'Más popular',
-    codigo: 'F4',
-    nombre: 'Fibra Esponja Dual F4',
-    descripcion: 'Doble cara. Antibacterial. El más vendido de la línea.',
-    color: '#FF2B2B',
-  },
+  columnas: CATEGORIA_ORDER.map((cat) => ({
+    titulo: CATEGORIA_TITULOS[cat],
+    color:  CATEGORY_COLORS[cat],
+    items:  products
+      .filter((p) => p.categoria === cat && p.estado === 'activo')
+      .map((p) => ({
+        codigo:    p.sku,
+        nombre:    p.variante ? `${p.nombre} · ${p.variante}` : p.nombre,
+        badge:     BADGES_NAVBAR.has(p.sku) ? 'Popular' : undefined,
+        chipColor: getChipColor(p.sku, p.categoria),
+      })),
+  })),
 }
 
 const navLinks = [
@@ -246,7 +232,7 @@ export default function Navbar() {
                       onClick={() => setMegaOpen((prev) => !prev)}
                       className={`flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                         megaOpen
-                          ? 'text-[#0076FF] bg-[#F0F5FF]'
+                          ? 'text-[#0076FF] bg-surface-blue'
                           : 'text-[#1A1A1A] hover:text-[#0076FF] hover:bg-[#F5F7FA]'
                       }`}
                     >
@@ -266,103 +252,81 @@ export default function Navbar() {
                         role="menu"
                         aria-label="Productos MagicClean"
                         className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-white border border-[#E8EAED] rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] overflow-hidden"
-                        style={{ width: 860 }}
+                        style={{ width: 720 }}
                         onMouseEnter={openMega}
                         onMouseLeave={closeMega}
                         onKeyDown={handleMegaKeyDown}
                       >
-                        <div className="flex">
-                          {/* Columnas */}
-                          <div className="flex-1 grid grid-cols-4 gap-0 p-6">
-                            {megaProductos.columnas.map((col) => (
-                              <div key={col.titulo} className="pr-4">
-                                <p
-                                  className="label-eyebrow mb-3 text-[10px]"
-                                  style={{ color: col.color }}
-                                >
-                                  {col.titulo}
-                                </p>
-                                <ul className="space-y-2.5">
-                                  {col.items.map((item) => (
-                                    <li key={item.codigo}>
-                                      <a
-                                        href="#productos"
-                                        role="menuitem"
-                                        className="group/item flex items-start gap-2"
-                                      >
-                                        <span
-                                          className="shrink-0 w-7 h-5 rounded flex items-center justify-center text-[9px] font-black text-white mt-0.5"
-                                          style={{ backgroundColor: col.color }}
-                                        >
-                                          {item.codigo}
-                                        </span>
-                                        <div>
-                                          <p className="text-[12px] font-medium text-[#1A1A1A] group-hover/item:text-[#0076FF] transition-colors leading-tight">
-                                            {item.nombre}
-                                            {item.badge && (
-                                              <span className="ml-1.5 text-[10px] font-bold text-[#FF2B2B] bg-[#FFF0F0] px-1.5 py-0.5 rounded-full">
-                                                {item.badge}
-                                              </span>
-                                            )}
-                                          </p>
-                                          <p className="text-[11px] text-[#666666] font-normal leading-tight mt-0.5">
-                                            {item.detalle}
-                                          </p>
-                                        </div>
-                                      </a>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </div>
-
-                          {/* Producto destacado */}
-                          <div className="w-44 bg-[#FFFBF0] flex flex-col items-center justify-center gap-3 p-6 text-center border-l border-[#E8EAED]">
-                            <span className="label-eyebrow text-[#FF2B2B] text-[10px]">
-                              {megaProductos.destacado.badge}
-                            </span>
-                            <div
-                              className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center border border-[#E8EAED]"
-                              style={{ boxShadow: `0 4px 20px ${megaProductos.destacado.color}30` }}
-                            >
-                              <span
-                                className="font-black text-xl leading-none"
-                                style={{ color: megaProductos.destacado.color }}
+                        <div className="grid grid-cols-4 gap-0 p-5">
+                          {megaProductos.columnas.map((col) => (
+                            <div key={col.titulo} className="pr-3">
+                              <p
+                                className="label-eyebrow mb-2.5 text-[10px]"
+                                style={{ color: col.color }}
                               >
-                                {megaProductos.destacado.codigo}
-                              </span>
+                                {col.titulo}
+                              </p>
+                              <ul className="space-y-1">
+                                {col.items.map((item) => (
+                                  <li key={item.codigo}>
+                                    <a
+                                      href="#productos"
+                                      role="menuitem"
+                                      className="group/item flex items-start gap-2 py-1 px-1 -mx-1 rounded-md hover:bg-[#F5F7FA] transition-colors"
+                                    >
+                                      <span
+                                        className="shrink-0 inline-flex items-center justify-center min-w-[28px] h-5 px-1.5 rounded text-[9px] font-black text-white mt-0.5"
+                                        style={{ backgroundColor: item.chipColor }}
+                                      >
+                                        {item.codigo}
+                                      </span>
+                                      <p className="text-[12px] font-medium text-[#1A1A1A] group-hover/item:text-[#0076FF] transition-colors leading-tight">
+                                        {item.nombre}
+                                        {item.badge && (
+                                          <span className="ml-1.5 text-[10px] font-bold text-[#FF2B2B] bg-surface-red px-1.5 py-0.5 rounded-full">
+                                            {item.badge}
+                                          </span>
+                                        )}
+                                      </p>
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
                             </div>
-                            <div>
-                              <p className="text-[12px] font-semibold text-[#1A1A1A] leading-snug">
-                                {megaProductos.destacado.nombre}
-                              </p>
-                              <p className="text-[11px] text-[#666666] font-normal mt-1 leading-snug">
-                                {megaProductos.destacado.descripcion}
-                              </p>
+                          ))}
+                        </div>
+
+                        {/* Footer del mega menú — 2 líneas: info + acciones */}
+                        <div className="border-t border-[#E8EAED] px-5 py-3 bg-[#F5F7FA] space-y-2">
+                          <p className="text-[11px] text-ink-muted font-normal">
+                            <span className="font-semibold text-[#1A1A1A]">{products.length} soluciones</span> disponibles · Línea Fibras y Línea Mops
+                          </p>
+                          <div className="flex items-center justify-between gap-3">
+                            <div className="flex items-center gap-2">
+                              {CATALOG_PDFS.map((pdf) => (
+                                <a
+                                  key={pdf.id}
+                                  href={pdf.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  role="menuitem"
+                                  aria-label={`Descargar ${pdf.label} en PDF, ${pdf.sizeA11y}`}
+                                  onClick={() => track(AnalyticsEvents.CatalogDownload, { catalog: pdf.id })}
+                                  className="inline-flex items-center gap-1 px-2 py-1 text-[10px] font-medium text-ink-muted hover:text-[#0076FF] border border-[#E8EAED] hover:border-[#0076FF] rounded transition-colors duration-200"
+                                >
+                                  <Download size={10} />
+                                  {pdf.labelShort} ({pdf.sizeLabel})
+                                </a>
+                              ))}
                             </div>
                             <a
-                              href="#productos"
+                              href="#contacto"
                               role="menuitem"
                               className="text-[11px] font-semibold text-[#0076FF] hover:underline underline-offset-2"
                             >
-                              Ver más →
+                              Solicitar catálogo profesional →
                             </a>
                           </div>
-                        </div>
-
-                        {/* Footer del mega menú */}
-                        <div className="border-t border-[#E8EAED] px-6 py-3 bg-[#F5F7FA] flex items-center justify-between">
-                          <p className="text-[11px] text-[#666666] font-normal">
-                            <span className="font-semibold text-[#1A1A1A]">23 modelos</span> disponibles · Línea Fibras y Línea Mops
-                          </p>
-                          <a
-                            href="#contacto"
-                            role="menuitem"
-                            className="text-[11px] font-semibold text-[#0076FF] hover:underline underline-offset-2"
-                          >
-                            Solicitar catálogo completo →
-                          </a>
                         </div>
                       </div>
                     )}

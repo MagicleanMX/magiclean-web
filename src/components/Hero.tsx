@@ -8,7 +8,7 @@ import { CANALES } from '@/lib/products'
 const FALLBACK: HeroSection = {
   eyebrow:       'Proveedor B2B · Canal Profesional México',
   headline:      'Fibras que duran. Tecnología que protege.',
-  subheadline:   '23 modelos con NeoShield™ — la única tecnología antibacterial certificada para el canal profesional en México. Más duración. Cero contaminación cruzada. Un solo proveedor.',
+  subheadline:   '23 soluciones profesionales con NeoShield™ — la única tecnología antibacterial certificada para el canal profesional en México. Más duración. Cero contaminación cruzada. Un solo proveedor.',
   heroMicrotext: 'Distribuidores · Retail · HORECA · Institucional · México y LATAM',
 }
 
@@ -34,7 +34,7 @@ export default function Hero({ data }: HeroProps) {
           {/* Eyebrow — azul como en secciones premium */}
           <div className="flex items-center gap-2 mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#0076FF] shrink-0" />
-            <span className="label-eyebrow text-[#0076FF]">{eyebrow}</span>
+            <span className="label-eyebrow text-[#0052CC]">{eyebrow}</span>
           </div>
 
           {/* Headline */}
@@ -43,12 +43,12 @@ export default function Hero({ data }: HeroProps) {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-[1rem] font-normal text-[#666666] leading-[1.75] max-w-sm mb-3">
+          <p className="text-[1rem] font-normal text-ink-muted leading-[1.75] max-w-sm mb-3">
             {subheadline}
           </p>
 
           {/* Micro-texto B2B */}
-          <p className="text-[0.8rem] font-normal text-[#8B92A0] tracking-wide mb-8">
+          <p className="text-[0.8rem] font-normal text-ink-subtle tracking-wide mb-8">
             {heroMicrotext}
           </p>
 
@@ -77,7 +77,7 @@ export default function Hero({ data }: HeroProps) {
             ].map((s) => (
               <div key={s.label}>
                 <p className="text-xl sm:text-2xl font-black text-[#1A1A1A] leading-none mb-1">{s.n}</p>
-                <p className="label-eyebrow text-[#666666]">{s.label}</p>
+                <p className="label-eyebrow text-ink-muted">{s.label}</p>
               </div>
             ))}
           </div>

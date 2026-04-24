@@ -7,7 +7,9 @@ export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 function dataUrl(rel: string): string {
-  const buf = fs.readFileSync(path.join(process.cwd(), rel))
+  // turbopackIgnore placed inside path.join so Turbopack doesn't trace the
+  // whole project into the NFT list for this build-time file read.
+  const buf = fs.readFileSync(path.join(/*turbopackIgnore: true*/ process.cwd(), rel))
   return `data:image/png;base64,${buf.toString('base64')}`
 }
 
@@ -31,7 +33,6 @@ export default async function Image() {
           fontFamily: 'system-ui, sans-serif',
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={logo} width={600} alt="" style={{ display: 'block' }} />
         <div
           style={{
@@ -50,7 +51,6 @@ export default async function Image() {
           <div>Limpieza profesional con</div>
           <div>tecnología NeoShield™</div>
         </div>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={neoshield}
           width={260}

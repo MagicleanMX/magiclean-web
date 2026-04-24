@@ -1,6 +1,22 @@
-import Image from 'next/image'
+'use client'
 
-const cols = [
+import Image from 'next/image'
+import { track, AnalyticsEvents } from '@/lib/analytics'
+import { CATALOG_PDFS, type CatalogId } from '@/lib/catalog-assets'
+
+type FooterLink = {
+  label: string
+  href: string
+  external?: boolean
+  analyticsId?: CatalogId
+}
+
+type FooterCol = {
+  titulo: string
+  links: FooterLink[]
+}
+
+const cols: FooterCol[] = [
   {
     titulo: 'Productos',
     links: [
@@ -19,7 +35,12 @@ const cols = [
       { label: 'Tecnología NeoShield™', href: '#tecnologia' },
       { label: 'Cómo funciona', href: '#como-funciona' },
       { label: 'Red de Distribuidores', href: '#distribuidores' },
-      { label: 'Catálogo completo', href: '#contacto' },
+      ...CATALOG_PDFS.map((pdf) => ({
+        label: `${pdf.label} (${pdf.sizeLabel})`,
+        href: pdf.url,
+        external: true,
+        analyticsId: pdf.id,
+      })),
     ],
   },
   {
@@ -107,17 +128,17 @@ export default function Footer() {
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="#0076FF" aria-hidden="true">
                   <path d="M12 2L3.5 6.5V12c0 5.1 3.84 9.87 8.5 11.1C16.66 21.87 20.5 17.1 20.5 12V6.5L12 2z"/>
                 </svg>
-                <span className="label-eyebrow text-white/40 text-[10px] font-normal">NeoShield™ Technology</span>
+                <span className="label-eyebrow text-white/70 text-[10px] font-normal">NeoShield™ Technology</span>
               </span>
               <span className="inline-flex items-center gap-2 self-start">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0076FF]" />
-                <span className="label-eyebrow text-white/40 text-[10px] font-normal">MercadoLibre · Amazon · Walmart</span>
+                <span className="label-eyebrow text-white/70 text-[10px] font-normal">MercadoLibre · Amazon · Walmart</span>
               </span>
             </div>
 
             {/* Redes sociales */}
             <div>
-              <p className="label-eyebrow text-white/40 text-[10px] font-normal mb-3">Síguenos</p>
+              <p className="label-eyebrow text-white/70 text-[10px] font-normal mb-3">Síguenos</p>
               <div className="flex items-center gap-3">
                 {socialLinks.map((s) => (
                   <a
@@ -138,12 +159,16 @@ export default function Footer() {
           {/* Link columns */}
           {cols.map((col) => (
             <div key={col.titulo}>
-              <p className="label-eyebrow text-white/40 mb-6">{col.titulo}</p>
+              <p className="label-eyebrow text-white/70 mb-6">{col.titulo}</p>
               <ul className="space-y-3.5">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      {...(link.external && { target: '_blank', rel: 'noopener noreferrer' })}
+                      {...(link.analyticsId && {
+                        onClick: () => track(AnalyticsEvents.CatalogDownload, { catalog: link.analyticsId as CatalogId }),
+                      })}
                       className="text-[13px] font-normal text-white/50 hover:text-white transition-colors duration-200 leading-snug block"
                     >
                       {link.label}
@@ -168,14 +193,14 @@ export default function Footer() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-[11px] font-normal text-white/40 hover:text-white/60 transition-colors duration-200"
+                className="text-[11px] font-normal text-white/70 hover:text-white/60 transition-colors duration-200"
               >
                 {item.label}
               </a>
             ))}
           </div>
-          <p className="text-[11px] font-normal text-white/40">
-            © {new Date().getFullYear()} MagicClean S.A. de C.V. · México · Todos los derechos reservados.
+          <p className="text-[11px] font-normal text-white/70">
+            © {new Date().getFullYear()} Prolim BH, SA de CV · MagiClean® marca registrada · México
           </p>
         </div>
       </div>
