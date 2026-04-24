@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import Logo from '@/components/Logo'
 import { track, AnalyticsEvents } from '@/lib/analytics'
 import { CATALOG_PDFS, type CatalogId } from '@/lib/catalog-assets'
 
@@ -105,12 +105,9 @@ export default function Footer() {
           <div>
             {/* Logo */}
             <a href="#" aria-label="MagiClean — inicio" className="inline-flex items-center mb-6 group">
-              <Image
-                src="/images/brand/logo/magiclean-logo.webp"
-                alt="MagiClean — Limpieza profesional"
-                width={2000}
-                height={610}
-                className="h-12 w-auto"
+              <Logo
+                variant="white"
+                className="h-10"
               />
             </a>
 
