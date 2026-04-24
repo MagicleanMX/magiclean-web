@@ -46,7 +46,7 @@ const cols: FooterCol[] = [
   {
     titulo: 'Contacto LATAM',
     links: [
-      { label: 'contacto@magicleanproducts.com', href: 'mailto:contacto@magicleanproducts.com' },
+      { label: 'ventas@magiclean.mx', href: 'mailto:ventas@magiclean.mx' },
       { label: 'CDMX · Guadalajara · Monterrey', href: '#contacto' },
       { label: 'Exportaciones LATAM', href: '#contacto' },
       { label: 'Solicitar cotización', href: '#contacto' },
