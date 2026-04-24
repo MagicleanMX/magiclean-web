@@ -1,6 +1,13 @@
 import { ImageResponse } from 'next/og'
 import fs from 'node:fs'
 import path from 'node:path'
+import {
+  LOGO_VIEW_BOX,
+  LOGO_RED_PATH_D,
+  LOGO_BLUE_PATH_D,
+  LOGO_RED_FILL,
+  LOGO_BLUE_FILL,
+} from '@/components/logo-paths'
 
 export const alt = 'MagiClean — Limpieza profesional con tecnología NeoShield™'
 export const size = { width: 1200, height: 630 }
@@ -14,7 +21,6 @@ function dataUrl(rel: string): string {
 }
 
 export default async function Image() {
-  const logo = dataUrl('public/images/brand/logo/magiclean-logo.png')
   const neoshield = dataUrl('public/images/brand/neoshield/neoshield-badge.png')
 
   return new ImageResponse(
@@ -33,7 +39,16 @@ export default async function Image() {
           fontFamily: 'system-ui, sans-serif',
         }}
       >
-        <img src={logo} width={600} alt="" style={{ display: 'block' }} />
+        <svg
+          width={600}
+          height={115}
+          viewBox={LOGO_VIEW_BOX}
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ display: 'block' }}
+        >
+          <path fill={LOGO_RED_FILL} d={LOGO_RED_PATH_D} />
+          <path fill={LOGO_BLUE_FILL} d={LOGO_BLUE_PATH_D} />
+        </svg>
         <div
           style={{
             marginTop: 40,
