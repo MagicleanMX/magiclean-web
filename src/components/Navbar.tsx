@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import Logo from '@/components/Logo'
 import { useState, useEffect, useRef } from 'react'
 import { Menu, X, ChevronDown, Download } from 'lucide-react'
 import { CATEGORY_COLORS, getChipColor } from '@/lib/categoryColors'
@@ -197,13 +197,9 @@ export default function Navbar() {
 
             {/* Logo */}
             <a href="#" aria-label="MagiClean — inicio" className="flex items-center shrink-0 group">
-              <Image
-                src="/images/brand/logo/magiclean-logo.webp"
-                alt="MagiClean — Limpieza profesional"
-                width={2000}
-                height={610}
-                priority
-                className="h-8 lg:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+              <Logo
+                variant="color"
+                className="h-9 lg:h-11"
               />
             </a>
 
