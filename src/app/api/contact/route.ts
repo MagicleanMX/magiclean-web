@@ -181,7 +181,7 @@ export async function POST(req: NextRequest) {
 
     try {
       await resend.emails.send({
-        from:    'MagicClean · Prolim BH <noreply@magiclean.mx>',
+        from:    process.env.RESEND_FROM_NOTIFY || 'onboarding@resend.dev',
         to:      notifyTo,
         subject: `🟢 Nuevo lead B2B — ${safe.empresa} (${safe.canal})`,
         html: `
@@ -255,7 +255,7 @@ export async function POST(req: NextRequest) {
     // 3️⃣  Confirmación automática al lead
     try {
       await resend.emails.send({
-        from:    'MagicClean · Prolim BH <hola@magiclean.mx>',
+        from:    process.env.RESEND_FROM_CONFIRM || 'onboarding@resend.dev',
         to:      body.email,
         subject: 'Recibimos tu solicitud — MagicClean',
         html: `
