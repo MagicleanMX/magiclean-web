@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Términos de Uso — Prolim BH, SA de CV',
   description:
-    'Términos y condiciones de uso del sitio web magicleanproducts.com, operado por Prolim BH, SA de CV (titular de la marca MagiClean®).',
+    'Términos y condiciones de uso del sitio web magiclean.mx, operado por Prolim BH, SA de CV (titular de la marca MagiClean®).',
   robots: { index: true, follow: true },
 }
 
@@ -26,7 +26,7 @@ export default function TerminosDeUso() {
               Términos de Uso
             </h1>
             <p className="text-sm text-white/50 font-normal">
-              Condiciones generales de uso del sitio web magicleanproducts.com ·{' '}
+              Condiciones generales de uso del sitio web magiclean.mx ·{' '}
               Última actualización:{' '}
               <time dateTime="2025-04-13">13 de abril de 2025</time>
             </p>
