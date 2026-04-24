@@ -27,3 +27,10 @@ public/og-image.png
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+# Brand source files — canonical location is project-log/brand-sources/
+public/images/brand/_source/
+
+# Raster fallbacks — orphan, pending cleanup (deuda B-2 Sprint B)
+public/images/hero/hero-kitchen.png
+public/images/products/F4.jpg
