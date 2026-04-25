@@ -177,3 +177,46 @@ Jerarquía nueva: **Hero = qué vendemos** (categoría + sello). **ElProblema = 
 **Revisar si:** cambia el posicionamiento de NeoShield™, o si MagiClean lanza sub-líneas con tecnología distinta a NeoShield™ (ej. BioBase PRO+ cuando llegue de China), o si los segmentos B2B se simplifican/expanden.
 
 ---
+
+### 2026-04-25 — Regla operativa: NeoShield™ seal variantes por tamaño
+
+**Decisor:** Jacobo Levy
+**Contexto:** Sesión Claude web 2026-04-25. Validación visual sobre `neoshield_compare.png` mostró que la variante COMPLETA del seal (con texto "SURFACE PROTECCIÓN — REMUEVE EL 99% DE BACTERIAS" alrededor del escudo) se vuelve ilegible bajo 300px. Sin regla clara, futuras integraciones podrían embeber la variante incorrecta.
+**Decisión:** regla operativa por tamaño del badge renderizado:
+- **≤120px** (Navbar, cards de catálogo, thumbnails) → variante **COMPACTA** (escudo solo, sin texto perimetral)
+- **≥300px** (Hero, banners grandes, secciones dedicadas) → variante **COMPLETA** (escudo + texto perimetral)
+- **Zona muerta 120-300px** → **COMPACTA por default** (priorizar legibilidad sobre claim explícito)
+**Alternativas consideradas:** forzar variante COMPLETA en todos los tamaños (descartado por ilegibilidad); diseñar variante intermedia con texto reducido (descartado por complejidad de mantenimiento — dos variantes son mantenibles, tres no).
+**Consecuencias esperadas:** PR #25 (NeoShield badge en cards de productos) implementa COMPACTA. Toda integración futura del seal aplica esta regla. Si emerge un tamaño nuevo (ej. footer signature, watermark de PDF) se asigna a una de las dos variantes según la regla.
+**Revisar si:** el badge se rediseña visualmente, surge una variante intermedia justificada por uso específico, o si métricas de reconocibilidad muestran que la COMPACTA pierde signal de marca.
+
+---
+
+### 2026-04-25 — Verb discipline en CTAs B2B
+
+**Decisor:** Jacobo Levy
+**Contexto:** PR #23 (CTA cleanup) detectó saturación de "Solicitar cotización" repetido en home. La unificación a "Hablar con ventas" en HowItWorks + Nosotros + ProductHeroMop ("Cotizar este sistema") cerró el problema puntual, pero sin guideline futuras secciones repetirían la saturación.
+**Decisión:** cuatro verbos según contexto, codificados:
+- **"Hablar con ventas"** — conversación general, sin objeto. Para secciones narrativas (HowItWorks, Nosotros, futuras Distribuidores/Empresa).
+- **"Cotizar [X específico]"** — CTA producto-específico, con objeto. Ej: "Cotizar este sistema", "Cotizar fibras", "Cotizar volumen".
+- **"Cotizar"** sin objeto — exclusivo de form submit (`ContactForm`) y links útiles (Footer).
+- **"Solicitar cotización"** — reservado para Hero primary y Navbar (CTAs persistentes top-level).
+**Alternativas consideradas:** unificar todo a "Solicitar cotización" (descartado, motivo del PR #23); reducir todo a "Contactar" (descartado por pérdida de specificity producto-específica que tracciona conversión B2B).
+**Consecuencias esperadas:** futuros CTAs siguen el patrón sin re-discusión. Mantenimiento sostenido del balance entre claridad y diferenciación. Si una nueva sección no encaja en ninguno de los cuatro slots, se evalúa caso por caso.
+**Revisar si:** emerge un contexto nuevo (campañas marketing, landing dedicadas) que requiere CTA fuera del patrón; o si métricas A/B muestran que un verbo específico subperforma.
+
+---
+
+### 2026-04-25 — Política sobre el conteo de SKUs en copy
+
+**Decisor:** Jacobo Levy
+**Contexto:** PR #24 (Hero copy rework). El subheadline original citaba "23 soluciones profesionales" — el catálogo crece (24, 25 SKUs proyectados; BioBase PRO+ entra cuando llegue de China) y un número fijo en el Hero envejece mal. Pero el número sigue siendo útil en surfaces operativos para crawlers/SEO/usuarios buscando alcance.
+**Decisión:** política sobre el conteo de SKUs:
+- **Eliminado** del Hero — la marca = solución integral, no conteo de SKUs. Hero debe ser estable cuando crece el catálogo.
+- **Mantenido** en surfaces operativos: `/productos` header (count auto-derivado de `products.json` con `estado === 'activo'`), catálogos descargables PDF, `metadata.description` de `layout.tsx`, mega-menú del Navbar.
+- **Single source of truth** del conteo: `products.json` filtrado por `estado === 'activo'`. Cualquier mención literal del número se desactualiza al crecer el catálogo.
+**Alternativas consideradas:** eliminar el número de todos los surfaces (descartado por pérdida de signal SEO + información operativa relevante); mantener "23" en el Hero (descartado, motivo del PR #24); auto-derivar el conteo en el Hero (descartado — no aporta a la marca).
+**Consecuencias esperadas:** cuando el catálogo crezca a 24/25/30 SKUs, solo se actualizan los surfaces operativos (idealmente derivando del JSON). Marca queda estable. La descripción del Hero no requiere update al cambiar el conteo.
+**Revisar si:** el catálogo se reduce drásticamente (ej. 23 → 8 por descontinuación masiva) y el conteo deja de ser útil para SEO; o si una sub-línea separada (PRO, BioBase) requiere conteos distintos por audiencia.
+
+---
