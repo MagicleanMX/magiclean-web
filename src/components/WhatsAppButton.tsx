@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { track, AnalyticsEvents } from '@/lib/analytics'
 
-const WHATSAPP_NUMBER = '5215512345678'
+const WHATSAPP_NUMBER = '525570959011'
 const WHATSAPP_MESSAGE = 'Hola, me interesa conocer el portafolio profesional de MagicClean.'
 
 export default function WhatsAppButton() {

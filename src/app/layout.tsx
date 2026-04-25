@@ -96,9 +96,7 @@ const jsonLd = {
     logo: `${siteUrl}/images/logo.svg`,
   },
   sameAs: [
-    'https://www.facebook.com/magiclean',
-    'https://www.instagram.com/magiclean',
-    'https://www.linkedin.com/company/magiclean',
+    'https://www.tiktok.com/@magicleanmx',
   ],
 }
 
