@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, Download } from 'lucide-react'
 import type { CategoriesSection } from '@/lib/wordpress'
@@ -86,14 +87,14 @@ function ProductCard({
   const cardBorderColor = featured ? bgColor : '#E8EAED'
 
   return (
-    <motion.a
-      href={`#contacto?producto=${product.sku}`}
+    <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] }}
-      className={`group block ${colSpanClass}`}
+      className={colSpanClass}
     >
+      <Link href={`/productos/${product.sku}`} className="group block">
       {/* Card visual con slot reservado para foto futura */}
       <div
         className={`relative overflow-hidden rounded-2xl ${aspectClass} ${borderClass} transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-0.5`}
@@ -139,7 +140,8 @@ function ProductCard({
           {nombreFull}
         </p>
       </div>
-    </motion.a>
+      </Link>
+    </motion.div>
   )
 }
 
