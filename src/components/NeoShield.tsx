@@ -29,7 +29,7 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 
 export default function NeoShield() {
   return (
-    <section id="tecnologia" className="section-premium relative overflow-hidden bg-[#0A1628]">
+    <section id="tecnologia" className="section-premium relative overflow-hidden bg-deep">
       {/* Glow decorativo */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#0076FF]/8 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-[#FF2B2B]/5 blur-[100px] pointer-events-none" />
@@ -108,7 +108,7 @@ export default function NeoShield() {
               {NEOSHIELD_STATS.map((s) => (
                 <div
                   key={s.label}
-                  className="bg-[#0A1628] px-7 py-7 hover:bg-[#0d1f38] transition-colors duration-300"
+                  className="bg-deep px-7 py-7 hover:bg-[#0d1f38] transition-colors duration-300"
                 >
                   <p className="font-black text-white text-[2.4rem] lg:text-[3rem] leading-none mb-2">
                     <Counter target={s.target} suffix={s.suffix} />

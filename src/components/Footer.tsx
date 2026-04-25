@@ -95,7 +95,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A1628] text-white">
+    <footer className="bg-deep text-white">
 
       {/* Main footer content */}
       <div className="max-w-[1440px] mx-auto px-8 py-16">

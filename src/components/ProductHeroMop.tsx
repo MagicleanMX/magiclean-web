@@ -49,7 +49,7 @@ const m2Specs = [
 
 export default function ProductHeroMop() {
   return (
-    <section id="sistemas-mop-m1" className="relative overflow-hidden bg-[#0A1628]">
+    <section id="sistemas-mop-m1" className="relative overflow-hidden bg-deep">
 
       {/* Header */}
       <div className="max-w-[1440px] mx-auto px-8 pt-16 pb-10">
@@ -210,7 +210,7 @@ export default function ProductHeroMop() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-wrap items-center gap-3 mt-5"
         >
-          <p className="label-eyebrow text-white/30 text-[10px]" aria-hidden="true">También disponibles</p>
+          <p className="label-eyebrow text-white/60 text-[10px]" aria-hidden="true">También disponibles</p>
           {masModelos.map((m) => (
             <a
               key={m.codigo}
