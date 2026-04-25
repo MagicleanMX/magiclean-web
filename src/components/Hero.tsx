@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import type { HeroSection } from '@/lib/wordpress'
 import { CANALES } from '@/lib/products'
 
@@ -60,12 +61,12 @@ export default function Hero({ data }: HeroProps) {
             >
               Solicitar cotización
             </a>
-            <a
+            <Link
               href="/productos"
               className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
             >
               Ver portafolio completo
-            </a>
+            </Link>
           </div>
 
           {/* Stats */}
