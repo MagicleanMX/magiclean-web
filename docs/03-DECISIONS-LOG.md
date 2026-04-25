@@ -1,6 +1,6 @@
 # 03 — Log de Decisiones Estratégicas MagiClean
 
-**Última actualización:** 2026-04-21
+**Última actualización:** 2026-04-25
 
 > **Archivo append-only.** Nunca se borra una decisión. Si cambia, se agrega entrada nueva marcando la anterior como "revisada".
 
@@ -136,5 +136,16 @@
 **Alternativas consideradas:** Separar en 2 branches con rebase manual (más trabajo, sin valor adicional).
 **Consecuencias esperadas:** Menos granularidad en merge, pero commits individualmente revertibles. Regla nueva agregada a CLAUDE.md: si branching causa conflictos, Claude Code pregunta antes de decidir.
 **Revisar si:** emerge razón de negocio para separar contribuciones técnicas vs legales.
+
+---
+
+### 2026-04-25 — WhatsApp FAB mobile-only por diseño UX B2B
+
+**Decisor:** Jacobo Levy
+**Contexto:** Validación visual de PR #16 detectó que el botón flotante de WhatsApp no aparecía en desktop. Discovery posterior reveló que es comportamiento intencional vía clase Tailwind `md:hidden` (oculto en pantallas ≥768px). Riesgo de que futuras auditorías lo clasifiquen como bug.
+**Decisión:** Mantener el FAB como mobile-only. Compradores B2B en desktop usan email + form de cotización (canales formales); el FAB sirve al comprador HORECA en mobile (almacén/cocina con celular en mano).
+**Alternativas consideradas:** Habilitar el botón también en desktop (quitar `md:hidden`).
+**Consecuencias esperadas:** Sin cambios técnicos. Documentación cruzada: `project_magicclean_wip.md` item 10 marcado como RESUELTO. Validado en sesión 2026-04-25 post-merge PR #16 (commit `06c8988`).
+**Revisar si:** métricas de conversión muestran que desktop pierde leads que sí completarían vía WhatsApp.
 
 ---
