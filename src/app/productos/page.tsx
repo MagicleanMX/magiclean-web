@@ -1,13 +1,8 @@
-import Link from 'next/link'
 import type { Metadata } from 'next'
 import { Download } from 'lucide-react'
 
 import productsData from '@/lib/products.json'
-import {
-  CATEGORY_COLORS,
-  CATEGORIA_LABELS,
-  getChipColor,
-} from '@/lib/categoryColors'
+import { CATEGORY_COLORS, CATEGORIA_LABELS } from '@/lib/categoryColors'
 import type { ProductCategoria } from '@/lib/categoryColors'
 import { CATALOG_PDFS } from '@/lib/catalog-assets'
 
@@ -15,6 +10,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import StickyCtaBar from '@/components/StickyCtaBar'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import ProductCardPlaceholder from '@/components/ProductCardPlaceholder'
 
 type Product = {
   sku: string
@@ -104,40 +100,9 @@ export default function CatalogPage() {
                     </div>
 
                     <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,200px))] gap-5 justify-start">
-                      {items.map((p) => {
-                        const chipColor = getChipColor(p.sku, p.categoria)
-                        const fullName = p.variante ? `${p.nombre} · ${p.variante}` : p.nombre
-                        return (
-                          <Link
-                            key={p.sku}
-                            href={`/productos/${p.sku}`}
-                            className="group block"
-                          >
-                            <div
-                              className="relative aspect-square rounded-2xl border border-[#E8EAED] overflow-hidden transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-0.5"
-                              style={{
-                                background: `linear-gradient(160deg, ${chipColor}14 0%, #FFFFFF 70%)`,
-                              }}
-                            >
-                              <span
-                                className="absolute top-3 left-3 inline-flex items-center justify-center min-w-[32px] h-6 px-2 rounded text-[10px] font-black text-white z-10"
-                                style={{ backgroundColor: chipColor }}
-                              >
-                                {p.sku}
-                              </span>
-                              <p
-                                className="absolute inset-0 flex items-center justify-center font-black text-[2.6rem] tracking-tighter leading-none select-none pointer-events-none"
-                                style={{ color: `${chipColor}1F` }}
-                              >
-                                {p.sku}
-                              </p>
-                            </div>
-                            <p className="text-[13px] font-medium text-[#1A1A1A] group-hover:text-[#0076FF] transition-colors leading-snug mt-3 px-1">
-                              {fullName}
-                            </p>
-                          </Link>
-                        )
-                      })}
+                      {items.map((p) => (
+                        <ProductCardPlaceholder key={p.sku} product={p} />
+                      ))}
                     </div>
                   </div>
                 )
