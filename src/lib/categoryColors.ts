@@ -13,6 +13,15 @@ export const CATEGORY_COLORS: Record<ProductCategoria, string> = {
   repuestos:  '#9CA3AF', // gris claro
 }
 
+// Display labels for each category — used in breadcrumbs, catalog headers,
+// and the product-detail metadata. Kept here so all surfaces share one source.
+export const CATEGORIA_LABELS: Record<ProductCategoria, string> = {
+  fibras:     'Fibras Abrasivas',
+  mops:       'Sistemas Mop',
+  accesorios: 'Accesorios',
+  repuestos:  'Repuestos Originales',
+}
+
 // Sub-grupos within Fibras — used for chip color and section sub-headers
 // in Categories, and for chip color in Navbar.
 export type FibraSubgrupo = {
