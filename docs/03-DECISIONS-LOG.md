@@ -161,3 +161,19 @@
 **Revisar si:** se identifica un mercado B2B técnico-especializado (laboratorios, hospitales) que sí valora la explicación científica. Para ese segmento, la explicación técnica puede vivir en una página separada tipo `/tecnologia` o `/ciencia`, sin saturar el mensaje principal del sitio.
 
 ---
+
+### 2026-04-25 — Hero copy rework: jerarquía Hero vs ElProblema, sin tope numérico
+
+**Decisor:** Jacobo Levy
+**Contexto:** Post-PR #23. Validación visual detectó conflicto rítmico entre Hero ("Fibras que duran. Tecnología que protege.") y ElProblema ("Producto que rinde. Margen que respeta. Rotación que vende.") — ambos usaban el mismo patrón binario "X que Y" en secciones consecutivas, eco molesto al scrollear. Adicionalmente, el subheadline citaba "23 soluciones profesionales" — el catálogo crece y un número fijo en el Hero envejece mal.
+**Decisión:** Reescribir Hero con tres principios:
+- **Headline** = "Limpieza profesional, repensada." Registro Apple-tier ("categoría, repensada") que cede el ritmo binario a ElProblema.
+- **Subheadline** = "Solución integral con NeoShield™ en cada producto. Más duración. Cero contaminación cruzada. Para HORECA, retail e institucional." Sin "23". Reposiciona MagiClean como solución, no como lista de SKUs. "NeoShield™ en cada producto" alinea con el eslogan sello-de-confianza del PR #22.
+- **heroMicrotext** = "México · LATAM". Solo geografía. Los segmentos B2B viven en el sub.
+
+Jerarquía nueva: **Hero = qué vendemos** (categoría + sello). **ElProblema = por qué te conviene** (business case B2B).
+**Alternativas consideradas:** mantener "Fibras que duran. Tecnología que protege." (descartado por eco con ElProblema); Opción 1 — "23 soluciones, una sola tecnología" (descartado por tope numérico); Opciones C/D/E del sub con distintas combinaciones de claims (descartadas por mantener el sello universal único en lugar de fragmentar el mensaje).
+**Consecuencias esperadas:** Hero escalable sin update de copy cuando crezca el catálogo. La rítmica binaria queda como firma exclusiva de ElProblema. Si en el futuro se introducen sub-líneas con tecnologías distintas, el sub del Hero ("NeoShield™ en cada producto") puede necesitar ajuste.
+**Revisar si:** cambia el posicionamiento de NeoShield™, o si MagiClean lanza sub-líneas con tecnología distinta a NeoShield™ (ej. BioBase PRO+ cuando llegue de China), o si los segmentos B2B se simplifican/expanden.
+
+---
