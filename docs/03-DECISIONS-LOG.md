@@ -196,14 +196,13 @@ Jerarquía nueva: **Hero = qué vendemos** (categoría + sello). **ElProblema = 
 
 **Decisor:** Jacobo Levy
 **Contexto:** PR #23 (CTA cleanup) detectó saturación de "Solicitar cotización" repetido en home. La unificación a "Hablar con ventas" en HowItWorks + Nosotros + ProductHeroMop ("Cotizar este sistema") cerró el problema puntual, pero sin guideline futuras secciones repetirían la saturación.
-**Decisión:** cuatro verbos según contexto, codificados:
+**Decisión:** tres verbos según contexto, codificados:
 - **"Hablar con ventas"** — conversación general, sin objeto. Para secciones narrativas (HowItWorks, Nosotros, futuras Distribuidores/Empresa).
 - **"Cotizar [X específico]"** — CTA producto-específico, con objeto. Ej: "Cotizar este sistema", "Cotizar fibras", "Cotizar volumen".
 - **"Cotizar"** sin objeto — exclusivo de form submit (`ContactForm`) y links útiles (Footer).
-- **"Solicitar cotización"** — reservado para Hero primary y Navbar (CTAs persistentes top-level).
 **Alternativas consideradas:** unificar todo a "Solicitar cotización" (descartado, motivo del PR #23); reducir todo a "Contactar" (descartado por pérdida de specificity producto-específica que tracciona conversión B2B).
-**Consecuencias esperadas:** futuros CTAs siguen el patrón sin re-discusión. Mantenimiento sostenido del balance entre claridad y diferenciación. Si una nueva sección no encaja en ninguno de los cuatro slots, se evalúa caso por caso.
-**Revisar si:** emerge un contexto nuevo (campañas marketing, landing dedicadas) que requiere CTA fuera del patrón; o si métricas A/B muestran que un verbo específico subperforma.
+**Consecuencias esperadas:** futuros CTAs siguen el patrón sin re-discusión. Mantenimiento sostenido del balance entre claridad y diferenciación. Si una nueva sección no encaja en ninguno de los tres slots, se evalúa caso por caso.
+**Revisar si:** emerge un contexto nuevo (campañas marketing, landing dedicadas) que requiere CTA fuera del patrón; o si métricas A/B muestran que un verbo específico subperforma; o si "Solicitar cotización" (vivo en Hero + Navbar post-PR #23 sin decisión explícita) requiere unificación con este patrón.
 
 ---
 
