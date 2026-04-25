@@ -75,7 +75,7 @@ export default function ProductHeroMop() {
             href="#contacto"
             className="inline-flex items-center gap-2.5 bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-white hover:text-[#0A1628] transition-all duration-300 group self-start lg:self-auto shrink-0"
           >
-            Solicitar cotización
+            Cotizar este sistema
             <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
           </a>
         </motion.div>
