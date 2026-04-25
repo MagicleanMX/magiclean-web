@@ -1,11 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Zap, Shield, Leaf, type LucideIcon } from 'lucide-react'
+import { ArrowRight, Zap, ShieldCheck, Leaf, type LucideIcon } from 'lucide-react'
 import { NeoShieldBadge } from '@/components/NeoShieldMark'
 import { BENEFICIOS } from '@/lib/products'
 
-const ICONS: LucideIcon[] = [Zap, Shield, Leaf]
+const ICONS: LucideIcon[] = [Zap, ShieldCheck, Leaf]
 
 export default function BeneficiosClave() {
   return (

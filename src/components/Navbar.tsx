@@ -343,7 +343,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <a
                 href="#contacto"
-                className="hidden lg:inline-flex items-center bg-[#0076FF] text-white px-5 py-2.5 rounded-full text-[13px] font-semibold hover:bg-[#0052CC] transition-colors duration-200"
+                className="hidden lg:inline-flex items-center border border-[#0076FF] text-[#0076FF] px-5 py-2.5 rounded-full text-[13px] font-semibold hover:bg-[#0076FF] hover:text-white transition-colors duration-200"
               >
                 Solicitar cotización
               </a>

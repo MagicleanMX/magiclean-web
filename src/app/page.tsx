@@ -12,6 +12,7 @@ import DistribuidoresCTA from '@/components/DistribuidoresCTA'
 import Logistica from '@/components/Logistica'
 import Nosotros from '@/components/Nosotros'
 import ContactForm from '@/components/ContactForm'
+import CatalogDownloadsHome from '@/components/CatalogDownloadsHome'
 import Footer from '@/components/Footer'
 import StickyCtaBar from '@/components/StickyCtaBar'
 import { getWPSettings, getHeroSection, getDistribuidoresSection } from '@/lib/wordpress'
@@ -19,19 +20,20 @@ import { getWPSettings, getHeroSection, getDistribuidoresSection } from '@/lib/w
 /**
  * Orden de secciones — narrativa de marca:
  *
- *  1. Hero              → Promesa de marca
- *  2. ElProblema        → Por qué necesitas algo mejor
- *  3. NeoShield         → La tecnología que lo resuelve (#tecnologia)
- *  4. BeneficiosClave   → Los 3 pilares: durabilidad, antibacterial, eco-friendly
- *  5. HeroFibras        → Showcase 2×2 de fibras destacadas (F4, F1, F6, F7)
- *  6. ProductHeroMop    → Sistemas Mop M1 + M2 consolidados (#sistemas-mop-m1)
- *  7. SocialProof       → Presencia verificada · marketplaces · métricas
- *  8. HowItWorks        → El proceso, simple y transparente (#como-funciona)
- *  9. Logistica         → Operación honesta: tiempos, cobertura, presentaciones (#logistica)
- * 10. DistribuidoresCTA → CTA red B2B (#distribuidores)
- * 11. Nosotros          → Historia de marca (#nosotros)
- * 12. ContactForm       → Formulario de cierre (#contacto)
- * 13. Footer
+ *  1. Hero                  → Promesa de marca
+ *  2. ElProblema            → Por qué elegirnos: value-first multi-market
+ *  3. NeoShield             → Sello de confianza antibacterial (#tecnologia)
+ *  4. BeneficiosClave       → 3 pilares: durabilidad, cero contaminación cruzada, eco-friendly
+ *  5. HeroFibras            → Showcase 2×2 de fibras destacadas (F4, F1, F6, F7)
+ *  6. ProductHeroMop        → Sistemas Mop M1 + M2 consolidados (#sistemas-mop-m1)
+ *  7. SocialProof           → Presencia verificada · marketplaces · métricas
+ *  8. HowItWorks            → El proceso, simple y transparente (#como-funciona)
+ *  9. Logistica             → Operación honesta: tiempos, cobertura, presentaciones (#logistica)
+ * 10. DistribuidoresCTA     → CTA red B2B (#distribuidores)
+ * 11. Nosotros              → Historia de marca (#nosotros)
+ * 12. ContactForm           → Formulario de cierre (#contacto)
+ * 13. CatalogDownloadsHome  → PDFs descargables + link a /productos
+ * 14. Footer
  *
  * WordPress/GraphQL fetches are skipped entirely when WP_GRAPHQL_URL is not
  * set (e.g. Vercel production without a connected WP instance). Components
@@ -85,6 +87,7 @@ export default async function Home() {
         <DistribuidoresCTA data={distribuidoresData} />
         <Nosotros />
         <ContactForm />
+        <CatalogDownloadsHome />
       </main>
       <Footer />
       <WhatsAppButton />

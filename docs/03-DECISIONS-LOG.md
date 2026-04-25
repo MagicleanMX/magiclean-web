@@ -149,3 +149,15 @@
 **Revisar si:** métricas de conversión muestran que desktop pierde leads que sí completarían vía WhatsApp.
 
 ---
+
+### 2026-04-25 — NeoShield™ se posiciona como sello de confianza, no como explicación técnica
+
+**Decisor:** Jacobo Levy
+**Contexto:** El comprador de productos de limpieza no estudia plata coloidal ni procesos de producción para tomar una decisión. Compra basado en confianza de marca, igual que un consumidor compra una laptop por "Intel Inside" o un Mac por "Apple Silicon" sin entender arquitectura de procesadores. NeoShield™ debe funcionar como ese sello: si el producto lo lleva, el comprador confía.
+**Decisión:** Toda comunicación de NeoShield™ se posiciona como sello de confianza inspiracional, no como explicación técnica. Eslogan core: "Si lo trae el producto, sabes que está protegido." La explicación técnica (plata coloidal, polímeros, etc.) se elimina del copy público — queda como respaldo de laboratorio si alguien pregunta, no como argumento de venta.
+**Próximo paso (NO en este PR):** Convertir NeoShield™ en icono visual recurrente. Badge en cada producto que lo lleva — en cards de home, en cards de catálogo, en páginas individuales. Reusar campo `antibacterial_neoshield: bool` ya existente en `products.json`. Ese trabajo merece PR separado (futuro PR #23 o posterior).
+**Alternativas consideradas:** Mantener explicación técnica de plata coloidal y procesos. Descartado: la gente que compra limpieza no entiende ni le interesa el cómo, le interesa el qué.
+**Consecuencias esperadas:** Todo copy futuro de NeoShield™ respeta el principio: lenguaje inspiracional sobre protección y confianza, no lenguaje técnico de procesos. Frases aceptables: "tecnología antibacterial que define...", "si lo trae, está protegido", "compromiso de calidad MagiClean". Frases a evitar: explicaciones de plata coloidal, descripciones de procesos químicos, claims de duración cronométrica.
+**Revisar si:** se identifica un mercado B2B técnico-especializado (laboratorios, hospitales) que sí valora la explicación científica. Para ese segmento, la explicación técnica puede vivir en una página separada tipo `/tecnologia` o `/ciencia`, sin saturar el mensaje principal del sitio.
+
+---

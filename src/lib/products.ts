@@ -23,32 +23,31 @@ export const MARKETPLACES = ['MercadoLibre', 'Amazon', 'Walmart'] as const
 // Only tech-differentiating stats live here. Portfolio breadth (23 solutions) and
 // distribution reach (3 marketplaces) are owned by Hero/SocialProof/Nosotros.
 export const NEOSHIELD_STATS = [
-  { target: 99,  suffix: '%',     label: 'Eliminación de bacterias' },
-  { target: 3,   suffix: '×',     label: 'Mayor duración vs competencia' },
-  { target: 3,   suffix: ' años', label: 'De I+D en laboratorio' },
-  { target: 100, suffix: '%',     label: 'Protección permanente' },
+  { target: 99,  suffix: '%', label: 'Eliminación de bacterias' },
+  { target: 3,   suffix: '×', label: 'Mayor duración vs competencia' },
+  { target: 0,   suffix: '',  label: 'Químicos adicionales' },
+  { target: 100, suffix: '%', label: 'Producción profesional certificada' },
 ] as const
 
 export const NEOSHIELD_FEATURES = [
-  'Micropartículas de plata coloidal integradas al polímero',
-  'Acción antibacterial permanente — no se lava, no se deteriora',
+  'Acción antibacterial activa entre lavados',
   'Validado por laboratorio certificado independiente',
-  'Compatible con todos los protocolos de higiene HORECA',
+  'Compatible con todos los protocolos HORECA',
 ] as const
 
-// ─── El Problema ──────────────────────────────────────────────────────────────
+// ─── Por qué elegirnos ────────────────────────────────────────────────────────
 export const PROBLEMAS = [
   {
-    titulo: 'Se deterioran en días',
-    desc: 'La abrasividad de una fibra convencional cae un 40% en la primera semana. Reemplazas más. Gastas más. Y el resultado es el mismo.',
+    titulo: 'Calidad que se sostiene',
+    desc: 'Fibras profesionales con tecnología NeoShield™. Mantienen rendimiento más allá del primer uso. Menos reposición para tu cliente final.',
   },
   {
-    titulo: 'Acumulan lo que deberían eliminar',
-    desc: 'Sin protección antibacterial, cada uso redistribuye contaminación en vez de eliminarla. Limpiar no es lo mismo que desinfectar.',
+    titulo: 'Estructura comercial competitiva',
+    desc: 'Precio por caja optimizado. Mejor costo unitario que multinacionales. Margen saludable para distribuidores y retailers.',
   },
   {
-    titulo: 'Un proveedor para cada cosa',
-    desc: 'Fibras de un lado, mops de otro, accesorios de otro. Sin estándar, sin soporte, sin una sola llamada que lo resuelva.',
+    titulo: 'Un solo proveedor para todo el ciclo',
+    desc: '23 soluciones profesionales. Fibras, sistemas mop, accesorios y repuestos. Un catálogo. Un equipo. Un estándar.',
   },
 ] as const
 
@@ -60,9 +59,9 @@ export const BENEFICIOS = [
     descripcion: 'Más duración que una fibra convencional. Abrasividad constante de inicio a fin. Sin deterioro con el uso. Menos reposición, mejor costo por unidad.',
   },
   {
-    numero: '99%',
-    titulo: 'Antibacterial',
-    descripcion: 'Bacterias eliminadas. Micropartículas de plata coloidal integradas al polímero. No se lavan, no se deterioran. Sin químicos adicionales. Certificado por laboratorio independiente.',
+    numero: '0%',
+    titulo: 'Cero contaminación cruzada',
+    descripcion: 'Diseño profesional certificado. Cumple con protocolos HACCP, ISO 22000 y normativas sanitarias para operaciones HORECA e institucionales.',
   },
   {
     numero: '30%',
