@@ -45,7 +45,7 @@ export default function ProductHeroF4() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative order-1 overflow-hidden bg-[#0A1628] aspect-[4/5] lg:aspect-auto"
+          className="relative order-1 overflow-hidden bg-deep aspect-[4/5] lg:aspect-auto"
         >
           {/* Badge popular — top left */}
           {F4.destacado && (

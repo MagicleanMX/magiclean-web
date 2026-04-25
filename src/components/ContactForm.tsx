@@ -87,7 +87,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <section id="contacto-ok" className="section-standard bg-[#0A1628]">
+      <section id="contacto-ok" className="section-standard bg-deep">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="max-w-md mx-auto text-center">
             <motion.div
@@ -117,7 +117,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="section-standard bg-[#0A1628]">
+    <section id="contacto" className="section-standard bg-deep">
       <div className="max-w-[1440px] mx-auto px-8">
 
         {/* Header */}
@@ -220,15 +220,15 @@ export default function ContactForm() {
                 className={`${inputClass} appearance-none cursor-pointer`}
                 disabled={loading}
               >
-                <option value="" disabled className="bg-[#0A1628] text-white/50">
+                <option value="" disabled className="bg-deep text-white/50">
                   ¿Cómo nos vas a usar?
                 </option>
-                <option value="distribuidor"  className="bg-[#0A1628] text-white">Distribuidor mayorista</option>
-                <option value="horeca"        className="bg-[#0A1628] text-white">HORECA (Hotel · Restaurant · Cafetería)</option>
-                <option value="retail"        className="bg-[#0A1628] text-white">Retail / Cadena de tiendas</option>
-                <option value="institucional" className="bg-[#0A1628] text-white">Institucional (Hospital · Escuela · Gobierno)</option>
-                <option value="hogar"         className="bg-[#0A1628] text-white">Hogar / Consumidor final</option>
-                <option value="otro"          className="bg-[#0A1628] text-white">Otro</option>
+                <option value="distribuidor"  className="bg-deep text-white">Distribuidor mayorista</option>
+                <option value="horeca"        className="bg-deep text-white">HORECA (Hotel · Restaurant · Cafetería)</option>
+                <option value="retail"        className="bg-deep text-white">Retail / Cadena de tiendas</option>
+                <option value="institucional" className="bg-deep text-white">Institucional (Hospital · Escuela · Gobierno)</option>
+                <option value="hogar"         className="bg-deep text-white">Hogar / Consumidor final</option>
+                <option value="otro"          className="bg-deep text-white">Otro</option>
               </select>
             </div>
 
@@ -304,7 +304,7 @@ export default function ContactForm() {
             )}
           </button>
 
-          <p className="text-white/20 text-[11px] font-light text-center mt-4">
+          <p className="text-white/70 text-[11px] font-light text-center mt-4">
             Sin compromiso · Sin intermediarios · Propuesta personalizada en 24h hábiles
           </p>
         </motion.form>
