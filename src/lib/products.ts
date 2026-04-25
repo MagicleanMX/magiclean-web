@@ -31,7 +31,6 @@ export const NEOSHIELD_STATS = [
 
 export const NEOSHIELD_FEATURES = [
   'Acción antibacterial activa entre lavados',
-  'Validado por laboratorio certificado independiente',
   'Compatible con todos los protocolos HORECA',
 ] as const
 
