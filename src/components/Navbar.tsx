@@ -1,6 +1,7 @@
 'use client'
 
 import Logo from '@/components/Logo'
+import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import { Menu, X, ChevronDown, Download } from 'lucide-react'
 import { CATEGORY_COLORS, getChipColor } from '@/lib/categoryColors'
@@ -196,12 +197,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-[68px]">
 
             {/* Logo */}
-            <a href="#" aria-label="MagiClean — inicio" className="flex items-center shrink-0 group">
+            <Link href="/" aria-label="MagiClean — inicio" className="flex items-center shrink-0 group">
               <Logo
                 variant="color"
                 className="h-9 lg:h-11"
               />
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-0.5">
