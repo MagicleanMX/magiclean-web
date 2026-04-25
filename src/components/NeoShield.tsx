@@ -54,14 +54,11 @@ export default function NeoShield() {
             </h2>
 
             <p className="text-[1rem] font-normal text-white/50 leading-[1.75] max-w-md mb-5">
-              Desarrollada en laboratorio después de 3 años de investigación,
-              NeoShield™ es la tecnología de fibra más avanzada del mercado mexicano.
-              Elimina el 99% de las bacterias sin productos químicos adicionales.
+              La tecnología antibacterial que define la limpieza profesional MagiClean.
             </p>
 
-            <p className="text-[0.9rem] font-normal text-white/50 leading-relaxed max-w-md mb-8">
-              Cada fibra incorpora micropartículas de plata coloidal enlazadas
-              a la estructura del polímero. La protección no se lava ni se deteriora.
+            <p className="text-[1.05rem] font-medium text-white/70 leading-relaxed max-w-md mb-8 italic">
+              Si lo trae el producto, sabes que está protegido.
             </p>
 
             <div className="flex flex-col gap-3 mb-8">

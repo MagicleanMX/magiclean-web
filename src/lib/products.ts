@@ -23,17 +23,16 @@ export const MARKETPLACES = ['MercadoLibre', 'Amazon', 'Walmart'] as const
 // Only tech-differentiating stats live here. Portfolio breadth (23 solutions) and
 // distribution reach (3 marketplaces) are owned by Hero/SocialProof/Nosotros.
 export const NEOSHIELD_STATS = [
-  { target: 99,  suffix: '%',     label: 'Eliminación de bacterias' },
-  { target: 3,   suffix: '×',     label: 'Mayor duración vs competencia' },
-  { target: 3,   suffix: ' años', label: 'De I+D en laboratorio' },
-  { target: 100, suffix: '%',     label: 'Protección permanente' },
+  { target: 99,  suffix: '%', label: 'Eliminación de bacterias' },
+  { target: 3,   suffix: '×', label: 'Mayor duración vs competencia' },
+  { target: 0,   suffix: '',  label: 'Químicos adicionales' },
+  { target: 100, suffix: '%', label: 'Producción profesional certificada' },
 ] as const
 
 export const NEOSHIELD_FEATURES = [
-  'Micropartículas de plata coloidal integradas al polímero',
-  'Acción antibacterial permanente — no se lava, no se deteriora',
+  'Acción antibacterial activa entre lavados',
   'Validado por laboratorio certificado independiente',
-  'Compatible con todos los protocolos de higiene HORECA',
+  'Compatible con todos los protocolos HORECA',
 ] as const
 
 // ─── Por qué elegirnos ────────────────────────────────────────────────────────
