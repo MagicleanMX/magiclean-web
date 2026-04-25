@@ -8,9 +8,9 @@ import { CANALES } from '@/lib/products'
 // Fallback values — used when WordPress is unreachable or fields are empty
 const FALLBACK: HeroSection = {
   eyebrow:       'Proveedor B2B · Canal Profesional México',
-  headline:      'Fibras que duran. Tecnología que protege.',
-  subheadline:   '23 soluciones profesionales con NeoShield™ — protección integrada en cada producto. Más duración. Cero contaminación cruzada. Un solo proveedor.',
-  heroMicrotext: 'Distribuidores · Retail · HORECA · Institucional · México y LATAM',
+  headline:      'Limpieza profesional, repensada.',
+  subheadline:   'Solución integral con NeoShield™ en cada producto. Más duración. Cero contaminación cruzada. Para HORECA, retail e institucional.',
+  heroMicrotext: 'México · LATAM',
 }
 
 interface HeroProps {
