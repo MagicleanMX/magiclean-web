@@ -4,8 +4,7 @@ import Hero from '@/components/Hero'
 import ElProblema from '@/components/ElProblema'
 import NeoShield from '@/components/NeoShield'
 import BeneficiosClave from '@/components/BeneficiosClave'
-import Categories from '@/components/Categories'
-import ProductHeroF4 from '@/components/ProductHeroF4'
+import HeroFibras from '@/components/HeroFibras'
 import ProductHeroMop from '@/components/ProductHeroMop'
 import SocialProof from '@/components/SocialProof'
 import HowItWorks from '@/components/HowItWorks'
@@ -15,7 +14,7 @@ import Nosotros from '@/components/Nosotros'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
 import StickyCtaBar from '@/components/StickyCtaBar'
-import { getWPSettings, getHeroSection, getCategoriesSection, getDistribuidoresSection } from '@/lib/wordpress'
+import { getWPSettings, getHeroSection, getDistribuidoresSection } from '@/lib/wordpress'
 
 /**
  * Orden de secciones — narrativa de marca:
@@ -24,16 +23,15 @@ import { getWPSettings, getHeroSection, getCategoriesSection, getDistribuidoresS
  *  2. ElProblema        → Por qué necesitas algo mejor
  *  3. NeoShield         → La tecnología que lo resuelve (#tecnologia)
  *  4. BeneficiosClave   → Los 3 pilares: durabilidad, antibacterial, eco-friendly
- *  5. Categories        → Amplitud del portafolio (#productos)
- *  6. ProductHeroF4     → El más vendido como prueba viva (#fibra-dual-f4)
- *  7. ProductHeroMop    → Sistemas Mop M1 + M2 consolidados (#sistemas-mop-m1)
- *  8. SocialProof       → Presencia verificada · marketplaces · métricas
- *  9. HowItWorks        → El proceso, simple y transparente (#como-funciona)
- * 10. Logistica         → Operación honesta: tiempos, cobertura, presentaciones (#logistica)
- * 11. DistribuidoresCTA → CTA red B2B (#distribuidores)
- * 12. Nosotros          → Historia de marca (#nosotros)
- * 13. ContactForm       → Formulario de cierre (#contacto)
- * 14. Footer
+ *  5. HeroFibras        → Showcase 2×2 de fibras destacadas (F4, F1, F6, F7)
+ *  6. ProductHeroMop    → Sistemas Mop M1 + M2 consolidados (#sistemas-mop-m1)
+ *  7. SocialProof       → Presencia verificada · marketplaces · métricas
+ *  8. HowItWorks        → El proceso, simple y transparente (#como-funciona)
+ *  9. Logistica         → Operación honesta: tiempos, cobertura, presentaciones (#logistica)
+ * 10. DistribuidoresCTA → CTA red B2B (#distribuidores)
+ * 11. Nosotros          → Historia de marca (#nosotros)
+ * 12. ContactForm       → Formulario de cierre (#contacto)
+ * 13. Footer
  *
  * WordPress/GraphQL fetches are skipped entirely when WP_GRAPHQL_URL is not
  * set (e.g. Vercel production without a connected WP instance). Components
@@ -47,10 +45,9 @@ const WP_CONNECTED = !!process.env.WP_GRAPHQL_URL
 export default async function Home() {
   // Only hit WordPress when the env var is actually configured.
   // When missing, skip fetches and let every component use its static fallback.
-  const [wp, heroData, categoriesData, distribuidoresData] = await Promise.all([
+  const [wp, heroData, distribuidoresData] = await Promise.all([
     WP_CONNECTED ? getWPSettings()            : Promise.resolve({ title: '', description: '', url: '' }),
     WP_CONNECTED ? getHeroSection()           : Promise.resolve(null),
-    WP_CONNECTED ? getCategoriesSection()     : Promise.resolve(null),
     WP_CONNECTED ? getDistribuidoresSection() : Promise.resolve(null),
   ])
 
@@ -80,8 +77,7 @@ export default async function Home() {
         <ElProblema />
         <NeoShield />
         <BeneficiosClave />
-        <Categories data={categoriesData} />
-        <ProductHeroF4 />
+        <HeroFibras />
         <ProductHeroMop />
         <SocialProof />
         <HowItWorks />
