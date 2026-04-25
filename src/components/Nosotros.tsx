@@ -136,7 +136,7 @@ export default function Nosotros() {
             href="#contacto"
             className="shrink-0 inline-flex items-center bg-[#1A1A1A] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-[#0076FF] transition-colors duration-300"
           >
-            Solicitar cotización
+            Hablar con ventas
           </a>
         </motion.div>
 
