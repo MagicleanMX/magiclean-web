@@ -59,9 +59,9 @@ export const BENEFICIOS = [
     descripcion: 'Más duración que una fibra convencional. Abrasividad constante de inicio a fin. Sin deterioro con el uso. Menos reposición, mejor costo por unidad.',
   },
   {
-    numero: '99%',
-    titulo: 'Antibacterial',
-    descripcion: 'Bacterias eliminadas. Micropartículas de plata coloidal integradas al polímero. No se lavan, no se deterioran. Sin químicos adicionales. Certificado por laboratorio independiente.',
+    numero: '0%',
+    titulo: 'Cero contaminación cruzada',
+    descripcion: 'Diseño profesional certificado. Cumple con protocolos HACCP, ISO 22000 y normativas sanitarias para operaciones HORECA e institucionales.',
   },
   {
     numero: '30%',
