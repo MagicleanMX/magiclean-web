@@ -36,19 +36,19 @@ export const NEOSHIELD_FEATURES = [
   'Compatible con todos los protocolos de higiene HORECA',
 ] as const
 
-// ─── El Problema ──────────────────────────────────────────────────────────────
+// ─── Por qué elegirnos ────────────────────────────────────────────────────────
 export const PROBLEMAS = [
   {
-    titulo: 'Se deterioran en días',
-    desc: 'La abrasividad de una fibra convencional cae un 40% en la primera semana. Reemplazas más. Gastas más. Y el resultado es el mismo.',
+    titulo: 'Calidad que se sostiene',
+    desc: 'Fibras profesionales con tecnología NeoShield™. Mantienen rendimiento más allá del primer uso. Menos reposición para tu cliente final.',
   },
   {
-    titulo: 'Acumulan lo que deberían eliminar',
-    desc: 'Sin protección antibacterial, cada uso redistribuye contaminación en vez de eliminarla. Limpiar no es lo mismo que desinfectar.',
+    titulo: 'Estructura comercial competitiva',
+    desc: 'Precio por caja optimizado. Mejor costo unitario que multinacionales. Margen saludable para distribuidores y retailers.',
   },
   {
-    titulo: 'Un proveedor para cada cosa',
-    desc: 'Fibras de un lado, mops de otro, accesorios de otro. Sin estándar, sin soporte, sin una sola llamada que lo resuelva.',
+    titulo: 'Un solo proveedor para todo el ciclo',
+    desc: '23 soluciones profesionales. Fibras, sistemas mop, accesorios y repuestos. Un catálogo. Un equipo. Un estándar.',
   },
 ] as const
 
