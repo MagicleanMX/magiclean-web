@@ -25,7 +25,6 @@ const DEFAULT_SHADOW =
   'drop-shadow(0 18px 30px rgba(15,23,42,0.18)) drop-shadow(0 6px 12px rgba(15,23,42,0.10))'
 
 export default function FibraHeroPanel({ sku, showcase }: Props) {
-  const isDarkBg = showcase.accentColor === '#F5E9D7'
   const isLifestyle = showcase.slotType === 'lifestyle'
   const productFilter = showcase.shadowFilter ?? DEFAULT_SHADOW
 
@@ -134,10 +133,11 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
           </Link>
           <Link
             href={`/#contacto?producto=${sku}`}
-            className="fhp-btn"
+            className="fhp-btn bg-white text-[#1d1d1f] border-0 outline-none focus:outline-none focus-visible:outline-none hover:bg-white/90"
             style={{
-              border: `1.5px solid ${isDarkBg ? 'rgba(255,255,255,0.40)' : '#0071e3'}`,
-              color: isDarkBg ? '#f5f5f7' : '#1d1d1f',
+              border: 'none',
+              outline: 'none',
+              boxShadow: 'none',
               padding: '11px 22px',
               borderRadius: 980,
               fontSize: 13,
@@ -145,7 +145,6 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
               textDecoration: 'none',
               display: 'inline-flex',
               alignItems: 'center',
-              backgroundColor: isDarkBg ? 'transparent' : 'white',
             }}
           >
             Cotizar
