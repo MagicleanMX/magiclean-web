@@ -35,6 +35,18 @@ type Product = {
   imagen_path: string | null
   compatible_con: string[] | null
   notas: string | null
+  medida?: string
+  abrasividad?: number
+  unidades_paquete?: number
+  color_ficha?: string
+  color_ficha_secundario?: string
+  aplicaciones_si?: string[]
+  aplicaciones_no?: string[]
+  upc_paquete?: string | null
+  upc_cajex?: string | null
+  upc_cajex_desc?: string | null
+  upc_master?: string | null
+  upc_master_desc?: string | null
 }
 
 const products = productsData as Product[]
@@ -180,6 +192,107 @@ export default async function ProductDetailPage({
           </div>
         </section>
 
+        {/* Section 2.5 — Specs técnicas */}
+        {(product.medida ||
+          product.abrasividad !== undefined ||
+          product.unidades_paquete !== undefined) && (
+          <section className="bg-white py-12 lg:py-16 border-b border-[#E8EAED]">
+            <div className="max-w-[1440px] mx-auto px-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {product.medida && (
+                  <div>
+                    <p className="label-eyebrow text-ink-muted text-[10px] mb-2">Medida</p>
+                    <p className="text-[1.1rem] font-semibold text-[#1A1A1A]">
+                      {product.medida}
+                    </p>
+                  </div>
+                )}
+                {product.abrasividad !== undefined && (
+                  <div>
+                    <p className="label-eyebrow text-ink-muted text-[10px] mb-2">Abrasividad</p>
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((n) => (
+                        <span
+                          key={n}
+                          className="h-2 w-6 rounded-full"
+                          style={{
+                            background:
+                              n <= (product.abrasividad ?? 0)
+                                ? product.color_ficha ?? '#0076FF'
+                                : '#E8EAED',
+                          }}
+                        />
+                      ))}
+                      <span className="ml-2 text-[14px] font-medium text-[#1A1A1A]">
+                        {product.abrasividad}/5
+                      </span>
+                    </div>
+                  </div>
+                )}
+                {product.unidades_paquete !== undefined && (
+                  <div>
+                    <p className="label-eyebrow text-ink-muted text-[10px] mb-2">
+                      Unidades por paquete
+                    </p>
+                    <p className="text-[1.1rem] font-semibold text-[#1A1A1A]">
+                      {product.unidades_paquete}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Section 2.6 — Para qué SÍ / Para qué NO */}
+        {((product.aplicaciones_si && product.aplicaciones_si.length > 0) ||
+          (product.aplicaciones_no && product.aplicaciones_no.length > 0)) && (
+          <section className="bg-[#F8F9FB] py-16 lg:py-20">
+            <div className="max-w-[1440px] mx-auto px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {product.aplicaciones_si && product.aplicaciones_si.length > 0 && (
+                  <div>
+                    <p className="label-eyebrow text-[#137333] text-[10px] mb-4">
+                      Sí funciona en
+                    </p>
+                    <ul className="space-y-3">
+                      {product.aplicaciones_si.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 text-[1rem] text-[#1A1A1A]"
+                        >
+                          <span className="mt-1 inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#137333] text-white text-[11px] font-bold leading-none">
+                            ✓
+                          </span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {product.aplicaciones_no && product.aplicaciones_no.length > 0 && (
+                  <div>
+                    <p className="label-eyebrow text-[#B3261E] text-[10px] mb-4">No usar en</p>
+                    <ul className="space-y-3">
+                      {product.aplicaciones_no.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 text-[1rem] text-ink-muted"
+                        >
+                          <span className="mt-1 inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#B3261E] text-white text-[11px] font-bold leading-none">
+                            ×
+                          </span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Section 3 — Presentación comercial */}
         <section className="bg-white py-16 lg:py-20">
           <div className="max-w-[1440px] mx-auto px-8">
@@ -189,19 +302,42 @@ export default async function ProductDetailPage({
                 Volúmenes y unidades de venta
               </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
                 <div className="border border-[#E8EAED] rounded-2xl p-6">
                   <p className="label-eyebrow text-ink-muted text-[10px] mb-3">Unidad</p>
                   <p className="text-[1.2rem] font-semibold text-[#1A1A1A]">
                     {product.presentacion.unidad}
                   </p>
-                </div>
-                {product.presentacion.caja && (
-                  <div className="border border-[#E8EAED] rounded-2xl p-6">
-                    <p className="label-eyebrow text-ink-muted text-[10px] mb-3">Caja completa</p>
-                    <p className="text-[1.2rem] font-semibold text-[#1A1A1A]">
-                      {product.presentacion.caja}
+                  {product.upc_paquete && (
+                    <p className="text-[11px] font-mono text-ink-muted mt-2">
+                      UPC {product.upc_paquete}
                     </p>
+                  )}
+                </div>
+                {(product.presentacion.caja || product.upc_cajex_desc) && (
+                  <div className="border border-[#E8EAED] rounded-2xl p-6">
+                    <p className="label-eyebrow text-ink-muted text-[10px] mb-3">Caja</p>
+                    <p className="text-[1.2rem] font-semibold text-[#1A1A1A]">
+                      {product.upc_cajex_desc ?? product.presentacion.caja}
+                    </p>
+                    {product.upc_cajex && (
+                      <p className="text-[11px] font-mono text-ink-muted mt-2">
+                        UPC {product.upc_cajex}
+                      </p>
+                    )}
+                  </div>
+                )}
+                {product.upc_master_desc && (
+                  <div className="border border-[#E8EAED] rounded-2xl p-6">
+                    <p className="label-eyebrow text-ink-muted text-[10px] mb-3">Master</p>
+                    <p className="text-[1.2rem] font-semibold text-[#1A1A1A]">
+                      {product.upc_master_desc}
+                    </p>
+                    {product.upc_master && (
+                      <p className="text-[11px] font-mono text-ink-muted mt-2">
+                        UPC {product.upc_master}
+                      </p>
+                    )}
                   </div>
                 )}
               </div>
