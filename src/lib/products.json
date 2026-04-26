@@ -8,9 +8,9 @@
       "slotType": "lifestyle",
       "image": "/showcase/F1-LIFESTYLE-HD-V2.jpeg",
       "accentColor": "#0071e3",
-      "bgGradient": "linear-gradient(to bottom, rgba(10,10,10,0.90) 0%, rgba(10,10,10,0.55) 38%, rgba(0,0,0,0) 65%)",
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 22%, rgba(0,0,0,0.20) 42%, rgba(0,0,0,0) 55%)",
       "shadowFilter": "drop-shadow(0 18px 30px rgba(15,40,28,0.20)) drop-shadow(0 6px 12px rgba(15,40,28,0.12))",
-      "bgPosition": "center 55%"
+      "bgPosition": "center 75%"
     },
     "nombre": "Fibra Verde Pesada",
     "variante": "Tamaño grande",
@@ -99,8 +99,8 @@
       "slotType": "lifestyle",
       "image": "/showcase/F4-LIFESTYLE-HD-V2.jpeg",
       "accentColor": "#0071e3",
-      "bgGradient": "linear-gradient(to bottom, rgba(10,10,10,0.90) 0%, rgba(10,10,10,0.55) 38%, rgba(0,0,0,0) 65%)",
-      "bgPosition": "center 60%"
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 22%, rgba(0,0,0,0.20) 42%, rgba(0,0,0,0) 55%)",
+      "bgPosition": "center 80%"
     },
     "nombre": "Fibra Esponja Dual",
     "variante": null,
@@ -136,9 +136,9 @@
       "slotType": "lifestyle",
       "image": "/showcase/F5-LIFESTYLE-HD-V2.jpeg",
       "accentColor": "#F5E9D7",
-      "bgGradient": "linear-gradient(to bottom, rgba(5,5,5,0.90) 0%, rgba(5,5,5,0.55) 38%, rgba(0,0,0,0) 65%)",
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 22%, rgba(0,0,0,0.20) 42%, rgba(0,0,0,0) 55%)",
       "shadowFilter": "drop-shadow(0 24px 48px rgba(0,0,0,0.55)) drop-shadow(0 8px 16px rgba(0,0,0,0.40))",
-      "bgPosition": "center 40%"
+      "bgPosition": "center 30%"
     },
     "nombre": "Fibra Negra Parrillas",
     "variante": null,
@@ -203,8 +203,8 @@
       "slotType": "lifestyle",
       "image": "/showcase/F7-LIFESTYLE-HD-V2.jpeg",
       "accentColor": "#0071e3",
-      "bgGradient": "linear-gradient(to bottom, rgba(10,10,10,0.90) 0%, rgba(10,10,10,0.55) 38%, rgba(0,0,0,0) 65%)",
-      "bgPosition": "center 50%"
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 22%, rgba(0,0,0,0.20) 42%, rgba(0,0,0,0) 55%)",
+      "bgPosition": "center 60%"
     },
     "nombre": "Fibra Esponja Azul",
     "variante": null,
