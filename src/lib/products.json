@@ -5,11 +5,12 @@
       "titleMain": "Fibra Verde",
       "titleAccent": "Pesada",
       "tagline": "Resistencia donde más importa.",
-      "slotType": "cutout",
-      "image": "/showcase/F1-AUTORIZED.png",
+      "slotType": "lifestyle",
+      "image": "/showcase/F1-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#0071e3",
-      "bgGradient": "linear-gradient(180deg, #C8E0D2 0%, #F8FBF9 100%)",
-      "shadowFilter": "drop-shadow(0 18px 30px rgba(15,40,28,0.20)) drop-shadow(0 6px 12px rgba(15,40,28,0.12))"
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
+      "shadowFilter": "drop-shadow(0 18px 30px rgba(15,40,28,0.20)) drop-shadow(0 6px 12px rgba(15,40,28,0.12))",
+      "bgPosition": "center 88%"
     },
     "nombre": "Fibra Verde Pesada",
     "variante": "Tamaño grande",
@@ -18,8 +19,14 @@
     "uso_principal": "Limpieza profunda · Uso industrial y HORECA",
     "descripcion_corta": "Fibra abrasiva de alta densidad para superficies resistentes. Tamaño grande optimizado para HORECA y cocinas industriales.",
     "descripcion_larga": "Diseñada para remoción de cochambre y residuos pesados sobre ollas, sartenes y acero. Densidad superior y formato grande sostienen el rendimiento operativo en jornadas largas. Protección antibacterial NeoShield™ integrada en la fibra.",
-    "recomendado_para": ["horeca", "industrial"],
-    "presentacion": { "unidad": "Paquete 3 piezas", "caja": "24 paquetes" },
+    "recomendado_para": [
+      "horeca",
+      "industrial"
+    ],
+    "presentacion": {
+      "unidad": "Paquete 3 piezas",
+      "caja": "24 paquetes"
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -39,8 +46,14 @@
     "uso_principal": "Limpieza profunda · Uso profesional y HORECA",
     "descripcion_corta": "Variante mediana de la fibra abrasiva pesada. Equilibrio entre rendimiento profesional y formato cómodo.",
     "descripcion_larga": "Mismo material y tecnología NeoShield™ que la línea pesada en formato medio: cubre tareas exigentes en hogares de uso intensivo y operaciones HORECA de menor escala. Densidad calibrada para vida útil prolongada.",
-    "recomendado_para": ["horeca", "hogar"],
-    "presentacion": { "unidad": "Paquete 3 piezas", "caja": "24 paquetes" },
+    "recomendado_para": [
+      "horeca",
+      "hogar"
+    ],
+    "presentacion": {
+      "unidad": "Paquete 3 piezas",
+      "caja": "24 paquetes"
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -60,8 +73,13 @@
     "uso_principal": "Limpieza profunda · Uso doméstico",
     "descripcion_corta": "Formato doméstico de la fibra verde pesada. Limpieza diaria con calidad profesional NeoShield™.",
     "descripcion_larga": "Tamaño estándar para uso cotidiano en cocinas residenciales sin sacrificar la abrasión y durabilidad de la línea pesada. Protección antibacterial NeoShield™ integrada en cada pieza.",
-    "recomendado_para": ["hogar"],
-    "presentacion": { "unidad": "Paquete 3 piezas", "caja": "24 paquetes" },
+    "recomendado_para": [
+      "hogar"
+    ],
+    "presentacion": {
+      "unidad": "Paquete 3 piezas",
+      "caja": "24 paquetes"
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -78,10 +96,11 @@
       "titleMain": "Fibra Esponja",
       "titleAccent": "Dual",
       "tagline": "Dos superficies. Un solo movimiento.",
-      "slotType": "cutout",
-      "image": "/showcase/F4-AUTORIZED.png",
+      "slotType": "lifestyle",
+      "image": "/showcase/F4-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#0071e3",
-      "bgGradient": "linear-gradient(180deg, #FFFFFF 0%, #F4F6F8 100%)"
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
+      "bgPosition": "center 96%"
     },
     "nombre": "Fibra Esponja Dual",
     "variante": null,
@@ -90,8 +109,14 @@
     "uso_principal": "Limpieza dual diaria — abrasión y absorción",
     "descripcion_corta": "Dualidad fibra + esponja en una sola pieza. Remoción de grasa y absorción de líquidos en un movimiento.",
     "descripcion_larga": "Diseño dual que combina capa abrasiva para cochambre y grasa con esponja absorbente para residuos líquidos. Apta para cerámica, vidrios y superficies del hogar. Protección antibacterial NeoShield™ que prolonga vida útil entre lavados.",
-    "recomendado_para": ["hogar", "horeca"],
-    "presentacion": { "unidad": "Paquete 3 piezas", "caja": "24 paquetes" },
+    "recomendado_para": [
+      "hogar",
+      "horeca"
+    ],
+    "presentacion": {
+      "unidad": "Paquete 3 piezas",
+      "caja": "24 paquetes"
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -108,11 +133,12 @@
       "titleMain": "Fibra Negra",
       "titleAccent": "Parrillas",
       "tagline": "Resistencia para lo que se carboniza.",
-      "slotType": "cutout",
-      "image": "/showcase/F5-AUTORIZED.png",
+      "slotType": "lifestyle",
+      "image": "/showcase/F5-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#F5E9D7",
-      "bgGradient": "linear-gradient(180deg, #1d1d1f 0%, #000000 100%)",
-      "shadowFilter": "drop-shadow(0 24px 48px rgba(0,0,0,0.55)) drop-shadow(0 8px 16px rgba(0,0,0,0.40))"
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
+      "shadowFilter": "drop-shadow(0 24px 48px rgba(0,0,0,0.55)) drop-shadow(0 8px 16px rgba(0,0,0,0.40))",
+      "bgPosition": "center 88%"
     },
     "nombre": "Fibra Negra Parrillas",
     "variante": null,
@@ -121,8 +147,15 @@
     "uso_principal": "Remoción de grasa carbonizada en parrillas, hornos y asadores",
     "descripcion_corta": "Abrasivo de alta densidad para grasa carbonizada en parrillas, hornos y asadores.",
     "descripcion_larga": "Formulación negra de máxima resistencia para limpieza profunda de superficies con cochambre adherido. Soporta el calor residual y los residuos pesados de operaciones HORECA. Protección antibacterial NeoShield™ que evita reproliferación entre usos.",
-    "recomendado_para": ["hogar", "horeca", "industrial"],
-    "presentacion": { "unidad": "Paquete 1 pieza", "caja": "24 paquetes" },
+    "recomendado_para": [
+      "hogar",
+      "horeca",
+      "industrial"
+    ],
+    "presentacion": {
+      "unidad": "Paquete 1 pieza",
+      "caja": "24 paquetes"
+    },
     "linea": "ambas",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -142,8 +175,15 @@
     "uso_principal": "Superficies delicadas: cristal, cromo, acero inoxidable",
     "descripcion_corta": "Fibra no abrasiva para superficies delicadas. Cero rayaduras en cristal, cromo y acero inoxidable.",
     "descripcion_larga": "Pensada para acabados sensibles: cristales, espejos, mamparas de ducha, cromo y acero inoxidable. Limpieza eficaz sin marcas ni micro-rayaduras. Protección antibacterial NeoShield™ integrada.",
-    "recomendado_para": ["hogar", "horeca", "industrial"],
-    "presentacion": { "unidad": "Paquete 1 pieza", "caja": "24 paquetes" },
+    "recomendado_para": [
+      "hogar",
+      "horeca",
+      "industrial"
+    ],
+    "presentacion": {
+      "unidad": "Paquete 1 pieza",
+      "caja": "24 paquetes"
+    },
     "linea": "ambas",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -160,10 +200,11 @@
       "titleMain": "Fibra Esponja",
       "titleAccent": "Azul",
       "tagline": "El equilibrio que el oficio reconoce.",
-      "slotType": "cutout",
-      "image": "/showcase/F7-AUTORIZED.png",
+      "slotType": "lifestyle",
+      "image": "/showcase/F7-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#0071e3",
-      "bgGradient": "linear-gradient(180deg, #EAF2FB 0%, #BFD3E6 100%)"
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
+      "bgPosition": "center 75%"
     },
     "nombre": "Fibra Esponja Azul",
     "variante": null,
@@ -172,8 +213,14 @@
     "uso_principal": "Vajilla, cristalería y utensilios delicados",
     "descripcion_corta": "Esponja doble cara para vajilla, cristalería y utensilios delicados. Cero rayas.",
     "descripcion_larga": "Combina capa suave con esponja absorbente para limpieza segura sobre vajilla fina, cristalería, ollas antiadherentes y sartenes. Absorción y arrastre en un solo paso. Protección antibacterial NeoShield™ integrada.",
-    "recomendado_para": ["hogar", "horeca"],
-    "presentacion": { "unidad": "Paquete 1 pieza", "caja": "24 paquetes" },
+    "recomendado_para": [
+      "hogar",
+      "horeca"
+    ],
+    "presentacion": {
+      "unidad": "Paquete 1 pieza",
+      "caja": "24 paquetes"
+    },
     "linea": "ambas",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -193,8 +240,15 @@
     "uso_principal": "Limpieza multiuso sin químicos",
     "descripcion_corta": "Borrador multiuso con esponja. Limpieza sin químicos en juntas, cristalería y superficies decorativas.",
     "descripcion_larga": "Tecnología que remueve manchas con sólo agua: cero detergentes, cero solventes. Especialmente eficaz sobre juntas de azulejo, tenis blancos y cristalería. Protección antibacterial NeoShield™ que previene gérmenes y malos olores entre usos.",
-    "recomendado_para": ["hogar", "horeca", "industrial"],
-    "presentacion": { "unidad": "Paquete 3 piezas", "caja": "12 paquetes" },
+    "recomendado_para": [
+      "hogar",
+      "horeca",
+      "industrial"
+    ],
+    "presentacion": {
+      "unidad": "Paquete 3 piezas",
+      "caja": "12 paquetes"
+    },
     "linea": "ambas",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -214,8 +268,14 @@
     "uso_principal": "Limpieza profesional multiuso sin químicos",
     "descripcion_corta": "Versión profesional del borrador mágico. Aplicaciones exigentes sin químicos ni jabón.",
     "descripcion_larga": "Formato y densidad pensados para uso intensivo: cubre amplia gama de superficies con la misma tecnología sin químicos del F8, escalada a operaciones profesionales. Caja de 14 piezas para reposición continua.",
-    "recomendado_para": ["horeca", "industrial"],
-    "presentacion": { "unidad": "Caja de 14 piezas", "caja": null },
+    "recomendado_para": [
+      "horeca",
+      "industrial"
+    ],
+    "presentacion": {
+      "unidad": "Caja de 14 piezas",
+      "caja": null
+    },
     "linea": "ambas",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -235,8 +295,14 @@
     "uso_principal": "Fregado profesional y doméstico con escurrido centrífugo",
     "descripcion_corta": "Sistema de fregado con cubeta de pedal y escurrido centrífugo. Mopa antibacterial NeoShield™ incluida.",
     "descripcion_larga": "El pedal libera y activa la mopa sin contacto manual; el escurrido centrífugo da control preciso de humedad sin esfuerzo. Set completo con mopa de microfibra de alta absorción. Apto para hogar exigente, oficinas, retail y HORECA.",
-    "recomendado_para": ["hogar", "horeca"],
-    "presentacion": { "unidad": "1 pieza", "caja": null },
+    "recomendado_para": [
+      "hogar",
+      "horeca"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza",
+      "caja": null
+    },
     "linea": "ambas",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -256,8 +322,14 @@
     "uso_principal": "Fregado con activación centrífuga en un movimiento",
     "descripcion_corta": "Cubeta Spin Magic con mecanismo de activación que escurre la mopa en un solo movimiento.",
     "descripcion_larga": "Diseño ergonómico para uso prolongado y mecanismo de giro que reduce esfuerzo. Incluye mopa de microfibra antibacterial NeoShield™. Recomendado para hogares de uso intensivo, comercios y servicios profesionales.",
-    "recomendado_para": ["hogar", "horeca"],
-    "presentacion": { "unidad": "1 pieza", "caja": null },
+    "recomendado_para": [
+      "hogar",
+      "horeca"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza",
+      "caja": null
+    },
     "linea": "ambas",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -277,8 +349,14 @@
     "uso_principal": "Reposición de mopa para sistemas Turbo Magic M1 y Spin Magic M2",
     "descripcion_corta": "Repuesto original compatible con sistemas Turbo Magic M1 y Spin Magic M2. Lavable en lavadora.",
     "descripcion_larga": "Pieza certificada que garantiza el ajuste y rendimiento del sistema original. Microfibra de alta absorción con protección antibacterial NeoShield™. Disponible en pieza individual o caja de 5 unidades para distribución.",
-    "recomendado_para": ["hogar", "horeca"],
-    "presentacion": { "unidad": "1 pieza", "caja": "5 piezas" },
+    "recomendado_para": [
+      "hogar",
+      "horeca"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza",
+      "caja": "5 piezas"
+    },
     "linea": "ambas",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -286,7 +364,10 @@
     "destacado": false,
     "foto_disponible": true,
     "imagen_path": null,
-    "compatible_con": ["M1", "M2"],
+    "compatible_con": [
+      "M1",
+      "M2"
+    ],
     "notas": null
   },
   {
@@ -298,8 +379,14 @@
     "uso_principal": "Limpieza de inodoros, lavabos y zonas de difícil acceso",
     "descripcion_corta": "Cepillo desechable con cartuchos pre-cargados de detergente desinfectante. Limpieza sin contacto con superficies contaminadas.",
     "descripcion_larga": "Sistema de limpieza para inodoros, lavabos, esquinas y desagües: cada cartucho viene pre-cargado con detergente desinfectante y se desecha tras el uso. Diseño ergonómico para zonas de difícil acceso. Set incluye 16 cartuchos; repuestos M10 disponibles.",
-    "recomendado_para": ["hogar", "horeca"],
-    "presentacion": { "unidad": "1 pieza con 16 cartuchos", "caja": null },
+    "recomendado_para": [
+      "hogar",
+      "horeca"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza con 16 cartuchos",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -319,8 +406,13 @@
     "uso_principal": "Limpieza integral de pisos duros con escurrido y giro 360°",
     "descripcion_corta": "Mopa con escurrido integrado y giro 360°. Apta para todo tipo de pisos duros.",
     "descripcion_larga": "Sistema de escurrido manual y rotación completa para alcanzar rincones complejos. Compatible con madera, laminados, mármol y loseta. Microfibra con protección antibacterial NeoShield™ que remueve hasta 99% de bacterias.",
-    "recomendado_para": ["hogar"],
-    "presentacion": { "unidad": "1 pieza", "caja": null },
+    "recomendado_para": [
+      "hogar"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -340,8 +432,14 @@
     "uso_principal": "Limpieza acelerada con separación de agua limpia y sucia",
     "descripcion_corta": "Mop con tecnología de separación de agua limpia y sucia. Acelera la limpieza sin cambios de cubeta.",
     "descripcion_larga": "Compartimentos independientes evitan contaminación cruzada y eliminan paradas para cambiar el agua. Diseñado para hogares y oficinas que requieren rendimiento sostenido. Microfibra con protección antibacterial NeoShield™.",
-    "recomendado_para": ["hogar", "oficinas"],
-    "presentacion": { "unidad": "1 caja (set completo)", "caja": null },
+    "recomendado_para": [
+      "hogar",
+      "oficinas"
+    ],
+    "presentacion": {
+      "unidad": "1 caja (set completo)",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -361,8 +459,14 @@
     "uso_principal": "Cabezal intercambiable para pisos porosos y trabajos exigentes",
     "descripcion_corta": "Cepillo de cerdas rígidas adaptable a sistemas M1 y M2. Para pisos porosos y trabajos exigentes.",
     "descripcion_larga": "Cabezal de uso rudo intercambiable que extiende los sistemas Turbo Magic y Spin Magic a aplicaciones intensivas: pisos porosos, cocheras, áreas exteriores. Construcción reforzada con protección antibacterial NeoShield™.",
-    "recomendado_para": ["industrial", "horeca"],
-    "presentacion": { "unidad": "1 pieza", "caja": null },
+    "recomendado_para": [
+      "industrial",
+      "horeca"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -370,7 +474,10 @@
     "destacado": false,
     "foto_disponible": true,
     "imagen_path": null,
-    "compatible_con": ["M1", "M2"],
+    "compatible_con": [
+      "M1",
+      "M2"
+    ],
     "notas": null
   },
   {
@@ -382,8 +489,14 @@
     "uso_principal": "Mopa plana con atomizador integrado para todo tipo de piso duro",
     "descripcion_corta": "Mopa plana con atomizador integrado y giro 360°. Aplica el producto preferido directo sobre la superficie.",
     "descripcion_larga": "Sistema todo-en-uno: el depósito permite usar el detergente, desinfectante o producto que prefiera el operador, sin baldes adicionales. Compatible con todo tipo de piso duro, incluyendo madera. Microfibra con protección antibacterial NeoShield™ que remueve hasta 99.9% de bacterias.",
-    "recomendado_para": ["hogar", "oficinas"],
-    "presentacion": { "unidad": "1 pieza", "caja": null },
+    "recomendado_para": [
+      "hogar",
+      "oficinas"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -403,8 +516,14 @@
     "uso_principal": "Reposición de cartuchos para Dispositivo Limpieza Baños M4",
     "descripcion_corta": "Repuestos desechables originales para el Dispositivo Limpieza Baños M4. Elimina 99.9% de bacterias.",
     "descripcion_larga": "Cartuchos pre-cargados con detergente desinfectante para reposición continua del sistema M4. Caja de 32 unidades pensada para hogares de uso intensivo y operaciones de limpieza profesional. Protección antibacterial NeoShield™.",
-    "recomendado_para": ["hogar", "horeca"],
-    "presentacion": { "unidad": "Caja de 32 repuestos", "caja": null },
+    "recomendado_para": [
+      "hogar",
+      "horeca"
+    ],
+    "presentacion": {
+      "unidad": "Caja de 32 repuestos",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -412,7 +531,9 @@
     "destacado": false,
     "foto_disponible": true,
     "imagen_path": null,
-    "compatible_con": ["M4"],
+    "compatible_con": [
+      "M4"
+    ],
     "notas": null
   },
   {
@@ -424,8 +545,15 @@
     "uso_principal": "Cubeta multiuso de almacenaje compacto",
     "descripcion_corta": "Cubeta plegable de 10 litros. Almacenaje compacto, fácil transporte.",
     "descripcion_larga": "Apta para cualquier actividad de limpieza, lavado o servicio donde el espacio de almacenamiento sea crítico. Diseño durable que se pliega a fracción del volumen original. Material con tratamiento antibacterial NeoShield™.",
-    "recomendado_para": ["hogar", "horeca", "industrial"],
-    "presentacion": { "unidad": "1 pieza", "caja": null },
+    "recomendado_para": [
+      "hogar",
+      "horeca",
+      "industrial"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -445,8 +573,14 @@
     "uso_principal": "Set escoba y recogedor para recolección eficiente",
     "descripcion_corta": "Set escoba y recogedor con cerdas de nylon de alta durabilidad.",
     "descripcion_larga": "Recolección eficiente sobre superficies lisas y rugosas. Cerdas de nylon que mantienen forma y rendimiento tras uso prolongado. Apto para uso doméstico e industrial multiusos. Protección antibacterial NeoShield™.",
-    "recomendado_para": ["hogar", "industrial"],
-    "presentacion": { "unidad": "1 pieza (set)", "caja": null },
+    "recomendado_para": [
+      "hogar",
+      "industrial"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza (set)",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -466,8 +600,13 @@
     "uso_principal": "Trapeador dual barrer + trapear con eficacia en pelo de mascotas",
     "descripcion_corta": "Trapeador dual de silicón. Barre y trapea en un paso, especializado en pelo de mascotas.",
     "descripcion_larga": "Cerdas de silicón que recolectan polvo, líquidos y pelo de mascotas con eficacia superior a trapeadores convencionales. Durabilidad 3× mayor en uso continuo. Apto para pisos, alfombras y superficies texturadas. Protección antibacterial NeoShield™.",
-    "recomendado_para": ["hogar"],
-    "presentacion": { "unidad": "1 pieza", "caja": null },
+    "recomendado_para": [
+      "hogar"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -487,8 +626,14 @@
     "uso_principal": "Bastón de repuesto para sistema Turbo Magic M1",
     "descripcion_corta": "Bastón original de repuesto para el sistema Turbo Magic M1.",
     "descripcion_larga": "Pieza certificada que garantiza la misma durabilidad y rendimiento del producto original. Construcción reforzada para uso intensivo. Compatible exclusivamente con M1.",
-    "recomendado_para": ["hogar", "horeca"],
-    "presentacion": { "unidad": "1 pieza", "caja": null },
+    "recomendado_para": [
+      "hogar",
+      "horeca"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -496,7 +641,9 @@
     "destacado": false,
     "foto_disponible": true,
     "imagen_path": null,
-    "compatible_con": ["M1"],
+    "compatible_con": [
+      "M1"
+    ],
     "notas": null
   },
   {
@@ -508,8 +655,14 @@
     "uso_principal": "Bastón de repuesto para sistema Spin Magic M2",
     "descripcion_corta": "Bastón original de repuesto para el sistema Spin Magic M2.",
     "descripcion_larga": "Pieza certificada que garantiza la misma durabilidad y rendimiento del producto original. Construcción reforzada para uso intensivo. Compatible exclusivamente con M2.",
-    "recomendado_para": ["hogar", "horeca"],
-    "presentacion": { "unidad": "1 pieza", "caja": null },
+    "recomendado_para": [
+      "hogar",
+      "horeca"
+    ],
+    "presentacion": {
+      "unidad": "1 pieza",
+      "caja": null
+    },
     "linea": "standard",
     "estado": "activo",
     "antibacterial_neoshield": true,
@@ -517,7 +670,9 @@
     "destacado": false,
     "foto_disponible": true,
     "imagen_path": null,
-    "compatible_con": ["M2"],
+    "compatible_con": [
+      "M2"
+    ],
     "notas": null
   }
 ]

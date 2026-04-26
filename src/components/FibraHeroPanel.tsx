@@ -1,13 +1,14 @@
 import Link from 'next/link'
 
-type ShowcaseData = {
+export type ShowcaseData = {
   titleMain: string
   titleAccent: string
   tagline: string
-  slotType: string
+  slotType: 'cutout' | 'lifestyle'
   image: string
   accentColor: string
   bgGradient: string
+  bgPosition?: string
   shadowFilter?: string
 }
 
@@ -24,7 +25,7 @@ const DEFAULT_SHADOW =
 
 export default function FibraHeroPanel({ sku, showcase }: Props) {
   const isDarkBg = showcase.accentColor === '#F5E9D7'
-  const textColor = isDarkBg ? '#f5f5f7' : '#1d1d1f'
+  const isLifestyle = showcase.slotType === 'lifestyle'
   const productFilter = showcase.shadowFilter ?? DEFAULT_SHADOW
 
   return (
@@ -32,14 +33,43 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
       className="fhp-slot relative overflow-hidden"
       style={{
         aspectRatio: '16 / 11',
-        background: showcase.bgGradient,
+        background: isLifestyle
+          ? `url(${showcase.image}) ${showcase.bgPosition ?? 'center 55%'}/cover no-repeat`
+          : showcase.bgGradient,
         borderRadius: 0,
-        padding: 'clamp(40px, 4vw, 56px) clamp(28px, 4vw, 48px) clamp(28px, 3vw, 40px)',
+        padding: isLifestyle
+          ? 0
+          : 'clamp(40px, 4vw, 56px) clamp(28px, 4vw, 48px) clamp(28px, 3vw, 40px)',
         fontFamily: APPLE_FONT,
-        color: textColor,
+        color: '#ffffff',
       }}
     >
-      <div className="flex flex-col items-center text-center h-full">
+      {isLifestyle && (
+        <div
+          aria-hidden
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: showcase.bgGradient,
+            zIndex: 0,
+            pointerEvents: 'none',
+          }}
+        />
+      )}
+
+      <div
+        className="flex flex-col items-center text-center h-full"
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          textAlign: 'center',
+          padding: isLifestyle
+            ? 'clamp(20px, 2.5vw, 28px) clamp(18px, 2vw, 26px) 0'
+            : undefined,
+        }}
+      >
         <div className="fhp-text-zone w-full">
           <h2
             className="fhp-h2"
@@ -75,19 +105,21 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
           </p>
         </div>
 
-        <div className="fhp-product flex-1 flex items-center justify-center w-full min-h-0 py-6">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={showcase.image}
-            alt={`${showcase.titleMain} ${showcase.titleAccent}`}
-            style={{
-              maxWidth: '78%',
-              maxHeight: '100%',
-              objectFit: 'contain',
-              filter: productFilter,
-            }}
-          />
-        </div>
+        {!isLifestyle && (
+          <div className="fhp-product flex-1 flex items-center justify-center w-full min-h-0 py-6">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={showcase.image}
+              alt={`${showcase.titleMain} ${showcase.titleAccent}`}
+              style={{
+                maxWidth: '78%',
+                maxHeight: '100%',
+                objectFit: 'contain',
+                filter: productFilter,
+              }}
+            />
+          </div>
+        )}
 
         <div className="fhp-ctas flex gap-3 items-center justify-center">
           <Link
