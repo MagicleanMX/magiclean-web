@@ -29,8 +29,10 @@ const SHOWCASE_STYLES = `
 .fhp-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px;
+  gap: 8px;
+  padding: 8px;
   width: 100%;
+  background: #fbfbfd;
 }
 @media (max-width: 700px) {
   .fhp-grid { grid-template-columns: 1fr; }
