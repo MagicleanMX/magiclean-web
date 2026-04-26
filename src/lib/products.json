@@ -1,6 +1,16 @@
 [
   {
     "sku": "F1",
+    "showcase": {
+      "titleMain": "Fibra Verde",
+      "titleAccent": "Pesada",
+      "tagline": "Resistencia donde más importa.",
+      "slotType": "cutout",
+      "image": "/showcase/F1-AUTORIZED.png",
+      "accentColor": "#0071e3",
+      "bgGradient": "linear-gradient(180deg, #C8E0D2 0%, #F8FBF9 100%)",
+      "shadowFilter": "drop-shadow(0 18px 30px rgba(15,40,28,0.20)) drop-shadow(0 6px 12px rgba(15,40,28,0.12))"
+    },
     "nombre": "Fibra Verde Pesada",
     "variante": "Tamaño grande",
     "categoria": "fibras",
@@ -64,6 +74,15 @@
   },
   {
     "sku": "F4",
+    "showcase": {
+      "titleMain": "Fibra Esponja",
+      "titleAccent": "Dual",
+      "tagline": "Dos superficies. Un solo movimiento.",
+      "slotType": "cutout",
+      "image": "/showcase/F4-AUTORIZED.png",
+      "accentColor": "#0071e3",
+      "bgGradient": "linear-gradient(180deg, #FFFFFF 0%, #F4F6F8 100%)"
+    },
     "nombre": "Fibra Esponja Dual",
     "variante": null,
     "categoria": "fibras",
@@ -85,6 +104,16 @@
   },
   {
     "sku": "F5",
+    "showcase": {
+      "titleMain": "Fibra Negra",
+      "titleAccent": "Parrillas",
+      "tagline": "Resistencia para lo que se carboniza.",
+      "slotType": "cutout",
+      "image": "/showcase/F5-AUTORIZED.png",
+      "accentColor": "#F5E9D7",
+      "bgGradient": "linear-gradient(180deg, #1d1d1f 0%, #000000 100%)",
+      "shadowFilter": "drop-shadow(0 24px 48px rgba(0,0,0,0.55)) drop-shadow(0 8px 16px rgba(0,0,0,0.40))"
+    },
     "nombre": "Fibra Negra Parrillas",
     "variante": null,
     "categoria": "fibras",
@@ -127,6 +156,15 @@
   },
   {
     "sku": "F7",
+    "showcase": {
+      "titleMain": "Fibra Esponja",
+      "titleAccent": "Azul",
+      "tagline": "El equilibrio que el oficio reconoce.",
+      "slotType": "cutout",
+      "image": "/showcase/F7-AUTORIZED.png",
+      "accentColor": "#0071e3",
+      "bgGradient": "linear-gradient(180deg, #EAF2FB 0%, #BFD3E6 100%)"
+    },
     "nombre": "Fibra Esponja Azul",
     "variante": null,
     "categoria": "fibras",
