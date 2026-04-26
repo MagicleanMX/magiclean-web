@@ -10,6 +10,7 @@ export type ShowcaseData = {
   bgGradient: string
   bgPosition?: string
   shadowFilter?: string
+  textColor?: string
 }
 
 type Props = {
@@ -41,7 +42,7 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
           ? 0
           : 'clamp(40px, 4vw, 56px) clamp(28px, 4vw, 48px) clamp(28px, 3vw, 40px)',
         fontFamily: APPLE_FONT,
-        color: '#ffffff',
+        color: showcase.textColor ?? '#ffffff',
       }}
     >
       {isLifestyle && (
@@ -82,23 +83,15 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
             }}
           >
             {showcase.titleMain}{' '}
-            <em
-              style={{
-                fontStyle: 'italic',
-                fontWeight: 600,
-                color: showcase.accentColor,
-              }}
-            >
-              {showcase.titleAccent}
-            </em>
+            {showcase.titleAccent}
           </h2>
           <p
             className="fhp-tagline"
             style={{
-              fontSize: 'clamp(14px, 1.2vw, 17px)',
+              fontSize: 'clamp(18px, 1.4vw, 19px)',
+              fontWeight: 400,
               lineHeight: 1.3,
               marginTop: 12,
-              opacity: isDarkBg ? 0.92 : 0.78,
             }}
           >
             {showcase.tagline}

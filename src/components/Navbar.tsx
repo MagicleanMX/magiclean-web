@@ -3,7 +3,7 @@
 import Logo from '@/components/Logo'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
-import { Menu, X, ChevronDown, Download } from 'lucide-react'
+import { Menu, X, ChevronDown, Download, Search } from 'lucide-react'
 import { CATEGORY_COLORS, getChipColor } from '@/lib/categoryColors'
 import type { ProductCategoria } from '@/lib/categoryColors'
 import productsData from '@/lib/products.json'
@@ -54,12 +54,14 @@ const navLinks = [
   { label: 'Tecnología', href: '#tecnologia', mega: false },
   { label: 'Distribuidores', href: '#distribuidores', mega: false },
   { label: 'Empresa', href: '#nosotros', mega: false },
+  { label: 'Soporte', href: '/#contacto', mega: false },
 ]
 
 const mobileLinks = [
   { label: 'Productos', href: '#productos' },
   { label: 'Tecnología', href: '#tecnologia' },
   { label: 'Distribuidores', href: '#distribuidores' },
+  { label: 'Soporte', href: '/#contacto' },
   { label: 'Contacto', href: '#contacto' },
 ]
 
@@ -67,13 +69,18 @@ export default function Navbar() {
   const [scrolled, setScrolled]     = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [megaOpen, setMegaOpen]     = useState(false)
+  const [searchOpen, setSearchOpen]   = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
 
   // DOM refs
-  const megaTriggerRef = useRef<HTMLButtonElement>(null)
-  const megaPanelRef   = useRef<HTMLDivElement>(null)
-  const hamburgerRef   = useRef<HTMLButtonElement>(null)
-  const mobileMenuRef  = useRef<HTMLDivElement>(null)
-  const megaTimeout    = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const megaTriggerRef    = useRef<HTMLButtonElement>(null)
+  const megaPanelRef      = useRef<HTMLDivElement>(null)
+  const hamburgerRef      = useRef<HTMLButtonElement>(null)
+  const mobileMenuRef     = useRef<HTMLDivElement>(null)
+  const megaTimeout       = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const searchTriggerRef  = useRef<HTMLButtonElement>(null)
+  const searchInputRef    = useRef<HTMLInputElement>(null)
+  const searchPanelRef    = useRef<HTMLDivElement>(null)
 
   // Track whether the menu was opened via keyboard so hover closes don't steal focus
   const megaViaKeyboard   = useRef(false)
@@ -85,6 +92,54 @@ export default function Navbar() {
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
+
+  // ── Search panel: focus input on open, close on Escape / outside click ─────
+  useEffect(() => {
+    if (searchOpen) {
+      // Defer focus until after render so the input exists in the DOM
+      const t = setTimeout(() => searchInputRef.current?.focus(), 0)
+      return () => clearTimeout(t)
+    }
+    return
+  }, [searchOpen])
+
+  useEffect(() => {
+    if (!searchOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSearchOpen(false)
+        searchTriggerRef.current?.focus()
+      }
+    }
+    const onDocClick = (e: MouseEvent) => {
+      const target = e.target as Node | null
+      if (
+        target &&
+        !searchPanelRef.current?.contains(target) &&
+        !searchTriggerRef.current?.contains(target)
+      ) {
+        setSearchOpen(false)
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    document.addEventListener('mousedown', onDocClick)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.removeEventListener('mousedown', onDocClick)
+    }
+  }, [searchOpen])
+
+  const searchResults = (() => {
+    const q = searchQuery.trim().toLowerCase()
+    if (!q) return [] as Product[]
+    return products
+      .filter((p) => p.estado === 'activo')
+      .filter((p) => {
+        const haystack = `${p.sku} ${p.nombre} ${p.variante ?? ''}`.toLowerCase()
+        return haystack.includes(q)
+      })
+      .slice(0, 8)
+  })()
 
   // ── Mega-menu: focus first menuitem after keyboard open ────────────────────
   useEffect(() => {
@@ -342,6 +397,16 @@ export default function Navbar() {
 
             {/* CTA + hamburger */}
             <div className="flex items-center gap-3">
+              <button
+                ref={searchTriggerRef}
+                aria-expanded={searchOpen}
+                aria-controls="navbar-search-panel"
+                aria-label={searchOpen ? 'Cerrar búsqueda' : 'Buscar productos'}
+                onClick={() => setSearchOpen((prev) => !prev)}
+                className="p-2 rounded-full text-[#1A1A1A] hover:text-[#0076FF] hover:bg-[#F5F7FA] transition-colors"
+              >
+                <Search size={18} strokeWidth={2.2} />
+              </button>
               <a
                 href="#contacto"
                 className="hidden lg:inline-flex items-center border border-[#0076FF] text-[#0076FF] px-5 py-2.5 rounded-full text-[13px] font-semibold hover:bg-[#0076FF] hover:text-white transition-colors duration-200"
@@ -367,6 +432,89 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+
+      {/* Search panel */}
+      {searchOpen && (
+        <div
+          id="navbar-search-panel"
+          ref={searchPanelRef}
+          role="dialog"
+          aria-label="Búsqueda de productos"
+          className="fixed inset-x-0 top-[68px] z-40 bg-white border-b border-[#E8EAED] shadow-lg"
+        >
+          <div className="max-w-[1440px] mx-auto px-8 py-5">
+            <div className="flex items-center gap-3 border-b border-[#E8EAED] pb-3">
+              <Search size={18} strokeWidth={2.2} className="text-[#6e6e73] shrink-0" />
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Buscar producto, SKU…"
+                aria-label="Buscar productos"
+                className="flex-1 bg-transparent outline-none text-[16px] text-[#1A1A1A] placeholder:text-[#6e6e73]"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  aria-label="Limpiar búsqueda"
+                  onClick={() => {
+                    setSearchQuery('')
+                    searchInputRef.current?.focus()
+                  }}
+                  className="p-1 rounded text-[#6e6e73] hover:text-[#1A1A1A]"
+                >
+                  <X size={16} />
+                </button>
+              )}
+              <button
+                type="button"
+                aria-label="Cerrar búsqueda"
+                onClick={() => {
+                  setSearchOpen(false)
+                  setSearchQuery('')
+                }}
+                className="text-[12px] font-medium text-[#6e6e73] hover:text-[#1A1A1A]"
+              >
+                Esc
+              </button>
+            </div>
+
+            {searchQuery.trim() && (
+              <ul className="mt-3 max-h-[60vh] overflow-y-auto">
+                {searchResults.length > 0 ? (
+                  searchResults.map((p) => (
+                    <li key={p.sku}>
+                      <Link
+                        href={`/productos/${p.sku}`}
+                        onClick={() => {
+                          setSearchOpen(false)
+                          setSearchQuery('')
+                        }}
+                        className="flex items-center gap-3 py-2.5 px-2 -mx-2 rounded-md hover:bg-[#F5F7FA] transition-colors"
+                      >
+                        <span
+                          className="shrink-0 inline-flex items-center justify-center min-w-[36px] h-6 px-2 rounded text-[10px] font-black text-white"
+                          style={{ backgroundColor: getChipColor(p.sku, p.categoria) }}
+                        >
+                          {p.sku}
+                        </span>
+                        <span className="text-[14px] font-medium text-[#1A1A1A]">
+                          {p.variante ? `${p.nombre} · ${p.variante}` : p.nombre}
+                        </span>
+                      </Link>
+                    </li>
+                  ))
+                ) : (
+                  <li className="py-3 text-[14px] text-[#6e6e73]">
+                    Sin resultados para “{searchQuery}”.
+                  </li>
+                )}
+              </ul>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Mobile menu — focus trap active while open */}
       {mobileOpen && (

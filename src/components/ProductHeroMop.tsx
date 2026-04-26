@@ -49,7 +49,7 @@ const m2Specs = [
 
 export default function ProductHeroMop() {
   return (
-    <section id="sistemas-mop-m1" className="relative overflow-hidden bg-deep">
+    <section id="sistemas-mop-m1" className="relative overflow-hidden bg-deep py-20">
 
       {/* Header */}
       <div className="max-w-[1440px] mx-auto px-8 pt-16 pb-10">
