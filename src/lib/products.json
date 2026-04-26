@@ -6,11 +6,11 @@
       "titleAccent": "Pesada",
       "tagline": "Resistencia donde más importa.",
       "slotType": "lifestyle",
-      "image": "/showcase/F1-LIFESTYLE-HD-V2.jpeg",
+      "image": "/showcase/F1-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#0071e3",
-      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 22%, rgba(0,0,0,0.20) 42%, rgba(0,0,0,0) 55%)",
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
       "shadowFilter": "drop-shadow(0 18px 30px rgba(15,40,28,0.20)) drop-shadow(0 6px 12px rgba(15,40,28,0.12))",
-      "bgPosition": "center 75%"
+      "bgPosition": "center 88%"
     },
     "nombre": "Fibra Verde Pesada",
     "variante": "Tamaño grande",
@@ -97,10 +97,10 @@
       "titleAccent": "Dual",
       "tagline": "Dos superficies. Un solo movimiento.",
       "slotType": "lifestyle",
-      "image": "/showcase/F4-LIFESTYLE-HD-V2.jpeg",
+      "image": "/showcase/F4-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#0071e3",
-      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 22%, rgba(0,0,0,0.20) 42%, rgba(0,0,0,0) 55%)",
-      "bgPosition": "center 80%"
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
+      "bgPosition": "center 96%"
     },
     "nombre": "Fibra Esponja Dual",
     "variante": null,
@@ -134,11 +134,11 @@
       "titleAccent": "Parrillas",
       "tagline": "Resistencia para lo que se carboniza.",
       "slotType": "lifestyle",
-      "image": "/showcase/F5-LIFESTYLE-HD-V2.jpeg",
+      "image": "/showcase/F5-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#F5E9D7",
-      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 22%, rgba(0,0,0,0.20) 42%, rgba(0,0,0,0) 55%)",
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
       "shadowFilter": "drop-shadow(0 24px 48px rgba(0,0,0,0.55)) drop-shadow(0 8px 16px rgba(0,0,0,0.40))",
-      "bgPosition": "center 30%"
+      "bgPosition": "center 88%"
     },
     "nombre": "Fibra Negra Parrillas",
     "variante": null,
@@ -201,10 +201,10 @@
       "titleAccent": "Azul",
       "tagline": "El equilibrio que el oficio reconoce.",
       "slotType": "lifestyle",
-      "image": "/showcase/F7-LIFESTYLE-HD-V2.jpeg",
+      "image": "/showcase/F7-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#0071e3",
-      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 22%, rgba(0,0,0,0.20) 42%, rgba(0,0,0,0) 55%)",
-      "bgPosition": "center 60%"
+      "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
+      "bgPosition": "center 75%"
     },
     "nombre": "Fibra Esponja Azul",
     "variante": null,
