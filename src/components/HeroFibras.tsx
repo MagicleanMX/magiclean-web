@@ -1,18 +1,7 @@
-import FibraHeroPanel from '@/components/FibraHeroPanel'
+import FibraHeroPanel, { type ShowcaseData } from '@/components/FibraHeroPanel'
 import productsData from '@/lib/products.json'
 
 const SHOWCASE_ORDER = ['F4', 'F1', 'F5', 'F7'] as const
-
-type ShowcaseData = {
-  titleMain: string
-  titleAccent: string
-  tagline: string
-  slotType: string
-  image: string
-  accentColor: string
-  bgGradient: string
-  shadowFilter?: string
-}
 
 type Product = {
   sku: string
