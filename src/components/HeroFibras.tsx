@@ -1,59 +1,66 @@
 import FibraHeroPanel from '@/components/FibraHeroPanel'
+import productsData from '@/lib/products.json'
 
-const fibras = [
-  {
-    sku: 'F4',
-    nombre: 'Fibra Esponja Dual',
-    tagline: 'Dos superficies. Un solo movimiento.',
-    color: '#F59E0B',
-    gradientStart: '#F59E0B25',
-    gradientEnd: '#FFFFFF',
-  },
-  {
-    sku: 'F1',
-    nombre: 'Fibra Verde Pesada',
-    tagline: 'Resistencia donde más importa.',
-    color: '#10B981',
-    gradientStart: '#10B98130',
-    gradientEnd: '#FFFFFF',
-  },
-  {
-    sku: 'F6',
-    nombre: 'Fibra Blanca Delicada',
-    tagline: 'Delicadeza profesional. Sin compromisos.',
-    color: '#3B82F6',
-    gradientStart: '#3B82F625',
-    gradientEnd: '#FFFFFF',
-  },
-  {
-    sku: 'F7',
-    nombre: 'Fibra Esponja Azul',
-    tagline: 'El equilibrio que el oficio reconoce.',
-    color: '#3B82F6',
-    gradientStart: '#3B82F635',
-    gradientEnd: '#FFFFFF',
-  },
-]
+const SHOWCASE_ORDER = ['F4', 'F1', 'F5', 'F7'] as const
+
+type ShowcaseData = {
+  titleMain: string
+  titleAccent: string
+  tagline: string
+  slotType: string
+  image: string
+  accentColor: string
+  bgGradient: string
+  shadowFilter?: string
+}
+
+type Product = {
+  sku: string
+  showcase?: ShowcaseData
+}
+
+const products = productsData as Product[]
+
+const showcaseProducts = SHOWCASE_ORDER.map((sku) => products.find((p) => p.sku === sku)).filter(
+  (p): p is Product & { showcase: ShowcaseData } => !!p && !!p.showcase,
+)
+
+const SHOWCASE_STYLES = `
+.fhp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .fhp-grid { grid-template-columns: 1fr; }
+  .fhp-slot {
+    aspect-ratio: 1 / 1.15 !important;
+    padding: clamp(32px, 5vw, 40px) clamp(20px, 4vw, 28px) !important;
+  }
+  .fhp-h2 {
+    font-size: clamp(22px, 6vw, 32px) !important;
+    line-height: 1.1 !important;
+  }
+  .fhp-product img {
+    max-width: 65% !important;
+  }
+  .fhp-btn {
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+  }
+  .fhp-ctas { gap: 8px !important; }
+}
+`
 
 export default function HeroFibras() {
   return (
-    <section className="bg-white py-24 md:py-32">
-      <div className="max-w-[1440px] mx-auto px-8">
-        <p className="label-eyebrow text-[#0076FF] text-[12px] tracking-widest uppercase mb-6">
-          LA COLECCIÓN
-        </p>
-        <h2 className="font-serif text-[3rem] md:text-[4rem] leading-tight mb-4">
-          Cuatro fibras.<br />Cuatro estándares.
-        </h2>
-        <p className="text-[1.125rem] text-ink-muted max-w-[640px] mb-16">
-          Cada producto con tecnología NeoShield™. Diseñado para el oficio.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {fibras.map((fibra) => (
-            <FibraHeroPanel key={fibra.sku} {...fibra} />
-          ))}
-        </div>
+    <section className="bg-white py-16">
+      <style>{SHOWCASE_STYLES}</style>
+      <div className="fhp-grid">
+        {showcaseProducts.map((p) => (
+          <FibraHeroPanel key={p.sku} sku={p.sku} showcase={p.showcase} />
+        ))}
       </div>
     </section>
   )

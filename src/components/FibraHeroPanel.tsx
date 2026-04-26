@@ -1,58 +1,127 @@
 import Link from 'next/link'
 
-type FibraHeroPanelProps = {
-  sku: string
-  nombre: string
+type ShowcaseData = {
+  titleMain: string
+  titleAccent: string
   tagline: string
-  color: string
-  gradientStart: string
-  gradientEnd: string
+  slotType: string
+  image: string
+  accentColor: string
+  bgGradient: string
+  shadowFilter?: string
 }
 
-export default function FibraHeroPanel({
-  sku,
-  nombre,
-  tagline,
-  color,
-  gradientStart,
-  gradientEnd,
-}: FibraHeroPanelProps) {
-  return (
-    <article className="group">
-      <Link href={`/productos/${sku}`}>
-        <div
-          className="relative aspect-[4/3] rounded-3xl border border-[#E8EAED] overflow-hidden transition-all duration-500 ease-out group-hover:shadow-2xl group-hover:scale-[1.02] group-hover:-translate-y-1"
-          style={{ background: `linear-gradient(160deg, ${gradientStart} 0%, ${gradientEnd} 75%)` }}
-        >
-          <span
-            className="absolute top-5 left-5 inline-flex items-center justify-center min-w-[44px] h-8 px-3 rounded text-[12px] font-black text-white z-10"
-            style={{ backgroundColor: color }}
-          >
-            {sku}
-          </span>
+type Props = {
+  sku: string
+  showcase: ShowcaseData
+}
 
-          <p
-            className="absolute inset-0 flex items-center justify-center font-medium text-[1rem] md:text-[1.125rem] uppercase tracking-[0.2em] text-center px-8 select-none pointer-events-none"
-            style={{ color: `${color}66` }}
+const APPLE_FONT =
+  '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif'
+
+const DEFAULT_SHADOW =
+  'drop-shadow(0 18px 30px rgba(15,23,42,0.18)) drop-shadow(0 6px 12px rgba(15,23,42,0.10))'
+
+export default function FibraHeroPanel({ sku, showcase }: Props) {
+  const isDarkBg = showcase.accentColor === '#F5E9D7'
+  const textColor = isDarkBg ? '#f5f5f7' : '#1d1d1f'
+  const productFilter = showcase.shadowFilter ?? DEFAULT_SHADOW
+
+  return (
+    <article
+      className="fhp-slot relative overflow-hidden"
+      style={{
+        aspectRatio: '16 / 11',
+        background: showcase.bgGradient,
+        borderRadius: 0,
+        padding: 'clamp(40px, 4vw, 56px) clamp(28px, 4vw, 48px) clamp(28px, 3vw, 40px)',
+        fontFamily: APPLE_FONT,
+        color: textColor,
+      }}
+    >
+      <div className="flex flex-col items-center text-center h-full">
+        <div className="fhp-text-zone w-full">
+          <h2
+            className="fhp-h2"
+            style={{
+              fontWeight: 600,
+              fontSize: 'clamp(28px, 3.4vw, 44px)',
+              letterSpacing: '-0.022em',
+              lineHeight: 1.05,
+              margin: 0,
+            }}
           >
-            {nombre.toUpperCase()}
+            {showcase.titleMain}{' '}
+            <em
+              style={{
+                fontStyle: 'italic',
+                fontWeight: 600,
+                color: showcase.accentColor,
+              }}
+            >
+              {showcase.titleAccent}
+            </em>
+          </h2>
+          <p
+            className="fhp-tagline"
+            style={{
+              fontSize: 'clamp(14px, 1.2vw, 17px)',
+              lineHeight: 1.3,
+              marginTop: 12,
+              opacity: isDarkBg ? 0.92 : 0.78,
+            }}
+          >
+            {showcase.tagline}
           </p>
         </div>
-      </Link>
 
-      <div className="mt-6">
-        <h3 className="font-medium text-[1.5rem] text-[#1A1A1A] mb-2">{nombre}</h3>
-        <p className="text-[1rem] text-ink-muted mb-5 leading-relaxed">{tagline}</p>
-        <div className="flex gap-3">
+        <div className="fhp-product flex-1 flex items-center justify-center w-full min-h-0 py-6">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={showcase.image}
+            alt={`${showcase.titleMain} ${showcase.titleAccent}`}
+            style={{
+              maxWidth: '78%',
+              maxHeight: '100%',
+              objectFit: 'contain',
+              filter: productFilter,
+            }}
+          />
+        </div>
+
+        <div className="fhp-ctas flex gap-3 items-center justify-center">
           <Link
             href={`/productos/${sku}`}
-            className="px-6 py-3 rounded-full bg-[#0076FF] text-white text-[14px] font-medium hover:bg-[#0052CC] transition-colors"
+            className="fhp-btn"
+            style={{
+              backgroundColor: '#0071e3',
+              color: 'white',
+              padding: '11px 22px',
+              borderRadius: 980,
+              fontSize: 13,
+              fontWeight: 500,
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+            }}
           >
             Más información
           </Link>
           <Link
             href={`/#contacto?producto=${sku}`}
-            className="px-6 py-3 rounded-full border border-[#E0E3E8] text-[#1A1A1A] text-[14px] font-medium hover:bg-[#F5F7FA] transition-colors"
+            className="fhp-btn"
+            style={{
+              border: `1.5px solid ${isDarkBg ? 'rgba(255,255,255,0.40)' : '#0071e3'}`,
+              color: isDarkBg ? '#f5f5f7' : '#1d1d1f',
+              padding: '11px 22px',
+              borderRadius: 980,
+              fontSize: 13,
+              fontWeight: 500,
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              backgroundColor: isDarkBg ? 'transparent' : 'white',
+            }}
           >
             Cotizar
           </Link>
