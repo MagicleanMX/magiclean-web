@@ -46,7 +46,7 @@ const SHOWCASE_STYLES = `
 
 export default function HeroFibras() {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-20">
       <style>{SHOWCASE_STYLES}</style>
       <div className="fhp-grid">
         {showcaseProducts.map((p) => (

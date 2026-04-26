@@ -75,18 +75,18 @@ export default async function Home() {
       <Navbar />
       <main>
         <Hero data={heroData} />
-        <ElProblema />
-        <NeoShield />
-        <BeneficiosClave />
-        <HeroFibras />
-        <ProductHeroMop />
-        <SocialProof />
-        <HowItWorks />
-        <Logistica />
-        <DistribuidoresCTA data={distribuidoresData} />
-        <Nosotros />
-        <ContactForm />
-        <CatalogDownloadsHome />
+        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><ElProblema /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80 }}><NeoShield /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><BeneficiosClave /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><HeroFibras /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80 }}><ProductHeroMop /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><SocialProof /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><HowItWorks /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><Logistica /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80 }}><DistribuidoresCTA data={distribuidoresData} /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><Nosotros /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80 }}><ContactForm /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><CatalogDownloadsHome /></div>
       </main>
       <Footer />
       <WhatsAppButton />

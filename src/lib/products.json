@@ -3,14 +3,15 @@
     "sku": "F1",
     "showcase": {
       "titleMain": "Fibra Verde",
-      "titleAccent": "Pesada",
+      "titleAccent": "Limpieza Pesada",
       "tagline": "Resistencia donde más importa.",
       "slotType": "lifestyle",
       "image": "/showcase/F1-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#0071e3",
       "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
       "shadowFilter": "drop-shadow(0 18px 30px rgba(15,40,28,0.20)) drop-shadow(0 6px 12px rgba(15,40,28,0.12))",
-      "bgPosition": "center 88%"
+      "bgPosition": "center 88%",
+      "textColor": "#FFFFFF"
     },
     "nombre": "Fibra Verde Pesada",
     "variante": "Tamaño grande",
@@ -35,7 +36,32 @@
     "foto_disponible": true,
     "imagen_path": null,
     "compatible_con": null,
-    "notas": null
+    "notas": null,
+    "medida": "220 × 140 × 8 mm",
+    "abrasividad": 5,
+    "unidades_paquete": 3,
+    "color_ficha": "#1A5C28",
+    "aplicaciones_si": [
+      "Parrillas y asadores",
+      "Ollas y sartenes",
+      "Hornos industriales",
+      "Cocinas profesionales"
+    ],
+    "aplicaciones_no": [
+      "Vidrio y cristalería",
+      "Superficies delicadas",
+      "Cerámica sensible"
+    ],
+    "upc_paquete": "07503051815003",
+    "upc_cajex": "07503051815249",
+    "upc_cajex_desc": "24 paqs · 31×30×23.5 cm",
+    "upc_master": "07503051815027",
+    "upc_master_desc": "120 paqs · 57×44.5×37 cm",
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón",
+    "subtitulo_hero": "Limpieza pesada y profunda. Remueve grasa, cochambre y suciedad incrustada.",
+    "nombre_display": "Fibra Verde\nLimpieza Pesada"
   },
   {
     "sku": "F2",
@@ -62,7 +88,32 @@
     "foto_disponible": true,
     "imagen_path": null,
     "compatible_con": null,
-    "notas": null
+    "notas": null,
+    "medida": "150 × 140 × 8 mm",
+    "abrasividad": 5,
+    "unidades_paquete": 3,
+    "color_ficha": "#1A5C28",
+    "aplicaciones_si": [
+      "Parrillas y asadores",
+      "Ollas y sartenes",
+      "Hornos industriales",
+      "Cocinas profesionales"
+    ],
+    "aplicaciones_no": [
+      "Vidrio y cristalería",
+      "Superficies delicadas",
+      "Cerámica sensible"
+    ],
+    "upc_paquete": "07503051815034",
+    "upc_cajex": "07503051815256",
+    "upc_cajex_desc": "24 paqs · 32.5×29×17 cm",
+    "upc_master": "07503051815058",
+    "upc_master_desc": "160 paqs · 61×57×26 cm",
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón",
+    "subtitulo_hero": "Misma abrasividad 5/5 que F1 en formato mediano. Para superficies de tamaño estándar.",
+    "nombre_display": "Fibra Verde\nMediana"
   },
   {
     "sku": "F3",
@@ -88,7 +139,32 @@
     "foto_disponible": true,
     "imagen_path": null,
     "compatible_con": null,
-    "notas": null
+    "notas": null,
+    "medida": "135 × 80 × 8 mm",
+    "abrasividad": 5,
+    "unidades_paquete": 3,
+    "color_ficha": "#1A5C28",
+    "aplicaciones_si": [
+      "Parrillas y asadores",
+      "Ollas y sartenes",
+      "Hornos industriales",
+      "Cocinas profesionales"
+    ],
+    "aplicaciones_no": [
+      "Vidrio y cristalería",
+      "Superficies delicadas",
+      "Cerámica sensible"
+    ],
+    "upc_paquete": "07503051815065",
+    "upc_cajex": "07503051815263",
+    "upc_cajex_desc": "24 paqs · 30×18×15.5 cm",
+    "upc_master": "07503051815102",
+    "upc_master_desc": "280 paqs · 58×55×26 cm",
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón",
+    "subtitulo_hero": "Formato compacto para limpieza pesada. Ideal para espacios y superficies pequeñas.",
+    "nombre_display": "Fibra Verde\nEstándar"
   },
   {
     "sku": "F4",
@@ -100,7 +176,8 @@
       "image": "/showcase/F4-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#0071e3",
       "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
-      "bgPosition": "center 96%"
+      "bgPosition": "center 96%",
+      "textColor": "#FFFFFF"
     },
     "nombre": "Fibra Esponja Dual",
     "variante": null,
@@ -125,20 +202,46 @@
     "foto_disponible": true,
     "imagen_path": "/images/products/F4.webp",
     "compatible_con": null,
-    "notas": null
+    "notas": null,
+    "medida": "120 × 80 × 25 mm",
+    "abrasividad": 5,
+    "unidades_paquete": 2,
+    "color_ficha": "#207830",
+    "color_ficha_secundario": "#C8960A",
+    "aplicaciones_si": [
+      "Vajilla",
+      "Ollas y sartenes",
+      "Encimeras de cocina",
+      "Superficies resistentes"
+    ],
+    "aplicaciones_no": [
+      "Vidrio y cristal",
+      "Cerámica delicada"
+    ],
+    "upc_paquete": "07503051815119",
+    "upc_cajex": "07503051815270",
+    "upc_cajex_desc": "24 paqs · 32×16.5×25.5 cm",
+    "upc_master": "07503051815089",
+    "upc_master_desc": "280 paqs · 67×45.7×42 cm",
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón",
+    "subtitulo_hero": "Dualidad inteligente: fibra abrasiva + esponja absorbente en una sola pieza.",
+    "nombre_display": "Fibra Esponja\nDual"
   },
   {
     "sku": "F5",
     "showcase": {
       "titleMain": "Fibra Negra",
-      "titleAccent": "Parrillas",
+      "titleAccent": "Parrillas y Hornos",
       "tagline": "Resistencia para lo que se carboniza.",
       "slotType": "lifestyle",
       "image": "/showcase/F5-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#F5E9D7",
       "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
       "shadowFilter": "drop-shadow(0 24px 48px rgba(0,0,0,0.55)) drop-shadow(0 8px 16px rgba(0,0,0,0.40))",
-      "bgPosition": "center 88%"
+      "bgPosition": "center 88%",
+      "textColor": "#FFFFFF"
     },
     "nombre": "Fibra Negra Parrillas",
     "variante": null,
@@ -164,7 +267,32 @@
     "foto_disponible": true,
     "imagen_path": null,
     "compatible_con": null,
-    "notas": null
+    "notas": null,
+    "medida": "140 × 80 × 15 mm",
+    "abrasividad": 5,
+    "unidades_paquete": 1,
+    "color_ficha": "#111111",
+    "aplicaciones_si": [
+      "Parrillas y asadores",
+      "Hornos",
+      "Superficies de fierro",
+      "Cochambre incrustado"
+    ],
+    "aplicaciones_no": [
+      "Vidrio y cristal",
+      "Superficies delicadas",
+      "Cerámica"
+    ],
+    "upc_paquete": "07503051815157",
+    "upc_cajex": "07503051815294",
+    "upc_cajex_desc": "24 paqs · 24.5×19.5×15.5 cm",
+    "upc_master": "07503051815331",
+    "upc_master_desc": "432 paqs · 74×60×32.5 cm",
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón",
+    "subtitulo_hero": "Resistente a altas temperaturas. Limpieza ruda en parrillas, asadores y hornos.",
+    "nombre_display": "Fibra Negra\nParrillas y Asadores"
   },
   {
     "sku": "F6",
@@ -192,19 +320,44 @@
     "foto_disponible": true,
     "imagen_path": null,
     "compatible_con": null,
-    "notas": null
+    "notas": null,
+    "medida": "146 × 92 × 20 mm",
+    "abrasividad": 1,
+    "unidades_paquete": 1,
+    "color_ficha": "#1C4F9C",
+    "aplicaciones_si": [
+      "Cristales y espejos",
+      "Mamparas de ducha",
+      "Baño y sanitarios",
+      "Cromo"
+    ],
+    "aplicaciones_no": [
+      "Cocinas",
+      "Superficies metálicas"
+    ],
+    "upc_paquete": null,
+    "upc_cajex": null,
+    "upc_cajex_desc": null,
+    "upc_master": null,
+    "upc_master_desc": null,
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón suave",
+    "subtitulo_hero": "Sin rayones. Para cristales, espejos, mamparas de ducha, baños y cromo.",
+    "nombre_display": "Fibra Blanca\nBaños y Canceles"
   },
   {
     "sku": "F7",
     "showcase": {
-      "titleMain": "Fibra Esponja",
-      "titleAccent": "Azul",
+      "titleMain": "Fibra Azul",
+      "titleAccent": "Sin Rayar",
       "tagline": "El equilibrio que el oficio reconoce.",
       "slotType": "lifestyle",
       "image": "/showcase/F7-LIFESTYLE-HD-V3.jpeg",
       "accentColor": "#0071e3",
       "bgGradient": "linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.10) 42%, rgba(0,0,0,0) 55%)",
-      "bgPosition": "center 75%"
+      "bgPosition": "center 75%",
+      "textColor": "#FFFFFF"
     },
     "nombre": "Fibra Esponja Azul",
     "variante": null,
@@ -229,7 +382,31 @@
     "foto_disponible": true,
     "imagen_path": null,
     "compatible_con": null,
-    "notas": null
+    "notas": null,
+    "medida": "120 × 80 × 25 mm",
+    "abrasividad": 2,
+    "unidades_paquete": 1,
+    "color_ficha": "#1A4F9C",
+    "aplicaciones_si": [
+      "Ollas delicadas",
+      "Encimeras de cocina",
+      "Baños",
+      "Vidrio y cristalería"
+    ],
+    "aplicaciones_no": [
+      "Fierro y acero rudo",
+      "Superficies muy abrasivas"
+    ],
+    "upc_paquete": "07503051815188",
+    "upc_cajex": "07503051815300",
+    "upc_cajex_desc": "24 paqs · 33×17×14 cm",
+    "upc_master": "07503051815195",
+    "upc_master_desc": "315 paqs · 55×42×38 cm",
+    "composicion": "100% Nylon",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón suave",
+    "subtitulo_hero": "Delicada. Limpia sin rayar. 100% Nylon para superficies que requieren cuidado.",
+    "nombre_display": "Fibra Esponja\nAzul Delicada"
   },
   {
     "sku": "F8",
@@ -257,7 +434,28 @@
     "foto_disponible": true,
     "imagen_path": null,
     "compatible_con": null,
-    "notas": null
+    "notas": null,
+    "medida": "120 × 80 × 30 mm",
+    "abrasividad": 2,
+    "unidades_paquete": 3,
+    "color_ficha": "#1A6AAE",
+    "aplicaciones_si": [
+      "Tenis y calzado",
+      "Juntas de pisos",
+      "Rayón de crayón",
+      "Oxido y grasa"
+    ],
+    "aplicaciones_no": [],
+    "upc_paquete": "07503051815201",
+    "upc_cajex": "07503051815317",
+    "upc_cajex_desc": "12 paqs · 33×18×13 cm",
+    "upc_master": "07503051815225",
+    "upc_master_desc": "192 uds · 69×58.5×54.5 cm",
+    "composicion": "100% Melamina",
+    "duracion": "1–2 semanas",
+    "metodo_uso": "Agua",
+    "subtitulo_hero": "Multiusos. Sin químicos. 100% Melamina para limpieza efectiva sin productos adicionales.",
+    "nombre_display": "Borrador Mágico\n+ Esponja"
   },
   {
     "sku": "F9",
@@ -284,7 +482,28 @@
     "foto_disponible": true,
     "imagen_path": null,
     "compatible_con": null,
-    "notas": null
+    "notas": null,
+    "composicion": "100% Melamina",
+    "duracion": "1–2 semanas",
+    "metodo_uso": "Agua",
+    "subtitulo_hero": "Borrador mágico solo. 100% Melamina. Limpieza sin químicos para multiusos.",
+    "nombre_display": "Borrador\nMágico",
+    "medida": "120 × 80 × 30 mm",
+    "abrasividad": 2,
+    "unidades_paquete": 14,
+    "color_ficha": "#1A6AAE",
+    "aplicaciones_si": [
+      "Tenis y calzado",
+      "Juntas de pisos",
+      "Rayón de crayón",
+      "Óxido, grasa y rayones"
+    ],
+    "aplicaciones_no": [],
+    "upc_paquete": null,
+    "upc_cajex": "0750046510275",
+    "upc_cajex_desc": "14 uds · 33×18×13 cm",
+    "upc_master": "07503051815355",
+    "upc_master_desc": "336 uds · 69×58.5×54.5 cm"
   },
   {
     "sku": "M1",

@@ -10,6 +10,7 @@ export type ShowcaseData = {
   bgGradient: string
   bgPosition?: string
   shadowFilter?: string
+  textColor?: string
 }
 
 type Props = {
@@ -24,7 +25,6 @@ const DEFAULT_SHADOW =
   'drop-shadow(0 18px 30px rgba(15,23,42,0.18)) drop-shadow(0 6px 12px rgba(15,23,42,0.10))'
 
 export default function FibraHeroPanel({ sku, showcase }: Props) {
-  const isDarkBg = showcase.accentColor === '#F5E9D7'
   const isLifestyle = showcase.slotType === 'lifestyle'
   const productFilter = showcase.shadowFilter ?? DEFAULT_SHADOW
 
@@ -41,7 +41,7 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
           ? 0
           : 'clamp(40px, 4vw, 56px) clamp(28px, 4vw, 48px) clamp(28px, 3vw, 40px)',
         fontFamily: APPLE_FONT,
-        color: '#ffffff',
+        color: showcase.textColor ?? '#ffffff',
       }}
     >
       {isLifestyle && (
@@ -82,23 +82,15 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
             }}
           >
             {showcase.titleMain}{' '}
-            <em
-              style={{
-                fontStyle: 'italic',
-                fontWeight: 600,
-                color: showcase.accentColor,
-              }}
-            >
-              {showcase.titleAccent}
-            </em>
+            {showcase.titleAccent}
           </h2>
           <p
             className="fhp-tagline"
             style={{
-              fontSize: 'clamp(14px, 1.2vw, 17px)',
+              fontSize: 'clamp(18px, 1.4vw, 19px)',
+              fontWeight: 400,
               lineHeight: 1.3,
               marginTop: 12,
-              opacity: isDarkBg ? 0.92 : 0.78,
             }}
           >
             {showcase.tagline}
@@ -141,10 +133,11 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
           </Link>
           <Link
             href={`/#contacto?producto=${sku}`}
-            className="fhp-btn"
+            className="fhp-btn bg-white text-[#1d1d1f] border-0 outline-none focus:outline-none focus-visible:outline-none hover:bg-white/90"
             style={{
-              border: `1.5px solid ${isDarkBg ? 'rgba(255,255,255,0.40)' : '#0071e3'}`,
-              color: isDarkBg ? '#f5f5f7' : '#1d1d1f',
+              border: 'none',
+              outline: 'none',
+              boxShadow: 'none',
               padding: '11px 22px',
               borderRadius: 980,
               fontSize: 13,
@@ -152,7 +145,6 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
               textDecoration: 'none',
               display: 'inline-flex',
               alignItems: 'center',
-              backgroundColor: isDarkBg ? 'transparent' : 'white',
             }}
           >
             Cotizar
