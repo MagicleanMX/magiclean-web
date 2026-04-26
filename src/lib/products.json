@@ -3,7 +3,7 @@
     "sku": "F1",
     "showcase": {
       "titleMain": "Fibra Verde",
-      "titleAccent": "Pesada",
+      "titleAccent": "Limpieza Pesada",
       "tagline": "Resistencia donde más importa.",
       "slotType": "lifestyle",
       "image": "/showcase/F1-LIFESTYLE-HD-V3.jpeg",
@@ -233,7 +233,7 @@
     "sku": "F5",
     "showcase": {
       "titleMain": "Fibra Negra",
-      "titleAccent": "Parrillas",
+      "titleAccent": "Parrillas y Hornos",
       "tagline": "Resistencia para lo que se carboniza.",
       "slotType": "lifestyle",
       "image": "/showcase/F5-LIFESTYLE-HD-V3.jpeg",
@@ -349,8 +349,8 @@
   {
     "sku": "F7",
     "showcase": {
-      "titleMain": "Fibra Esponja",
-      "titleAccent": "Azul",
+      "titleMain": "Fibra Azul",
+      "titleAccent": "Sin Rayar",
       "tagline": "El equilibrio que el oficio reconoce.",
       "slotType": "lifestyle",
       "image": "/showcase/F7-LIFESTYLE-HD-V3.jpeg",
