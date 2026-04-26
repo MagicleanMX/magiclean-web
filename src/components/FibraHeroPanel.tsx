@@ -8,6 +8,7 @@ export type ShowcaseData = {
   image: string
   accentColor: string
   bgGradient: string
+  bgPosition?: string
   shadowFilter?: string
 }
 
@@ -33,10 +34,12 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
       style={{
         aspectRatio: '16 / 11',
         background: isLifestyle
-          ? `url(${showcase.image}) center/cover no-repeat`
+          ? `url(${showcase.image}) ${showcase.bgPosition ?? 'center 55%'}/cover no-repeat`
           : showcase.bgGradient,
         borderRadius: 0,
-        padding: 'clamp(40px, 4vw, 56px) clamp(28px, 4vw, 48px) clamp(28px, 3vw, 40px)',
+        padding: isLifestyle
+          ? 0
+          : 'clamp(40px, 4vw, 56px) clamp(28px, 4vw, 48px) clamp(28px, 3vw, 40px)',
         fontFamily: APPLE_FONT,
         color: '#ffffff',
       }}
@@ -59,7 +62,12 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
         style={{
           position: 'relative',
           zIndex: 1,
-          justifyContent: isLifestyle ? 'flex-end' : undefined,
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          textAlign: 'center',
+          padding: isLifestyle
+            ? 'clamp(20px, 2.5vw, 28px) clamp(18px, 2vw, 26px) 0'
+            : undefined,
         }}
       >
         <div className="fhp-text-zone w-full">
