@@ -321,9 +321,10 @@ export default function Navbar() {
                               <ul className="space-y-1">
                                 {col.items.map((item) => (
                                   <li key={item.codigo}>
-                                    <a
-                                      href="#productos"
+                                    <Link
+                                      href={`/productos/${item.codigo}`}
                                       role="menuitem"
+                                      onClick={() => setMegaOpen(false)}
                                       className="group/item flex items-start gap-2 py-1 px-1 -mx-1 rounded-md hover:bg-[#F5F7FA] transition-colors"
                                     >
                                       <span
@@ -340,7 +341,7 @@ export default function Navbar() {
                                           </span>
                                         )}
                                       </p>
-                                    </a>
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>
