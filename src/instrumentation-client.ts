@@ -4,36 +4,38 @@
 
 import * as Sentry from "@sentry/nextjs";
 
-const DEFAULT_DSN = "https://8b1e7e0d4f33f17be8416f4b622420f6@o4511248313352192.ingest.us.sentry.io/4511253451243520";
+const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN
 
-Sentry.init({
-  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN || DEFAULT_DSN,
+if (dsn) {
+  Sentry.init({
+    dsn,
 
-  // Add optional integrations for additional features
-  integrations: [Sentry.replayIntegration()],
+    // Add optional integrations for additional features
+    integrations: [Sentry.replayIntegration()],
 
-  // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
-  tracesSampleRate: 0.1,
+    // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
+    tracesSampleRate: 0.1,
 
-  // Define how likely Replay events are sampled.
-  // This sets the sample rate to be 10%. You may want this to be 100% while
-  // in development and sample at a lower rate in production
-  replaysSessionSampleRate: 0.1,
+    // Define how likely Replay events are sampled.
+    // This sets the sample rate to be 10%. You may want this to be 100% while
+    // in development and sample at a lower rate in production
+    replaysSessionSampleRate: 0.1,
 
-  // Define how likely Replay events are sampled when an error occurs.
-  replaysOnErrorSampleRate: 1.0,
+    // Define how likely Replay events are sampled when an error occurs.
+    replaysOnErrorSampleRate: 1.0,
 
-  // Enable sending user PII (Personally Identifiable Information)
-  // https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/options/#sendDefaultPii
-  sendDefaultPii: false,
+    // Enable sending user PII (Personally Identifiable Information)
+    // https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/options/#sendDefaultPii
+    sendDefaultPii: false,
 
-  beforeSend(event) {
-    // Redact request body from API routes (contact form)
-    if (event.request?.data) {
-      event.request.data = '[REDACTED]'
-    }
-    return event
-  },
-});
+    beforeSend(event) {
+      // Redact request body from API routes (contact form)
+      if (event.request?.data) {
+        event.request.data = '[REDACTED]'
+      }
+      return event
+    },
+  });
+}
 
 export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
