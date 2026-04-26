@@ -55,7 +55,12 @@
     "upc_cajex": "07503051815249",
     "upc_cajex_desc": "24 paqs · 31×30×23.5 cm",
     "upc_master": "07503051815027",
-    "upc_master_desc": "120 paqs · 57×44.5×37 cm"
+    "upc_master_desc": "120 paqs · 57×44.5×37 cm",
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón",
+    "subtitulo_hero": "Limpieza pesada y profunda. Remueve grasa, cochambre y suciedad incrustada.",
+    "nombre_display": "Fibra Verde\nLimpieza Pesada"
   },
   {
     "sku": "F2",
@@ -102,7 +107,12 @@
     "upc_cajex": "07503051815256",
     "upc_cajex_desc": "24 paqs · 32.5×29×17 cm",
     "upc_master": "07503051815058",
-    "upc_master_desc": "160 paqs · 61×57×26 cm"
+    "upc_master_desc": "160 paqs · 61×57×26 cm",
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón",
+    "subtitulo_hero": "Misma abrasividad 5/5 que F1 en formato mediano. Para superficies de tamaño estándar.",
+    "nombre_display": "Fibra Verde\nMediana"
   },
   {
     "sku": "F3",
@@ -148,7 +158,12 @@
     "upc_cajex": "07503051815263",
     "upc_cajex_desc": "24 paqs · 30×18×15.5 cm",
     "upc_master": "07503051815102",
-    "upc_master_desc": "280 paqs · 58×55×26 cm"
+    "upc_master_desc": "280 paqs · 58×55×26 cm",
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón",
+    "subtitulo_hero": "Formato compacto para limpieza pesada. Ideal para espacios y superficies pequeñas.",
+    "nombre_display": "Fibra Verde\nEstándar"
   },
   {
     "sku": "F4",
@@ -205,7 +220,12 @@
     "upc_cajex": "07503051815270",
     "upc_cajex_desc": "24 paqs · 32×16.5×25.5 cm",
     "upc_master": "07503051815089",
-    "upc_master_desc": "280 paqs · 67×45.7×42 cm"
+    "upc_master_desc": "280 paqs · 67×45.7×42 cm",
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón",
+    "subtitulo_hero": "Dualidad inteligente: fibra abrasiva + esponja absorbente en una sola pieza.",
+    "nombre_display": "Fibra Esponja\nDual"
   },
   {
     "sku": "F5",
@@ -264,7 +284,12 @@
     "upc_cajex": "07503051815294",
     "upc_cajex_desc": "24 paqs · 24.5×19.5×15.5 cm",
     "upc_master": "07503051815331",
-    "upc_master_desc": "432 paqs · 74×60×32.5 cm"
+    "upc_master_desc": "432 paqs · 74×60×32.5 cm",
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón",
+    "subtitulo_hero": "Resistente a altas temperaturas. Limpieza ruda en parrillas, asadores y hornos.",
+    "nombre_display": "Fibra Negra\nParrillas y Asadores"
   },
   {
     "sku": "F6",
@@ -311,7 +336,12 @@
     "upc_cajex": null,
     "upc_cajex_desc": null,
     "upc_master": null,
-    "upc_master_desc": null
+    "upc_master_desc": null,
+    "composicion": "100% Poliéster",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón suave",
+    "subtitulo_hero": "Sin rayones. Para cristales, espejos, mamparas de ducha, baños y cromo.",
+    "nombre_display": "Fibra Blanca\nBaños y Canceles"
   },
   {
     "sku": "F7",
@@ -367,7 +397,12 @@
     "upc_cajex": "07503051815300",
     "upc_cajex_desc": "24 paqs · 33×17×14 cm",
     "upc_master": "07503051815195",
-    "upc_master_desc": "315 paqs · 55×42×38 cm"
+    "upc_master_desc": "315 paqs · 55×42×38 cm",
+    "composicion": "100% Nylon",
+    "duracion": "1–4 semanas",
+    "metodo_uso": "Agua + jabón suave",
+    "subtitulo_hero": "Delicada. Limpia sin rayar. 100% Nylon para superficies que requieren cuidado.",
+    "nombre_display": "Fibra Esponja\nAzul Delicada"
   },
   {
     "sku": "F8",
@@ -411,7 +446,12 @@
     "upc_cajex": "07503051815317",
     "upc_cajex_desc": "12 paqs · 33×18×13 cm",
     "upc_master": "07503051815225",
-    "upc_master_desc": "192 uds · 69×58.5×54.5 cm"
+    "upc_master_desc": "192 uds · 69×58.5×54.5 cm",
+    "composicion": "100% Melamina",
+    "duracion": "1–2 semanas",
+    "metodo_uso": "Agua",
+    "subtitulo_hero": "Multiusos. Sin químicos. 100% Melamina para limpieza efectiva sin productos adicionales.",
+    "nombre_display": "Borrador Mágico\n+ Esponja"
   },
   {
     "sku": "F9",
@@ -438,7 +478,28 @@
     "foto_disponible": true,
     "imagen_path": null,
     "compatible_con": null,
-    "notas": null
+    "notas": null,
+    "composicion": "100% Melamina",
+    "duracion": "1–2 semanas",
+    "metodo_uso": "Agua",
+    "subtitulo_hero": "Borrador mágico solo. 100% Melamina. Limpieza sin químicos para multiusos.",
+    "nombre_display": "Borrador\nMágico",
+    "medida": "120 × 80 × 30 mm",
+    "abrasividad": 2,
+    "unidades_paquete": 14,
+    "color_ficha": "#1A6AAE",
+    "aplicaciones_si": [
+      "Tenis y calzado",
+      "Juntas de pisos",
+      "Rayón de crayón",
+      "Óxido, grasa y rayones"
+    ],
+    "aplicaciones_no": [],
+    "upc_paquete": null,
+    "upc_cajex": "0750046510275",
+    "upc_cajex_desc": "14 uds · 33×18×13 cm",
+    "upc_master": "07503051815355",
+    "upc_master_desc": "336 uds · 69×58.5×54.5 cm"
   },
   {
     "sku": "M1",
