@@ -20,12 +20,12 @@ const cols: FooterCol[] = [
   {
     titulo: 'Productos',
     links: [
-      { label: 'Fibras Verdes F1 · F2 · F3', href: '#productos' },
-      { label: 'Fibra Esponja Dual F4', href: '#productos' },
-      { label: 'Fibras Especiales F5 · F6 · F7', href: '#productos' },
-      { label: 'Borradores Mágicos F8 · F9', href: '#productos' },
-      { label: 'Sistemas Mop M1 · M2 · M5', href: '#productos' },
-      { label: 'Accesorios y Repuestos', href: '#productos' },
+      { label: 'Fibras Verdes F1 · F2 · F3', href: '/productos/F1' },
+      { label: 'Fibra Esponja Dual F4', href: '/productos/F4' },
+      { label: 'Fibras Especiales F5 · F6 · F7', href: '/productos/F5' },
+      { label: 'Borradores Mágicos F8 · F9', href: '/productos/F8' },
+      { label: 'Sistemas Mop M1 · M2 · M5', href: '/productos/M1' },
+      { label: 'Accesorios y Repuestos', href: '/productos' },
     ],
   },
   {
