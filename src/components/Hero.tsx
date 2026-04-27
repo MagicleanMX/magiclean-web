@@ -65,39 +65,52 @@ export default function Hero({ data }: HeroProps) {
             {heroMicrotext}
           </p>
 
-          {/* CTAs — visual hierarchy: primary → secondary outline → ghost */}
-          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:items-center">
-            {/* Amazon — primary */}
-            <a
-              href={HERO_CTAS.amazon}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:bg-[#0052CC] transition-colors duration-300"
-            >
-              Comprar en Amazon
-            </a>
-            {/* Mercado Libre — secondary (outline) */}
-            <a
-              href={HERO_CTAS.mercadoLibre}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
-            >
-              Comprar en Mercado Libre
-            </a>
-            {/* Catálogo — ghost (text link with same hit area) */}
-            <a
-              href={HERO_CTAS.catalogo}
-              className="inline-flex items-center justify-center px-4 py-3.5 text-[13px] font-semibold tracking-wide text-[#1A1A1A] hover:text-[#0076FF] transition-colors duration-300"
-            >
-              Solicitar catálogo
-            </a>
-          </div>
+          {/* CTAs — auto-segmentation by intent (B2C left, B2B right).
+              Two groups with their own microcopy; no client-type pickers. */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-x-8 gap-y-6 sm:items-start">
 
-          {/* Trust microcopy — reduce decision friction below CTAs */}
-          <p className="text-[11px] font-normal text-ink-subtle leading-[1.6] mt-4 max-w-sm">
-            Compra inmediata en marketplaces · Envío a todo México · Respuesta B2B en menos de 24h
-          </p>
+            {/* Path 1 — Comprar (consumer · immediate) */}
+            <div className="flex flex-col">
+              <div className="flex flex-col sm:flex-row gap-3">
+                {/* Amazon — primary */}
+                <a
+                  href={HERO_CTAS.amazon}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:bg-[#0052CC] transition-colors duration-300"
+                >
+                  Comprar en Amazon
+                </a>
+                {/* Mercado Libre — secondary (outline) */}
+                <a
+                  href={HERO_CTAS.mercadoLibre}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
+                >
+                  Comprar en Mercado Libre
+                </a>
+              </div>
+              <p className="text-[11px] font-normal text-ink-subtle leading-[1.5] mt-3">
+                Compra inmediata en Amazon, Mercado Libre o Walmart
+              </p>
+            </div>
+
+            {/* Path 2 — Solicitar catálogo (B2B · volumen) */}
+            <div className="flex flex-col">
+              {/* Catálogo — ghost (text link with same hit area) */}
+              <a
+                href={HERO_CTAS.catalogo}
+                className="inline-flex items-center justify-center sm:justify-start px-4 py-3.5 text-[13px] font-semibold tracking-wide text-[#1A1A1A] hover:text-[#0076FF] transition-colors duration-300"
+              >
+                Solicitar catálogo
+              </a>
+              <p className="text-[11px] font-normal text-ink-subtle leading-[1.5] mt-3 sm:px-4">
+                Para distribuidores, horeca y compras a volumen
+              </p>
+            </div>
+
+          </div>
         </div>
 
         {/* Derecha — slot visual para fotografía de producto */}
