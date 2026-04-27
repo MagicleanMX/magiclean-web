@@ -97,7 +97,7 @@ export default function Hero({ data }: HeroProps) {
 
           {/* Two-line microcopy — intent split without splitting the layout */}
           <p className="text-[12px] font-medium text-ink-muted leading-[1.5] mt-4 max-w-sm">
-            Compra inmediata o solicita soluciones para tu operación
+            Compra inmediata o solicita soluciones para tu negocio
           </p>
           <p className="text-[11px] font-normal text-ink-subtle leading-[1.5] mt-1.5 max-w-sm">
             Para hogar, negocio o compras a volumen
