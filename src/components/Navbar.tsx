@@ -58,7 +58,7 @@ const navLinks = [
 ]
 
 const mobileLinks = [
-  { label: 'Productos', href: '#productos' },
+  { label: 'Productos', href: '/productos' },
   { label: 'Tecnología', href: '#tecnologia' },
   { label: 'Distribuidores', href: '#distribuidores' },
   { label: 'Soporte', href: '/#contacto' },
@@ -404,7 +404,7 @@ export default function Navbar() {
                 aria-controls="navbar-search-panel"
                 aria-label={searchOpen ? 'Cerrar búsqueda' : 'Buscar productos'}
                 onClick={() => setSearchOpen((prev) => !prev)}
-                className="p-2 rounded-full text-[#1A1A1A] hover:text-[#0076FF] hover:bg-[#F5F7FA] transition-colors"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-[#1A1A1A] hover:text-[#0076FF] hover:bg-[#F5F7FA] transition-colors"
               >
                 <Search size={18} strokeWidth={2.2} />
               </button>
@@ -425,7 +425,7 @@ export default function Navbar() {
                   }
                 }}
                 onClick={() => setMobileOpen((prev) => !prev)}
-                className="lg:hidden p-2 text-[#1A1A1A] hover:text-[#0076FF] transition-colors"
+                className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-[#1A1A1A] hover:text-[#0076FF] transition-colors"
               >
                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
               </button>

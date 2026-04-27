@@ -228,7 +228,7 @@ export default function AvisoDePrivacidad() {
           </section>
 
           {/* 6. Cookies */}
-          <section>
+          <section id="cookies" className="scroll-mt-24">
             <h2 className="text-lg font-black tracking-tight mb-4 pb-2 border-b border-[#E8EAED]">
               VI. Uso de cookies y tecnologías de rastreo
             </h2>
