@@ -302,7 +302,7 @@ export default function Navbar() {
                         ref={megaPanelRef}
                         id="mega-menu-productos"
                         role="menu"
-                        aria-label="Productos MagicClean"
+                        aria-label="Productos MagiClean"
                         className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-white border border-[#E8EAED] rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] overflow-hidden"
                         style={{ width: 720 }}
                         onMouseEnter={openMega}

@@ -105,7 +105,7 @@ export default function TerminosDeUso() {
               <li>Intentar acceder de forma no autorizada a sistemas o bases de datos.</li>
               <li>Enviar spam, contenido malicioso o realizar ataques informáticos.</li>
               <li>Reproducir o scrappear contenido de forma automatizada sin permiso.</li>
-              <li>Suplantar la identidad de MagicClean o de terceros.</li>
+              <li>Suplantar la identidad de MagiClean o de terceros.</li>
             </ul>
           </section>
 

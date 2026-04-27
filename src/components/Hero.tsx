@@ -77,7 +77,7 @@ export default function Hero({ data }: HeroProps) {
         >
           <Image
             src="/images/hero/hero-kitchen.webp"
-            alt="MagicClean F1 — Fibra profesional flotando sobre encimera de mármol en cocina editorial con luz natural"
+            alt="MagiClean F1 — Fibra profesional flotando sobre encimera de mármol en cocina editorial con luz natural"
             fill
             sizes="(max-width: 1024px) 100vw, 48vw"
             className="object-cover object-center"

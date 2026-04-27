@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Página no encontrada — MagicClean',
+  title: 'Página no encontrada — MagiClean',
   description: 'La página que buscas no existe o fue movida.',
   robots: { index: false, follow: false },
 }

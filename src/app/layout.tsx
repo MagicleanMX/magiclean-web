@@ -25,7 +25,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
+  title: 'MagiClean — Proveedor B2B de Limpieza Profesional en México',
   description:
     `Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional. Tecnología NeoShield™ antibacterial. Líderes en MercadoLibre y Amazon · ${ACTIVE_SKU_COUNT} soluciones profesionales · México y LATAM.`,
   keywords: [
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
     'proveedor HORECA México',
     'distribuidor productos de limpieza',
     'fibra antibacterial NeoShield™',
-    'MagicClean México',
+    'MagiClean México',
     'limpieza industrial',
     'productos de limpieza B2B',
   ],
   authors: [{ name: 'Prolim BH, SA de CV' }],
-  creator: 'MagicClean',
-  publisher: 'MagicClean',
+  creator: 'MagiClean',
+  publisher: 'MagiClean',
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/',
@@ -49,15 +49,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_MX',
     url: siteUrl,
-    siteName: 'MagicClean',
-    title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
+    siteName: 'MagiClean',
+    title: 'MagiClean — Proveedor B2B de Limpieza Profesional en México',
     description:
       'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional en México y LATAM.',
     // Image auto-populated from src/app/opengraph-image.tsx (next/og ImageResponse).
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
+    title: 'MagiClean — Proveedor B2B de Limpieza Profesional en México',
     description:
       'Fibras, sistemas de mop y soluciones para distribuidores, retail, HORECA e institucional.',
     // Twitter image also auto-populated from src/app/opengraph-image.tsx.

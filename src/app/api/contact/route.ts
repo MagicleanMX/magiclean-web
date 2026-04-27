@@ -164,7 +164,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true })
     }
 
-    // 2️⃣  Notificación interna al equipo MagicClean
+    // 2️⃣  Notificación interna al equipo MagiClean
     const notifyTo = process.env.NOTIFY_EMAIL || 'hola@magiclean.mx'
     const canalLabel = CANAL_LABELS[body.canal] || body.canal
 
@@ -233,7 +233,7 @@ export async function POST(req: NextRequest) {
               </table>
 
               <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #E5E7EB;">
-                <a href="mailto:${safe.email}?subject=MagicClean — Tu solicitud profesional"
+                <a href="mailto:${safe.email}?subject=MagiClean — Tu solicitud profesional"
                    style="background: #0076FF; color: white; padding: 12px 24px; border-radius: 24px;
                           text-decoration: none; font-weight: 600; font-size: 14px; display: inline-block;">
                   Responder a ${safe.nombre} →
@@ -241,7 +241,7 @@ export async function POST(req: NextRequest) {
               </div>
 
               <p style="margin-top: 24px; font-size: 11px; color: #9CA3AF;">
-                Lead recibido el ${new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' })} · MagicClean Web
+                Lead recibido el ${new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' })} · MagiClean Web
               </p>
             </div>
           </div>
@@ -257,12 +257,12 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from:    process.env.RESEND_FROM_CONFIRM || 'onboarding@resend.dev',
         to:      body.email,
-        subject: 'Recibimos tu solicitud — MagicClean',
+        subject: 'Recibimos tu solicitud — MagiClean',
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1A1A1A;">
             <div style="background: #0A1628; padding: 24px 32px; border-radius: 8px 8px 0 0; text-align: center;">
               <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.5px;">
-                MagicClean
+                MagiClean
               </h1>
               <p style="color: rgba(255,255,255,0.4); margin: 4px 0 0; font-size: 13px;">
                 Soluciones de limpieza profesional
@@ -291,7 +291,7 @@ export async function POST(req: NextRequest) {
                 </p>
               </div>
               <p style="margin-top: 40px; font-size: 13px; color: #9CA3AF; text-align: center;">
-                MagicClean · Proveedor B2B de limpieza profesional · México
+                MagiClean · Proveedor B2B de limpieza profesional · México
               </p>
             </div>
           </div>
