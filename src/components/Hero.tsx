@@ -65,7 +65,8 @@ export default function Hero({ data }: HeroProps) {
             {heroMicrotext}
           </p>
 
-          {/* CTAs — visual hierarchy: primary → secondary outline → ghost */}
+          {/* CTAs — single row, hierarchy: primary → secondary outline → ghost.
+              Auto-segmentation lives in the two-line microcopy below. */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:items-center">
             {/* Amazon — primary */}
             <a
@@ -93,6 +94,14 @@ export default function Hero({ data }: HeroProps) {
               Solicitar catálogo
             </a>
           </div>
+
+          {/* Two-line microcopy — intent split without splitting the layout */}
+          <p className="text-[12px] font-medium text-ink-muted leading-[1.5] mt-4 max-w-sm">
+            Compra inmediata o solicita soluciones para tu negocio
+          </p>
+          <p className="text-[11px] font-normal text-ink-subtle leading-[1.5] mt-1.5 max-w-sm">
+            Para hogar, negocio o compras a volumen
+          </p>
         </div>
 
         {/* Derecha — slot visual para fotografía de producto */}

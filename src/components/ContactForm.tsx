@@ -305,7 +305,7 @@ export default function ContactForm() {
           </button>
 
           <p className="text-white/70 text-[11px] font-light text-center mt-4">
-            Sin compromiso · Sin intermediarios · Propuesta personalizada en 24h hábiles
+            Te contactamos directamente — sin intermediarios. Respuesta en menos de 24h hábiles.
           </p>
         </motion.form>
       </div>

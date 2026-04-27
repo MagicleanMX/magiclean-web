@@ -152,6 +152,19 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
             Comprar
           </Link>
         </div>
+
+        <p
+          className="fhp-microcopy"
+          style={{
+            fontSize: 11,
+            fontWeight: 500,
+            marginTop: 10,
+            opacity: 0.7,
+            color: 'currentColor',
+          }}
+        >
+          Disponible en Amazon y Mercado Libre
+        </p>
       </div>
     </article>
   )
