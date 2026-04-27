@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import Logo from '@/components/Logo'
 import { track, AnalyticsEvents } from '@/lib/analytics'
 import { CATALOG_PDFS, type CatalogId } from '@/lib/catalog-assets'
@@ -76,13 +77,14 @@ export default function Footer() {
 
           {/* Brand column */}
           <div>
-            {/* Logo */}
-            <a href="#" aria-label="MagiClean — inicio" className="inline-flex items-center mb-6 group">
+            {/* Logo — routes to home from any page; on home re-navigates so
+                Next.js Link's default scroll-to-top kicks in. No JS handler. */}
+            <Link href="/" aria-label="MagiClean — inicio" className="inline-flex items-center mb-6 group">
               <Logo
                 variant="white"
                 className="h-10"
               />
-            </a>
+            </Link>
 
             <p className="text-[13px] font-semibold text-white/70 leading-snug max-w-[220px] mb-2">
               Fibras que duran. Tecnología que protege.
