@@ -57,14 +57,14 @@ const navLinks = [
   { label: 'Tecnología', href: '/#tecnologia', mega: false },
   { label: 'Distribuidores', href: '/#distribuidores', mega: false },
   { label: 'Empresa', href: '/#nosotros', mega: false },
-  { label: 'Soporte', href: '/#contacto', mega: false },
+  { label: 'Atención y ventas', href: '/#contacto', mega: false },
 ]
 
 const mobileLinks = [
   { label: 'Productos', href: '/productos' },
   { label: 'Tecnología', href: '/#tecnologia' },
   { label: 'Distribuidores', href: '/#distribuidores' },
-  { label: 'Soporte', href: '/#contacto' },
+  { label: 'Atención y ventas', href: '/#contacto' },
   { label: 'Contacto', href: '/#contacto' },
 ]
 

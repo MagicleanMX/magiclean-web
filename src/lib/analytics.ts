@@ -25,6 +25,8 @@ export const AnalyticsEvents = {
   ClickMlHero:          'click_ml_hero',
   ClickWalmartHero:     'click_walmart_hero',
   ClickCatalogoHero:    'click_catalogo_hero',
+  ClickDistribuidorHero: 'click_distribuidor_hero',
+  ClickProducto:        'click_producto',
 } as const
 
 export type AnalyticsEventName = (typeof AnalyticsEvents)[keyof typeof AnalyticsEvents]
