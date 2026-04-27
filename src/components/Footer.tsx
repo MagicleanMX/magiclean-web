@@ -31,10 +31,10 @@ const cols: FooterCol[] = [
   {
     titulo: 'Empresa',
     links: [
-      { label: 'Quiénes somos', href: '#nosotros' },
-      { label: 'Tecnología NeoShield™', href: '#tecnologia' },
-      { label: 'Cómo funciona', href: '#como-funciona' },
-      { label: 'Red de Distribuidores', href: '#distribuidores' },
+      { label: 'Quiénes somos', href: '/#nosotros' },
+      { label: 'Tecnología NeoShield™', href: '/#tecnologia' },
+      { label: 'Cómo funciona', href: '/#como-funciona' },
+      { label: 'Red de Distribuidores', href: '/#distribuidores' },
       ...CATALOG_PDFS.map((pdf) => ({
         label: `${pdf.label} (${pdf.sizeLabel})`,
         href: pdf.url,
@@ -47,9 +47,9 @@ const cols: FooterCol[] = [
     titulo: 'Contacto LATAM',
     links: [
       { label: 'ventas@magiclean.mx', href: 'mailto:ventas@magiclean.mx' },
-      { label: 'CDMX · Guadalajara · Monterrey', href: '#contacto' },
-      { label: 'Exportaciones LATAM', href: '#contacto' },
-      { label: 'Solicitar cotización', href: '#contacto' },
+      { label: 'CDMX · Guadalajara · Monterrey', href: '/#contacto' },
+      { label: 'Exportaciones LATAM', href: '/#contacto' },
+      { label: 'Solicitar cotización', href: '/#contacto' },
     ],
   },
 ]

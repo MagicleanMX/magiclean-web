@@ -5,11 +5,12 @@ import type { HeroSection } from '@/lib/wordpress'
 import { CANALES } from '@/lib/products'
 
 // TODO(home-launch): replace `#` placeholders with official storefront URLs
-// when MagiClean storefront on Amazon and MercadoLibre go live.
+// when MagiClean storefronts on Amazon, Mercado Libre, and Walmart go live.
 const HERO_CTAS = {
   amazon:        '#',
   mercadoLibre:  '#',
-  catalogo:      '#contacto',
+  walmart:       '#',
+  catalogo:      '/#contacto',
 } as const
 
 // Fallback values — used when WordPress is unreachable or fields are empty
@@ -85,6 +86,15 @@ export default function Hero({ data }: HeroProps) {
               className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
             >
               Comprar en Mercado Libre
+            </a>
+            {/* Walmart — secondary (outline) — same hierarchy as Mercado Libre */}
+            <a
+              href={HERO_CTAS.walmart}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
+            >
+              Comprar en Walmart
             </a>
             {/* Catálogo — ghost (text link with same hit area) */}
             <a
