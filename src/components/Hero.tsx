@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import type { HeroSection } from '@/lib/wordpress'
 import { CANALES } from '@/lib/products'
 import { MARKETPLACES, withUTM } from '@/lib/marketplaces'
@@ -112,12 +113,21 @@ export default function Hero({ data }: HeroProps) {
             </a>
           </div>
 
+          {/* Secondary B2B path — ghost link below the four primary CTAs */}
+          <Link
+            href="/#distribuidores"
+            onClick={() => track(AnalyticsEvents.ClickDistribuidorHero)}
+            className="inline-flex items-center self-start mt-3 text-[12px] font-semibold tracking-wide text-[#0052CC] hover:text-[#0076FF] transition-colors duration-300"
+          >
+            Quiero vender MagiClean →
+          </Link>
+
           {/* Two-line microcopy — intent split without splitting the layout */}
           <p className="text-[12px] font-medium text-ink-muted leading-[1.5] mt-4 max-w-sm">
-            Compra inmediata o solicita soluciones para tu negocio
+            Compra inmediata o desarrolla tu línea con nosotros
           </p>
           <p className="text-[11px] font-normal text-ink-subtle leading-[1.5] mt-1.5 max-w-sm">
-            Para hogar, negocio o compras a volumen
+            Para hogar, negocio o distribución a volumen
           </p>
         </div>
 

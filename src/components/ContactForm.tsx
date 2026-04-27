@@ -134,10 +134,21 @@ export default function ContactForm() {
           <h2 className="headline-editorial text-[2rem] sm:text-[2.6rem] lg:text-[3.4rem] text-white max-w-lg mb-4">
             Hablemos de tu operación
           </h2>
-          <p className="text-white/60 font-normal text-base max-w-lg leading-[1.75]">
-            No tenemos catálogos genéricos. Cuéntanos qué operas, cuánto volumen manejas
-            y qué te duele hoy en tu proceso de limpieza. Te respondemos en menos de
-            24 horas hábiles con una propuesta específica.
+          <p className="text-white/80 font-normal text-base max-w-lg leading-[1.75] mb-4">
+            ¿Eres cliente, distribuidor o quieres comprar en volumen?
+          </p>
+          <p className="text-white/60 font-normal text-[15px] max-w-lg leading-[1.7] mb-2">
+            Te ayudamos con:
+          </p>
+          <ul className="text-white/60 font-normal text-[15px] max-w-lg leading-[1.7] mb-4 list-disc pl-5 space-y-1">
+            <li>compras empresariales</li>
+            <li>distribución</li>
+            <li>horeca</li>
+            <li>dudas de producto</li>
+          </ul>
+          <p className="text-white/50 font-normal text-[13px] max-w-lg leading-[1.7]">
+            Para compras en Amazon, Mercado Libre o Walmart, el soporte se realiza
+            directamente en cada plataforma.
           </p>
         </motion.div>
 

@@ -1,4 +1,8 @@
+'use client'
+
 import Link from 'next/link'
+import { MARKETPLACES, withUTM } from '@/lib/marketplaces'
+import { track, AnalyticsEvents } from '@/lib/analytics'
 
 export type ShowcaseData = {
   titleMain: string
@@ -132,39 +136,71 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
           >
             Ver producto
           </Link>
-          <Link
-            href={`/#contacto?producto=${sku}`}
-            aria-label={`Comprar ${showcase.titleMain} ${showcase.titleAccent}`}
-            className="fhp-btn bg-white text-[#1d1d1f] border-0 outline-none focus:outline-none focus-visible:outline-none hover:bg-white/90"
-            style={{
-              border: 'none',
-              outline: 'none',
-              boxShadow: 'none',
-              padding: '11px 22px',
-              borderRadius: 980,
-              fontSize: 13,
-              fontWeight: 500,
-              textDecoration: 'none',
-              display: 'inline-flex',
-              alignItems: 'center',
-            }}
-          >
-            Comprar
-          </Link>
         </div>
 
-        <p
-          className="fhp-microcopy"
-          style={{
-            fontSize: 11,
-            fontWeight: 500,
-            marginTop: 10,
-            opacity: 0.7,
-            color: 'currentColor',
-          }}
-        >
-          Disponible en Amazon y Mercado Libre
-        </p>
+        {/* Marketplace buttons — replace the previous generic "Comprar"
+            (which routed to a form, not checkout) with explicit per-store
+            buy paths. UTM placement = product_card. Single tracked event
+            per click with sku + origen. */}
+        <div className="fhp-marketplaces flex flex-wrap gap-2 items-center justify-center mt-3">
+          <a
+            href={withUTM(MARKETPLACES.amazon, 'amazon', 'product_card')}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => track(AnalyticsEvents.ClickProducto, { producto: sku, origen: 'card' })}
+            aria-label={`Comprar ${showcase.titleMain} ${showcase.titleAccent} en Amazon`}
+            className="fhp-mp-btn"
+            style={{
+              padding: '7px 14px',
+              borderRadius: 980,
+              fontSize: 11,
+              fontWeight: 600,
+              textDecoration: 'none',
+              border: '1px solid currentColor',
+              opacity: 0.85,
+            }}
+          >
+            Comprar en Amazon
+          </a>
+          <a
+            href={withUTM(MARKETPLACES.ml, 'mercado_libre', 'product_card')}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => track(AnalyticsEvents.ClickProducto, { producto: sku, origen: 'card' })}
+            aria-label={`Comprar ${showcase.titleMain} ${showcase.titleAccent} en Mercado Libre`}
+            className="fhp-mp-btn"
+            style={{
+              padding: '7px 14px',
+              borderRadius: 980,
+              fontSize: 11,
+              fontWeight: 600,
+              textDecoration: 'none',
+              border: '1px solid currentColor',
+              opacity: 0.85,
+            }}
+          >
+            Comprar en Mercado Libre
+          </a>
+          <a
+            href={withUTM(MARKETPLACES.walmart, 'walmart', 'product_card')}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => track(AnalyticsEvents.ClickProducto, { producto: sku, origen: 'card' })}
+            aria-label={`Comprar ${showcase.titleMain} ${showcase.titleAccent} en Walmart`}
+            className="fhp-mp-btn"
+            style={{
+              padding: '7px 14px',
+              borderRadius: 980,
+              fontSize: 11,
+              fontWeight: 600,
+              textDecoration: 'none',
+              border: '1px solid currentColor',
+              opacity: 0.85,
+            }}
+          >
+            Comprar en Walmart
+          </a>
+        </div>
       </div>
     </article>
   )

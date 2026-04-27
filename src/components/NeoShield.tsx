@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { MARKETPLACES, withUTM } from '@/lib/marketplaces'
 
 const STATS = [
   { value: '99%', label: 'Eliminación de bacterias' },
@@ -121,6 +122,86 @@ export default function NeoShield() {
             width={200}
             height={200}
           />
+        </div>
+
+        {/* Closing CTA — convert tech section into commerce. UTM placement
+            differentiates these from hero clicks at the analytics layer. */}
+        <div style={{ marginTop: 64, textAlign: 'center' }}>
+          <p
+            style={{
+              fontSize: 12,
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: 'rgba(255, 255, 255, 0.6)',
+              marginBottom: 20,
+            }}
+          >
+            Compra MagiClean ahora en:
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 12,
+              justifyContent: 'center',
+            }}
+          >
+            <a
+              href={withUTM(MARKETPLACES.amazon, 'amazon', 'tecnologia')}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '10px 22px',
+                borderRadius: 980,
+                fontSize: 13,
+                fontWeight: 600,
+                color: '#fff',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+              }}
+            >
+              Amazon
+            </a>
+            <a
+              href={withUTM(MARKETPLACES.ml, 'mercado_libre', 'tecnologia')}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '10px 22px',
+                borderRadius: 980,
+                fontSize: 13,
+                fontWeight: 600,
+                color: '#fff',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+              }}
+            >
+              Mercado Libre
+            </a>
+            <a
+              href={withUTM(MARKETPLACES.walmart, 'walmart', 'tecnologia')}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '10px 22px',
+                borderRadius: 980,
+                fontSize: 13,
+                fontWeight: 600,
+                color: '#fff',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+              }}
+            >
+              Walmart
+            </a>
+          </div>
         </div>
       </div>
     </section>
