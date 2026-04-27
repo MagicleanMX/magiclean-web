@@ -1,8 +1,10 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Download } from 'lucide-react'
 import type { DistribuidoresSection } from '@/lib/wordpress'
+import { CATALOG_PDFS } from '@/lib/catalog-assets'
 
 // Info logística (tiempos, MOQ, cobertura) vive en <Logistica />. Esta sección
 // es 100% CTA de reclutamiento B2B. Si WordPress envía `zones` lo ignoramos —
@@ -55,6 +57,9 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="label-eyebrow text-[#FF2B2B] mb-5">{eyebrow}</p>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white/70 mb-3">
+              Para distribuidores, horeca y retail
+            </p>
             <h2 className="headline-editorial text-[2rem] sm:text-[2.6rem] lg:text-[3.4rem] text-white mb-6 max-w-md">
               {headline}
             </h2>
@@ -69,6 +74,32 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
               {ctaLabel}
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
             </a>
+
+            {/* Catálogo PDF — absorbed from CatalogDownloadsHome */}
+            <div className="mt-8 pt-6 border-t border-white/15">
+              <p className="label-eyebrow text-white/70 mb-4">Catálogo profesional</p>
+              <div className="flex flex-wrap gap-3">
+                {CATALOG_PDFS.map((pdf) => (
+                  <a
+                    key={pdf.id}
+                    href={pdf.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Descargar ${pdf.label} en PDF, ${pdf.sizeA11y}`}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-white/30 text-white text-[13px] font-medium hover:border-white hover:bg-white/10 transition-colors"
+                  >
+                    <Download size={14} />
+                    {pdf.label} ({pdf.sizeLabel})
+                  </a>
+                ))}
+                <Link
+                  href="/productos"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-white/70 text-[13px] font-medium hover:text-white transition-colors"
+                >
+                  Ver portafolio completo →
+                </Link>
+              </div>
+            </div>
           </motion.div>
 
           {/* Beneficios como distribuidor */}

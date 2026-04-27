@@ -1,9 +1,16 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import type { HeroSection } from '@/lib/wordpress'
 import { CANALES } from '@/lib/products'
+
+// TODO(home-launch): replace `#` placeholders with official storefront URLs
+// when MagiClean storefront on Amazon and MercadoLibre go live.
+const HERO_CTAS = {
+  amazon:        '#',
+  mercadoLibre:  '#',
+  catalogo:      '#contacto',
+} as const
 
 // Fallback values — used when WordPress is unreachable or fields are empty
 const FALLBACK: HeroSection = {
@@ -54,19 +61,29 @@ export default function Hero({ data }: HeroProps) {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3">
             <a
-              href="#contacto"
+              href={HERO_CTAS.amazon}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:bg-[#0052CC] transition-colors duration-300"
             >
-              Hablar con ventas
+              Comprar en Amazon
             </a>
-            <Link
-              href="/productos"
+            <a
+              href={HERO_CTAS.mercadoLibre}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-[#1A1A1A] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:bg-[#0076FF] transition-colors duration-300"
+            >
+              Comprar en Mercado Libre
+            </a>
+            <a
+              href={HERO_CTAS.catalogo}
               className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
             >
-              Ver portafolio completo
-            </Link>
+              Solicitar catálogo
+            </a>
           </div>
         </div>
 
