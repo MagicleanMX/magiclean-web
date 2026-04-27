@@ -67,7 +67,7 @@
 
 Estas reglas NO se saltan sin autorización explícita del dueño en el chat activo:
 
-1. **NO cambiar `MagicClean` (doble C) → `MagiClean` de forma masiva** sin aprobación explícita. Son 43 ocurrencias en copy comercial. Requiere review con pantalla al lado cuando se haga. **Decisión pendiente.**
+1. **Forma canónica del nombre: `MagiClean`** (M y C ambas mayúsculas, una sola palabra). La variante histórica `MagicClean` (doble C) fue migrada en Sprint I 2026-04-26 (PR #36) — 25/25 ocurrencias en `src/` reemplazadas. Si volvés a ver `MagicClean` en código nuevo, es regresión: corregilo. Pendiente fuera de scope: email `magicleanproducts.com` (lowercase) — Sprint D, espera DNS Cloudflare.
 2. **NO tocar `magiclean-theme/`** (WordPress legacy — decisión sobre su futuro pendiente, Sprint F post-lanzamiento).
 3. **NO cambiar copy visible** (hero, headlines, CTAs, labels) sin aprobación explícita.
 4. **NO mergear a `main`** desde ninguna branch sin OK explícito.
@@ -185,5 +185,5 @@ Cada sección combina ambas capas. No separar por sección.
 
 Si algo no está en este archivo ni en `docs/`, **NO asumas. Preguntá al dueño en el chat activo antes de actuar.**
 
-Última actualización: 2026-04-21
+Última actualización: 2026-04-26
 Próxima revisión sugerida: al inicio de cada sprint nuevo o cuando cambie una decisión estratégica.
