@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import productsData from '@/lib/products.json'
+import { MARKETPLACES, withUTM } from '@/lib/marketplaces'
+import { track, AnalyticsEvents } from '@/lib/analytics'
 
 type Product = {
   sku: string
@@ -63,11 +65,10 @@ export default function ProductHeroMop() {
           <div>
             <p className="label-eyebrow text-[#0076FF] mb-3">Sistemas Mop</p>
             <h2 className="headline-editorial text-[2.6rem] lg:text-[3.4rem] xl:text-[4rem] text-white max-w-xl mb-4">
-              Piso impecable. Sin esfuerzo.{' '}
-              <span className="italic text-[#0076FF]">Sin químicos adicionales.</span>
+              Sistemas más vendidos
             </h2>
             <p className="text-[1rem] font-normal text-white/50 leading-[1.75] max-w-lg">
-              Dos sistemas con microfibra NeoShield™. El M1 para quien exige potencia. El M2 para quien necesita eficiencia.
+              Los productos que hoy lideran en e-commerce por eficiencia, durabilidad y resultados.
             </p>
           </div>
 
@@ -124,13 +125,17 @@ export default function ProductHeroMop() {
 
             {/* Texto debajo de la imagen */}
             <div className="p-8">
-              <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">{M1.sku}</p>
-              <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">{M1.nombre}</p>
-              <p className="text-white/50 font-normal text-[13px] mb-6">Con pedal · Escurrido automático</p>
+              <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-3">{M1.sku}</p>
+              <h3 className="text-white text-[1.25rem] font-semibold leading-tight mb-2">
+                M1 — limpieza profesional eficiente
+              </h3>
+              <p className="text-white/60 font-normal text-[13.5px] leading-[1.6] mb-6">
+                El sistema más vendido para operaciones que necesitan velocidad y consistencia.
+              </p>
 
               <p className="label-eyebrow text-[#0076FF] text-[10px] mb-5">Retail · HORECA · Hogar</p>
 
-              <ul className="space-y-3">
+              <ul className="space-y-3 mb-7">
                 {m1Specs.map((s) => (
                   <li key={s} className="flex items-start gap-3">
                     <span className="w-4 h-px bg-[#0076FF] mt-[0.6rem] shrink-0" />
@@ -138,6 +143,41 @@ export default function ProductHeroMop() {
                   </li>
                 ))}
               </ul>
+
+              {/* Marketplace buttons — UTM placement = m1_section. Single
+                  tracked event per click, producto: 'M1', origen: 'champions_section'. */}
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href={withUTM(MARKETPLACES.amazon, 'amazon', 'm1_section')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track(AnalyticsEvents.ClickProducto, { producto: 'M1', origen: 'champions_section' })}
+                  aria-label="Comprar M1 en Amazon"
+                  className="inline-flex items-center justify-center px-4 py-2 rounded-full text-[12px] font-semibold text-white border border-white/30 hover:border-white hover:bg-white/10 transition-colors duration-200"
+                >
+                  Comprar en Amazon
+                </a>
+                <a
+                  href={withUTM(MARKETPLACES.ml, 'mercado_libre', 'm1_section')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track(AnalyticsEvents.ClickProducto, { producto: 'M1', origen: 'champions_section' })}
+                  aria-label="Comprar M1 en Mercado Libre"
+                  className="inline-flex items-center justify-center px-4 py-2 rounded-full text-[12px] font-semibold text-white border border-white/30 hover:border-white hover:bg-white/10 transition-colors duration-200"
+                >
+                  Comprar en Mercado Libre
+                </a>
+                <a
+                  href={withUTM(MARKETPLACES.walmart, 'walmart', 'm1_section')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track(AnalyticsEvents.ClickProducto, { producto: 'M1', origen: 'champions_section' })}
+                  aria-label="Comprar M1 en Walmart"
+                  className="inline-flex items-center justify-center px-4 py-2 rounded-full text-[12px] font-semibold text-white border border-white/30 hover:border-white hover:bg-white/10 transition-colors duration-200"
+                >
+                  Comprar en Walmart
+                </a>
+              </div>
             </div>
           </motion.div>
 
@@ -183,13 +223,17 @@ export default function ProductHeroMop() {
 
             {/* Texto debajo de la imagen */}
             <div className="p-8">
-              <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-1">{M2.sku}</p>
-              <p className="text-white/80 text-[1.1rem] font-semibold leading-tight mb-1">{M2.nombre}</p>
-              <p className="text-white/50 font-normal text-[13px] mb-6">Sin pedal · Centrifugado manual</p>
+              <p className="font-black text-[4rem] leading-none text-[#0076FF] mb-3">{M2.sku}</p>
+              <h3 className="text-white text-[1.25rem] font-semibold leading-tight mb-2">
+                M2 — solución versátil para cualquier operación
+              </h3>
+              <p className="text-white/60 font-normal text-[13.5px] leading-[1.6] mb-6">
+                Adaptable a hogar, horeca y uso intensivo.
+              </p>
 
               <p className="label-eyebrow text-[#0076FF] text-[10px] mb-5">Apartamentos · Oficinas</p>
 
-              <ul className="space-y-3">
+              <ul className="space-y-3 mb-7">
                 {m2Specs.map((s) => (
                   <li key={s} className="flex items-start gap-3">
                     <span className="w-4 h-px bg-[#0076FF] mt-[0.6rem] shrink-0" />
@@ -197,6 +241,41 @@ export default function ProductHeroMop() {
                   </li>
                 ))}
               </ul>
+
+              {/* Marketplace buttons — UTM placement = m2_section. Single
+                  tracked event per click, producto: 'M2', origen: 'champions_section'. */}
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href={withUTM(MARKETPLACES.amazon, 'amazon', 'm2_section')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track(AnalyticsEvents.ClickProducto, { producto: 'M2', origen: 'champions_section' })}
+                  aria-label="Comprar M2 en Amazon"
+                  className="inline-flex items-center justify-center px-4 py-2 rounded-full text-[12px] font-semibold text-white border border-white/30 hover:border-white hover:bg-white/10 transition-colors duration-200"
+                >
+                  Comprar en Amazon
+                </a>
+                <a
+                  href={withUTM(MARKETPLACES.ml, 'mercado_libre', 'm2_section')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track(AnalyticsEvents.ClickProducto, { producto: 'M2', origen: 'champions_section' })}
+                  aria-label="Comprar M2 en Mercado Libre"
+                  className="inline-flex items-center justify-center px-4 py-2 rounded-full text-[12px] font-semibold text-white border border-white/30 hover:border-white hover:bg-white/10 transition-colors duration-200"
+                >
+                  Comprar en Mercado Libre
+                </a>
+                <a
+                  href={withUTM(MARKETPLACES.walmart, 'walmart', 'm2_section')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track(AnalyticsEvents.ClickProducto, { producto: 'M2', origen: 'champions_section' })}
+                  aria-label="Comprar M2 en Walmart"
+                  className="inline-flex items-center justify-center px-4 py-2 rounded-full text-[12px] font-semibold text-white border border-white/30 hover:border-white hover:bg-white/10 transition-colors duration-200"
+                >
+                  Comprar en Walmart
+                </a>
+              </div>
             </div>
           </motion.div>
 
