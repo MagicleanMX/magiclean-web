@@ -19,8 +19,8 @@ import { getWPSettings, getHeroSection, getDistribuidoresSection } from '@/lib/w
  *  1. Hero                  → Promesa de marca + 3 CTAs (Amazon, ML, catálogo)
  *  2. MarketplacesRibbon    → "Disponible en:" — apoyo directo a e-commerce
  *  3. HeroFibras            → Showcase 2×2 de fibras destacadas (F4, F1, F5, F7)
- *  4. ProductHeroMop        → Sistemas Mop M1 + M2 (#sistemas-mop-m1)
- *  5. DistribuidoresCTA     → Conversión B2B + descarga catálogo PDF (#distribuidores)
+ *  4. DistribuidoresCTA     → Conversión B2B + descarga catálogo PDF (#distribuidores)
+ *  5. ProductHeroMop        → Sistemas Mop M1 + M2 (#sistemas-mop-m1)
  *  6. NeoShield             → Tecnología antibacterial propia (#tecnologia)
  *  7. BeneficiosClave       → 3 pilares (#como-funciona — anchor preservado)
  *  8. Logistica             → Operación honesta: tiempos, cobertura (#logistica)
@@ -72,8 +72,8 @@ export default async function Home() {
         <Hero data={heroData} />
         <MarketplacesRibbon />
         <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><HeroFibras /></div>
-        <div style={{ paddingTop: 80, paddingBottom: 80 }}><ProductHeroMop /></div>
         <div style={{ paddingTop: 80, paddingBottom: 80 }}><DistribuidoresCTA data={distribuidoresData} /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80 }}><ProductHeroMop /></div>
         <div style={{ paddingTop: 80, paddingBottom: 80 }}><NeoShield /></div>
         <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><BeneficiosClave /></div>
         <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><Logistica /></div>
