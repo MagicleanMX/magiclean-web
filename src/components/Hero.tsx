@@ -59,7 +59,7 @@ export default function Hero({ data }: HeroProps) {
               href="#contacto"
               className="inline-flex items-center justify-center bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:bg-[#0052CC] transition-colors duration-300"
             >
-              Solicitar cotización
+              Hablar con ventas
             </a>
             <Link
               href="/productos"
@@ -67,20 +67,6 @@ export default function Hero({ data }: HeroProps) {
             >
               Ver portafolio completo
             </Link>
-          </div>
-
-          {/* Stats */}
-          <div className="hidden sm:flex items-center gap-6 sm:gap-10 mt-10 pt-6 border-t border-[#E8EAED] flex-wrap">
-            {[
-              { n: '3',            label: 'Años de crecimiento' },
-              { n: 'ML · AMZ · WMT', label: 'Marketplaces activos' },
-              { n: '23',           label: 'Modelos especializados' },
-            ].map((s) => (
-              <div key={s.label}>
-                <p className="text-xl sm:text-2xl font-black text-[#1A1A1A] leading-none mb-1">{s.n}</p>
-                <p className="label-eyebrow text-ink-muted">{s.label}</p>
-              </div>
-            ))}
           </div>
         </div>
 

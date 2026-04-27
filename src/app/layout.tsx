@@ -4,6 +4,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import CookieBanner from '@/components/CookieBanner'
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
 import { siteUrl } from '@/lib/config'
+import { ACTIVE_SKU_COUNT } from '@/lib/products-stats'
 import './globals.css'
 
 const montserrat = Montserrat({
@@ -26,7 +27,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: 'MagicClean — Proveedor B2B de Limpieza Profesional en México',
   description:
-    'Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional. Tecnología NeoShield™ antibacterial. Líderes en MercadoLibre y Amazon · 23 soluciones profesionales · México y LATAM.',
+    `Fibras, sistemas de mop y soluciones de limpieza profesional para distribuidores, retail, HORECA e institucional. Tecnología NeoShield™ antibacterial. Líderes en MercadoLibre y Amazon · ${ACTIVE_SKU_COUNT} soluciones profesionales · México y LATAM.`,
   keywords: [
     'fibras de limpieza profesional',
     'sistemas de mop',
