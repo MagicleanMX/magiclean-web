@@ -92,7 +92,7 @@ export default function Hero({ data }: HeroProps) {
           <div className="flex items-center justify-center gap-8 flex-wrap">
             {CANALES.map((c, i) => (
               <span key={c} className="flex items-center gap-8">
-                <span className="label-eyebrow text-white/50 text-[10px]">{c}</span>
+                <span className="label-eyebrow text-white text-[10px]">{c}</span>
                 {i < CANALES.length - 1 && (
                   <span className="text-white/20 select-none text-xs">·</span>
                 )}
