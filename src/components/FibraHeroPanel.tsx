@@ -130,11 +130,11 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
               alignItems: 'center',
             }}
           >
-            Más información
+            Ver producto
           </Link>
           <Link
             href={`/#contacto?producto=${sku}`}
-            aria-label={`Cotizar ${showcase.titleMain} ${showcase.titleAccent}`}
+            aria-label={`Comprar ${showcase.titleMain} ${showcase.titleAccent}`}
             className="fhp-btn bg-white text-[#1d1d1f] border-0 outline-none focus:outline-none focus-visible:outline-none hover:bg-white/90"
             style={{
               border: 'none',
@@ -149,7 +149,7 @@ export default function FibraHeroPanel({ sku, showcase }: Props) {
               alignItems: 'center',
             }}
           >
-            Cotizar
+            Comprar
           </Link>
         </div>
       </div>

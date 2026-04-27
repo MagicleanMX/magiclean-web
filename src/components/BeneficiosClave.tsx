@@ -9,7 +9,7 @@ const ICONS: LucideIcon[] = [Zap, ShieldCheck, Leaf]
 
 export default function BeneficiosClave() {
   return (
-    <section className="section-premium bg-surface-alt">
+    <section id="como-funciona" className="section-premium bg-surface-alt">
       <div className="max-w-[1440px] mx-auto px-8">
 
         <motion.div

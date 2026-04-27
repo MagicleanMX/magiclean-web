@@ -1,44 +1,39 @@
 import Navbar from '@/components/Navbar'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import Hero from '@/components/Hero'
-import ElProblema from '@/components/ElProblema'
-import NeoShield from '@/components/NeoShield'
-import BeneficiosClave from '@/components/BeneficiosClave'
+import MarketplacesRibbon from '@/components/MarketplacesRibbon'
 import HeroFibras from '@/components/HeroFibras'
 import ProductHeroMop from '@/components/ProductHeroMop'
-import SocialProof from '@/components/SocialProof'
-import HowItWorks from '@/components/HowItWorks'
 import DistribuidoresCTA from '@/components/DistribuidoresCTA'
+import NeoShield from '@/components/NeoShield'
+import BeneficiosClave from '@/components/BeneficiosClave'
 import Logistica from '@/components/Logistica'
 import Nosotros from '@/components/Nosotros'
 import ContactForm from '@/components/ContactForm'
-import CatalogDownloadsHome from '@/components/CatalogDownloadsHome'
 import Footer from '@/components/Footer'
 import { getWPSettings, getHeroSection, getDistribuidoresSection } from '@/lib/wordpress'
 
 /**
- * Orden de secciones — narrativa de marca:
+ * Orden de secciones — home restructure (launch):
  *
- *  1. Hero                  → Promesa de marca
- *  2. ElProblema            → Por qué elegirnos: value-first multi-market
- *  3. NeoShield             → Sello de confianza antibacterial (#tecnologia)
- *  4. BeneficiosClave       → 3 pilares: durabilidad, cero contaminación cruzada, eco-friendly
- *  5. HeroFibras            → Showcase 2×2 de fibras destacadas (F4, F1, F6, F7)
- *  6. ProductHeroMop        → Sistemas Mop M1 + M2 consolidados (#sistemas-mop-m1)
- *  7. SocialProof           → Presencia verificada · marketplaces · métricas
- *  8. HowItWorks            → El proceso, simple y transparente (#como-funciona)
- *  9. Logistica             → Operación honesta: tiempos, cobertura, presentaciones (#logistica)
- * 10. DistribuidoresCTA     → CTA red B2B (#distribuidores)
- * 11. Nosotros              → Historia de marca (#nosotros)
- * 12. ContactForm           → Formulario de cierre (#contacto)
- * 13. CatalogDownloadsHome  → PDFs descargables + link a /productos
- * 14. Footer
+ *  1. Hero                  → Promesa de marca + 3 CTAs (Amazon, ML, catálogo)
+ *  2. MarketplacesRibbon    → "Disponible en:" — apoyo directo a e-commerce
+ *  3. HeroFibras            → Showcase 2×2 de fibras destacadas (F4, F1, F5, F7)
+ *  4. DistribuidoresCTA     → Conversión B2B + descarga catálogo PDF (#distribuidores)
+ *  5. ProductHeroMop        → Sistemas Mop M1 + M2 (#sistemas-mop-m1)
+ *  6. NeoShield             → Tecnología antibacterial propia (#tecnologia)
+ *  7. BeneficiosClave       → 3 pilares (#como-funciona — anchor preservado)
+ *  8. Logistica             → Operación honesta: tiempos, cobertura (#logistica)
+ *  9. Nosotros              → Historia de marca (#nosotros)
+ * 10. ContactForm           → Formulario de cierre (#contacto)
+ *
+ * Componentes deprecados (archivos conservados, sin importar):
+ *   - ElProblema, HowItWorks, SocialProof, CatalogDownloadsHome
+ *   Limpieza física pendiente para sprint posterior.
  *
  * WordPress/GraphQL fetches are skipped entirely when WP_GRAPHQL_URL is not
  * set (e.g. Vercel production without a connected WP instance). Components
  * receive null and render their hardcoded fallback content directly.
- * This guarantees the SSR HTML is identical to the client-rendered HTML —
- * no failed network calls, no empty states, correct content for crawlers/SEO.
  */
 
 const WP_CONNECTED = !!process.env.WP_GRAPHQL_URL
@@ -75,18 +70,15 @@ export default async function Home() {
       <Navbar />
       <main>
         <Hero data={heroData} />
-        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><ElProblema /></div>
+        <MarketplacesRibbon />
+        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><HeroFibras /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80 }}><DistribuidoresCTA data={distribuidoresData} /></div>
+        <div style={{ paddingTop: 80, paddingBottom: 80 }}><ProductHeroMop /></div>
         <div style={{ paddingTop: 80, paddingBottom: 80 }}><NeoShield /></div>
         <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><BeneficiosClave /></div>
-        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><HeroFibras /></div>
-        <div style={{ paddingTop: 80, paddingBottom: 80 }}><ProductHeroMop /></div>
-        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><SocialProof /></div>
-        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><HowItWorks /></div>
         <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><Logistica /></div>
-        <div style={{ paddingTop: 80, paddingBottom: 80 }}><DistribuidoresCTA data={distribuidoresData} /></div>
         <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><Nosotros /></div>
         <div style={{ paddingTop: 80, paddingBottom: 80 }}><ContactForm /></div>
-        <div style={{ paddingTop: 80, paddingBottom: 80, background: '#fff' }}><CatalogDownloadsHome /></div>
       </main>
       <Footer />
       <WhatsAppButton />

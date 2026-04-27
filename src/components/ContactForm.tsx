@@ -132,7 +132,7 @@ export default function ContactForm() {
             Hablemos
           </p>
           <h2 className="headline-editorial text-[2rem] sm:text-[2.6rem] lg:text-[3.4rem] text-white max-w-lg mb-4">
-            Tu operación merece una solución diseñada para ella.
+            Hablemos de tu operación
           </h2>
           <p className="text-white/60 font-normal text-base max-w-lg leading-[1.75]">
             No tenemos catálogos genéricos. Cuéntanos qué operas, cuánto volumen manejas

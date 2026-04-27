@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const STATS = [
   { value: '99%', label: 'Eliminación de bacterias' },
-  { value: '3×',  label: 'Más duración vs competencia' },
+  { value: '3×',  label: 'Hasta 3x mayor duración vs fibras convencionales' },
   { value: '0',   label: 'Químicos adicionales' },
 ] as const
 
