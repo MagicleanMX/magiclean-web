@@ -55,13 +55,19 @@ export default function Hero({ data }: HeroProps) {
             {subheadline}
           </p>
 
+          {/* Audience tagline — B2B segmentation, conversion-driven */}
+          <p className="text-[0.95rem] font-semibold text-[#1A1A1A] leading-[1.5] max-w-sm mb-3">
+            Para cocina, horeca, retail y uso profesional
+          </p>
+
           {/* Micro-texto B2B */}
           <p className="text-[0.8rem] font-normal text-ink-subtle tracking-wide mb-8">
             {heroMicrotext}
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+          {/* CTAs — visual hierarchy: primary → secondary outline → ghost */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:items-center">
+            {/* Amazon — primary */}
             <a
               href={HERO_CTAS.amazon}
               target="_blank"
@@ -70,17 +76,19 @@ export default function Hero({ data }: HeroProps) {
             >
               Comprar en Amazon
             </a>
+            {/* Mercado Libre — secondary (outline) */}
             <a
               href={HERO_CTAS.mercadoLibre}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-[#1A1A1A] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:bg-[#0076FF] transition-colors duration-300"
+              className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
             >
               Comprar en Mercado Libre
             </a>
+            {/* Catálogo — ghost (text link with same hit area) */}
             <a
               href={HERO_CTAS.catalogo}
-              className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
+              className="inline-flex items-center justify-center px-4 py-3.5 text-[13px] font-semibold tracking-wide text-[#1A1A1A] hover:text-[#0076FF] transition-colors duration-300"
             >
               Solicitar catálogo
             </a>

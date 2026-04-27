@@ -67,6 +67,10 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
               {body}
             </p>
 
+            <p className="text-[14px] font-medium text-white/85 mb-4 max-w-md leading-[1.55]">
+              Accede a precios de distribuidor y catálogo completo.
+            </p>
+
             <a
               href={ctaUrl}
               className="inline-flex items-center gap-2.5 bg-white text-[#0076FF] px-8 py-3.5 rounded-full text-[13px] font-semibold hover:bg-surface-blue transition-colors duration-300 group"

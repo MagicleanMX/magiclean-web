@@ -74,7 +74,7 @@ export default function Logistica() {
         >
           <p className="label-eyebrow text-[#0052CC] mb-3">Operación</p>
           <h2 className="headline-editorial text-[2.8rem] lg:text-[3.6rem] text-[#1A1A1A] mb-4">
-            Cómo llega a tus clientes
+            Cobertura nacional para distribuidores y empresas
           </h2>
           <p className="text-[1rem] font-normal text-ink-muted leading-[1.75]">
             Cobertura nacional desde CDMX. Operación directa en zona metro.
