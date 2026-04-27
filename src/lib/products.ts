@@ -14,13 +14,15 @@
  * para reflejar contenido real (8 imports a actualizar).
  */
 
+import { ACTIVE_SKU_COUNT } from './products-stats'
+
 // ─── Brand ────────────────────────────────────────────────────────────────────
 export const CANALES = ['HOGAR', 'RETAIL', 'HORECA', 'INDUSTRIAL', 'INSTITUCIONAL'] as const
 
 export const MARKETPLACES = ['MercadoLibre', 'Amazon', 'Walmart'] as const
 
 // ─── NeoShield™ ───────────────────────────────────────────────────────────────
-// Only tech-differentiating stats live here. Portfolio breadth (23 solutions) and
+// Only tech-differentiating stats live here. Portfolio breadth and
 // distribution reach (3 marketplaces) are owned by Hero/SocialProof/Nosotros.
 export const NEOSHIELD_STATS = [
   { target: 99,  suffix: '%', label: 'Eliminación de bacterias' },
@@ -46,7 +48,7 @@ export const PROBLEMAS = [
   },
   {
     titulo: 'Un solo proveedor para todo el ciclo',
-    desc: '23 soluciones profesionales. Fibras, sistemas mop, accesorios y repuestos. Un catálogo. Un equipo. Un estándar.',
+    desc: `${ACTIVE_SKU_COUNT} soluciones profesionales. Fibras, sistemas mop, accesorios y repuestos. Un catálogo. Un equipo. Un estándar.`,
   },
 ] as const
 
@@ -96,14 +98,14 @@ export const PASOS = [
 // ─── Social Proof ─────────────────────────────────────────────────────────────
 export const METRICAS = [
   { n: '3+',               label: 'Marketplaces activos' },
-  { n: '23',               label: 'Soluciones en portafolio' },
+  { n: String(ACTIVE_SKU_COUNT), label: 'Soluciones en portafolio' },
   { n: 'CDMX · GDL · MTY', label: 'Cobertura nacional' },
 ] as const
 
 // ─── Nosotros ─────────────────────────────────────────────────────────────────
 export const NOSOTROS_STATS = [
   { n: '3',  label: 'Años de crecimiento acelerado' },
-  { n: '23', label: 'Soluciones especializadas' },
+  { n: String(ACTIVE_SKU_COUNT), label: 'Soluciones especializadas' },
   { n: '3',  label: 'Marketplaces líderes' },
   { n: '5+', label: 'Líneas de producto activas' },
 ] as const
@@ -121,7 +123,7 @@ export const NOSOTROS_VALORES = [
   },
   {
     num: '03',
-    titulo: '23 soluciones. Un portafolio para cada canal.',
+    titulo: `${ACTIVE_SKU_COUNT} soluciones. Un portafolio para cada canal.`,
     desc: 'Fibras, sistemas mop y accesorios para hogar, retail, HORECA e institucional. Cada producto diseñado con propósito — no fabricamos volumen, fabricamos soluciones.',
   },
   {
