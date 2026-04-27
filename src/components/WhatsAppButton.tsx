@@ -6,7 +6,7 @@ import { X } from 'lucide-react'
 import { track, AnalyticsEvents } from '@/lib/analytics'
 
 const WHATSAPP_NUMBER = '525570959011'
-const WHATSAPP_MESSAGE = 'Hola, me interesa conocer el portafolio profesional de MagicClean.'
+const WHATSAPP_MESSAGE = 'Hola, me interesa conocer el portafolio profesional de MagiClean.'
 
 export default function WhatsAppButton() {
   const [open, setOpen] = useState(false)
@@ -53,7 +53,7 @@ export default function WhatsAppButton() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-[#1A1A1A] text-[13px] leading-tight">MagicClean</p>
+                  <p className="font-semibold text-[#1A1A1A] text-[13px] leading-tight">MagiClean</p>
                   <p className="text-[10px] text-[#167A35] font-medium">En línea ahora</p>
                 </div>
               </div>

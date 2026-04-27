@@ -322,7 +322,7 @@ export async function getMetrics(): Promise<HomeMetrics | null> {
 
 export interface CategoriesSection {
   eyebrow:  string   // e.g. "La Colección"
-  headline: string   // e.g. "Productos MagicClean"
+  headline: string   // e.g. "Productos MagiClean"
   ctaText:  string   // e.g. "Ver catálogo completo"
   ctaLink:  string   // e.g. "#contacto"
   microtext: string  // e.g. "23 soluciones · 2 líneas de producto"
@@ -369,7 +369,7 @@ export async function getCategoriesSection(): Promise<CategoriesSection | null> 
 
 export interface DistribuidoresSection {
   eyebrow:  string   // e.g. "Únete a la red"
-  headline: string   // e.g. "Conviértete en distribuidor MagicClean"
+  headline: string   // e.g. "Conviértete en distribuidor MagiClean"
   body:     string   // main paragraph
   ctaLabel: string   // e.g. "Quiero ser distribuidor"
   ctaUrl:   string   // e.g. "#contacto"

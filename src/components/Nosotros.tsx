@@ -22,7 +22,7 @@ export default function Nosotros() {
             <span className="italic text-[#0076FF]"> Lo estamos construyendo.</span>
           </h2>
           <p className="text-[1rem] font-normal text-ink-muted leading-[1.75]">
-            MagicClean nació con una idea simple: que la limpieza profesional merecía mejor
+            MagiClean nació con una idea simple: que la limpieza profesional merecía mejor
             tecnología, mejor diseño y mejor precio. Desarrollamos NeoShield™ — tecnología
             antibacterial propia — y la integramos en cada producto. Hoy operamos en los 3
             marketplaces líderes de México. El siguiente capítulo es la distribución a escala nacional.
@@ -38,7 +38,7 @@ export default function Nosotros() {
           className="relative overflow-hidden rounded-2xl mb-12"
           style={{ aspectRatio: '21/9', backgroundColor: '#0A1628' }}
         >
-          {/* <Image src="/nosotros-banner.webp" alt="MagicClean — El estándar que faltaba" fill className="object-cover object-[30%_center]" /> */}
+          {/* <Image src="/nosotros-banner.webp" alt="MagiClean — El estándar que faltaba" fill className="object-cover object-[30%_center]" /> */}
 
           {/* Overlay gradiente — legibilidad para texto futuro */}
           <div

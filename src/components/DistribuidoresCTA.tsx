@@ -18,7 +18,7 @@ const BENEFITS = [
 // Fallback values — used when WordPress is unreachable or field group not yet published
 const FALLBACK: DistribuidoresSection = {
   eyebrow:  'Únete a la red',
-  headline: 'Conviértete en distribuidor MagicClean',
+  headline: 'Conviértete en distribuidor MagiClean',
   body:     'Márgenes competitivos frente a multinacionales. Capacitación técnica sobre NeoShield™. Soporte de ventas dedicado. Una marca B2B con recorrido en marketplaces y visión editorial para el canal.',
   ctaLabel: 'Quiero ser distribuidor',
   ctaUrl:   '?canal=distribuidor#contacto',
