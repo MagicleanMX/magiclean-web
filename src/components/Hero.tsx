@@ -3,15 +3,18 @@
 import Image from 'next/image'
 import type { HeroSection } from '@/lib/wordpress'
 import { CANALES } from '@/lib/products'
+import { MARKETPLACES, withUTM } from '@/lib/marketplaces'
+import { track, AnalyticsEvents } from '@/lib/analytics'
 
-// TODO(home-launch): replace `#` placeholders with official storefront URLs
-// when MagiClean storefronts on Amazon, Mercado Libre, and Walmart go live.
+// Real marketplace URLs with UTM tagging. Computed once at module load —
+// stable for the lifetime of the page. URL/UTM source of truth lives in
+// src/lib/marketplaces.ts.
 const HERO_CTAS = {
-  amazon:        '#',
-  mercadoLibre:  '#',
-  walmart:       '#',
-  catalogo:      '/#contacto',
-} as const
+  amazon:       withUTM(MARKETPLACES.amazon,  'amazon',         'hero'),
+  mercadoLibre: withUTM(MARKETPLACES.ml,      'mercado_libre',  'hero'),
+  walmart:      withUTM(MARKETPLACES.walmart, 'walmart',        'hero'),
+  catalogo:     '/#contacto',
+}
 
 // Fallback values — used when WordPress is unreachable or fields are empty
 const FALLBACK: HeroSection = {
@@ -74,6 +77,7 @@ export default function Hero({ data }: HeroProps) {
               href={HERO_CTAS.amazon}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track(AnalyticsEvents.ClickAmazonHero)}
               className="inline-flex items-center justify-center bg-[#0076FF] text-white px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:bg-[#0052CC] transition-colors duration-300"
             >
               Comprar en Amazon
@@ -83,6 +87,7 @@ export default function Hero({ data }: HeroProps) {
               href={HERO_CTAS.mercadoLibre}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track(AnalyticsEvents.ClickMlHero)}
               className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
             >
               Comprar en Mercado Libre
@@ -92,6 +97,7 @@ export default function Hero({ data }: HeroProps) {
               href={HERO_CTAS.walmart}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track(AnalyticsEvents.ClickWalmartHero)}
               className="inline-flex items-center justify-center border border-[#D0D0D0] text-[#1A1A1A] px-8 py-3.5 rounded-full text-[13px] font-semibold tracking-wide hover:border-[#1A1A1A] transition-colors duration-300"
             >
               Comprar en Walmart
@@ -99,6 +105,7 @@ export default function Hero({ data }: HeroProps) {
             {/* Catálogo — ghost (text link with same hit area) */}
             <a
               href={HERO_CTAS.catalogo}
+              onClick={() => track(AnalyticsEvents.ClickCatalogoHero)}
               className="inline-flex items-center justify-center px-4 py-3.5 text-[13px] font-semibold tracking-wide text-[#1A1A1A] hover:text-[#0076FF] transition-colors duration-300"
             >
               Solicitar catálogo

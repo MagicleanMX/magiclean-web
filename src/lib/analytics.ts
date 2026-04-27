@@ -21,6 +21,10 @@ export const AnalyticsEvents = {
   ContactFormSubmit:    'contact_form_submit',
   WhatsAppClick:        'whatsapp_click',
   CatalogDownload:      'catalog_download',
+  ClickAmazonHero:      'click_amazon_hero',
+  ClickMlHero:          'click_ml_hero',
+  ClickWalmartHero:     'click_walmart_hero',
+  ClickCatalogoHero:    'click_catalogo_hero',
 } as const
 
 export type AnalyticsEventName = (typeof AnalyticsEvents)[keyof typeof AnalyticsEvents]
