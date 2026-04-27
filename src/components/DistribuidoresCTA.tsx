@@ -79,6 +79,10 @@ export default function DistribuidoresCTA({ data }: DistribuidoresCTAProps) {
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
             </a>
 
+            <p className="text-[12px] font-normal text-white/60 mt-3">
+              Respuesta en menos de 24h hábiles
+            </p>
+
             {/* Catálogo PDF — absorbed from CatalogDownloadsHome */}
             <div className="mt-8 pt-6 border-t border-white/15">
               <p className="label-eyebrow text-white/70 mb-4">Catálogo profesional</p>

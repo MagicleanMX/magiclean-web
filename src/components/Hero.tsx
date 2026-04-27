@@ -93,6 +93,11 @@ export default function Hero({ data }: HeroProps) {
               Solicitar catálogo
             </a>
           </div>
+
+          {/* Trust microcopy — reduce decision friction below CTAs */}
+          <p className="text-[11px] font-normal text-ink-subtle leading-[1.6] mt-4 max-w-sm">
+            Compra inmediata en marketplaces · Envío a todo México · Respuesta B2B en menos de 24h
+          </p>
         </div>
 
         {/* Derecha — slot visual para fotografía de producto */}
