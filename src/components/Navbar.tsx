@@ -49,20 +49,23 @@ const megaProductos = {
   })),
 }
 
+// Anchors use the absolute /#anchor form so they resolve correctly from
+// internal routes like /productos and /productos/[sku] (Next.js routes home
+// + scrolls to the anchor). On the home page the same hrefs still work.
 const navLinks = [
   { label: 'Productos', href: '#productos', mega: true },
-  { label: 'Tecnología', href: '#tecnologia', mega: false },
-  { label: 'Distribuidores', href: '#distribuidores', mega: false },
-  { label: 'Empresa', href: '#nosotros', mega: false },
+  { label: 'Tecnología', href: '/#tecnologia', mega: false },
+  { label: 'Distribuidores', href: '/#distribuidores', mega: false },
+  { label: 'Empresa', href: '/#nosotros', mega: false },
   { label: 'Soporte', href: '/#contacto', mega: false },
 ]
 
 const mobileLinks = [
   { label: 'Productos', href: '/productos' },
-  { label: 'Tecnología', href: '#tecnologia' },
-  { label: 'Distribuidores', href: '#distribuidores' },
+  { label: 'Tecnología', href: '/#tecnologia' },
+  { label: 'Distribuidores', href: '/#distribuidores' },
   { label: 'Soporte', href: '/#contacto' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Contacto', href: '/#contacto' },
 ]
 
 export default function Navbar() {
@@ -372,13 +375,13 @@ export default function Navbar() {
                                 </a>
                               ))}
                             </div>
-                            <a
-                              href="#contacto"
+                            <Link
+                              href="/#contacto"
                               role="menuitem"
                               className="text-[11px] font-semibold text-[#0076FF] hover:underline underline-offset-2"
                             >
                               Solicitar catálogo profesional →
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -408,12 +411,12 @@ export default function Navbar() {
               >
                 <Search size={18} strokeWidth={2.2} />
               </button>
-              <a
-                href="#contacto"
+              <Link
+                href="/#contacto"
                 className="hidden lg:inline-flex items-center border border-[#0076FF] text-[#0076FF] px-5 py-2.5 rounded-full text-[13px] font-semibold hover:bg-[#0076FF] hover:text-white transition-colors duration-200"
               >
                 Solicitar cotización
-              </a>
+              </Link>
               <button
                 ref={hamburgerRef}
                 aria-expanded={mobileOpen}
@@ -536,13 +539,13 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contacto"
+            <Link
+              href="/#contacto"
               onClick={() => setMobileOpen(false)}
               className="mt-3 bg-[#0076FF] text-white px-6 py-3.5 rounded-full text-[14px] font-semibold text-center hover:bg-[#1A1A1A] transition-colors"
             >
               Solicitar cotización
-            </a>
+            </Link>
           </div>
         </div>
       )}
